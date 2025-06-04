@@ -1,6 +1,9 @@
-import requests
-from requests.auth import HTTPBasicAuth
+import os
 from datetime import datetime
+
+import requests
+from flask import Flask, request
+from requests.auth import HTTPBasicAuth
 
 # ——— Configuration ———
 JIRA_DOMAIN     = "https://citigo.atlassian.net"
@@ -17,6 +20,8 @@ INPUT_BY_JQL    = True
 # Which checking logic to apply (currently only level 1 is supported)
 CHECKING_LEVEL  = 1
 # ————————————————————————
+
+app = Flask(__name__)
 
 def format_date(date_str: str) -> str:
     if not date_str:
@@ -118,7 +123,7 @@ def get_issue_summary_status_and_links(issue_key: str, checkingLevel: int = 1) -
 
     return table
 
-def main():
+def cli_main():
     if INPUT_BY_JQL:
         keys_list = get_keys_by_jql(JQL_QUERY)
     else:
@@ -128,5 +133,43 @@ def main():
         print(f"\n=== {key} ===")
         print(get_issue_summary_status_and_links(key, checkingLevel=CHECKING_LEVEL))
 
+
+@app.get("/issues")
+def issues_route():
+    """Return issue data for given keys or JQL."""
+    jql = request.args.get("jql")
+    keys = request.args.get("keys")
+    if jql:
+        keys_list = get_keys_by_jql(jql)
+    elif keys:
+        keys_list = [k.strip() for k in keys.split(",") if k.strip()]
+    elif INPUT_BY_JQL:
+        keys_list = get_keys_by_jql(JQL_QUERY)
+    else:
+        keys_list = [k.strip() for k in ISSUE_KEYS.split(",") if k.strip()]
+
+    outputs = []
+    for key in keys_list:
+        table = get_issue_summary_status_and_links(key, checkingLevel=CHECKING_LEVEL)
+        outputs.append(f"=== {key} ===\n{table}")
+
+    return "<br>".join(f"<pre>{o}</pre>" for o in outputs)
+
+
+@app.get("/")
+def index_route():
+    """Simple form allowing the user to enter a JQL query."""
+    return (
+        "<form action='/issues' method='get'>"
+        "<input type='text' name='jql' placeholder='Enter JQL query' size='60'>"
+        "<button type='submit'>Generate</button>"
+        "</form>"
+    )
+
+
 if __name__ == "__main__":
-    main()
+    if os.getenv("CLI_MODE") == "1":
+        cli_main()
+    else:
+        port = int(os.environ.get("PORT", 5000))
+        app.run(host="0.0.0.0", port=port)
