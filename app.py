@@ -2,7 +2,7 @@ import os
 from datetime import datetime
 
 import requests
-from flask import Flask, request
+from flask import Flask, request, render_template_string
 from requests.auth import HTTPBasicAuth
 
 # ——— Configuration ———
@@ -66,7 +66,7 @@ def get_keys_by_jql(jql: str) -> list:
     issues = resp.json().get("issues", [])
     return [issue["key"] for issue in issues]
 
-def get_issue_summary_status_and_links(issue_key: str, checkingLevel: int = 1) -> str:
+def get_issue_summary_status_and_links(issue_key: str, checkingLevel: int = 1, html: bool = False) -> str:
     if checkingLevel != 1:
         return f"Checking level {checkingLevel} not supported yet."
 
@@ -90,20 +90,35 @@ def get_issue_summary_status_and_links(issue_key: str, checkingLevel: int = 1) -
             elif "outwardIssue" in link:
                 issues.append(get_basic_details(link["outwardIssue"]["key"]))
 
-    # Build table
-    table = (
-        f"{'Key':<15}{'Summary':<40}{'Status':<15}"
-        f"{'Due Date (Dev)':<20}{'Go-live Plan'}\n"
-        + "-"*100 + "\n"
-    )
-    for i in issues:
-        table += (
-            f"{i['key']:<15}"
-            f"{i['summary'][:37]:<40}"
-            f"{i['status']:<15}"
-            f"{i['due_date_dev']:<20}"
-            f"{i['go_live_plan']}\n"
+    # Build output table
+    if html:
+        table = [
+            "<table class='table table-bordered table-sm'>",
+            "<thead><tr>",
+            "<th>Key</th><th>Summary</th><th>Status</th><th>Due Date (Dev)</th><th>Go-live Plan</th>",
+            "</tr></thead><tbody>"
+        ]
+        for i in issues:
+            table.append(
+                f"<tr><td>{i['key']}</td><td>{i['summary']}</td><td>{i['status']}</td>"
+                f"<td>{i['due_date_dev']}</td><td>{i['go_live_plan']}</td></tr>"
+            )
+        table.append("</tbody></table>")
+        table = "".join(table)
+    else:
+        table = (
+            f"{'Key':<15}{'Summary':<40}{'Status':<15}"
+            f"{'Due Date (Dev)':<20}{'Go-live Plan'}\n"
+            + "-"*100 + "\n"
         )
+        for i in issues:
+            table += (
+                f"{i['key']:<15}"
+                f"{i['summary'][:37]:<40}"
+                f"{i['status']:<15}"
+                f"{i['due_date_dev']:<20}"
+                f"{i['go_live_plan']}\n"
+            )
 
     # If Testing Staging, count unresolved bug-subtasks
     if root["status"] == "Testing Staging":
@@ -119,7 +134,10 @@ def get_issue_summary_status_and_links(issue_key: str, checkingLevel: int = 1) -
             cat = fetch_json(st["key"])["fields"]["status"]["statusCategory"]["name"]
             if cat != "Done":
                 unresolved += 1
-        table += f"\nUnresolved bugs: {unresolved}/{total_bugs}\n"
+        if html:
+            table += f"<p><strong>Unresolved bugs: {unresolved}/{total_bugs}</strong></p>"
+        else:
+            table += f"\nUnresolved bugs: {unresolved}/{total_bugs}\n"
 
     return table
 
@@ -150,20 +168,45 @@ def issues_route():
 
     outputs = []
     for key in keys_list:
-        table = get_issue_summary_status_and_links(key, checkingLevel=CHECKING_LEVEL)
-        outputs.append(f"=== {key} ===\n{table}")
+        table = get_issue_summary_status_and_links(key, checkingLevel=CHECKING_LEVEL, html=True)
+        outputs.append(f"<h2>{key}</h2>{table}")
 
-    return "<br>".join(f"<pre>{o}</pre>" for o in outputs)
+    body = "".join(outputs)
+    html_page = (
+        "<!doctype html><html lang='en'>"
+        "<head>"
+        "<meta charset='utf-8'>"
+        "<link rel='stylesheet' href='https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css'>"
+        "<title>Issue Report</title>"
+        "</head><body class='p-4'>"
+        f"{body}" "</body></html>"
+    )
+    return html_page
 
 
 @app.get("/")
 def index_route():
     """Simple form allowing the user to enter a JQL query."""
     return (
-        "<form action='/issues' method='get'>"
-        "<input type='text' name='jql' placeholder='Enter JQL query' size='60'>"
-        "<button type='submit'>Generate</button>"
+        "<!doctype html><html lang='en'>"
+        "<head>"
+        "<meta charset='utf-8'>"
+        "<link rel='stylesheet' href='https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css'>"
+        "<title>Issue Report</title>"
+        "</head>"
+        "<body class='p-4'>"
+        "<div class='container'>"
+        "<h1 class='mb-4'>Generate Issue Report</h1>"
+        "<form action='/issues' method='get' class='row g-3'>"
+        "<div class='col-auto'>"
+        "<input type='text' class='form-control' name='jql' placeholder='Enter JQL query'>"
+        "</div>"
+        "<div class='col-auto'>"
+        "<button type='submit' class='btn btn-primary'>Generate</button>"
+        "</div>"
         "</form>"
+        "</div>"
+        "</body></html>"
     )
 
 
