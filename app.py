@@ -1,8 +1,9 @@
 import os
+import json
 from datetime import datetime
 
 import requests
-from flask import Flask, request, render_template_string
+from flask import Flask, request
 from requests.auth import HTTPBasicAuth
 
 # ——— Configuration ———
@@ -19,6 +20,14 @@ INPUT_BY_JQL    = True
 
 # Which checking logic to apply (currently only level 1 is supported)
 CHECKING_LEVEL  = 1
+CONFIG_PATH     = os.path.join(os.path.dirname(__file__), "user_config.json")
+
+try:
+    with open(CONFIG_PATH, "r", encoding="utf-8") as cf:
+        USER_CONFIG = json.load(cf)
+except FileNotFoundError:
+    USER_CONFIG = {"JqlByPriority": {}}
+
 # ————————————————————————
 
 app = Flask(__name__)
@@ -141,7 +150,44 @@ def get_issue_summary_status_and_links(issue_key: str, checkingLevel: int = 1, h
 
     return table
 
+
+def suggest_action(priority: str) -> str:
+    """Return a suggested action for the given priority."""
+    if priority == "1":
+        return "These are highest priority issues. Coordinate with the team and ensure immediate resolution."
+    if priority == "2":
+        return "Monitor progress closely and follow up with assignees as needed."
+    return "Review these tasks and allocate resources appropriately."
+
+
+def generate_reports_from_config(html: bool = True) -> str:
+    """Generate reports for all priorities defined in the user config."""
+    outputs = []
+    priorities = USER_CONFIG.get("JqlByPriority", {})
+    for p in sorted(priorities.keys(), key=lambda x: int(x)):
+        jql = priorities[p]
+        keys_list = get_keys_by_jql(jql)
+        section = [f"<h2>Priority {p}</h2>"] if html else [f"\n=== Priority {p} ===\n"]
+        for key in keys_list:
+            table = get_issue_summary_status_and_links(key, checkingLevel=CHECKING_LEVEL, html=html)
+            if html:
+                section.append(f"<h3>{key}</h3>{table}")
+            else:
+                section.append(f"=== {key} ===\n{table}")
+        action = suggest_action(p)
+        if html:
+            section.append(f"<p><em>{action}</em></p>")
+        else:
+            section.append(f"{action}\n")
+        outputs.append("".join(section))
+
+    return "".join(outputs)
+
 def cli_main():
+    if USER_CONFIG.get("JqlByPriority"):
+        print(generate_reports_from_config(html=False))
+        return
+
     if INPUT_BY_JQL:
         keys_list = get_keys_by_jql(JQL_QUERY)
     else:
@@ -184,6 +230,22 @@ def issues_route():
     return html_page
 
 
+@app.get("/priority-report")
+def priority_report_route():
+    """Generate reports based on user_config.json priorities."""
+    body = generate_reports_from_config(html=True)
+    html_page = (
+        "<!doctype html><html lang='en'>"
+        "<head>"
+        "<meta charset='utf-8'>"
+        "<link rel='stylesheet' href='https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css'>"
+        "<title>Priority Report</title>"
+        "</head><body class='p-4'>"
+        f"{body}" "</body></html>"
+    )
+    return html_page
+
+
 @app.get("/")
 def index_route():
     """Simple form allowing the user to enter a JQL query."""
@@ -205,6 +267,9 @@ def index_route():
         "<button type='submit' class='btn btn-primary'>Generate</button>"
         "</div>"
         "</form>"
+        "<div class='mt-3'>"
+        "<a href='/priority-report'>Generate Priority Report</a>"
+        "</div>"
         "</div>"
         "</body></html>"
     )
