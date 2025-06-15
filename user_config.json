@@ -1,0 +1,6 @@
+{
+  "JqlByPriority": {
+    "1": "parent = FNB-70518 AND sprint = 'FnB Sprint 128' ORDER BY created DESC",
+    "2": "key in linkedIssues('FNB-67890')"
+  }
+}
