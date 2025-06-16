@@ -248,28 +248,22 @@ def priority_report_route():
 
 @app.get("/")
 def index_route():
-    """Simple form allowing the user to enter a JQL query."""
+    """Show user config and allow generating the priority report."""
+    config_str = json.dumps(USER_CONFIG, indent=4)
     return (
         "<!doctype html><html lang='en'>"
         "<head>"
         "<meta charset='utf-8'>"
         "<link rel='stylesheet' href='https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css'>"
-        "<title>Issue Report</title>"
+        "<title>Priority Report</title>"
         "</head>"
         "<body class='p-4'>"
         "<div class='container'>"
-        "<h1 class='mb-4'>Generate Issue Report</h1>"
-        "<form action='/issues' method='get' class='row g-3'>"
-        "<div class='col-auto'>"
-        "<input type='text' class='form-control' name='jql' placeholder='Enter JQL query'>"
-        "</div>"
-        "<div class='col-auto'>"
-        "<button type='submit' class='btn btn-primary'>Generate</button>"
-        "</div>"
+        "<h1 class='mb-4'>Priority Report</h1>"
+        f"<pre>{config_str}</pre>"
+        "<form action='/priority-report' method='get'>"
+        "<button type='submit' class='btn btn-primary mt-3'>Generate Report</button>"
         "</form>"
-        "<div class='mt-3'>"
-        "<a href='/priority-report'>Generate Priority Report</a>"
-        "</div>"
         "</div>"
         "</body></html>"
     )
