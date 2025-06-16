@@ -1,6 +1,9 @@
 {
   "JqlByPriority": {
-    "1": "parent = FNB-70518 AND sprint = 'FnB Sprint 128' ORDER BY created DESC",
-    "2": "key in linkedIssues('FNB-67890')"
+    "1": "parent = FNB-70518 AND sprint = 'FnB Sprint 128' AND status != Cancelled ORDER BY created DESC",
+    "2": "key in linkedIssues('FNB-67890') AND sprint = 'FnB Sprint 128'",
+    "3": "key = FNB-70580",
+    "4": "key in linkedIssues('FNB-67127') AND sprint = 'FnB Sprint 128'",
+    "5": "project = FNB AND key in linkedIssues('FNB-69215') AND sprint = 'FnB Sprint 128'"
   }
 }
