@@ -84,18 +84,23 @@ def get_issue_summary_status_and_links(issue_key: str, checkingLevel: int = 1, h
     # Fetch root issue
     root_json = fetch_json(issue_key)
     f = root_json["fields"]
+    issue_type = f.get("issuetype", {}).get("name", "N/A")
     root = {
         "key":          issue_key,
         "summary":      f.get("summary", "N/A"),
         "status":       f.get("status", {}).get("name", "N/A"),
+        "issue_type":   issue_type,
         "due_date_dev": format_date(f.get("customfield_10118")),
         "due_date_dev_raw": f.get("customfield_10118"),
         "go_live_plan": format_date(f.get("customfield_10192"))
     }
 
-    # Collect root + linked if Pending
+    # Collect root + linked if Pending and a Production Bug
     issues = [root]
-    if root["status"].lower() == "pending":
+    if (
+        root["status"].lower() == "pending"
+        and root.get("issue_type", "").lower() == "production bug"
+    ):
         for link in f.get("issuelinks", []):
             if "inwardIssue" in link:
                 issues.append(get_basic_details(link["inwardIssue"]["key"]))
