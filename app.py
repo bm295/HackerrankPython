@@ -204,11 +204,21 @@ def suggest_overdue_action(status: str) -> str:
     return "Follow up with the assignee to update the schedule."
 
 
-def generate_reports_from_config(html: bool = True) -> str:
-    """Generate reports for all priorities defined in the user config."""
+def generate_reports_from_config(html: bool = True, priority: str | None = None) -> str:
+    """Generate reports for priorities defined in the user config.
+
+    If ``priority`` is provided, only generate the report for that specific
+    priority key. Otherwise all priorities are processed.
+    """
     outputs = []
     priorities = USER_CONFIG.get("JqlByPriority", {})
-    for p in sorted(priorities.keys(), key=lambda x: int(x)):
+
+    if priority:
+        priority_keys = [priority] if priority in priorities else []
+    else:
+        priority_keys = sorted(priorities.keys(), key=lambda x: int(x))
+
+    for p in priority_keys:
         jql = priorities[p]
         keys_list = get_keys_by_jql(jql)
         section = [f"<h2>Priority {p}</h2>"] if html else [f"\n=== Priority {p} ===\n"]
@@ -277,7 +287,8 @@ def issues_route():
 @app.get("/priority-report")
 def priority_report_route():
     """Generate reports based on user_config.json priorities."""
-    body = generate_reports_from_config(html=True)
+    priority = request.args.get("priority")
+    body = generate_reports_from_config(html=True, priority=priority)
     html_page = (
         "<!doctype html><html lang='en'>"
         "<head>"
@@ -294,6 +305,16 @@ def priority_report_route():
 def index_route():
     """Show user config and allow generating the priority report."""
     config_str = json.dumps(USER_CONFIG, indent=4)
+    priorities = USER_CONFIG.get("JqlByPriority", {})
+    buttons = []
+    for p in sorted(priorities.keys(), key=lambda x: int(x)):
+        buttons.append(
+            "<form action='/priority-report' method='get'>"
+            f"<input type='hidden' name='priority' value='{p}'>"
+            f"<button type='submit' class='btn btn-primary mt-2'>Generate report for {p}</button>"
+            "</form>"
+        )
+    buttons_html = "".join(buttons)
     return (
         "<!doctype html><html lang='en'>"
         "<head>"
@@ -305,9 +326,7 @@ def index_route():
         "<div class='container'>"
         "<h1 class='mb-4'>Priority Report</h1>"
         f"<pre>{config_str}</pre>"
-        "<form action='/priority-report' method='get'>"
-        "<button type='submit' class='btn btn-primary mt-3'>Generate Report</button>"
-        "</form>"
+        f"{buttons_html}"
         "</div>"
         "</body></html>"
     )
