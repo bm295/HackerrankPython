@@ -121,9 +121,16 @@ def get_issue_summary_status_and_links(issue_key: str, checkingLevel: int = 1, h
                 f"<span style='color:red'>{i['due_date_dev']}</span>"
                 if overdue else i['due_date_dev']
             )
+            go_live_html = i['go_live_plan']
+            if (
+                i['status'] == 'Testing Staging'
+                and (not i['go_live_plan'] or i['go_live_plan'] == 'N/A')
+            ):
+                go_live_html = "<strong style='color:red'>N/A</strong>"
+
             table.append(
                 f"<tr><td>{i['key']}</td><td>{i['summary']}</td><td>{i['status']}</td>"
-                f"<td>{due_html}</td><td>{i['go_live_plan']}</td></tr>"
+                f"<td>{due_html}</td><td>{go_live_html}</td></tr>"
             )
             if overdue:
                 action = suggest_overdue_action(i['status'])
