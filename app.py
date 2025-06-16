@@ -40,6 +40,7 @@ def format_date(date_str: str) -> str:
     except ValueError:
         return date_str
 
+
 def fetch_json(issue_key: str) -> dict:
     url = f"{JIRA_DOMAIN}/rest/api/3/issue/{issue_key}"
     resp = requests.get(
@@ -58,6 +59,7 @@ def get_basic_details(issue_key: str) -> dict:
         "summary":      data.get("summary", "N/A"),
         "status":       data.get("status", {}).get("name", "N/A"),
         "due_date_dev": format_date(data.get("customfield_10118")),
+        "due_date_dev_raw": data.get("customfield_10118"),
         "go_live_plan": format_date(data.get("customfield_10192"))
     }
 
@@ -87,6 +89,7 @@ def get_issue_summary_status_and_links(issue_key: str, checkingLevel: int = 1, h
         "summary":      f.get("summary", "N/A"),
         "status":       f.get("status", {}).get("name", "N/A"),
         "due_date_dev": format_date(f.get("customfield_10118")),
+        "due_date_dev_raw": f.get("customfield_10118"),
         "go_live_plan": format_date(f.get("customfield_10192"))
     }
 
@@ -108,10 +111,23 @@ def get_issue_summary_status_and_links(issue_key: str, checkingLevel: int = 1, h
             "</tr></thead><tbody>"
         ]
         for i in issues:
+            due_raw = i.get('due_date_dev_raw')
+            overdue = (
+                due_raw
+                and i['status'] in ('New', 'In Progress')
+                and due_raw < datetime.utcnow().strftime('%Y-%m-%d')
+            )
+            due_html = (
+                f"<span style='color:red'>{i['due_date_dev']}</span>"
+                if overdue else i['due_date_dev']
+            )
             table.append(
                 f"<tr><td>{i['key']}</td><td>{i['summary']}</td><td>{i['status']}</td>"
-                f"<td>{i['due_date_dev']}</td><td>{i['go_live_plan']}</td></tr>"
+                f"<td>{due_html}</td><td>{i['go_live_plan']}</td></tr>"
             )
+            if overdue:
+                action = suggest_overdue_action(i['status'])
+                table.append(f"<tr><td colspan='5'><em>{action}</em></td></tr>")
         table.append("</tbody></table>")
         table = "".join(table)
     else:
@@ -121,13 +137,25 @@ def get_issue_summary_status_and_links(issue_key: str, checkingLevel: int = 1, h
             + "-"*100 + "\n"
         )
         for i in issues:
+            due_raw = i.get('due_date_dev_raw')
+            overdue = (
+                due_raw
+                and i['status'] in ('New', 'In Progress')
+                and due_raw < datetime.utcnow().strftime('%Y-%m-%d')
+            )
+            due_text = (
+                f"{i['due_date_dev']} (OVERDUE)" if overdue else i['due_date_dev']
+            )
             table += (
                 f"{i['key']:<15}"
                 f"{i['summary'][:37]:<40}"
                 f"{i['status']:<15}"
-                f"{i['due_date_dev']:<20}"
+                f"{due_text:<20}"
                 f"{i['go_live_plan']}\n"
             )
+            if overdue:
+                action = suggest_overdue_action(i['status'])
+                table += f"Action: {action}\n"
 
     # If Testing Staging, count unresolved bug-subtasks
     if root["status"] == "Testing Staging":
@@ -158,6 +186,22 @@ def suggest_action(priority: str) -> str:
     if priority == "2":
         return "Monitor progress closely and follow up with assignees as needed."
     return "Review these tasks and allocate resources appropriately."
+
+
+def suggest_overdue_action(status: str) -> str:
+    """Suggest a next step when an issue is overdue."""
+    s = status.lower()
+    if s == "new":
+        return (
+            "Due date passed while the task is still New. "
+            "Clarify requirements and assign resources immediately."
+        )
+    if s == "in progress":
+        return (
+            "Due date passed during development. "
+            "Review blockers, adjust the timeline or escalate as needed."
+        )
+    return "Follow up with the assignee to update the schedule."
 
 
 def generate_reports_from_config(html: bool = True) -> str:
