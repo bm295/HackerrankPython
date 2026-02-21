@@ -8,8 +8,8 @@ from requests.auth import HTTPBasicAuth
 
 # ——— Configuration ———
 JIRA_DOMAIN     = "https://citigo.atlassian.net"
-JIRA_EMAIL      = "minh.nb@kiotviet.com"
-JIRA_API_TOKEN  = "ATATT3xFfGF0xc1ajIi2krt8ahfjRdl38FcF_iVfOdHUnuW70Uih2tMMCCBs_TefOepzZQrkc7p0iZebPAJxDXyVY78CZ2dNQKLl1tMMuQNYe3DOCkBBiGucQEvKEgNbCy8YB7qX4Hv00lJeBOTPox8riwy-KytZRH2BZiDkVPzwCAVJJaxvElQ=8964B08C"
+JIRA_EMAIL      = "fqleu6yXidlQ1XBB9de7zFkM"
+JIRA_API_TOKEN  = "m7OJmHYrwtYMV4bwedl44UChV8FrnkNiqDCx8JIk2hEEEiJQvHvLqyvrUE3X7c7F"
 
 # Comma-separated list of issue keys to process (used if INPUT_BY_JQL is False)
 ISSUE_KEYS      = "FNB-69303,FNB-69298"
