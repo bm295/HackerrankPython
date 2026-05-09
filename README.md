@@ -1,42 +1,35 @@
-# Angular 19 Lazy Route Demo
+# Multi-Frontend Demo Repository
 
-This repository now includes an Angular 19 sample project to demonstrate lazy routing.
+This repository is now organized as a **multi-frontend setup** with two separate frontend applications.
 
-## Project location
+## Frontend apps
 
-- `angular-lazy-route-demo`
+- `angular-lazy-route-demo` (Angular 19, lazy route demo)
+- `react-frontend` (React + Vite starter)
 
-## Run locally
-
-1. Go to the Angular project folder:
-
-   ```bash
-   cd angular-lazy-route-demo
-   ```
-
-2. Install dependencies (if not already installed):
-
-   ```bash
-   npm install
-   ```
-
-3. Start the development server:
-
-   ```bash
-   npm start
-   ```
-
-4. Open your browser at:
-
-   ```
-   http://localhost:4200
-   ```
-
-5. Click **Reports (lazy)** in the top navigation to trigger loading of the lazy route chunk.
-
-## Build
+## Run Angular app
 
 ```bash
 cd angular-lazy-route-demo
-npm run build
+npm install
+npm start
+```
+
+Open `http://localhost:4200`.
+
+## Run React app
+
+```bash
+cd react-frontend
+npm install
+npm run dev
+```
+
+Open the URL shown by Vite (usually `http://localhost:5173`).
+
+## Build apps
+
+```bash
+cd angular-lazy-route-demo && npm run build
+cd react-frontend && npm run build
 ```
