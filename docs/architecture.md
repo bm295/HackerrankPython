@@ -8,7 +8,7 @@ This repository contains a CLI agent that analyzes a target repository in read-o
 - Config loader
 - Repository scanner
 - Architecture snapshot builder
-- Topic catalogue and selector
+- Repository profiler, online topic discovery, catalogue fallback, and selector
 - Research provider
 - Evidence finder
 - Report generator
@@ -17,8 +17,9 @@ This repository contains a CLI agent that analyzes a target repository in read-o
 1. Parse CLI arguments.
 2. Scan repository with ignore rules and file limits.
 3. Build a repository snapshot.
-4. Select one topic with seeded randomness.
-5. Research topic sources.
+4. Build search queries from repository signals.
+5. Discover and rank topics from online results, or use the catalogue fallback.
+6. Research topic sources.
 6. Match repository evidence.
 7. Render markdown or JSON.
 
