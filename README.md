@@ -6,7 +6,8 @@ Architecture Explorer Agent is a read-only CLI that analyzes a software reposito
 
 - Scans a local repository or clones a Git URL to a temporary read-only workspace
 - Builds a staged architecture snapshot
-- Selects one topic from an extensible catalogue
+- Discovers relevant topics online from repository languages, frameworks, dependencies, and code signals
+- Ranks discovered topics by repository relevance and source quality, with the built-in catalogue as an offline fallback
 - Fetches a small set of authoritative research sources
 - Finds concrete evidence in the repository
 - Produces a human-readable or JSON report
@@ -115,12 +116,32 @@ python -m architecture_agent.cli analyze ./my-repo --seed 42
 
 ### 6. Force a topic instead of random selection
 
-The default behavior is random topic selection with repository applicability checks.
+The default hybrid behavior searches for a relevant topic and falls back to seeded catalogue selection when search is unavailable.
 You can override the topic when you want a specific architecture lens:
 
 ```bash
 python -m architecture_agent.cli analyze ./my-repo --topic "Dependency Inversion"
 ```
+
+The requested topic guides online discovery. If discovery is unavailable in hybrid mode,
+the topic must exist in the built-in catalogue or the command reports a clear error.
+
+### Topic discovery modes
+
+```bash
+# Online discovery with a catalogue fallback (default)
+python -m architecture_agent.cli analyze ./my-repo --topic-mode hybrid
+
+# Require topics discovered from current online search results
+python -m architecture_agent.cli analyze ./my-repo --topic-mode discover
+
+# Disable search and retain deterministic catalogue selection
+python -m architecture_agent.cli analyze ./my-repo --topic-mode catalog
+```
+
+Discovery creates search queries from repository signals and uses DuckDuckGo's HTML
+endpoint by default. Configure `SEARCH_ENDPOINT`, `SEARCH_RESULT_COUNT`, and
+`SEARCH_TIMEOUT` when a different compatible endpoint or limits are required.
 
 ### 7. Emit structured JSON
 
@@ -140,6 +161,7 @@ python -m architecture_agent.cli analyze ./my-repo --output report.md
 
 - `--seed 42`
 - `--topic "Dependency Inversion"`
+- `--topic-mode hybrid`
 - `--json true`
 - `--output report.md`
 
@@ -148,10 +170,12 @@ python -m architecture_agent.cli analyze ./my-repo --output report.md
 1. Scans the repository in read-only mode.
 2. Ignores large or generated directories such as `node_modules`, `dist`, and `build`.
 3. Builds a compact architecture snapshot.
-4. Selects one architecture topic with controlled randomness.
-5. Researches the topic online from authoritative sources.
-6. Finds concrete evidence in the codebase.
-7. Produces a recommendation with benefits, trade-offs, and confidence.
+4. Builds a repository profile from languages, frameworks, dependencies, and code signals.
+5. Searches online for relevant architecture topics and ranks the candidates.
+6. Falls back to seeded catalogue selection when hybrid discovery is unavailable.
+7. Researches the selected topic online from its discovered sources.
+8. Finds concrete evidence in the codebase.
+9. Produces a recommendation with benefits, trade-offs, and confidence.
 
 ## Optional repo-local configuration
 

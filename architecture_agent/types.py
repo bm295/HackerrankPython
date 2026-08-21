@@ -24,6 +24,14 @@ class RepositorySnapshot:
 
 
 @dataclass(slots=True)
+class RepositoryProfile:
+    languages: list[str]
+    frameworks: list[str]
+    dependencies: list[str]
+    signals: list[str]
+
+
+@dataclass(slots=True)
 class Topic:
     id: str
     name: str
@@ -37,6 +45,22 @@ class ResearchSource:
     url: str
     reason: str
     excerpt: str | None = None
+
+
+@dataclass(slots=True)
+class SearchResult:
+    title: str
+    url: str
+    snippet: str = ""
+
+
+@dataclass(slots=True)
+class TopicCandidate:
+    topic: Topic
+    repository_signals: list[str]
+    search_queries: list[str]
+    relevance_score: float
+    source_quality_score: float
 
 
 @dataclass(slots=True)
@@ -77,4 +101,3 @@ class AnalysisReport:
 
     def to_dict(self) -> dict[str, object]:
         return asdict(self)
-

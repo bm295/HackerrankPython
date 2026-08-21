@@ -13,6 +13,10 @@ class AppConfig:
     research_source_count: int = 3
     random_seed: int | None = None
     log_level: str = "info"
+    topic_mode: str = "hybrid"
+    search_endpoint: str = "https://html.duckduckgo.com/html/"
+    search_result_count: int = 8
+    search_timeout: int = 10
 
 
 def _split_csv(value: str) -> list[str]:
@@ -29,4 +33,8 @@ def load_config(env: dict[str, str] | None = None) -> AppConfig:
         research_source_count=int(data.get("RESEARCH_SOURCE_COUNT", "3")),
         random_seed=int(data["RANDOM_SEED"]) if data.get("RANDOM_SEED") else None,
         log_level=data.get("LOG_LEVEL", "info"),
+        topic_mode=data.get("TOPIC_MODE", "hybrid").lower(),
+        search_endpoint=data.get("SEARCH_ENDPOINT", "https://html.duckduckgo.com/html/"),
+        search_result_count=int(data.get("SEARCH_RESULT_COUNT", "8")),
+        search_timeout=int(data.get("SEARCH_TIMEOUT", "10")),
     )
