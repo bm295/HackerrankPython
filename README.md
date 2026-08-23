@@ -1,13 +1,13 @@
 # Architecture Explorer Agent
 
-Architecture Explorer Agent is a read-only CLI that analyzes a software repository, selects one architecture topic with controlled randomness, researches that topic online, and produces evidence-backed recommendations tied to specific code locations.
+Architecture Explorer Agent is a read-only CLI that analyzes a software repository, discovers or selects one architecture topic, researches that topic online, and produces evidence-backed recommendations tied to specific code locations.
 
 ## What it does
 
 - Scans a local repository or clones a Git URL to a temporary read-only workspace
 - Builds a staged architecture snapshot
 - Discovers relevant topics online from repository languages, frameworks, dependencies, and code signals
-- Ranks discovered topics by repository relevance and source quality, with the built-in catalogue as an offline fallback
+- Ranks discovered topics by repository relevance and source quality, with the built-in catalogue as a fallback
 - Fetches a small set of authoritative research sources
 - Finds concrete evidence in the repository
 - Produces a human-readable or JSON report
@@ -99,11 +99,35 @@ After installation, in a new Codex thread you can ask for actions like:
 - `Analyze the current repository with Architecture Explorer Agent`
 - `Run Architecture Explorer Agent on D:\Code\SomeRepo`
 - `Analyze https://github.com/org/project.git with Architecture Explorer Agent`
+- `Analyze the current repository with Architecture Explorer Agent and write JSON`
+- `Run Architecture Explorer Agent on D:\Code\SomeRepo with the hybrid topic mode`
+
+The local plugin now exposes two skills:
+
+- `architecture-explorer-agent` for read-only repository analysis
+- `autonomous-architecture-improvement-loop` for safe, test-protected architectural refactoring in an arbitrary repository
+
+Use the second skill when the prompt asks for an autonomous improvement loop that discovers architectural weaknesses, adds characterization tests, refactors, verifies, and repeats.
 
 The plugin skill runs this local Python CLI:
 
 ```powershell
 python D:\Code\HackerrankPython\architecture_agent\cli.py analyze <target>
+```
+
+Useful flags:
+
+- `--topic-mode hybrid` for online discovery with a catalog fallback
+- `--topic-mode discover` to require online discovery
+- `--topic-mode catalog` to skip search and use the built-in topic catalog
+- `--json` for structured output
+- `--seed 42` for reproducible topic selection
+- `--output report.md` to write the report to a file
+
+You can also combine a seed and a topic when you want reproducible guided selection:
+
+```powershell
+python D:\Code\HackerrankPython\architecture_agent\cli.py analyze <target> --seed 42 --topic "Dependency Inversion"
 ```
 
 ### 5. Make runs reproducible with a seed
