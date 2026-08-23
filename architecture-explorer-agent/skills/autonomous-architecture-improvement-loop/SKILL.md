@@ -5,12 +5,32 @@ description: Run an autonomous architecture improvement loop in an arbitrary rep
 
 # Autonomous Architecture Improvement Loop
 
-Use this skill when the user wants an autonomous senior software architect and engineer to work directly inside an existing repository, find architecture problems, protect behavior with tests, make small safe refactorings, verify them, and repeat the process.
+Use this skill when the user wants Codex to work directly inside an existing repository, identify architectural weaknesses from source evidence, protect behavior with tests, make small safe refactorings, verify them, and repeat the process.
+
+This skill is for the Codex agent behavior itself. It is not a command-line mode of `architecture-agent`.
+
+## Minimal invocation defaults
+
+The user may invoke this skill with only a time range, for example `run 5-10 minutes`, plus optional constraints. In that case, proceed without asking for an architecture topic, target module, or test framework.
+
+Defaults:
+
+- Infer the target repository from the current workspace unless the user gives a path.
+- Parse the time range as minimum and maximum minutes.
+- Select the architecture topic automatically from source evidence.
+- Add characterization tests before refactoring production code.
+- Refactor only code covered by those characterization tests or by equivalent existing tests.
+- Run relevant tests after refactoring and repair regressions before continuing.
+- Add post-refactoring tests where they protect the improved architecture.
+- For a 5-10 minute budget, perform at most one focused iteration.
+- If the budget is too small for a safe production refactor, spend the run on characterization tests or architecture/conformance tests and report why production code was not changed.
+
+Optional user conditions override these defaults when safe, such as preferred folders, areas to avoid, no new dependencies, public API restrictions, validation commands, or maximum iterations.
 
 ## Operating rules
 
 - Begin by inspecting the repository deeply enough to understand its context.
-- Do not assume a particular language, framework, test runner, or architecture style.
+- Do not assume a specific language, framework, test runner, or architecture style.
 - Respect repository-local instructions such as `AGENTS.md`, `CONTRIBUTING.md`, and build docs.
 - Before editing production code, establish a baseline with the repository's relevant tests, build, lint, or type checks where practical.
 - Prefer small, test-protected, reviewable changes.

@@ -1,7 +1,7 @@
 # Architecture Explorer Agent
 
 ## Context
-This repository contains a CLI agent that analyzes a target repository in read-only mode, selects one architecture topic, performs web research, and produces evidence-backed recommendations.
+This repository contains a CLI agent that analyzes a target repository in read-only mode, selects one architecture topic, performs web research, and produces evidence-backed recommendations. Autonomous refactoring is handled by the Codex skill, which runs inside the target repository rather than through this Python CLI.
 
 ## Building Blocks
 - CLI

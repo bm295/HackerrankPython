@@ -100,11 +100,12 @@ def run_analysis(args: argparse.Namespace, search_provider: SearchProvider | Non
 def main() -> None:
     parser = build_parser()
     args = parser.parse_args()
-    if args.command != "analyze":
+    if args.command == "analyze":
+        report = run_analysis(args)
+        output = json.dumps(report.to_dict(), indent=2) if args.as_json else to_markdown(report)
+    else:
         parser.print_help()
         raise SystemExit(1)
-    report = run_analysis(args)
-    output = json.dumps(report.to_dict(), indent=2) if args.as_json else to_markdown(report)
     if args.output:
         Path(args.output).write_text(output, encoding="utf-8")
     else:

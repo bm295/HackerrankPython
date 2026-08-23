@@ -2,6 +2,8 @@
 
 Architecture Explorer Agent is a read-only CLI that analyzes a software repository, discovers or selects one architecture topic, researches that topic online, and produces evidence-backed recommendations tied to specific code locations.
 
+For autonomous refactoring, use the Codex skill `autonomous-architecture-improvement-loop`. That workflow is executed by Codex itself inside the target repo. The `architecture-agent` CLI remains read-only and is used for analysis reports.
+
 ## What it does
 
 - Scans a local repository or clones a Git URL to a temporary read-only workspace
@@ -102,20 +104,20 @@ After installation, in a new Codex thread you can ask for actions like:
 - `Analyze the current repository with Architecture Explorer Agent and write JSON`
 - `Run Architecture Explorer Agent on D:\Code\SomeRepo with the hybrid topic mode`
 
-The local plugin now exposes two skills:
+The local plugin exposes two skills:
 
 - `architecture-explorer-agent` for read-only repository analysis
 - `autonomous-architecture-improvement-loop` for safe, test-protected architectural refactoring in an arbitrary repository
 
-Use the second skill when the prompt asks for an autonomous improvement loop that discovers architectural weaknesses, adds characterization tests, refactors, verifies, and repeats.
+Use the second skill when the prompt asks for an autonomous improvement loop that discovers architectural weaknesses, adds characterization tests, refactors, verifies, and repeats. The skill is a Codex operating mode; it does not map to a separate CLI command.
 
-The plugin skill runs this local Python CLI:
+The analysis skill runs this local Python CLI:
 
 ```powershell
 python D:\Code\HackerrankPython\architecture_agent\cli.py analyze <target>
 ```
 
-Useful flags:
+Useful flags for analysis:
 
 - `--topic-mode hybrid` for online discovery with a catalog fallback
 - `--topic-mode discover` to require online discovery
@@ -181,6 +183,125 @@ python -m architecture_agent.cli analyze ./my-repo --json
 python -m architecture_agent.cli analyze ./my-repo --output report.md
 ```
 
+### Run from another repository
+
+If you are standing inside a different repository, install this read-only analyzer once:
+
+```powershell
+cd D:\Code\HackerrankPython
+python -m pip install -e .
+```
+
+Then you can run analysis from the target repository:
+
+```powershell
+cd D:\Code\ElFnB
+architecture-agent analyze . --topic-mode hybrid
+```
+
+Or force one topic:
+
+```powershell
+cd D:\Code\ElFnB
+architecture-agent analyze . --topic "Dependency Inversion" --topic-mode catalog
+```
+
+If you do not want to install the console command, call the CLI directly:
+
+```powershell
+cd D:\Code\ElFnB
+python D:\Code\HackerrankPython\architecture_agent\cli.py analyze . --topic-mode hybrid
+```
+
+To perform the full autonomous improvement loop, open Codex in the target repository and invoke the plugin with only a time range. This repository does not need a local API key because Codex is the executor.
+
+Minimal prompt:
+
+```text
+[@Architecture Explorer Agent](plugin://architecture-explorer-agent@personal) phan tich kien truc va refactor trong 5-10 phut
+```
+
+With optional conditions:
+
+```text
+[@Architecture Explorer Agent](plugin://architecture-explorer-agent@personal) phan tich kien truc va refactor trong 5-10 phut.
+Dieu kien:
+- Khong them dependency moi.
+- Khong doi public API neu khong can thiet.
+- Uu tien src/Application va tests lien quan.
+- Validation command: dotnet test
+```
+
+That prompt defaults to the autonomous workflow:
+
+- discover one architecture topic automatically;
+- inspect the repository and establish a validation baseline;
+- add characterization tests before refactoring;
+- refactor only a small, evidence-backed target;
+- run relevant tests and repair regressions;
+- add post-refactoring tests;
+- report files changed, tests run, and next topics.
+
+Use the longer form only when you want tighter control:
+
+```text
+Use the autonomous-architecture-improvement-loop skill on this repository.
+
+Goal:
+- Inspect the repository.
+- Identify architecture weaknesses from source evidence.
+- Add characterization tests before risky refactoring.
+- Make small architecture improvements.
+- Run relevant tests after each meaningful change.
+- Repeat with a different architecture topic if time remains.
+
+Conditions:
+- Budget: 20-30 minutes.
+- Maximum iterations: 2.
+- Preferred areas: <folders or modules>.
+- Avoid: <dependencies, public API changes, risky areas>.
+- Validation command: <known test/build command, if any>.
+- Extra constraints: <your project-specific rules>.
+
+Final report:
+- What changed.
+- Which tests were added or run.
+- Architecture before and after.
+- Known risks and recommended next topics.
+```
+
+If the skill is not available in the current Codex session, point Codex at the skill file explicitly:
+
+```text
+Read and follow this skill:
+D:\Code\HackerrankPython\architecture-explorer-agent\skills\autonomous-architecture-improvement-loop\SKILL.md
+
+Run it on the current repository with these conditions:
+- Budget: 20-30 minutes.
+- Maximum iterations: 2.
+- Preferred areas: <folders or modules>.
+- Avoid: <dependencies, public API changes, risky areas>.
+- Validation command: <known test/build command, if any>.
+```
+
+Useful sanity checks before starting the autonomous Codex run:
+
+```powershell
+python --version
+git status --short
+```
+
+If the target repository already has a known validation command, run it once first:
+
+```powershell
+python -m unittest discover -s tests -p "test_*.py"
+python -m pytest
+npm test
+dotnet test
+go test ./...
+cargo test
+```
+
 ## Useful options
 
 - `--seed 42`
@@ -217,8 +338,6 @@ This is useful when a repository contains old folders that should not influence 
 
 Environment variables:
 
-- `LLM_PROVIDER`
-- `LLM_MODEL`
 - `RESEARCH_PROVIDER`
 - `MAX_FILES_ANALYZED`
 - `MAX_FILE_SIZE`

@@ -1,15 +1,15 @@
 {
   "name": "architecture-explorer-agent",
-  "version": "0.1.0+codex.20260823055343",
-  "description": "Run the local Python Architecture Explorer Agent from Codex.",
+  "version": "0.1.0+codex.20260823160235",
+  "description": "Analyze repositories or run a Codex-driven architecture improvement loop.",
   "author": {
     "name": "Local developer"
   },
   "skills": "./skills/",
   "interface": {
     "displayName": "Architecture Explorer Agent",
-    "shortDescription": "Analyze or improve repositories with Codex.",
-    "longDescription": "Provides two local Codex skills: one for read-only architecture analysis and one for autonomous architecture improvement loops with tests and refactoring.",
+    "shortDescription": "Analyze or refactor repository architecture.",
+    "longDescription": "Provides Codex skills for read-only architecture analysis and autonomous architecture improvement loops with characterization tests, refactoring, verification, and post-refactor tests.",
     "developerName": "Local developer",
     "category": "Productivity",
     "capabilities": [
@@ -17,8 +17,8 @@
     ],
     "defaultPrompt": [
       "Analyze the current repository with Architecture Explorer Agent.",
-      "Improve the current repository with the Autonomous Architecture Improvement Loop.",
-      "Run the Autonomous Architecture Improvement Loop on D:\\Code\\SomeRepo."
+      "Architecture Explorer Agent: analyze and refactor this repository for 5-10 minutes.",
+      "Architecture Explorer Agent: run for 10-20 minutes, no new dependencies, keep public APIs stable."
     ]
   }
 }
