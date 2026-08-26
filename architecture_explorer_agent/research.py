@@ -4,7 +4,7 @@ import re
 from urllib.error import URLError
 from urllib.request import Request, urlopen
 
-from architecture_agent.types import ResearchSource
+from architecture_explorer_agent.types import ResearchSource
 
 TITLE_RE = re.compile(r"<title>([^<]+)</title>", re.IGNORECASE)
 

@@ -2,7 +2,7 @@ from __future__ import annotations
 
 import re
 
-from architecture_agent.types import EvidenceItem, FileRecord, Topic
+from architecture_explorer_agent.types import EvidenceItem, FileRecord, Topic
 
 PATH_RE = re.compile(r"service|repository|provider|scanner|analyzer|config|fetch|client|http|db|sql|route", re.IGNORECASE)
 TOPIC_PATTERNS = {

@@ -1,6 +1,6 @@
 from __future__ import annotations
 
-from architecture_agent.types import AnalysisReport
+from architecture_explorer_agent.types import AnalysisReport
 
 
 def to_markdown(report: AnalysisReport) -> str:

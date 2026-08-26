@@ -2,7 +2,7 @@
 
 Architecture Explorer Agent is a read-only CLI that analyzes a software repository, discovers or selects one architecture topic, researches that topic online, and produces evidence-backed recommendations tied to specific code locations.
 
-For autonomous refactoring, use the Codex skill `autonomous-architecture-improvement-loop`. That workflow is executed by Codex itself inside the target repo. The `architecture-agent` CLI remains read-only and is used for analysis reports.
+For autonomous refactoring, use the Codex skill `architecture-explorer-agent`. That single skill chooses between read-only analysis and a Codex-driven improvement workflow. The `architecture-explorer-agent` CLI remains read-only and is used for analysis reports.
 
 ## What it does
 
@@ -29,13 +29,13 @@ python -m pip install -e .
 ## Run
 
 ```bash
-python -m architecture_agent.cli analyze ./path/to/repo
+python -m architecture_explorer_agent.cli analyze ./path/to/repo
 ```
 
 Analyze a Git repository URL:
 
 ```bash
-python -m architecture_agent.cli analyze https://example.com/repository.git
+python -m architecture_explorer_agent.cli analyze https://example.com/repository.git
 ```
 
 ## How to use on any repository
@@ -45,13 +45,13 @@ python -m architecture_agent.cli analyze https://example.com/repository.git
 Point the agent at any local codebase you can read:
 
 ```bash
-python -m architecture_agent.cli analyze D:\Code\my-app
+python -m architecture_explorer_agent.cli analyze D:\Code\my-app
 ```
 
 Or from the current directory:
 
 ```bash
-python -m architecture_agent.cli analyze .
+python -m architecture_explorer_agent.cli analyze .
 ```
 
 ### 2. Analyze a Git repository URL
@@ -59,7 +59,7 @@ python -m architecture_agent.cli analyze .
 If you want the agent to inspect a remote repository, pass a Git URL:
 
 ```bash
-python -m architecture_agent.cli analyze https://github.com/user/project.git
+python -m architecture_explorer_agent.cli analyze https://github.com/user/project.git
 ```
 
 The agent clones the repo into a temporary workspace and keeps the target read-only.
@@ -71,13 +71,13 @@ If you are already inside some other repository, you can still invoke this agent
 From the other repo directory:
 
 ```bash
-python D:\Code\HackerrankPython\architecture_agent\cli.py analyze .
+python D:\Code\HackerrankPython\architecture_explorer_agent\cli.py analyze .
 ```
 
 Or use the installed console command:
 
 ```bash
-architecture-agent analyze .
+architecture-explorer-agent analyze .
 ```
 
 If you want the command available everywhere, install it once from the agent repo:
@@ -89,7 +89,7 @@ python -m pip install -e D:\Code\HackerrankPython
 Then from any repository:
 
 ```bash
-architecture-agent analyze .
+architecture-explorer-agent analyze .
 ```
 
 ### 4. Use it through a Codex plugin
@@ -104,17 +104,16 @@ After installation, in a new Codex thread you can ask for actions like:
 - `Analyze the current repository with Architecture Explorer Agent and write JSON`
 - `Run Architecture Explorer Agent on D:\Code\SomeRepo with the hybrid topic mode`
 
-The local plugin exposes two skills:
+The local plugin exposes one skill:
 
-- `architecture-explorer-agent` for read-only repository analysis
-- `autonomous-architecture-improvement-loop` for safe, test-protected architectural refactoring in an arbitrary repository
+- `architecture-explorer-agent` for read-only repository analysis and safe, test-protected architectural refactoring in an arbitrary repository
 
-Use the second skill when the prompt asks for an autonomous improvement loop that discovers architectural weaknesses, adds characterization tests, refactors, verifies, and repeats. The skill is a Codex operating mode; it does not map to a separate CLI command.
+When the prompt asks only for analysis or a report, the skill runs the read-only CLI. When the prompt asks for improvement, refactoring, or includes a time budget, the same skill switches to the autonomous improvement workflow. The autonomous workflow is a Codex operating mode; it does not map to a separate CLI command.
 
 The analysis skill runs this local Python CLI:
 
 ```powershell
-python D:\Code\HackerrankPython\architecture_agent\cli.py analyze <target>
+python D:\Code\HackerrankPython\architecture_explorer_agent\cli.py analyze <target>
 ```
 
 Useful flags for analysis:
@@ -129,7 +128,7 @@ Useful flags for analysis:
 You can also combine a seed and a topic when you want reproducible guided selection:
 
 ```powershell
-python D:\Code\HackerrankPython\architecture_agent\cli.py analyze <target> --seed 42 --topic "Dependency Inversion"
+python D:\Code\HackerrankPython\architecture_explorer_agent\cli.py analyze <target> --seed 42 --topic "Dependency Inversion"
 ```
 
 ### 5. Make runs reproducible with a seed
@@ -137,7 +136,7 @@ python D:\Code\HackerrankPython\architecture_agent\cli.py analyze <target> --see
 Use a seed when you want the same topic selection to be chosen again:
 
 ```bash
-python -m architecture_agent.cli analyze ./my-repo --seed 42
+python -m architecture_explorer_agent.cli analyze ./my-repo --seed 42
 ```
 
 ### 6. Force a topic instead of random selection
@@ -146,7 +145,7 @@ The default hybrid behavior searches for a relevant topic and falls back to seed
 You can override the topic when you want a specific architecture lens:
 
 ```bash
-python -m architecture_agent.cli analyze ./my-repo --topic "Dependency Inversion"
+python -m architecture_explorer_agent.cli analyze ./my-repo --topic "Dependency Inversion"
 ```
 
 The requested topic guides online discovery. If discovery is unavailable in hybrid mode,
@@ -156,13 +155,13 @@ the topic must exist in the built-in catalogue or the command reports a clear er
 
 ```bash
 # Online discovery with a catalogue fallback (default)
-python -m architecture_agent.cli analyze ./my-repo --topic-mode hybrid
+python -m architecture_explorer_agent.cli analyze ./my-repo --topic-mode hybrid
 
 # Require topics discovered from current online search results
-python -m architecture_agent.cli analyze ./my-repo --topic-mode discover
+python -m architecture_explorer_agent.cli analyze ./my-repo --topic-mode discover
 
 # Disable search and retain deterministic catalogue selection
-python -m architecture_agent.cli analyze ./my-repo --topic-mode catalog
+python -m architecture_explorer_agent.cli analyze ./my-repo --topic-mode catalog
 ```
 
 Discovery creates search queries from repository signals and uses DuckDuckGo's HTML
@@ -174,13 +173,13 @@ endpoint by default. Configure `SEARCH_ENDPOINT`, `SEARCH_RESULT_COUNT`, and
 Use JSON when you want to pipe results into another tool:
 
 ```bash
-python -m architecture_agent.cli analyze ./my-repo --json
+python -m architecture_explorer_agent.cli analyze ./my-repo --json
 ```
 
 ### 8. Write the report to a file
 
 ```bash
-python -m architecture_agent.cli analyze ./my-repo --output report.md
+python -m architecture_explorer_agent.cli analyze ./my-repo --output report.md
 ```
 
 ### Run from another repository
@@ -196,21 +195,21 @@ Then you can run analysis from the target repository:
 
 ```powershell
 cd D:\Code\ElFnB
-architecture-agent analyze . --topic-mode hybrid
+architecture-explorer-agent analyze . --topic-mode hybrid
 ```
 
 Or force one topic:
 
 ```powershell
 cd D:\Code\ElFnB
-architecture-agent analyze . --topic "Dependency Inversion" --topic-mode catalog
+architecture-explorer-agent analyze . --topic "Dependency Inversion" --topic-mode catalog
 ```
 
 If you do not want to install the console command, call the CLI directly:
 
 ```powershell
 cd D:\Code\ElFnB
-python D:\Code\HackerrankPython\architecture_agent\cli.py analyze . --topic-mode hybrid
+python D:\Code\HackerrankPython\architecture_explorer_agent\cli.py analyze . --topic-mode hybrid
 ```
 
 To perform the full autonomous improvement loop, open Codex in the target repository and invoke the plugin with only a time range. This repository does not need a local API key because Codex is the executor.
@@ -245,7 +244,7 @@ That prompt defaults to the autonomous workflow:
 Use the longer form only when you want tighter control:
 
 ```text
-Use the autonomous-architecture-improvement-loop skill on this repository.
+Use the architecture-explorer-agent skill on this repository.
 
 Goal:
 - Inspect the repository.
@@ -274,7 +273,7 @@ If the skill is not available in the current Codex session, point Codex at the s
 
 ```text
 Read and follow this skill:
-D:\Code\HackerrankPython\architecture-explorer-agent\skills\autonomous-architecture-improvement-loop\SKILL.md
+D:\Code\HackerrankPython\architecture-explorer-agent\skills\architecture-explorer-agent\SKILL.md
 
 Run it on the current repository with these conditions:
 - Budget: 20-30 minutes.
@@ -324,7 +323,7 @@ cargo test
 
 ## Optional repo-local configuration
 
-Create a `.architecture-agent.json` file in the target repository when you want to add extra ignored directories:
+Create a `.architecture-explorer.json` file in the target repository when you want to add extra ignored directories:
 
 ```json
 {
@@ -353,7 +352,7 @@ See `.env.example`.
 
 ```bash
 python -m pip install -e .
-python -m architecture_agent.cli analyze ./some-repo --seed 7 --output analysis.md
+python -m architecture_explorer_agent.cli analyze ./some-repo --seed 7 --output analysis.md
 ```
 
 If you want to inspect a different repository later, just point the same CLI at another path or URL.

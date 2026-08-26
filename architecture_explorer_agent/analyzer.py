@@ -3,7 +3,7 @@ from __future__ import annotations
 import re
 from pathlib import PurePosixPath
 
-from architecture_agent.types import FileRecord, RepositoryProfile, RepositorySnapshot
+from architecture_explorer_agent.types import FileRecord, RepositoryProfile, RepositorySnapshot
 
 MANIFEST_NAMES = {"package.json", "tsconfig.json", "pyproject.toml", "requirements.txt", "Cargo.toml", "go.mod"}
 ENTRYPOINT_RE = re.compile(r"(^|/)(main|cli|index|app)\.(ts|js|py|go|cs|jsx|tsx)$")
@@ -44,7 +44,7 @@ def build_snapshot(root: str, files: list[FileRecord], dirs: int) -> RepositoryS
     entry_points = [record.path for record in files if ENTRYPOINT_RE.search(record.path)]
     evidence_files = [record.path for record in files if record.text and EVIDENCE_RE.search(record.path)]
 
-    if any(record.path.startswith("architecture_agent/") for record in files):
+    if any(record.path.startswith("architecture_explorer_agent/") for record in files):
         repo_type = "Python CLI application"
     elif any(record.path.startswith("src/") for record in files):
         repo_type = "Application with source layout"

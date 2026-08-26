@@ -2,8 +2,8 @@ from __future__ import annotations
 
 import unittest
 
-from architecture_agent.selector import select_topic
-from architecture_agent.topics import TOPICS
+from architecture_explorer_agent.selector import select_topic
+from architecture_explorer_agent.topics import TOPICS
 
 
 class SelectorTests(unittest.TestCase):

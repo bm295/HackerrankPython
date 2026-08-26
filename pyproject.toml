@@ -15,11 +15,11 @@ authors = [
 dependencies = []
 
 [project.scripts]
-architecture-agent = "architecture_agent.cli:main"
+architecture-explorer-agent = "architecture_explorer_agent.cli:main"
 
 [tool.setuptools]
 include-package-data = true
 
 [tool.setuptools.packages.find]
 where = ["."]
-include = ["architecture_agent*"]
+include = ["architecture_explorer_agent*"]

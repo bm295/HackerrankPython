@@ -1,7 +1,7 @@
 {
   "name": "architecture-explorer-agent",
-  "version": "0.1.0+codex.20260823160235",
-  "description": "Analyze repositories or run a Codex-driven architecture improvement loop.",
+  "version": "0.1.0+codex.20260826164116",
+  "description": "Analyze repositories or run a Codex-driven architecture improvement workflow.",
   "author": {
     "name": "Local developer"
   },
@@ -9,7 +9,7 @@
   "interface": {
     "displayName": "Architecture Explorer Agent",
     "shortDescription": "Analyze or refactor repository architecture.",
-    "longDescription": "Provides Codex skills for read-only architecture analysis and autonomous architecture improvement loops with characterization tests, refactoring, verification, and post-refactor tests.",
+    "longDescription": "Provides one Codex skill for read-only architecture analysis and autonomous architecture improvement with characterization tests, refactoring, verification, and post-refactor tests.",
     "developerName": "Local developer",
     "category": "Productivity",
     "capabilities": [

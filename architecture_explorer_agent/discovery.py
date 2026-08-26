@@ -3,8 +3,8 @@ from __future__ import annotations
 import re
 from urllib.parse import urlparse
 
-from architecture_agent.search import SearchProvider
-from architecture_agent.types import RepositoryProfile, SearchResult, Topic, TopicCandidate
+from architecture_explorer_agent.search import SearchProvider
+from architecture_explorer_agent.types import RepositoryProfile, SearchResult, Topic, TopicCandidate
 
 AUTHORITATIVE_DOMAINS = (".org", ".edu", "docs.", "developer.", "learn.microsoft.com", "aws.amazon.com", "cloud.google.com")
 TITLE_SUFFIX_RE = re.compile(

@@ -6,7 +6,7 @@ from urllib.parse import parse_qs, quote_plus, unquote, urlparse
 from urllib.request import Request, urlopen
 import re
 
-from architecture_agent.types import SearchResult
+from architecture_explorer_agent.types import SearchResult
 
 
 class SearchProvider(Protocol):

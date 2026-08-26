@@ -4,7 +4,7 @@ import tempfile
 import unittest
 from pathlib import Path
 
-from architecture_agent.scanner import scan_repository
+from architecture_explorer_agent.scanner import scan_repository
 
 
 class ScannerTests(unittest.TestCase):

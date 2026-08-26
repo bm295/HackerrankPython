@@ -5,19 +5,19 @@ This guide shows the shortest path for using the agent on any codebase.
 ## Local repository
 
 ```bash
-python -m architecture_agent.cli analyze /path/to/repository
+python -m architecture_explorer_agent.cli analyze /path/to/repository
 ```
 
 Windows example:
 
 ```bash
-python -m architecture_agent.cli analyze D:\Code\my-service
+python -m architecture_explorer_agent.cli analyze D:\Code\my-service
 ```
 
 ## Remote Git repository
 
 ```bash
-python -m architecture_agent.cli analyze https://github.com/org/project.git
+python -m architecture_explorer_agent.cli analyze https://github.com/org/project.git
 ```
 
 The agent clones the repository into a temporary directory, analyzes it there, and does not modify the original target.
@@ -31,13 +31,13 @@ If you are currently inside another repository and want to analyze that reposito
 From the target repository directory:
 
 ```bash
-python D:\Code\HackerrankPython\architecture_agent\cli.py analyze .
+python D:\Code\HackerrankPython\architecture_explorer_agent\cli.py analyze .
 ```
 
 ### Option 2: Use the installed console command
 
 ```bash
-architecture-agent analyze .
+architecture-explorer-agent analyze .
 ```
 
 ### Option 3: Install the command once with pip
@@ -51,7 +51,7 @@ python -m pip install -e D:\Code\HackerrankPython
 Then from any other repository:
 
 ```bash
-architecture-agent analyze .
+architecture-explorer-agent analyze .
 ```
 
 ## Use it from Codex as a plugin
@@ -67,13 +67,13 @@ In a new Codex thread, ask for:
 The plugin skill delegates to:
 
 ```powershell
-python D:\Code\HackerrankPython\architecture_agent\cli.py analyze <target>
+python D:\Code\HackerrankPython\architecture_explorer_agent\cli.py analyze <target>
 ```
 
 ## Make the run repeatable
 
 ```bash
-python -m architecture_agent.cli analyze ./repo --seed 42
+python -m architecture_explorer_agent.cli analyze ./repo --seed 42
 ```
 
 Use the same seed to keep topic selection stable as long as the catalogue does not change.
@@ -81,7 +81,7 @@ Use the same seed to keep topic selection stable as long as the catalogue does n
 ## Choose a specific topic
 
 ```bash
-python -m architecture_agent.cli analyze ./repo --topic "Dependency Inversion"
+python -m architecture_explorer_agent.cli analyze ./repo --topic "Dependency Inversion"
 ```
 
 This bypasses random topic selection but still keeps repository applicability checks and evidence matching.
@@ -89,18 +89,18 @@ This bypasses random topic selection but still keeps repository applicability ch
 ## JSON output
 
 ```bash
-python -m architecture_agent.cli analyze ./repo --json
+python -m architecture_explorer_agent.cli analyze ./repo --json
 ```
 
 ## Save output to a file
 
 ```bash
-python -m architecture_agent.cli analyze ./repo --output report.md
+python -m architecture_explorer_agent.cli analyze ./repo --output report.md
 ```
 
 ## Ignore extra folders in a target repo
 
-Add a `.architecture-agent.json` file to the repository being analyzed:
+Add a `.architecture-explorer.json` file to the repository being analyzed:
 
 ```json
 {

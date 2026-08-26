@@ -11,7 +11,7 @@ class RepoConfig:
 
 
 def load_repo_config(root: str) -> RepoConfig:
-    path = Path(root) / ".architecture-agent.json"
+    path = Path(root) / ".architecture-explorer.json"
     if not path.exists():
         return RepoConfig(ignored_dirs=[])
     try:

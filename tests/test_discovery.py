@@ -2,8 +2,8 @@ from __future__ import annotations
 
 import unittest
 
-from architecture_agent.discovery import build_search_queries, discover_topics
-from architecture_agent.types import RepositoryProfile, SearchResult
+from architecture_explorer_agent.discovery import build_search_queries, discover_topics
+from architecture_explorer_agent.types import RepositoryProfile, SearchResult
 
 
 class FakeSearchProvider:

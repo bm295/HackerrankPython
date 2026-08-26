@@ -2,8 +2,8 @@ from __future__ import annotations
 
 import unittest
 
-from architecture_agent.analyzer import build_profile
-from architecture_agent.types import FileRecord
+from architecture_explorer_agent.analyzer import build_profile
+from architecture_explorer_agent.types import FileRecord
 
 
 class AnalyzerProfileTests(unittest.TestCase):

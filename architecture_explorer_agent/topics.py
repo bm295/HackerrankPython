@@ -1,6 +1,6 @@
 from __future__ import annotations
 
-from architecture_agent.types import Topic
+from architecture_explorer_agent.types import Topic
 
 TOPICS: list[Topic] = [
     Topic(

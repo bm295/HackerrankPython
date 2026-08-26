@@ -2,7 +2,7 @@ from __future__ import annotations
 
 import unittest
 
-from architecture_agent.research import research_topic
+from architecture_explorer_agent.research import research_topic
 
 
 class ResearchTests(unittest.TestCase):

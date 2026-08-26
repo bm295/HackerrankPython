@@ -4,7 +4,7 @@ from dataclasses import dataclass
 from fnmatch import fnmatch
 from pathlib import Path
 
-from architecture_agent.types import FileRecord
+from architecture_explorer_agent.types import FileRecord
 
 TEXT_EXTENSIONS = {
     ".ts",

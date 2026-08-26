@@ -4,23 +4,23 @@ import argparse
 import json
 from pathlib import Path
 
-from architecture_agent.analyzer import build_profile, build_snapshot
-from architecture_agent.config import load_config
-from architecture_agent.evidence import find_evidence
-from architecture_agent.discovery import discover_topics
-from architecture_agent.intake import prepare_repository_input
-from architecture_agent.repo_config import load_repo_config
-from architecture_agent.report import to_markdown
-from architecture_agent.research import research_topic
-from architecture_agent.scanner import scan_repository
-from architecture_agent.search import DuckDuckGoSearchProvider, SearchProvider
-from architecture_agent.selector import select_topic
-from architecture_agent.topics import TOPICS
-from architecture_agent.types import AnalysisReport, ApplicationPoint, Recommendation
+from architecture_explorer_agent.analyzer import build_profile, build_snapshot
+from architecture_explorer_agent.config import load_config
+from architecture_explorer_agent.evidence import find_evidence
+from architecture_explorer_agent.discovery import discover_topics
+from architecture_explorer_agent.intake import prepare_repository_input
+from architecture_explorer_agent.repo_config import load_repo_config
+from architecture_explorer_agent.report import to_markdown
+from architecture_explorer_agent.research import research_topic
+from architecture_explorer_agent.scanner import scan_repository
+from architecture_explorer_agent.search import DuckDuckGoSearchProvider, SearchProvider
+from architecture_explorer_agent.selector import select_topic
+from architecture_explorer_agent.topics import TOPICS
+from architecture_explorer_agent.types import AnalysisReport, ApplicationPoint, Recommendation
 
 
 def build_parser() -> argparse.ArgumentParser:
-    parser = argparse.ArgumentParser(prog="architecture-agent")
+    parser = argparse.ArgumentParser(prog="architecture-explorer-agent")
     subparsers = parser.add_subparsers(dest="command")
     analyze = subparsers.add_parser("analyze")
     analyze.add_argument("repository")
