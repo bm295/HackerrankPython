@@ -54,9 +54,9 @@ Then from any other repository:
 architecture-explorer-agent analyze .
 ```
 
-## Use it from Codex as a plugin
+## Use it from Codex as a skill
 
-This machine now has a local Codex plugin named `architecture-explorer-agent`.
+This repository includes the project skill `.skills/architecture-explorer-agent`.
 
 In a new Codex thread, ask for:
 
@@ -64,7 +64,7 @@ In a new Codex thread, ask for:
 - `Run Architecture Explorer Agent on D:\Code\SomeRepo`
 - `Analyze https://github.com/org/project.git with Architecture Explorer Agent`
 
-The plugin skill delegates to:
+For read-only analysis, the skill delegates to:
 
 ```powershell
 python D:\Code\HackerrankPython\architecture_explorer_agent\cli.py analyze <target>

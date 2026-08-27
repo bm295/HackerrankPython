@@ -92,9 +92,9 @@ Then from any repository:
 architecture-explorer-agent analyze .
 ```
 
-### 4. Use it through a Codex plugin
+### 4. Use it as a Codex skill
 
-This repository has also been wrapped as a local Codex plugin named `architecture-explorer-agent`.
+This repository includes the project skill `.skills/architecture-explorer-agent`.
 
 After installation, in a new Codex thread you can ask for actions like:
 
@@ -104,9 +104,8 @@ After installation, in a new Codex thread you can ask for actions like:
 - `Analyze the current repository with Architecture Explorer Agent and write JSON`
 - `Run Architecture Explorer Agent on D:\Code\SomeRepo with the hybrid topic mode`
 
-The local plugin exposes one skill:
-
-- `architecture-explorer-agent` for read-only repository analysis and safe, test-protected architectural refactoring in an arbitrary repository
+The `architecture-explorer-agent` skill supports read-only repository analysis and safe,
+test-protected architectural refactoring in an arbitrary repository.
 
 When the prompt asks only for analysis or a report, the skill runs the read-only CLI. When the prompt asks for improvement, refactoring, or includes a time budget, the same skill switches to the autonomous improvement workflow. The autonomous workflow is a Codex operating mode; it does not map to a separate CLI command.
 
@@ -212,18 +211,18 @@ cd D:\Code\ElFnB
 python D:\Code\HackerrankPython\architecture_explorer_agent\cli.py analyze . --topic-mode hybrid
 ```
 
-To perform the full autonomous improvement loop, open Codex in the target repository and invoke the plugin with only a time range. This repository does not need a local API key because Codex is the executor.
+To perform the full autonomous improvement loop, open Codex in the target repository and invoke the skill with only a time range. This repository does not need a local API key because Codex is the executor.
 
 Minimal prompt:
 
 ```text
-[@Architecture Explorer Agent](plugin://architecture-explorer-agent@personal) phan tich kien truc va refactor trong 5-10 phut
+Use the architecture-explorer-agent skill to analyze and refactor this repository for 5-10 minutes.
 ```
 
 With optional conditions:
 
 ```text
-[@Architecture Explorer Agent](plugin://architecture-explorer-agent@personal) phan tich kien truc va refactor trong 5-10 phut.
+Use the architecture-explorer-agent skill to analyze and refactor this repository for 5-10 minutes.
 Dieu kien:
 - Khong them dependency moi.
 - Khong doi public API neu khong can thiet.
