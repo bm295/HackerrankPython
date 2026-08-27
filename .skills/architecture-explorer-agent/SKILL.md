@@ -1,38 +1,15 @@
 ---
 name: architecture-explorer-agent
-description: Analyze a repository or run one autonomous, test-protected architecture improvement workflow from a single Architecture Explorer Agent skill.
+description: Analyze a repository or run one autonomous, test-protected architecture improvement workflow from a single Architecture Explorer Agent skill. Use for focused architecture analysis and refactors in any codebase.
 ---
 
 # Architecture Explorer Agent
 
-Use this skill when the user invokes `Architecture Explorer Agent` for repository architecture work.
+Use this skill when the user invokes `Architecture Explorer Agent` for repository architecture work in any repository.
 
-Choose the mode from the request:
+This is the Codex skill for architecture analysis and focused architectural improvement.
 
-- If the user asks only to analyze, inspect, report, or output JSON/Markdown, run the local read-only analyzer.
-- If the user asks to improve, refactor, fix architecture, run for a time budget, or says "phan tich va refactor", perform the autonomous improvement workflow directly as Codex in the target repository.
-
-## Read-Only Analysis Mode
-
-Use this mode only when the user wants a report and does not ask for code changes.
-
-The local Python CLI is:
-
-```powershell
-python D:\Code\HackerrankPython\architecture_explorer_agent\cli.py analyze <target>
-```
-
-Common commands:
-
-```powershell
-python D:\Code\HackerrankPython\architecture_explorer_agent\cli.py analyze .
-python D:\Code\HackerrankPython\architecture_explorer_agent\cli.py analyze D:\Path\To\Repository
-python D:\Code\HackerrankPython\architecture_explorer_agent\cli.py analyze <target> --topic-mode hybrid
-python D:\Code\HackerrankPython\architecture_explorer_agent\cli.py analyze <target> --topic "Dependency Inversion" --topic-mode catalog
-python D:\Code\HackerrankPython\architecture_explorer_agent\cli.py analyze <target> --json
-```
-
-The Python CLI is read-only. Do not expect it to refactor code.
+If the user asks to improve, refactor, fix architecture, run for a time budget, or says "phan tich va refactor", perform the autonomous improvement workflow directly as Codex in the target repository.
 
 ## Autonomous Improvement Mode
 

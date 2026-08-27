@@ -1,0 +1,4 @@
+interface:
+  display_name: "Market Readiness Agent"
+  short_description: "Improve repo readiness with one safe fix"
+  default_prompt: "Use $market-readiness-agent to make one evidence-backed improvement that increases readiness in the current repository."

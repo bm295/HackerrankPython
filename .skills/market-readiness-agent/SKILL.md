@@ -1,11 +1,15 @@
 ---
 name: market-readiness-agent
-description: Improve any repository toward market readiness by finding one evidence-backed weakness, adding tests, refactoring safely, and verifying the result.
+description: Improve any repository toward market readiness by finding one evidence-backed weakness, adding tests, refactoring safely, and verifying the result. Use for one concrete hardening change in any codebase, not for broad architecture surveys.
 ---
 
 # Market Readiness Agent
 
 Use this skill when the user wants Codex to work inside any repository and make one concrete improvement that materially increases readiness for commercialization.
+
+This is the default Codex workflow for a focused reliability, safety, testability, or maintainability improvement in a specific repository.
+
+If the request is explicitly about broad architecture analysis or a larger refactor program, prefer `architecture-explorer-agent` instead.
 
 This skill is for autonomous repository work by Codex. It is not tied to one language, framework, or test runner.
 
