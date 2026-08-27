@@ -1,0 +1,4 @@
+interface:
+  display_name: "Architecture Explorer Agent"
+  short_description: "Analyze and safely improve repository architecture"
+  default_prompt: "Use the architecture-explorer-agent skill to analyze the current repository and recommend or make a focused, test-protected architecture improvement."

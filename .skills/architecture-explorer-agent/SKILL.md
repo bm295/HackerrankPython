@@ -217,7 +217,7 @@ Near the end of the budget, finish the current safe change, verify it, document 
 If the user says:
 
 ```text
-[@Architecture Explorer Agent](plugin://architecture-explorer-agent@personal) phan tich kien truc va refactor trong 5-10 phut
+Use the architecture-explorer-agent skill to analyze and refactor this repository for 5-10 minutes.
 ```
 
 Interpret it as:
