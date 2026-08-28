@@ -1,163 +1,329 @@
 ---
 name: market-readiness-agent
-description: Improve any repository toward market readiness by finding one evidence-backed weakness, adding tests, refactoring safely, and verifying the result. Use for one concrete hardening change in any codebase, not for broad architecture surveys.
+description: Improve a repository toward market readiness by using evidence, documentation gates, TDD, and focused verification to deliver one concrete hardening change without broad rewrites.
 ---
 
 # Market Readiness Agent
 
-Use this skill when the user wants Codex to work inside any repository and make one concrete improvement that materially increases readiness for commercialization.
+Use this skill when the user wants Codex to work directly inside the current repository and improve its readiness for commercialization, support, reliability, and maintainability.
 
-This is the default Codex workflow for a focused reliability, safety, testability, or maintainability improvement in a specific repository.
+This skill is for one focused improvement cycle in a specific repository. It is not for broad architecture surveys or open-ended refactors. If the request is really about large-scale architecture analysis, prefer `architecture-explorer-agent` instead.
 
-If the request is explicitly about broad architecture analysis or a larger refactor program, prefer `architecture-explorer-agent` instead.
+## Core Goal
 
-This skill is for autonomous repository work by Codex. It is not tied to one language, framework, or test runner.
+Improve one concrete, evidence-backed weakness that affects the repository's ability to ship, sell, support, or trust in production.
 
-## Outcome
-
-Complete one focused improvement cycle:
-
-1. Inspect the repository.
-2. Choose one issue that blocks or weakens market readiness.
-3. Add tests covering the area to be changed before editing production code.
-4. Refactor or fix the code.
-5. Run verification and ensure tests pass.
-6. Add at least one more test that increases protection or coverage after the fix.
-
-The result must leave the repository in a coherent state with verified tests.
-
-## What counts as market readiness
-
-Favor issues that affect the repository's ability to be shipped, sold, supported, or trusted in production. Common examples:
+Prefer issues such as:
 
 - missing or weak tests around business-critical behavior;
 - unsafe configuration handling;
 - brittle error handling on important flows;
-- infrastructure and domain logic tightly coupled in a way that blocks maintenance;
+- tight coupling between infrastructure and domain logic;
 - release-critical behavior with poor validation;
-- code paths that are hard to verify or regress easily;
-- critical duplication or oversized components that make change risky;
-- missing guardrails for externally visible behavior;
-- packaging or entry-point issues that prevent reliable execution;
-- weak boundaries around integrations, persistence, or secrets.
+- externally visible code paths that are hard to verify or regress easily;
+- packaging or entry-point issues that block reliable execution;
+- missing guardrails around integrations, persistence, or secrets.
 
 Do not choose a cosmetic issue when a reliability, safety, testability, or maintainability issue has stronger business impact.
 
-## Operating rules
+## Mandatory Time-Box
 
-- Work on any repository in the current workspace unless the user gives a different target path.
-- Do not assume a specific language, framework, architecture style, or test tool.
-- Read repository instructions and constraints first, including `AGENTS.md`, `README.md`, build files, CI files, and test configuration where relevant.
-- Base the chosen improvement on concrete source evidence, not generic best practices.
-- Prefer the smallest change that creates a real commercial-readiness gain.
-- Do not broaden scope into a repo-wide rewrite.
-- Do not change unrelated behavior.
-- Do not claim success without running relevant tests.
+1. Read `MIN_WORK_MINUTES` and `MAX_WORK_MINUTES` from the Settings section at the end of this skill.
+2. Confirm that `0 < MIN_WORK_MINUTES <= MAX_WORK_MINUTES`. If invalid, stop and report the error.
+3. Record the start time and measure real elapsed time with the system clock.
+4. Work continuously on useful tasks for at least `MIN_WORK_MINUTES`.
+5. Do not use `sleep`, fake waiting, or pointless activity to satisfy the time box.
+6. Do not stop early just because one change is complete; continue with the next legitimate item.
+7. Reserve the final portion of the time box for tests, diff review, and cleanup.
+8. Do not start a new task if the remaining time is insufficient to finish and verify it safely.
+9. Stop before or exactly at `MAX_WORK_MINUTES`.
+10. Set build/test timeouts based on the time remaining.
+11. If a real blocker appears, report the blocker clearly with evidence instead of fabricating progress.
 
-## Required workflow
+## Repository Check
 
-### 1. Discover repository context
+Before editing, inspect the repository:
 
-Inspect enough of the repository to determine:
+- Read `AGENTS.md`, `CONTRIBUTING`, `README`, and any equivalent guidance files.
+- Check Git status and preserve all existing user changes.
+- Determine the language, framework, package manager, build command, and test command.
+- Determine whether the repository already has a test project, test suite, or runnable test harness.
+- Do not commit, push, open a PR, or modify anything outside the repository.
+- Do not perform broad dependency upgrades or unrelated refactors.
 
-- primary language and package structure;
-- build and test commands;
-- entry points and important modules;
-- existing test coverage in the target area;
-- obvious release, reliability, security, or maintenance risks.
+## Documentation Gate
 
-Run a practical baseline command when feasible before editing.
+Before changing code, search for all documentation that may describe business behavior:
 
-### 2. Select one improvement target
+- all Markdown files, not just `README`;
+- folders such as `docs`, `doc`, `documentation`, `requirements`, `specs`, `product`, `business`, `design`, or `adr`;
+- `.md`, `.mdx`, `.rst`, `.adoc`, `.txt`, `.pdf`, and `.docx` files when the available tools can read them;
+- ignore dependencies, vendor files, generated output, and build output.
 
-Choose exactly one issue and state:
+Read the content, not just the file names. Look for:
 
-- why it matters for market readiness;
-- what source evidence supports it;
-- what quality attribute is at risk;
-- why the chosen scope is the highest-value safe change.
+- product goals and business value;
+- users, roles, and permissions;
+- workflows and business rules;
+- functional requirements and acceptance criteria;
+- service packages, usage limits, licensing, or billing;
+- security, privacy, audit, data retention, operations, and support requirements;
+- features that are mandatory, planned, draft, or incomplete.
 
-Good targets are concrete and verifiable. Examples:
+Do not treat installation or build instructions as business documentation.
 
-- a service constructs dependencies internally and is effectively untestable;
-- an API handler swallows important failures and returns misleading results;
-- critical input validation is inconsistent across code paths;
-- release behavior depends on global mutable state;
-- configuration parsing accepts invalid values without protection;
-- business logic is mixed with infrastructure concerns and changes are risky.
+Create an internal traceability table:
 
-### 3. Add tests before changing production code
+`Requirement ID | Business requirement | Source file/section | Current code evidence | Status | Gap`
 
-Before production edits, add or strengthen tests around the behavior being changed.
+Classify the repository state clearly:
 
-The pre-change tests should:
+- `DOCUMENTATION_PRESENT`: documentation exists.
+- `BUSINESS_DOCUMENTATION_PRESENT`: documentation describes business behavior.
+- `CODE_READY_REQUIREMENT_PRESENT`: at least one business requirement is specific enough for TDD.
+- `TEST_INFRASTRUCTURE_PRESENT`: a test project or runnable test harness exists.
 
-- cover normal behavior;
-- cover at least one boundary, failure, or regression-prone case;
-- protect the behavior that the refactor must preserve or intentionally fix.
+## Required Pre-Change Conclusion
 
-Run those tests on the current code and record the result. If there are baseline failures, identify them precisely.
+After reading the docs, state one of the following decisions before changing any file:
 
-### 4. Refactor or fix the code
+- `DECISION = CODE_NOW`: the documentation is sufficient to start coding.
+- `DECISION = DOCUMENTATION_FIRST`: documentation is incomplete and must be improved first.
+- `DECISION = DOCUMENTATION_ONLY`: the repository has no business documentation.
+- `DECISION = BLOCKED_BY_TIMEBOX`: the request is code-ready, but there is not enough time left for a safe change.
 
-Make the smallest coherent code change that improves market readiness in the selected area.
+The conclusion must include:
 
-Acceptable improvements include:
+- the documentation and section used as evidence;
+- the evaluated requirement;
+- criteria already met;
+- criteria still missing;
+- the action planned for this run.
 
-- introducing a seam that makes critical behavior testable;
-- separating infrastructure concerns from business logic;
-- hardening error handling on a release-critical path;
-- tightening configuration validation;
-- removing a risky dependency coupling;
-- extracting a responsibility from an oversized unit;
-- enforcing a boundary that reduces regression risk.
+If documentation was updated in a previous run, reassess immediately whether the requirement is now code-ready. If it is, switch to `CODE_NOW`; do not keep adding generic documentation just to delay implementation.
 
-Avoid speculative abstractions or broad style rewrites.
+## Code Readiness Gate
 
-### 5. Verify the change
+A requirement is code-ready only when all of these are true:
 
-After editing:
+1. The behavior or business result is described specifically.
+2. The source and section are traceable.
+3. The affected actor or workflow is identified.
+4. The current missing or incorrect behavior is identifiable.
+5. The expected behavior is precise enough for an acceptance test.
+6. Input, output, error state, and important boundaries are not ambiguous.
+7. There is no conflicting documentation.
+8. The affected code area is identifiable.
+9. Suitable test infrastructure exists or can be created.
+10. There is enough time left to complete the change being chosen.
 
-1. run the new or strengthened pre-change tests;
-2. run relevant existing tests for affected modules;
-3. run broader validation when feasible for the repo.
+Create a table:
 
-A completed run requires passing verification for the changed area.
+`Readiness criterion | Met/Not met | Evidence | Missing information or action`
 
-### 6. Add post-change tests
+Having documentation does not automatically mean coding can start.
 
-After the code is stable, add at least one additional test that increases confidence or coverage beyond the minimum characterization tests.
+## Branch A - Documentation Is Sufficient for Coding
 
-Prefer tests that lock in:
+Use this branch when `DECISION = CODE_NOW`.
 
-- the new boundary;
-- a previously uncovered edge case;
-- an integration contract;
-- a regression-prone error path;
-- a commercially important invariant.
+- Compare the requirement against current code and tests.
+- Identify what is missing, incorrect, underimplemented, or lacking edge-case coverage.
+- Do not invent new requirements.
+- Do not add authentication, billing, multi-tenancy, audit, or monitoring unless the business documentation requires them.
+- Prioritize gaps by:
+  1. commercial readiness impact;
+  2. clarity of business evidence;
+  3. risk if missing or implemented incorrectly;
+  4. likelihood of completion in the remaining time;
+  5. small, independent, verifiable scope.
 
-### 7. Final report
+### If the repository has no test project
 
-Report:
+If `TEST_INFRASTRUCTURE_PRESENT = false`, create a test project or test harness before editing production code:
 
-- selected issue and why it matters for market readiness;
-- source evidence;
-- tests added before the change;
-- code change made;
-- tests added after the change;
-- commands run and pass/fail status;
-- any remaining important risks not addressed.
+- use the framework and conventions that fit the current ecosystem;
+- prefer the repository's existing test style or the standard, stable option for the stack;
+- add only the test dependencies that are necessary;
+- place the test project where it fits the repository structure;
+- connect it to the solution, workspace, or build system if required;
+- add at least one small smoke test to prove discovery and execution;
+- run the test command and confirm the harness works;
+- only then begin the RED-GREEN-REFACTOR cycle for the business requirement;
+- do not create an empty test project and claim success.
 
-## Safety rules
+If test project creation fails, record the command, error, and blocker.
+
+## Mandatory TDD Loop
+
+For every gap in Branch A:
+
+1. Choose one small gap tied to one specific requirement.
+2. Translate it into testable acceptance criteria.
+3. Run existing tests to establish a baseline.
+4. RED: write the test before production code.
+5. Run the test and confirm it fails for the right behavioral reason, not for syntax or setup issues.
+6. GREEN: write the smallest production change needed to make the test pass.
+7. Rerun the test and confirm it passes.
+8. REFACTOR: improve structure only if necessary and without broadening scope.
+9. Add tests for edge cases, negative cases, boundary cases, or regressions.
+10. Run focused tests first, then the broadest reasonable suite.
+11. Review the diff and remove unrelated changes.
+12. Move to the next gap only when the current loop is complete and the repository is consistent.
 
 Do not:
 
-- rewrite the entire repository;
-- disable or weaken tests to force a green run;
-- change technology stacks unnecessarily;
-- introduce new dependencies unless clearly justified;
-- modify generated files unless the repository intentionally maintains them;
-- claim the repo is fully market-ready after one improvement;
-- skip validation of the touched area.
+- implement before writing a test;
+- weaken or delete valid tests just to make the code pass;
+- use tests that are too weak to prove the business behavior;
+- combine unrelated requirements into one change;
+- leave placeholder code, skipped tests, or unfinished work without explanation.
 
-If the repository state prevents safe completion, stop with a precise explanation of the blocker instead of pretending the improvement was completed.
+If baseline tests already fail, document the failure precisely and separate it from any new failure introduced by the change.
+
+## Branch B - Documentation Is Not Yet Sufficient
+
+Use this branch when `DECISION = DOCUMENTATION_FIRST` or `DECISION = DOCUMENTATION_ONLY`.
+
+In this branch:
+
+- only create or update documentation;
+- do not modify source code, tests, schemas, migrations, configuration, CI/CD, or dependencies;
+- do not create a test project;
+- you may read code to describe current behavior, but do not claim a feature exists without evidence;
+- do not add generic business text just to justify a code change;
+- every new piece of content must close a specific gap that blocks coding.
+
+If the repository already has business documentation but is not code-ready, update the docs so that at least one requirement reaches `READY_FOR_TDD` in the next run.
+
+Each requirement prepared for the next run must include at least:
+
+- Requirement ID;
+- business objective;
+- actor or workflow;
+- preconditions;
+- expected behavior;
+- error behavior;
+- key boundary or edge cases;
+- testable acceptance criteria;
+- source/evidence;
+- expected code area;
+- first test scenario to write;
+- status `READY_FOR_TDD` or a concrete blocker.
+
+Do not repeat broad business analysis across multiple runs:
+
+- reread the readiness report or documentation from the previous run;
+- do not restate the same gap in different words;
+- if a requirement is already `READY_FOR_TDD`, the current run or the next run must switch to coding;
+- if stakeholder input is still missing, write exactly one decision record with the specific question, options, impact, and recommended choice;
+- do not keep expanding documentation indefinitely while the blocker remains;
+- if a safe assumption can move a requirement to `READY_FOR_TDD`, record it clearly as an assumption.
+
+Do not make major-impact decisions for the stakeholder around pricing, contracts, legal terms, access control, data retention, or destructive behavior.
+
+## Reporting When Code Is Not Changed
+
+If documentation exists but code is not changed, the report must answer:
+
+1. What documentation was found.
+2. Which documents contain business information.
+3. Why the current documentation is not sufficient to start code.
+4. Which information is missing, unclear, or conflicting.
+5. Why each documentation addition is needed.
+6. Which blocker each addition resolves.
+7. What is evidence, assumption, draft, or confirmed decision.
+8. Whether the requirement is now `READY_FOR_TDD`.
+9. Exactly when coding can begin.
+10. The first requirement to implement.
+11. Whether a test project exists or must be created.
+12. The first acceptance test to write.
+
+Do not give generic answers such as:
+
+- "More documentation is needed."
+- "The requirement is unclear."
+- "Business must confirm it."
+- "There is not enough time."
+
+State the exact missing decision, data, status, workflow, or expected behavior.
+
+If time-box pressure is the only blocker:
+
+- state clearly that there is no remaining business blocker;
+- identify the requirement as code-ready;
+- name the first test to write;
+- if there is no test project yet, state that the first action in the next run is to create one;
+- do not add unnecessary documentation just because there is no time left to code.
+
+## Backlog Management
+
+After each loop:
+
+- update elapsed time and remaining time;
+- update the requirement-code-test traceability table;
+- if `MIN_WORK_MINUTES` is not yet satisfied, choose the next legitimate gap;
+- if there is no remaining code gap with sufficient evidence, prepare the next requirement to `READY_FOR_TDD`;
+- do not invent features to fill time;
+- prefer finishing fewer items with high completeness over many incomplete items.
+
+## Final Verification
+
+Before finishing:
+
+- rerun the relevant tests;
+- if time permits, run the broadest reasonable suite, build, lint, or type-check;
+- check `git diff` and `git status`;
+- confirm that user changes were not overwritten;
+- confirm that a documentation-only branch did not change code, tests, config, or dependencies;
+- if a test project was created, confirm the test runner discovers and executes it;
+- do not claim tests passed unless they were actually run.
+
+## Final Report
+
+The final report must include:
+
+1. Start time, end time, and total elapsed time.
+2. The values of:
+   - `DOCUMENTATION_PRESENT`
+   - `BUSINESS_DOCUMENTATION_PRESENT`
+   - `CODE_READY_REQUIREMENT_PRESENT`
+   - `TEST_INFRASTRUCTURE_PRESENT`
+3. The decision that was chosen and why.
+4. The list of documents that were checked.
+5. A table of `Requirement | Source | Previous status | Change | Test/Evidence | Final status`.
+6. The Code Readiness Gate table.
+7. For each code change, evidence of RED, GREEN, and the test commands that were run.
+8. If a test project was created, its framework, location, dependencies, and verification command.
+9. The files that changed.
+10. Test, build, and lint results, including any pre-existing baseline failures.
+11. Remaining gaps, blockers, assumptions, and open questions.
+12. Confirmation that the repository is in a consistent state.
+
+If code was not changed, also include:
+
+### Why code was not changed
+
+Give the concrete reason based on evidence.
+
+### Why documentation was added
+
+`Documentation addition | Existing gap | Risk of coding without it | Blocker addressed`
+
+### When coding can start
+
+State exactly:
+
+- what is still not satisfied;
+- what information must be added or confirmed;
+- whether the requirement is `READY_FOR_TDD`;
+- when coding can start once conditions are met;
+- the first requirement to implement;
+- whether a test project already exists;
+- the first acceptance test to write;
+- if the only blocker is time, confirm that coding can begin in the next run.
+
+## Settings
+
+MIN_WORK_MINUTES = 2
+MAX_WORK_MINUTES = 3
