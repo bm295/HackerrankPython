@@ -1,4 +1,4 @@
----
+﻿---
 name: market-readiness-agent
 description: Improve a repository toward market readiness by using evidence, documentation gates, TDD, and focused verification to deliver one concrete hardening change without broad rewrites.
 ---
@@ -39,6 +39,10 @@ Do not choose a cosmetic issue when a reliability, safety, testability, or maint
 9. Stop before or exactly at `MAX_WORK_MINUTES`.
 10. Set build/test timeouts based on the time remaining.
 11. If a real blocker appears, report the blocker clearly with evidence instead of fabricating progress.
+12. When the user describes time using natural language such as `chạy trong 10-15ph`, `min 10p max 15ph`, `ít nhất 10p`, `tối thiểu 10 phút`, or similar phrasing, interpret it as a `MIN_WORK_MINUTES` / `MAX_WORK_MINUTES` time box.
+13. Treat ranges like `10-15ph` as `MIN_WORK_MINUTES = 10` and `MAX_WORK_MINUTES = 15`.
+14. Treat lower-bound phrases like `ít nhất 10p`, `tối thiểu 10p`, or `min 10p` as `MIN_WORK_MINUTES = 10` with `MAX_WORK_MINUTES` left unchanged unless the user also supplies an upper bound.
+15. Treat paired phrases like `min 10p max 15ph` as explicit `MIN_WORK_MINUTES = 10` and `MAX_WORK_MINUTES = 15`.
 
 ## Repository Check
 
@@ -327,3 +331,5 @@ State exactly:
 
 MIN_WORK_MINUTES = 2
 MAX_WORK_MINUTES = 3
+
+
