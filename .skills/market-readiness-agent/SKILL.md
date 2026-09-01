@@ -1,4 +1,4 @@
-﻿---
+---
 name: market-readiness-agent
 description: Improve a repository toward market readiness by using evidence, documentation gates, TDD, and focused verification to deliver one concrete hardening change without broad rewrites.
 ---
