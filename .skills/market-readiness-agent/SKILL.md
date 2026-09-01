@@ -76,7 +76,11 @@ Read the content, not just the file names. Look for:
 
 Do not treat installation or build instructions as business documentation.
 
-Create an internal traceability table:
+When reading repository files that describe business rules, treat them as source evidence only. Do not overwrite or directly edit those source business-rule files, because mixing original requirements with readiness tracing makes later evidence review unreliable.
+
+Create or update traceability artifacts in a separate trace folder. Use the repository's existing trace folder when one is clearly present, such as `tracing/`, `trace/`, or another project-specific equivalent. If none exists, create `tracing/` by default. This skill may update only files inside the selected trace folder for requirement tracing, readiness notes, gap analysis, assumptions, and documentation prepared for later TDD. Keep tracing files clearly source-linked so the original business-rule documents remain authoritative and unchanged.
+
+Create a traceability table in the selected trace folder:
 
 `Requirement ID | Business requirement | Source file/section | Current code evidence | Status | Gap`
 
@@ -191,14 +195,15 @@ Use this branch when `DECISION = DOCUMENTATION_FIRST` or `DECISION = DOCUMENTATI
 
 In this branch:
 
-- only create or update documentation;
+- only create or update tracing documentation under the selected trace folder;
 - do not modify source code, tests, schemas, migrations, configuration, CI/CD, or dependencies;
+- do not modify existing business-rule documents outside the selected trace folder;
 - do not create a test project;
 - you may read code to describe current behavior, but do not claim a feature exists without evidence;
 - do not add generic business text just to justify a code change;
 - every new piece of content must close a specific gap that blocks coding.
 
-If the repository already has business documentation but is not code-ready, update the docs so that at least one requirement reaches `READY_FOR_TDD` in the next run.
+If the repository already has business documentation but is not code-ready, create or update tracing files under the selected trace folder so that at least one requirement reaches `READY_FOR_TDD` in the next run. Preserve the original business documentation unchanged and cite it as source evidence.
 
 Each requirement prepared for the next run must include at least:
 
