@@ -28,21 +28,23 @@ Do not choose a cosmetic issue when a reliability, safety, testability, or maint
 
 ## Mandatory Time-Box
 
-1. Read `MIN_WORK_MINUTES` and `MAX_WORK_MINUTES` from the Settings section at the end of this skill.
-2. Confirm that `0 < MIN_WORK_MINUTES <= MAX_WORK_MINUTES`. If invalid, stop and report the error.
-3. Record the start time and measure real elapsed time with the system clock.
-4. Work continuously on useful tasks for at least `MIN_WORK_MINUTES`.
-5. Do not use `sleep`, fake waiting, or pointless activity to satisfy the time box.
-6. Do not stop early just because one change is complete; continue with the next legitimate item.
+1. Read the default `MIN_WORK_MINUTES` and `MAX_WORK_MINUTES` from the Settings section at the end of this skill.
+2. Parse any time-box expressed in the user's request before validation. An explicit user time-box is runtime configuration and overrides both Settings values.
+3. If the user supplies only a lower bound and no upper bound, set `MAX_WORK_MINUTES = MIN_WORK_MINUTES + 1` before validating the time box.
+4. Confirm that `0 < MIN_WORK_MINUTES <= MAX_WORK_MINUTES`. If invalid, stop and report the error.
+5. Record the start time and measure real elapsed time with the system clock.
+6. Work continuously on useful tasks for at least `MIN_WORK_MINUTES`.
+7. Do not use `sleep`, fake waiting, or pointless activity to satisfy the time box.
+8. Do not stop early just because one change is complete; continue with the next legitimate item.
 7. Reserve the final portion of the time box for tests, diff review, and cleanup.
 8. Do not start a new task if the remaining time is insufficient to finish and verify it safely.
 9. Stop before or exactly at `MAX_WORK_MINUTES`.
 10. Set build/test timeouts based on the time remaining.
 11. If a real blocker appears, report the blocker clearly with evidence instead of fabricating progress.
 12. When the user describes time using natural language such as `chạy trong 10-15ph`, `min 10p max 15ph`, `ít nhất 10p`, `tối thiểu 10 phút`, or similar phrasing, interpret it as a `MIN_WORK_MINUTES` / `MAX_WORK_MINUTES` time box.
-13. Treat ranges like `10-15ph` as `MIN_WORK_MINUTES = 10` and `MAX_WORK_MINUTES = 15`.
-14. Treat lower-bound phrases like `ít nhất 10p`, `tối thiểu 10p`, or `min 10p` as `MIN_WORK_MINUTES = 10` with `MAX_WORK_MINUTES` left unchanged unless the user also supplies an upper bound.
-15. Treat paired phrases like `min 10p max 15ph` as explicit `MIN_WORK_MINUTES = 10` and `MAX_WORK_MINUTES = 15`.
+13. Treat ranges like `10-15ph` as explicit runtime values `MIN_WORK_MINUTES = 10` and `MAX_WORK_MINUTES = 15`, overriding the static Settings values.
+14. Treat lower-bound phrases like `ít nhất 10p`, `tối thiểu 10p`, or `min 10p` as `MIN_WORK_MINUTES = 10` and, when no upper bound is supplied, set `MAX_WORK_MINUTES = 11` (that is, `MIN_WORK_MINUTES + 1`). This derived maximum overrides the static Settings value.
+15. Treat paired phrases like `min 10p max 15ph` as explicit runtime values `MIN_WORK_MINUTES = 10` and `MAX_WORK_MINUTES = 15`, overriding the static Settings values.
 
 ## Repository Check
 
