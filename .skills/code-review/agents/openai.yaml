@@ -1,0 +1,4 @@
+interface:
+  display_name: "Code Review"
+  short_description: "Review changed code and separation of concerns"
+  default_prompt: "Review the current code changes for correctness, regressions, and separation of concerns."
