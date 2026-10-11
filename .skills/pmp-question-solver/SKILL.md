@@ -19,7 +19,17 @@ Read the cheat sheet before solving questions. Treat it as maintained study note
 
 ## Classify correctly
 
-Use the user's stated exam version or study syllabus. Otherwise default to the **July 2026 PMP Examination Content Outline (ECO)** recorded in the cheat sheet. State this default briefly. Do not infer a legacy syllabus solely from an old screenshot or book.
+Use the user's stated exam version or study syllabus. Otherwise default to the **July 2026 PMP Examination Content Outline (ECO)**. State this default briefly. Do not infer a legacy syllabus solely from an old screenshot or book.
+
+Classification reference (verified 2026-10-11):
+
+| ECO domain | July 2026 weighting | Routing cues |
+| --- | --- | --- |
+| People | 33% | Leadership, conflict, stakeholder relationships, communication, shared understanding, knowledge transfer. |
+| Process | 41% | Integrated planning, scope, value delivery, resources, procurement, finance, quality, schedule, status, closure. |
+| Business Environment | 26% | Governance, compliance, changes, impediments/issues, risk, improvement, organizational change, external conditions. |
+
+Sources: [Official PMI July 2026 ECO](https://www.pmi.org/-/media/pmi/documents/public/pdf/certifications/new-pmp-examination-content-outline-2026.pdf), [PMI exam update](https://www.pmi.org/certifications/project-management-pmp/new-exam). Recheck when the target version changes. Keep this general exam reference in the skill, not duplicated in the cheat sheet. Any distinct reader-facing reference appendix belongs at the end of the cheat sheet.
 
 Report these dimensions separately:
 
@@ -28,7 +38,7 @@ Report these dimensions separately:
 3. **Approach:** Predictive, adaptive/agile, hybrid, or unspecified. Explain any consequential inference.
 4. **PMBOK mapping, when useful:** Label a traditional knowledge area or a specific edition's performance domain explicitly. Do not present a PMBOK knowledge area, process group, or performance domain as an ECO domain.
 
-Use the versioned domain index in the cheat sheet. Changes, risk, and impediments are particularly sensitive to the 2026 mapping; do not blindly reuse a legacy Process classification. Identify an exact ECO task number/title only after checking the applicable official outline. Domain assignments for user questions are reasoned mappings unless the question provider explicitly supplies an official mapping.
+Use the versioned domain index above. Changes, risk, and impediments are particularly sensitive to the 2026 mapping; do not blindly reuse a legacy Process classification. Identify an exact ECO task number/title only after checking the applicable official outline. Domain assignments for user questions are reasoned mappings unless the question provider explicitly supplies an official mapping.
 
 ## Select and explain the answer
 
@@ -45,27 +55,36 @@ For stable concepts, reason directly. Verify changing exam details, uncertain do
 
 ## Maintain the cheat sheet
 
+The cheat sheet teaches readers how to analyze answer choices and connect scenario facts to PMP theory. For each lesson, explain the recognition cues, relevant theory, reasoning that distinguishes the choices, and traps or exceptions. Use a short comparison or worked example when useful. Keep agent workflow, language rules, maintenance instructions, output templates, validation procedures, and the general exam reference in this skill only. Do not add empty placeholder sections or repetitive administrative metadata. Preserve useful formulas and stable lesson IDs.
+
 Updating the repository cheat sheet after a resolved question is part of this skill's normal workflow and needs no separate confirmation. Honor explicit requests to answer without editing. Modify only the cheat sheet unless the user requests other changes.
+
+Maintain a compact Vietnamese `Tra nhanh theo keyword trong câu hỏi` section immediately after the sheet title. Include a short reader-oriented explanation and a table mapping important English question keywords or scenario cues to linked PMP lesson IDs and the reasoning tip to look for. Cover every confirmed lesson once; indicate useful combinations when a question spans lessons. Explain that keywords route the reader to relevant guidance, not automatically to an answer. When adding or refining a lesson, update its index row and maintain a stable lowercase anchor such as `<a id="pmp-007"></a>` directly before its heading. Check that every index link resolves to the matching lesson; pending lessons should not appear as confirmed tips.
 
 1. Extract one or more reusable lessons: scenario trigger, best action or distinction, rationale, applicable approach/domain, and conditions or exceptions. Save a concise paraphrase, not the full question or screenshot.
 2. Search existing entries by concept and trigger. Reuse an existing ID and refine its rule if the lesson overlaps. Add a new entry only for a distinct lesson. If nothing new is learned, keep the existing entry and report that it already covers the question.
-3. Use the entry schema below. Allocate the next unused `PMP-NNN` identifier. Use the user's current local date for meaningful updates. Keep existing IDs stable and preserve unrelated notes.
-4. Store uncertain or unresolved lessons under `Chờ xác minh`, clearly separated from confirmed entries. Record the ambiguity and what would resolve it; do not teach a guess as a rule. Move a resolved pending lesson into the main entries and remove the obsolete pending note.
-5. Record a source URL only if inspected and relevant. Otherwise identify the basis as `Scenario reasoning (not an official answer key)`, `User-provided rationale`, or `Unverified`; distinguish an official taxonomy source from evidence for a behavioral rule.
-6. After editing, reread the changed sections and check that IDs are unique, links remain usable, formulas are sound, and the entry agrees with the answer. Report the actual edit, existing coverage, pending status, or write failure truthfully. If writing is unavailable, provide a ready-to-paste entry and do not claim it was saved.
+3. Use the entry schema below. Allocate the next unused `PMP-NNN` identifier. Keep existing IDs stable and preserve unrelated notes. Avoid update dates and repetitive reasoning-basis labels unless they materially help the reader.
+4. If an uncertain lesson is worth retaining, create a `Chờ xác minh` section only when it has actual content. Clearly separate it from confirmed entries and briefly identify the ambiguity. Move a resolved lesson into the main entries; remove the section when empty.
+5. Include source links only when inspected and useful to the reader. Explain question-specific uncertainty or answer-key disagreements in the answer, rather than adding repetitive disclaimers to every study entry. Distinguish an official taxonomy source from evidence for a behavioral rule.
+6. After editing, reread the changed sections and check that IDs are unique, the keyword index covers the confirmed lessons, links resolve to the correct anchors, formulas are sound, and the entry agrees with the answer. Report the actual edit, existing coverage, pending status, or write failure truthfully. If writing is unavailable, provide a ready-to-paste entry and do not claim it was saved.
 
 Entry schema (the placeholders below describe what to write; write the actual title and content in Vietnamese, keeping important PMP keywords in English):
 
 ```markdown
-### PMP-NNN | Short concept title
-- Domain / ECO: Primary domain; version; secondary domain if relevant.
-- Chủ đề / cách tiếp cận: Concept; predictive, adaptive/agile, hybrid, or approach-independent.
-- Tình huống áp dụng: The facts that make this lesson applicable.
-- Nguyên tắc: The best action or conceptual distinction, with its rationale.
-- Điều kiện / bẫy: When the rule changes; why a tempting alternative fails.
-- Cơ sở: Inspected source link or clearly labeled reasoning basis.
-- Cập nhật: YYYY-MM-DD.
+<a id="pmp-nnn"></a>
+
+## PMP-NNN | Short concept title
+
+**Dấu hiệu:** Scenario cues; relevant domain or approach when useful.
+
+**Liên hệ lý thuyết:** Relevant PMP concept and how it explains the scenario.
+
+**Cách phân tích đáp án:** Connect stated facts to the best choice; distinguish premature or unsupported alternatives. Add a short example or comparison when helpful.
+
+**Bẫy:** Exceptions, misleading assumptions, or changed facts that would justify another answer.
 ```
+
+Add a concise source or uncertainty note only when needed to assess the lesson.
 
 ## Answer format
 
