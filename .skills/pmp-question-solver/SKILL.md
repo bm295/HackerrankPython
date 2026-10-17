@@ -29,7 +29,7 @@ Classification reference (verified 2026-10-11):
 | Process | 41% | Integrated planning, scope, value delivery, resources, procurement, finance, quality, schedule, status, closure. |
 | Business Environment | 26% | Governance, compliance, changes, impediments/issues, risk, improvement, organizational change, external conditions. |
 
-Sources: [Official PMI July 2026 ECO](https://www.pmi.org/-/media/pmi/documents/public/pdf/certifications/new-pmp-examination-content-outline-2026.pdf), [PMI exam update](https://www.pmi.org/certifications/project-management-pmp/new-exam). Recheck when the target version changes. Keep this general exam reference in the skill, not duplicated in the cheat sheet. Any distinct reader-facing reference appendix belongs at the end of the cheat sheet.
+Sources: [Official PMI July 2026 ECO](https://www.pmi.org/-/media/pmi/documents/public/pdf/certifications/new-pmp-examination-content-outline-2026.pdf), [PMI exam update](https://www.pmi.org/certifications/project-management-pmp/new-exam). Recheck when the target version changes. Keep external references in this skill, not in the cheat sheet.
 
 Report these dimensions separately:
 
@@ -53,6 +53,15 @@ Identify the project's current state, development approach, decision authority, 
 
 For stable concepts, reason directly. Verify changing exam details, uncertain domain/task mappings, edition-specific claims, and disputed technical points using official PMI sources or the applicable primary standard when available. Cite the exact supporting page; do not invent page numbers, quotations, task labels, or sources. If verification is unavailable, disclose that limitation and avoid promoting the uncertain claim to a confirmed study rule.
 
+## References for solving and writing lessons
+
+Consult the relevant source when verifying a lesson; do not open every source for every question. These links guide the skill's research and writing, rather than serving as a reader reference list in the cheat sheet. A listed link is not evidence that it was inspected in the current task.
+
+- [Scrum Guide — Sprint Retrospective](https://scrumguides.org/scrum-guide.html#sprint-retrospective) and [Sprint Review](https://scrumguides.org/scrum-guide.html#sprint-review): use for PMP-007 and related questions to distinguish improving the team's way of working from inspecting product outcomes with stakeholders. Preserve this distinction in the lesson instead of copying source links into it.
+- [PMI — Project management and business analysis](https://www.pmi.org/learning/library/project-management-business-analysis-6410): use for PMP-008 and related questions about understanding business needs and the business case before charter development. This is a PMI-hosted conference paper, not an official answer key or ECO taxonomy source; compare its reasoning with the actual scenario rather than treating it as an unconditional sequencing rule.
+
+Keep additional useful, inspected external sources here with a short explanation of when to consult them and what they support. Put question-specific citations in the chat answer when needed. Keep the cheat sheet self-contained, with internal keyword and lesson links only.
+
 ## Maintain the cheat sheet
 
 The cheat sheet teaches readers how to analyze answer choices and connect scenario facts to PMP theory. For each lesson, explain the recognition cues, relevant theory, reasoning that distinguishes the choices, and traps or exceptions. Use a short comparison or worked example when useful. Keep agent workflow, language rules, maintenance instructions, output templates, validation procedures, and the general exam reference in this skill only. Do not add empty placeholder sections or repetitive administrative metadata. Preserve useful formulas and stable lesson IDs.
@@ -65,7 +74,7 @@ Maintain a compact Vietnamese `Tra nhanh theo keyword trong câu hỏi` section 
 2. Search existing entries by concept and trigger. Reuse an existing ID and refine its rule if the lesson overlaps. Add a new entry only for a distinct lesson. If nothing new is learned, keep the existing entry and report that it already covers the question.
 3. Use the entry schema below. Allocate the next unused `PMP-NNN` identifier. Keep existing IDs stable and preserve unrelated notes. Avoid update dates and repetitive reasoning-basis labels unless they materially help the reader.
 4. If an uncertain lesson is worth retaining, create a `Chờ xác minh` section only when it has actual content. Clearly separate it from confirmed entries and briefly identify the ambiguity. Move a resolved lesson into the main entries; remove the section when empty.
-5. Include source links only when inspected and useful to the reader. Explain question-specific uncertainty or answer-key disagreements in the answer, rather than adding repetitive disclaimers to every study entry. Distinguish an official taxonomy source from evidence for a behavioral rule.
+5. Do not add external source links or a reference appendix to the cheat sheet. Keep useful, inspected sources in this skill's reference sections with their purpose; preserve internal keyword and lesson links in the cheat sheet. Explain question-specific uncertainty or answer-key disagreements in the answer, rather than adding repetitive disclaimers to every study entry. Distinguish an official taxonomy source from evidence for a behavioral rule.
 6. After editing, reread the changed sections and check that IDs are unique, the keyword index covers the confirmed lessons, links resolve to the correct anchors, formulas are sound, and the entry agrees with the answer. Report the actual edit, existing coverage, pending status, or write failure truthfully. If writing is unavailable, provide a ready-to-paste entry and do not claim it was saved.
 
 Entry schema (the placeholders below describe what to write; write the actual title and content in Vietnamese, keeping important PMP keywords in English):
@@ -84,7 +93,7 @@ Entry schema (the placeholders below describe what to write; write the actual ti
 **Bẫy:** Exceptions, misleading assumptions, or changed facts that would justify another answer.
 ```
 
-Add a concise source or uncertainty note only when needed to assess the lesson.
+Add a concise uncertainty note only when needed to assess the lesson; keep source links in this skill or the chat answer.
 
 ## Answer format
 

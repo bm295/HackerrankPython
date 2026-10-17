@@ -7,12 +7,14 @@ Tìm keyword và mục tiêu câu hỏi trong bảng, rồi đọc mục PMP tư
 | Keyword / dấu hiệu trong đề | Mục nên đọc | Tip cần tìm |
 | --- | --- | --- |
 | FIRST, NEXT; hành động đầu tiên hoặc tiếp theo | [PMP-001](#pmp-001) | Phân biệt bước cần làm ngay với giải pháp cuối cùng. |
-| Change request, scope, baseline, approval, backlog | [PMP-002](#pmp-002) | Xác định cách tiếp cận và thẩm quyền xử lý thay đổi. |
+| Change request, scope creep, baseline, approval, backlog; fixed budget, regulated scope | [PMP-002](#pmp-002) | Xác định thẩm quyền thay đổi; ngăn scope mở rộng khi chưa được kiểm soát và phê duyệt. |
 | Risk, issue, may occur, has occurred, contingency | [PMP-003](#pmp-003) | Phân biệt sự kiện chưa chắc chắn với vấn đề đã xảy ra. |
 | Frustrated, conflict, unhappy team, changing requirements | [PMP-004](#pmp-004) | Hiểu mối lo và nguyên nhân trước khi chọn biện pháp; kết hợp PMP-001 nếu hỏi FIRST. |
 | Deliverable, inspection, acceptance, quality, Definition of Done | [PMP-005](#pmp-005) | Phân biệt kiểm tra chất lượng với chấp nhận kết quả. |
 | PV, EV, AC, BAC, CPI, SPI, EAC, ETC, TCPI; over budget, ahead of schedule | [PMP-006](#pmp-006) | So sánh CPI/SPI với 1 để xác định vấn đề chi phí hay tiến độ; chọn công thức theo giả định. |
 | Sprint, review, retrospective, prevent errors, happen again | [PMP-007](#pmp-007) | Phân biệt phản hồi về sản phẩm với cải thiện cách làm. |
+| Assumptions, high-level risk, preliminary scope, business case, charter approval | [PMP-008](#pmp-008) | Thông tin sơ bộ chưa chứng minh đã hiểu lý do đầu tư hoặc charter sẵn sàng phê duyệt. |
+| Complaints about communication methods, communications management plan, stakeholder engagement plan | [PMP-009](#pmp-009) | Đối chiếu nhu cầu thông tin và cách thu hút stakeholder trước khi quyết định sửa kế hoạch. |
 
 Ví dụ: **frustrated + changing requirements + FIRST** → PMP-004 và PMP-001; **Sprint + prevent errors from happening again** → PMP-007.
 
@@ -28,6 +30,8 @@ Ví dụ: **frustrated + changing requirements + FIRST** → PMP-004 và PMP-001
 
 **Bẫy:** Giải pháp cuối cùng tốt chưa chắc là bước tiếp theo đúng. Không suy ra “luôn đánh giá trước”: an toàn hoặc tuân thủ khẩn cấp có thể cần hành động bảo vệ ngay.
 
+**Áp dụng theo tình huống:** Xem [PMP-004](#pmp-004) khi cần hiểu nguyên nhân nhóm bức xúc và [PMP-008](#pmp-008) khi cần hiểu business case trước khi xin phê duyệt charter. Hai mục bổ sung kiến thức chuyên đề cho nguyên tắc chọn bước tiếp theo ở đây.
+
 <a id="pmp-002"></a>
 
 ## PMP-002 | Đánh giá thay đổi theo cách tiếp cận và thẩm quyền
@@ -38,7 +42,11 @@ Ví dụ: **frustrated + changing requirements + FIRST** → PMP-004 và PMP-001
 
 **Cách phân tích đáp án:** Phân biệt yêu cầu mới với thay đổi đã được duyệt. Với predictive/hybrid có baseline, xem đáp án có đánh giá tác động và tuân thủ quy trình phê duyệt không. Với adaptive/agile, xem đây là điều chỉnh backlog thông thường hay thay đổi vượt ràng buộc hợp đồng, ngân sách hoặc quy định.
 
+Khi đề hỏi tránh scope creep với fixed budget và scope chịu quy định của cơ quan nhà nước, ưu tiên đưa thay đổi scope qua quy trình đánh giá và phê duyệt chính thức trước khi thực hiện. Scope creep là mở rộng phạm vi mà không kiểm soát hoặc điều chỉnh tương ứng về thời gian, chi phí và nguồn lực. Daily stand-up và báo cáo có thể giúp phát hiện sai lệch nhưng không thay thế quyền phê duyệt; cấm stakeholder giao tiếp với nhóm làm giảm cộng tác mà không tạo cơ chế kiểm soát thay đổi.
+
 **Bẫy:** Không chọn “thực hiện ngay” chỉ vì stakeholder yêu cầu. Không mặc định PM được duyệt mọi thay đổi hoặc mọi backlog refinement đều cần change control board (CCB). Agile vẫn có cơ chế kiểm soát.
+
+Distributed team là dấu hiệu về nhu cầu phối hợp, không tự xác định dự án dùng agile hay làm daily stand-up trở thành biện pháp kiểm soát scope tốt nhất. Scope chịu quy định vẫn có thể cần thay đổi; phê duyệt nội bộ không cho phép vi phạm quy định.
 
 <a id="pmp-003"></a>
 
@@ -60,7 +68,7 @@ Ví dụ: **frustrated + changing requirements + FIRST** → PMP-004 và PMP-001
 
 **Liên hệ lý thuyết:** Active listening giúp hiểu trải nghiệm của nhóm; emotional intelligence giúp nhận diện và phản hồi cảm xúc; servant leadership chú trọng hỗ trợ nhóm và tháo gỡ trở ngại. Bức xúc là dấu hiệu cần tìm hiểu, chưa chứng minh change management process bị lỗi.
 
-**Cách phân tích đáp án:** Tách dữ kiện “nhóm đang bức xúc” khỏi suy đoán “quy trình phải sửa” hoặc “mọi thay đổi đều có hại”. Đề chưa nêu thay đổi nào gây khó khăn và tác động cụ thể. Gặp nhóm để hiểu nguyên nhân tạo cơ sở cho biện pháp tiếp theo, nên phù hợp nhất với FIRST.
+**Cách phân tích đáp án:** Áp dụng [PMP-001](#pmp-001) cho FIRST: dùng active listening để xác định thay đổi nào gây khó khăn và tác động cụ thể. Phân biệt dữ kiện “nhóm đang bức xúc” với suy đoán “quy trình phải sửa” hoặc “mọi thay đổi đều có hại”.
 
 | Loại lựa chọn | Cách đánh giá |
 | --- | --- |
@@ -69,7 +77,7 @@ Ví dụ: **frustrated + changing requirements + FIRST** → PMP-004 và PMP-001
 | Yêu cầu stakeholder ngừng đề xuất thay đổi | Thiếu căn cứ: có thể chặn cả thay đổi cần thiết hoặc mang lại giá trị. |
 | Tạm ngừng chấp nhận mọi thay đổi | Chưa có lý do hoặc phê duyệt cho change freeze; chưa giải quyết nguyên nhân. |
 
-**Bẫy:** Yêu cầu thay đổi thường xuyên chưa đủ để kết luận dự án dùng agile. Nếu có khẩn cấp, sai phạm, nguy cơ an toàn hoặc vấn đề vượt thẩm quyền, cần cân nhắc hành động bảo vệ hay escalation phù hợp thay vì chỉ họp tìm hiểu.
+**Bẫy:** Yêu cầu thay đổi thường xuyên chưa đủ để kết luận dự án dùng agile. Các ngoại lệ khẩn cấp áp dụng theo PMP-001; nếu giải pháp liên quan quy trình thay đổi, đối chiếu thẩm quyền và cách tiếp cận ở [PMP-002](#pmp-002).
 
 <a id="pmp-005"></a>
 
@@ -109,7 +117,7 @@ Với CPI/SPI, **1** là mức đúng kế hoạch: CPI > 1 biểu thị hiệu 
 
 Ví dụ **SPI = 1,2; CPI = 0,76**: giá trị công việc đạt được bằng 120% kế hoạch, nhưng mỗi 1 đơn vị tiền thực chi chỉ tạo ra 0,76 đơn vị giá trị theo ngân sách. Nếu đề hỏi nhóm cần bàn cách khắc phục gì, tập trung vào **budget/cost**. Không chọn sửa cả schedule và budget chỉ vì stakeholder không hài lòng; chưa có dữ kiện cho thấy scope có vấn đề.
 
-**Bẫy:** EV không phải tiền thực chi. SV có đơn vị giá trị, không phải số ngày chậm. SPI không tự xác định critical path hay ngày kết thúc. CPI = 0,76 không có nghĩa chi phí vượt 24%; mức vượt so với EV là AC/EV - 1 = 1/0,76 - 1 ≈ 31,6%. “Fix budget” trong lựa chọn có thể chỉ việc khắc phục hiệu suất chi phí; không đồng nghĩa tự ý tăng ngân sách hoặc thay baseline. Các số phải cùng thời điểm báo cáo và đơn vị tương thích; không chia cho 0.
+**Bẫy:** BAC không dùng để kết luận under budget hay over budget tại thời điểm báo cáo; phải so sánh AC với EV. AC < BAC chưa chứng minh hiệu suất chi phí thuận lợi. EV không phải tiền thực chi. SV có đơn vị giá trị, không phải số ngày chậm. SPI không tự xác định critical path hay ngày kết thúc. CPI = 0,76 không có nghĩa chi phí vượt 24%; mức vượt so với EV là AC/EV - 1 = 1/0,76 - 1 ≈ 31,6%. “Fix budget” trong lựa chọn có thể chỉ việc khắc phục hiệu suất chi phí; không đồng nghĩa tự ý tăng ngân sách hoặc thay baseline. Các số phải cùng thời điểm báo cáo và đơn vị tương thích; không chia cho 0.
 
 <a id="pmp-007"></a>
 
@@ -117,7 +125,7 @@ Ví dụ **SPI = 1,2; CPI = 0,76**: giá trị công việc đạt được bằ
 
 **Dấu hiệu:** Sprint vừa kết thúc, deliverable có lỗi; đề hỏi nơi nhóm bàn cách ngăn lỗi tái diễn. Áp dụng cho agile hoặc phần agile của hybrid. Theo ECO tháng 7/2026, mục tiêu continuous improvement liên quan Business Environment; chất lượng deliverable liên quan thêm Process.
 
-**Liên hệ lý thuyết:** Sprint Retrospective giúp nhóm cải thiện chất lượng và hiệu quả bằng cách xem lại cách làm việc. Sprint Review tập trung vào kết quả sản phẩm và phản hồi của stakeholder. Phân biệt đối tượng cần cải thiện giúp chọn đúng cuộc họp. Xem [Scrum Guide — Sprint Retrospective](https://scrumguides.org/scrum-guide.html#sprint-retrospective) và [Sprint Review](https://scrumguides.org/scrum-guide.html#sprint-review).
+**Liên hệ lý thuyết:** Sprint Retrospective giúp nhóm cải thiện chất lượng và hiệu quả bằng cách xem lại cách làm việc. Sprint Review tập trung vào kết quả sản phẩm và phản hồi của stakeholder. Phân biệt đối tượng cần cải thiện giúp chọn đúng cuộc họp.
 
 **Cách phân tích đáp án:** Xác định mục tiêu chính trong câu hỏi. “Khách hàng không hài lòng” là bối cảnh; “prevent errors from happening again” yêu cầu cải thiện cách làm để phòng ngừa tái diễn, nên chọn Retrospective. Nhóm có thể tìm nguyên nhân lỗi lọt qua kiểm tra, rồi thống nhất biện pháp như bổ sung kiểm thử hoặc làm rõ Definition of Done.
 
@@ -129,6 +137,30 @@ Ví dụ **SPI = 1,2; CPI = 0,76**: giá trị công việc đạt được bằ
 | Change control process | Xử lý thay đổi cần đánh giá và phê duyệt theo governance; không thay thế cuộc họp cải tiến của nhóm. |
 
 **Bẫy:** Không chọn Review chỉ vì đề nhắc khách hàng. Nếu mục tiêu là lấy phản hồi về sản phẩm, Review có thể đúng; nếu cải thiện cách làm để ngăn tái diễn, Retrospective phù hợp hơn. Không chờ đến Retrospective mới xử lý lỗi khẩn cấp. Scrum không quy định vai trò PM; trong câu hỏi hybrid, không suy ra PM thay thế Scrum Master hoặc quyết định thay nhóm.
+
+<a id="pmp-008"></a>
+
+## PMP-008 | Hiểu business case trước khi xin phê duyệt charter
+
+**Dấu hiệu:** Dự án mới có assumptions, high-level risks và preliminary scope; câu hỏi yêu cầu bước tiếp theo. Thường gặp trong bối cảnh predictive hoặc hybrid.
+
+**Liên hệ lý thuyết:** Project charter chính thức cho phép dự án tồn tại và trao thẩm quyền cho PM sử dụng nguồn lực tổ chức. Sponsor hoặc người khởi tạo có thẩm quyền phê duyệt; business case giải thích lý do đầu tư và lợi ích mong đợi.
+
+**Cách phân tích đáp án:** Nếu đề nói mới chỉ biết assumptions, high-level risks và preliminary scope, chưa đủ cơ sở suy ra đã hiểu business case hoặc charter đã hoàn thiện. Khi có lựa chọn hiểu rõ business case, ưu tiên làm rõ nhu cầu kinh doanh, lý do đầu tư và lợi ích mong đợi trước khi xin phê duyệt charter. Phân công toàn bộ nhóm hoặc lập schedule chi tiết cũng quá sớm trong tình huống này.
+
+**Bẫy:** Nhận ra nội dung thường xuất hiện trong charter không chứng minh charter đã sẵn sàng trình ký. Áp dụng [PMP-001](#pmp-001) để tránh lặp lại bước đã hoàn tất: nếu business case đã được hiểu rõ và charter sẵn sàng, xin phê duyệt có thể đúng. Một số nhân sự có thể tham gia khởi tạo; không suy ra mọi hoạt động nhân sự đều phải chờ charter.
+
+<a id="pmp-009"></a>
+
+## PMP-009 | Rà soát kế hoạch khi stakeholder phàn nàn về giao tiếp
+
+**Dấu hiệu:** Stakeholder phàn nàn về phương thức giao tiếp, kể cả sau khi PM đã gửi formal change request. Domain chính: People; áp dụng cho mọi cách tiếp cận có kế hoạch hoặc thỏa thuận giao tiếp phù hợp.
+
+**Liên hệ lý thuyết:** Communications management plan xác định nhu cầu thông tin, nội dung, người nhận, phương thức, tần suất và trách nhiệm giao tiếp. Stakeholder engagement plan xác định cách thu hút và duy trì sự tham gia phù hợp của stakeholder. Hai kế hoạch cần được xem xét cùng nhau khi phương thức giao tiếp không đáp ứng kỳ vọng.
+
+**Cách phân tích đáp án:** Áp dụng [PMP-001](#pmp-001): kiểm tra các kế hoạch và cách thực hiện để phân biệt PM chưa làm đúng thỏa thuận với kế hoạch không còn phù hợp. Sau khi xác định khoảng cách, trao đổi với stakeholder để làm rõ nhu cầu nếu cần, rồi điều chỉnh cách thực hiện hoặc cập nhật kế hoạch theo thẩm quyền. Không suy ra phải sửa kế hoạch ngay chỉ vì có phàn nàn.
+
+**Bẫy:** Change request có thể chỉ là bối cảnh; nếu câu hỏi tập trung vào phàn nàn về giao tiếp, gửi lại yêu cầu hoặc sửa nội dung thay đổi chưa giải quyết đúng vấn đề. Không mặc định cần sponsor để hiểu stakeholder khi PM có thể xử lý trực tiếp. Nếu khoảng cách đã được xác định và giải pháp được thống nhất, thực hiện điều chỉnh có thể phù hợp hơn việc rà soát lại.
 
 ## Công thức cần nhớ
 
