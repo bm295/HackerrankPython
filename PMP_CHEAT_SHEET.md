@@ -7,7 +7,7 @@ Tìm keyword và mục tiêu câu hỏi trong bảng, rồi đọc mục PMP tư
 | Keyword / dấu hiệu trong đề | Mục nên đọc | Tip cần tìm |
 | --- | --- | --- |
 | FIRST, NEXT; hành động đầu tiên hoặc tiếp theo | [PMP-001](#pmp-001) | Phân biệt bước cần làm ngay với giải pháp cuối cùng. |
-| Change request, scope creep, baseline, approval, backlog; fixed budget, regulated scope | [PMP-002](#pmp-002) | Xác định thẩm quyền thay đổi; ngăn scope mở rộng khi chưa được kiểm soát và phê duyệt. |
+| Change request, scope creep, baseline, approval, backlog; cannot agree how to implement changes; fixed budget, regulated scope | [PMP-002](#pmp-002) | Xác định thẩm quyền và quy trình thay đổi; “necessary” chưa có nghĩa là đã được phê duyệt. |
 | Risk, issue, may occur, has occurred, contingency | [PMP-003](#pmp-003) | Phân biệt sự kiện chưa chắc chắn với vấn đề đã xảy ra. |
 | Frustrated, conflict, unhappy team, changing requirements | [PMP-004](#pmp-004) | Hiểu mối lo và nguyên nhân trước khi chọn biện pháp; kết hợp PMP-001 nếu hỏi FIRST. |
 | Deliverable, inspection, acceptance, quality, Definition of Done | [PMP-005](#pmp-005) | Phân biệt kiểm tra chất lượng với chấp nhận kết quả. |
@@ -15,6 +15,8 @@ Tìm keyword và mục tiêu câu hỏi trong bảng, rồi đọc mục PMP tư
 | Sprint, review, retrospective, prevent errors, happen again | [PMP-007](#pmp-007) | Phân biệt phản hồi về sản phẩm với cải thiện cách làm. |
 | Assumptions, high-level risk, preliminary scope, business case, charter approval | [PMP-008](#pmp-008) | Thông tin sơ bộ chưa chứng minh đã hiểu lý do đầu tư hoặc charter sẵn sàng phê duyệt. |
 | Complaints about communication methods, communications management plan, stakeholder engagement plan | [PMP-009](#pmp-009) | Đối chiếu nhu cầu thông tin và cách thu hút stakeholder trước khi quyết định sửa kế hoạch. |
+
+| In parallel, overlap, finish sooner, schedule compression, fast tracking, crashing | [PMP-010](#pmp-010) | Chồng lấn công việc là fast tracking; thêm nguồn lực để rút thời lượng là crashing. |
 
 Ví dụ: **frustrated + changing requirements + FIRST** → PMP-004 và PMP-001; **Sprint + prevent errors from happening again** → PMP-007.
 
@@ -47,6 +49,10 @@ Khi đề hỏi tránh scope creep với fixed budget và scope chịu quy đị
 **Bẫy:** Không chọn “thực hiện ngay” chỉ vì stakeholder yêu cầu. Không mặc định PM được duyệt mọi thay đổi hoặc mọi backlog refinement đều cần change control board (CCB). Agile vẫn có cơ chế kiểm soát.
 
 Distributed team là dấu hiệu về nhu cầu phối hợp, không tự xác định dự án dùng agile hay làm daily stand-up trở thành biện pháp kiểm soát scope tốt nhất. Scope chịu quy định vẫn có thể cần thay đổi; phê duyệt nội bộ không cho phép vi phạm quy định.
+
+Khi sponsor yêu cầu đổi phương pháp sản xuất do HR risk mới, tuân thủ documented change control process: ghi nhận yêu cầu, đánh giá tác động và trình người có thẩm quyền quyết định theo quy trình. Yêu cầu của sponsor không tự chứng minh thay đổi đã được phê duyệt đúng thủ tục. Risk mới chưa chứng minh có emergency cần thực hiện ngay hoặc phải dừng toàn bộ công việc. Chỉ dừng công việc hay dùng thủ tục khẩn cấp khi có căn cứ về an toàn, tuân thủ hoặc điều kiện kích hoạt phù hợp; không từ chối thay đổi trước khi đánh giá.
+
+Khi nhiều thay đổi được nhận diện trong execution và nhóm chưa thống nhất cách xử lý, bảo đảm nhóm và stakeholder hiểu, tuân thủ change management plan để có quy trình chung về đề xuất, đánh giá, phê duyệt và triển khai. “Necessary changes” chưa có nghĩa là “approved changes”. Họp nhóm hữu ích nhưng đáp án vừa họp vừa thực hiện thay đổi “where needed” chưa thể hiện kiểm soát phê duyệt. Nếu thay đổi đã được duyệt và bất đồng chỉ về giải pháp kỹ thuật, facilitation với nhóm có thể phù hợp hơn việc chỉ nhắc lại kế hoạch. Không tự động chuyển vấn đề lên sponsor khi vẫn trong thẩm quyền xử lý của nhóm và PM.
 
 <a id="pmp-003"></a>
 
@@ -161,6 +167,18 @@ Ví dụ **SPI = 1,2; CPI = 0,76**: giá trị công việc đạt được bằ
 **Cách phân tích đáp án:** Áp dụng [PMP-001](#pmp-001): kiểm tra các kế hoạch và cách thực hiện để phân biệt PM chưa làm đúng thỏa thuận với kế hoạch không còn phù hợp. Sau khi xác định khoảng cách, trao đổi với stakeholder để làm rõ nhu cầu nếu cần, rồi điều chỉnh cách thực hiện hoặc cập nhật kế hoạch theo thẩm quyền. Không suy ra phải sửa kế hoạch ngay chỉ vì có phàn nàn.
 
 **Bẫy:** Change request có thể chỉ là bối cảnh; nếu câu hỏi tập trung vào phàn nàn về giao tiếp, gửi lại yêu cầu hoặc sửa nội dung thay đổi chưa giải quyết đúng vấn đề. Không mặc định cần sponsor để hiểu stakeholder khi PM có thể xử lý trực tiếp. Nếu khoảng cách đã được xác định và giải pháp được thống nhất, thực hiện điều chỉnh có thể phù hợp hơn việc rà soát lại.
+
+<a id="pmp-010"></a>
+
+## PMP-010 | Phân biệt fast tracking và crashing để rút ngắn tiến độ
+
+**Dấu hiệu:** Hoàn thành sớm hơn bằng cách chạy công việc song song, chồng lấn hoạt động hoặc bổ sung nguồn lực. Domain chính: Process theo ECO tháng 7/2026; thường gặp trong predictive hoặc phần lập tiến độ của hybrid.
+
+**Liên hệ lý thuyết:** Schedule compression rút ngắn tiến độ mà không giảm scope. Fast tracking cho các hoạt động vốn được lên lịch tuần tự thực hiện song song hoặc chồng lấn một phần. Crashing bổ sung nguồn lực hoặc chi phí để giảm thời lượng hoạt động khi khả thi, cân nhắc chi phí tăng thêm cho thời gian tiết kiệm được.
+
+**Cách phân tích đáp án:** “Running tasks in parallel” để hoàn thành sớm hơn là fast tracking. “Add resources”, làm thêm giờ hoặc trả chi phí để rút thời lượng gợi ý crashing. Decomposition chia deliverable hoặc công việc thành phần nhỏ hơn để lập kế hoạch và quản lý; tự nó không phải kỹ thuật nén tiến độ. “Limit” không phải tên kỹ thuật tương ứng.
+
+**Bẫy:** Fast tracking có thể tăng risk và rework do bắt đầu công việc trước khi đầu vào hoàn tất; chỉ áp dụng khi dependencies cho phép. Crashing thường tăng chi phí và không phải hoạt động nào cũng làm nhanh hơn khi thêm người. Muốn rút thời gian toàn dự án phải xem critical path và các đường gần critical; rút một hoạt động có float chưa chắc đổi ngày kết thúc. Hai công việc vốn độc lập chạy song song theo kế hoạch ban đầu chưa đủ để kết luận đang fast tracking.
 
 ## Công thức cần nhớ
 
