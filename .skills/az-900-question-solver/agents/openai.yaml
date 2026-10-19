@@ -1,0 +1,4 @@
+interface:
+  display_name: "AZ-900 Question Solver"
+  short_description: "Giải câu hỏi AZ-900 và cập nhật cheat sheet tiếng Việt"
+  default_prompt: "Dùng $az-900-question-solver để giải câu hỏi luyện thi Azure Fundamentals và cập nhật cheat sheet."
