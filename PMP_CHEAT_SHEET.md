@@ -13,10 +13,15 @@ Tìm keyword và mục tiêu câu hỏi trong bảng, rồi đọc mục PMP tư
 | Deliverable, inspection, acceptance, quality, Definition of Done | [PMP-005](#pmp-005) | Phân biệt kiểm tra chất lượng với chấp nhận kết quả. |
 | PV, EV, AC, BAC, CPI, SPI, EAC, ETC, TCPI; over budget, ahead of schedule | [PMP-006](#pmp-006) | So sánh CPI/SPI với 1 để xác định vấn đề chi phí hay tiến độ; chọn công thức theo giả định. |
 | Sprint, review, retrospective, prevent errors, happen again | [PMP-007](#pmp-007) | Phân biệt phản hồi về sản phẩm với cải thiện cách làm. |
-| Assumptions, high-level risk, preliminary scope, business case, charter approval | [PMP-008](#pmp-008) | Thông tin sơ bộ chưa chứng minh đã hiểu lý do đầu tư hoặc charter sẵn sàng phê duyệt. |
+| Assumptions, high-level risk, high-level scope, expert judgment, business case, charter approval | [PMP-008](#pmp-008) | Nhận diện charter qua nội dung tổng quan; phân biệt đang soạn charter với đã sẵn sàng xin phê duyệt. |
 | Complaints about communication methods, communications management plan, stakeholder engagement plan | [PMP-009](#pmp-009) | Đối chiếu nhu cầu thông tin và cách thu hút stakeholder trước khi quyết định sửa kế hoạch. |
-
 | In parallel, overlap, finish sooner, schedule compression, fast tracking, crashing | [PMP-010](#pmp-010) | Chồng lấn công việc là fast tracking; thêm nguồn lực để rút thời lượng là crashing. |
+| Insufficient resources, major tasks to be outsourced, outside consultants, procurement management plan | [PMP-011](#pmp-011) | Nhu cầu thuê ngoài mới làm thay đổi cách mua sắm dịch vụ; cập nhật kế hoạch procurement trước khi triển khai việc thuê ngoài. |
+| Bidder conference, vendors understand requirements, prebid conference | [PMP-012](#pmp-012) | Làm rõ yêu cầu chung trước khi nhà cung cấp nộp đề xuất và thương lượng hợp đồng. |
+| Industry best practices, compare similar projects, benchmarking | [PMP-013](#pmp-013) | So sánh thực hành để tìm chuẩn tham chiếu và cơ hội cải thiện; phân biệt với thu thập ý kiến khách hàng. |
+| Agile technical issue, brainstorm with team, servant leadership, team ownership | [PMP-014](#pmp-014) | Hỗ trợ nhóm cùng tìm giải pháp trước khi thay nhóm quyết định hoặc tìm chuyên gia bên ngoài khi chưa có căn cứ. |
+| Recent regulation, compliance feature, bottom of backlog, do not complete | [PMP-015](#pmp-015) | Khi chưa rõ lý do quyết định của product owner, trao đổi để hiểu căn cứ trước khi chọn cách xử lý tiếp theo. |
+| Unhappy customers, requirements not met in final product, incremental delivery, early feedback | [PMP-016](#pmp-016) | Giao phần sản phẩm sử dụng được và lấy phản hồi sớm để điều chỉnh trước khi hoàn thành toàn bộ. |
 
 Ví dụ: **frustrated + changing requirements + FIRST** → PMP-004 và PMP-001; **Sprint + prevent errors from happening again** → PMP-007.
 
@@ -146,15 +151,19 @@ Ví dụ **SPI = 1,2; CPI = 0,76**: giá trị công việc đạt được bằ
 
 <a id="pmp-008"></a>
 
-## PMP-008 | Hiểu business case trước khi xin phê duyệt charter
+## PMP-008 | Nhận diện charter và hiểu business case trước khi xin phê duyệt
 
 **Dấu hiệu:** Dự án mới có assumptions, high-level risks và preliminary scope; câu hỏi yêu cầu bước tiếp theo. Thường gặp trong bối cảnh predictive hoặc hybrid.
 
 **Liên hệ lý thuyết:** Project charter chính thức cho phép dự án tồn tại và trao thẩm quyền cho PM sử dụng nguồn lực tổ chức. Sponsor hoặc người khởi tạo có thẩm quyền phê duyệt; business case giải thích lý do đầu tư và lợi ích mong đợi.
 
+Charter ghi nhận thông tin tổng quan như mục tiêu, high-level scope và overall project risk. Khi đề hỏi PM đang tạo tài liệu gì bằng expert judgment, kết hợp phạm vi tổng quan với đánh giá rủi ro ban đầu gợi ý đang phát triển charter. Expert judgment được dùng trong nhiều hoạt động nên không đủ để nhận diện nếu đứng riêng. Project scope statement mô tả phạm vi chi tiết hơn; project management plan tích hợp cách thực hiện, giám sát và kiểm soát dự án; risk management plan mô tả cách quản lý rủi ro, không phải bản phân tích rủi ro.
+
 **Cách phân tích đáp án:** Nếu đề nói mới chỉ biết assumptions, high-level risks và preliminary scope, chưa đủ cơ sở suy ra đã hiểu business case hoặc charter đã hoàn thiện. Khi có lựa chọn hiểu rõ business case, ưu tiên làm rõ nhu cầu kinh doanh, lý do đầu tư và lợi ích mong đợi trước khi xin phê duyệt charter. Phân công toàn bộ nhóm hoặc lập schedule chi tiết cũng quá sớm trong tình huống này.
 
 **Bẫy:** Nhận ra nội dung thường xuất hiện trong charter không chứng minh charter đã sẵn sàng trình ký. Áp dụng [PMP-001](#pmp-001) để tránh lặp lại bước đã hoàn tất: nếu business case đã được hiểu rõ và charter sẵn sàng, xin phê duyệt có thể đúng. Một số nhân sự có thể tham gia khởi tạo; không suy ra mọi hoạt động nhân sự đều phải chờ charter.
+
+Phân biệt câu hỏi nhận diện hoạt động đang làm với câu hỏi chọn bước tiếp theo: “đang soạn charter” không đồng nghĩa “nên xin phê duyệt ngay”. PM có thể hỗ trợ soạn charter; việc này không trao cho PM quyền tự phê duyệt.
 
 <a id="pmp-009"></a>
 
@@ -179,6 +188,78 @@ Ví dụ **SPI = 1,2; CPI = 0,76**: giá trị công việc đạt được bằ
 **Cách phân tích đáp án:** “Running tasks in parallel” để hoàn thành sớm hơn là fast tracking. “Add resources”, làm thêm giờ hoặc trả chi phí để rút thời lượng gợi ý crashing. Decomposition chia deliverable hoặc công việc thành phần nhỏ hơn để lập kế hoạch và quản lý; tự nó không phải kỹ thuật nén tiến độ. “Limit” không phải tên kỹ thuật tương ứng.
 
 **Bẫy:** Fast tracking có thể tăng risk và rework do bắt đầu công việc trước khi đầu vào hoàn tất; chỉ áp dụng khi dependencies cho phép. Crashing thường tăng chi phí và không phải hoạt động nào cũng làm nhanh hơn khi thêm người. Muốn rút thời gian toàn dự án phải xem critical path và các đường gần critical; rút một hoạt động có float chưa chắc đổi ngày kết thúc. Hai công việc vốn độc lập chạy song song theo kế hoạch ban đầu chưa đủ để kết luận đang fast tracking.
+
+<a id="pmp-011"></a>
+
+## PMP-011 | Cập nhật kế hoạch procurement khi phát sinh nhu cầu thuê ngoài
+
+**Dấu hiệu:** Workload tăng, nguồn lực nội bộ không đủ và các công việc lớn sẽ chuyển sang thuê ngoài; outside consultants có thể chiếm phần lớn nhóm. Domain chính: Process theo ECO tháng 7/2026; cách tiếp cận chưa xác định nếu đề không nêu thêm dữ kiện.
+
+**Liên hệ lý thuyết:** Procurement management plan mô tả cách dự án mua hàng hóa và dịch vụ từ bên ngoài tổ chức. Chuyển công việc từ nguồn lực nội bộ sang nhà cung cấp làm thay đổi nhu cầu và cách thức procurement. Kế hoạch cần phản ánh cách lựa chọn, ký kết và quản lý nhà cung cấp, trách nhiệm và thời điểm mua sắm phù hợp.
+
+**Cách phân tích đáp án:** Khi đã xác định cần thuê ngoài nhiều công việc và hỏi FIRST, cập nhật procurement management plan là lựa chọn trực tiếp đáp ứng thay đổi về cách huy động dịch vụ. Chính nhu cầu thuê ngoài mới tạo lý do cập nhật; không cần đề nêu thêm một lỗi có sẵn trong kế hoạch. Rà soát communications management plan vẫn hữu ích để phối hợp với consultants, nhưng dữ kiện này chưa cho thấy giao tiếp là vấn đề cần ưu tiên trước việc lập kế hoạch thuê ngoài. Organizational chart chỉ làm rõ cơ cấu và quan hệ báo cáo; sponsor cần tham gia khi có yêu cầu phê duyệt hoặc vấn đề vượt thẩm quyền PM.
+
+**Bẫy:** Đừng chọn giao tiếp chỉ vì consultants sẽ chiếm hơn nửa nhóm; không có ngưỡng 50% tự động quyết định đáp án. Phân biệt “sắp thuê ngoài” với “đã có hợp đồng và đang gặp khó khăn giao tiếp”: trường hợp sau có thể cần [PMP-009](#pmp-009). Cập nhật kế hoạch không tự cấp quyền ký hợp đồng, tăng ngân sách hoặc sửa baseline; vẫn tuân thủ thẩm quyền và [PMP-002](#pmp-002) khi có thay đổi thuộc diện kiểm soát.
+
+<a id="pmp-012"></a>
+
+## PMP-012 | Dùng bidder conference để thống nhất cách hiểu yêu cầu
+
+**Dấu hiệu:** Cần thuê ngoài và bảo đảm nhà cung cấp hiểu đầy đủ yêu cầu trước khi lựa chọn. Domain chính: Process theo ECO tháng 7/2026; cách tiếp cận chưa xác định.
+
+**Liên hệ lý thuyết:** Bidder conference là cuộc trao đổi với các nhà cung cấp tiềm năng trước khi nộp đề xuất nhằm làm rõ yêu cầu kỹ thuật và thương mại, tạo cách hiểu chung và cơ hội tiếp cận thông tin công bằng.
+
+**Cách phân tích đáp án:** Khi điều kiện lựa chọn là hiểu toàn bộ yêu cầu, ưu tiên bidder conference trong các đáp án để giải thích yêu cầu và trả lời câu hỏi trước khi đánh giá đề xuất hoặc thương lượng. Procurement management plan mô tả cách quản lý mua sắm, không thay thế tài liệu yêu cầu hay procurement statement of work. Ghi nhà cung cấp vào stakeholder register hỗ trợ quản lý stakeholder nhưng không xác nhận họ hiểu yêu cầu. Số giờ nguồn lực chỉ mô tả khối lượng cần mua, không quyết định kỹ thuật lựa chọn này.
+
+**Bẫy:** Tham dự hội nghị không tự chứng minh năng lực hoặc đáp ứng mọi yêu cầu; vẫn cần đánh giá đề xuất theo tiêu chí lựa chọn. Negotiation phù hợp khi làm rõ hoặc thống nhất điều khoản theo quy trình procurement. Không suy ra mọi hoạt động thuê ngoài đều bắt buộc tổ chức hội nghị; chọn theo mục tiêu và giai đoạn nêu trong đề.
+
+<a id="pmp-013"></a>
+
+## PMP-013 | Dùng benchmarking để tìm thực hành tốt trong ngành
+
+**Dấu hiệu:** PM cần xác định industry best practices hoặc so sánh với dự án, sản phẩm hay quy trình tương tự. Domain chính: Process khi mục tiêu là lập kế hoạch chất lượng hoặc phát triển sản phẩm; cách tiếp cận chưa xác định.
+
+**Liên hệ lý thuyết:** Benchmarking so sánh thực hành hoặc kết quả với các đối tượng phù hợp trong hay ngoài tổ chức để nhận diện thực hành tốt, khoảng cách và cơ hội cải thiện, đồng thời hỗ trợ xác định chuẩn đo lường.
+
+**Cách phân tích đáp án:** Nếu mục tiêu trực tiếp là tìm best practices của ngành, chọn benchmarking. Focus groups thu thập kỳ vọng và phản hồi của khách hàng hoặc người dùng. Facilitation giúp nhóm trao đổi và đạt thống nhất. Affinity diagram gom các ý tưởng hoặc dữ liệu thành nhóm theo quan hệ. Ba kỹ thuật sau có thể hỗ trợ dự án nhưng không trực tiếp thực hiện việc so sánh thực hành. Mục tiêu customer satisfaction không tự làm focus groups thành đáp án nếu câu hỏi yêu cầu tìm thực hành ngành.
+
+**Bẫy:** Thời hạn dự án không quyết định kỹ thuật trong tình huống này. Không sao chép máy móc thực hành của đơn vị khác; cần xét tính tương đồng và điều chỉnh cho bối cảnh. Nếu đề hỏi tìm hiểu nhu cầu khách hàng thay vì chuẩn thực hành, focus groups có thể phù hợp hơn.
+
+<a id="pmp-014"></a>
+
+## PMP-014 | Hỗ trợ nhóm agile cùng giải quyết vấn đề kỹ thuật
+
+**Dấu hiệu:** Nhóm agile gặp khó khăn kỹ thuật có thể ảnh hưởng Sprint; đề hỏi NEXT và có lựa chọn brainstorm cùng nhóm. Domain chính: People khi kiểm tra cách lãnh đạo và trao quyền; việc tháo gỡ impediment liên quan thêm Business Environment theo ECO tháng 7/2026.
+
+**Liên hệ lý thuyết:** Servant leadership và facilitation giúp nhóm huy động kiến thức tập thể, đánh giá phương án và giữ quyền sở hữu giải pháp kỹ thuật. PM hỗ trợ hợp tác và tháo gỡ trở ngại thay vì tự chọn rồi triển khai giải pháp thay nhóm.
+
+**Cách phân tích đáp án:** Gặp nhóm để brainstorm là bước phù hợp khi chưa có dữ kiện cho thấy nhóm đã thử hết phương án hoặc thiếu chuyên môn cần thiết. Product owner tập trung vào giá trị và ưu tiên sản phẩm, không mặc nhiên là người cung cấp giải pháp kỹ thuật. Thuê chuyên gia bên ngoài có thể phù hợp khi xác định khoảng trống năng lực; PM tự nghiên cứu rồi áp dụng thay nhóm làm giảm quyền tự quản. Có nguy cơ ảnh hưởng tiến độ chưa đủ để bỏ qua cộng tác.
+
+**Bẫy:** Không biến thành quy tắc “không bao giờ dùng consultant” hoặc họp brainstorm lặp lại vô hạn. Nếu nhóm đã cùng phân tích nhưng thiếu chuyên môn, hỗ trợ tiếp cận chuyên gia có thể là bước tiếp theo. Product owner có thể cần tham gia khi điều chỉnh ưu tiên hoặc phạm vi Sprint; việc này khác với giao họ quyết định giải pháp kỹ thuật. Vấn đề khẩn cấp về an toàn hoặc tuân thủ cần phản ứng phù hợp ngay.
+
+<a id="pmp-015"></a>
+
+## PMP-015 | Làm rõ lý do product owner trì hoãn yêu cầu tuân thủ
+
+**Dấu hiệu:** Quy định mới tạo một feature trong product backlog nhưng product owner xếp cuối và yêu cầu không thực hiện. Domain chính: Business Environment theo ECO tháng 7/2026; cách tiếp cận agile.
+
+**Liên hệ lý thuyết:** Product owner chịu trách nhiệm sắp xếp product backlog. Khi một quyết định có vẻ không phù hợp nhưng chưa rõ căn cứ, trao đổi trực tiếp giúp hiểu thông tin và giả định đã dùng. Quản lý compliance vẫn cần xác định yêu cầu áp dụng, đánh giá hậu quả và lựa chọn hành động đáp ứng; quyền ưu tiên backlog không miễn trừ nghĩa vụ tuân thủ.
+
+**Cách phân tích đáp án:** Trong tình huống product owner xếp feature do quy định mới xuống cuối và yêu cầu không thực hiện, nhưng chưa rõ lý do, bước FIRST phù hợp là gặp product owner để tìm hiểu căn cứ quyết định. Cuộc trao đổi làm rõ cách hiểu quy định, thời hạn, thông tin và đánh giá đã có; không mặc định những phân tích đó chưa từng được thực hiện. Phân tích tác động nếu bỏ feature vẫn cần thiết khi còn thiếu thông tin, nhưng không đủ cơ sở để đặt một bước phân tích riêng trước việc làm rõ lý do của người chịu trách nhiệm backlog. Sau khi hiểu căn cứ, cùng xác định đánh giá bổ sung và cách đáp ứng tuân thủ. Không chỉ đạo nhóm làm cuối hoặc dừng toàn bộ dự án khi chưa có căn cứ.
+
+**Bẫy:** Keyword regulation không tự làm “phân tích trước” thành đáp án. Cũng không suy ra “luôn gặp trước”: nếu có lệnh dừng, nguy cơ an toàn hoặc vi phạm cần phản ứng ngay, phải hành động theo thẩm quyền. Xếp cuối backlog không tự đồng nghĩa bỏ feature; chú ý chỉ dẫn riêng rằng không thực hiện. Làm rõ lý do không có nghĩa chấp nhận bỏ yêu cầu bắt buộc, và PM không tự thay product owner sắp xếp backlog. Nếu lý do đã rõ nhưng hậu quả chưa được đánh giá, phân tích tác động có thể là bước tiếp theo phù hợp.
+
+<a id="pmp-016"></a>
+
+## PMP-016 | Giao sản phẩm từng phần để xác nhận nhu cầu khách hàng sớm
+
+**Dấu hiệu:** Khách hàng chỉ phát hiện sản phẩm cuối không đáp ứng yêu cầu; đề hỏi cách tránh lặp lại ở dự án agile tiếp theo. Domain chính: Process theo ECO tháng 7/2026, về giao giá trị từng phần; liên quan thêm People qua phản hồi và kỳ vọng khách hàng.
+
+**Liên hệ lý thuyết:** Incremental delivery cung cấp các phần sản phẩm sử dụng được trong suốt dự án, tạo cơ hội khách hàng kiểm tra kết quả thực tế. Kết hợp phản hồi thường xuyên với điều chỉnh backlog giúp phát hiện sớm cách hiểu sai và nhu cầu thay đổi, giảm nguy cơ chỉ nhận ra khoảng cách khi kết thúc.
+
+**Cách phân tích đáp án:** Ưu tiên giao các phần sản phẩm nhỏ trong suốt dự án để khách hàng có cơ sở cụ thể đánh giá. Họp hằng ngày để hỏi yêu cầu không thay thế kiểm tra sản phẩm thực tế và chưa có căn cứ về tần suất cần thiết. Danh sách yêu cầu chi tiết ban đầu có thể hữu ích nhưng không bảo đảm cách hiểu đúng hoặc nhu cầu không đổi. Khẳng định đã làm đúng specification không giải quyết khoảng cách với kỳ vọng khách hàng.
+
+**Bẫy:** Chỉ chia nhỏ và giao mà không thu thập, xử lý phản hồi chưa bảo đảm sự hài lòng. Increment phải đáp ứng tiêu chuẩn chất lượng phù hợp, không chỉ là mảnh công việc dở dang. Không suy ra mọi increment đều bắt buộc phát hành production ngay; lịch phát hành còn phụ thuộc bối cảnh. Khi câu hỏi tập trung vào cuộc họp lấy phản hồi sản phẩm, đối chiếu Sprint Review ở [PMP-007](#pmp-007).
 
 ## Công thức cần nhớ
 
