@@ -22,6 +22,7 @@ Tìm keyword và mục tiêu câu hỏi trong bảng, rồi đọc mục PMP tư
 | Agile technical issue, brainstorm with team, servant leadership, team ownership | [PMP-014](#pmp-014) | Hỗ trợ nhóm cùng tìm giải pháp trước khi thay nhóm quyết định hoặc tìm chuyên gia bên ngoài khi chưa có căn cứ. |
 | Recent regulation, compliance feature, bottom of backlog, do not complete | [PMP-015](#pmp-015) | Khi chưa rõ lý do quyết định của product owner, trao đổi để hiểu căn cứ trước khi chọn cách xử lý tiếp theo. |
 | Unhappy customers, requirements not met in final product, incremental delivery, early feedback | [PMP-016](#pmp-016) | Giao phần sản phẩm sử dụng được và lấy phản hồi sớm để điều chỉnh trước khi hoàn thành toàn bộ. |
+| Moving from predictive to agile, cannot create product backlog, training, coaching | [PMP-017](#pmp-017) | Khi khoảng trống kiến thức đã thể hiện rõ, đào tạo để nhóm tự thực hiện; phân biệt với chỉ rà soát lựa chọn đào tạo. |
 
 Ví dụ: **frustrated + changing requirements + FIRST** → PMP-004 và PMP-001; **Sprint + prevent errors from happening again** → PMP-007.
 
@@ -260,6 +261,18 @@ Phân biệt câu hỏi nhận diện hoạt động đang làm với câu hỏi
 **Cách phân tích đáp án:** Ưu tiên giao các phần sản phẩm nhỏ trong suốt dự án để khách hàng có cơ sở cụ thể đánh giá. Họp hằng ngày để hỏi yêu cầu không thay thế kiểm tra sản phẩm thực tế và chưa có căn cứ về tần suất cần thiết. Danh sách yêu cầu chi tiết ban đầu có thể hữu ích nhưng không bảo đảm cách hiểu đúng hoặc nhu cầu không đổi. Khẳng định đã làm đúng specification không giải quyết khoảng cách với kỳ vọng khách hàng.
 
 **Bẫy:** Chỉ chia nhỏ và giao mà không thu thập, xử lý phản hồi chưa bảo đảm sự hài lòng. Increment phải đáp ứng tiêu chuẩn chất lượng phù hợp, không chỉ là mảnh công việc dở dang. Không suy ra mọi increment đều bắt buộc phát hành production ngay; lịch phát hành còn phụ thuộc bối cảnh. Khi câu hỏi tập trung vào cuộc họp lấy phản hồi sản phẩm, đối chiếu Sprint Review ở [PMP-007](#pmp-007).
+
+<a id="pmp-017"></a>
+
+## PMP-017 | Đào tạo khi nhóm thiếu kiến thức trong quá trình chuyển sang agile
+
+**Dấu hiệu:** Nhóm chuyển từ predictive sang agile, chưa biết cách tạo product backlog và việc khởi động dự án bị chậm. Domain chính: People theo ECO tháng 7/2026, vì quyết định được kiểm tra là phát triển năng lực và hỗ trợ nhóm.
+
+**Liên hệ lý thuyết:** Training và coaching giúp nhóm hiểu phương pháp, vai trò và kỹ thuật cần thiết để làm việc theo agile. Servant leadership hỗ trợ nhóm có năng lực tự thực hiện thay vì PM nhận làm thay. Trong Scrum, product owner chịu trách nhiệm cuối cùng về quản lý product backlog, gồm tạo và truyền đạt rõ các mục, sắp xếp thứ tự và bảo đảm backlog được hiểu; có thể giao người khác thực hiện nhưng vẫn giữ trách nhiệm đó.
+
+**Cách phân tích đáp án:** Việc nhóm chưa biết tạo backlog trong quá trình chuyển đổi cho thấy nhu cầu học tập cụ thể. Khi đề hỏi PM nên làm gì và có lựa chọn đào tạo nhóm về agile, ưu tiên hành động này để giải quyết khoảng trống năng lực đang gây chậm trễ. Rà soát lựa chọn đào tạo có thể là bước chuẩn bị hữu ích, nhưng đề chưa nêu nhu cầu chọn khóa học hoặc điều kiện khiến việc đào tạo chưa thể thực hiện. Không tự suy ra PM thiếu khả năng hướng dẫn nhóm. Nội dung nên tập trung vào cách xây dựng backlog và trách nhiệm của các vai trò.
+
+**Bẫy:** Không biến thành quy tắc “luôn đào tạo ngay”: nếu chưa rõ nhóm thiếu gì, cần xác định nhu cầu; nếu cần chọn hình thức hoặc người đào tạo phù hợp, rà soát lựa chọn có thể là bước tiếp theo. PM có thể trực tiếp hướng dẫn trong phạm vi năng lực hoặc tổ chức hỗ trợ phù hợp. PM không mặc nhiên là người tạo và sở hữu product backlog. Sponsor phù hợp khi cần quyết định, kinh phí hoặc hỗ trợ tổ chức vượt thẩm quyền; chưa có căn cứ chuyển một khó khăn học tập thông thường lên sponsor. Nếu nhóm đã hiểu agile nhưng bất đồng về ưu tiên hoặc giá trị, cần làm rõ với product owner thay vì lặp lại đào tạo chung.
 
 ## Công thức cần nhớ
 
