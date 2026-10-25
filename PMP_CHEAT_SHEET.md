@@ -7,8 +7,8 @@ Tìm keyword và mục tiêu câu hỏi trong bảng, rồi đọc mục PMP tư
 | Keyword / dấu hiệu trong đề | Mục nên đọc | Tip cần tìm |
 | --- | --- | --- |
 | FIRST, NEXT; hành động đầu tiên hoặc tiếp theo | [PMP-001](#pmp-001) | Phân biệt bước cần làm ngay với giải pháp cuối cùng. |
-| Change request, scope creep, baseline, approval, backlog; cannot agree how to implement changes; fixed budget, regulated scope | [PMP-002](#pmp-002) | Xác định thẩm quyền và quy trình thay đổi; “necessary” chưa có nghĩa là đã được phê duyệt. |
-| Risk, issue, may occur, has occurred, contingency | [PMP-003](#pmp-003) | Phân biệt sự kiện chưa chắc chắn với vấn đề đã xảy ra. |
+| Change request, scope creep, baseline, approval, backlog; fixed go-live date, additional scope, fully committed; cannot agree how to implement changes; fixed budget, regulated scope | [PMP-002](#pmp-002) | Xác định thẩm quyền và quy trình thay đổi; scope tăng nhưng giữ ngày giao cần phân tích tác động và phương án trước khi xin phê duyệt. |
+| Risk, issue, may occur, has occurred, no response planned, contingency | [PMP-003](#pmp-003) | Risk đã xảy ra và gây tác động cần ghi issue log và xử lý; nếu chưa có response thì cùng nhóm xác định workaround. |
 | Frustrated, conflict, unhappy team, changing requirements | [PMP-004](#pmp-004) | Hiểu mối lo và nguyên nhân trước khi chọn biện pháp; kết hợp PMP-001 nếu hỏi FIRST. |
 | Deliverable, inspection, acceptance, quality, Definition of Done | [PMP-005](#pmp-005) | Phân biệt kiểm tra chất lượng với chấp nhận kết quả. |
 | PV, EV, AC, BAC, CPI, SPI, EAC, ETC, TCPI; over budget, ahead of schedule | [PMP-006](#pmp-006) | So sánh CPI/SPI với 1 để xác định vấn đề chi phí hay tiến độ; chọn công thức theo giả định. |
@@ -23,6 +23,9 @@ Tìm keyword và mục tiêu câu hỏi trong bảng, rồi đọc mục PMP tư
 | Recent regulation, compliance feature, bottom of backlog, do not complete | [PMP-015](#pmp-015) | Khi chưa rõ lý do quyết định của product owner, trao đổi để hiểu căn cứ trước khi chọn cách xử lý tiếp theo. |
 | Unhappy customers, requirements not met in final product, incremental delivery, early feedback | [PMP-016](#pmp-016) | Giao phần sản phẩm sử dụng được và lấy phản hồi sớm để điều chỉnh trước khi hoàn thành toàn bộ. |
 | Moving from predictive to agile, cannot create product backlog, training, coaching | [PMP-017](#pmp-017) | Khi khoảng trống kiến thức đã thể hiện rõ, đào tạo để nhóm tự thực hiện; phân biệt với chỉ rà soát lựa chọn đào tạo. |
+| Agile schedule status, burnup, burndown, work completed, work remaining | [PMP-018](#pmp-018) | Burnup theo dõi phần hoàn thành; burndown theo dõi phần còn lại theo thời gian. |
+| Work completed last Sprint, estimate next iteration, velocity | [PMP-019](#pmp-019) | Dùng khối lượng đã hoàn thành mỗi iteration để dự báo, có điều chỉnh theo capacity và bối cảnh. |
+| Slow approvals, another department, blocked, unable to resolve dependency | [PMP-020](#pmp-020) | Khi nhóm không tự tháo gỡ được blocker liên phòng ban, PM chủ động phối hợp và theo dõi đến khi giải quyết. |
 
 Ví dụ: **frustrated + changing requirements + FIRST** → PMP-004 và PMP-001; **Sprint + prevent errors from happening again** → PMP-007.
 
@@ -50,6 +53,8 @@ Ví dụ: **frustrated + changing requirements + FIRST** → PMP-004 và PMP-001
 
 **Cách phân tích đáp án:** Phân biệt yêu cầu mới với thay đổi đã được duyệt. Với predictive/hybrid có baseline, xem đáp án có đánh giá tác động và tuân thủ quy trình phê duyệt không. Với adaptive/agile, xem đây là điều chỉnh backlog thông thường hay thay đổi vượt ràng buộc hợp đồng, ngân sách hoặc quy định.
 
+Khi sponsor yêu cầu thêm nhiều scope giữa dự án predictive nhưng giữ nguyên ngày go-live và nhóm đã hết capacity, bước FIRST phù hợp là cùng nhóm đánh giá tác động lên schedule, cost, quality và resources, rồi thảo luận các phương án với sponsor. Có thể cân nhắc chia giai đoạn giao hàng, hoãn phần scope khác hoặc bổ sung nguồn lực nếu khả thi; chưa cam kết phương án trước khi phân tích. Trình change request để phê duyệt cần có thông tin tác động và lựa chọn đủ rõ. Việc ghi nhận yêu cầu ban đầu có thể diễn ra trước hoặc song song với phân tích theo quy trình; không đồng nhất ghi nhận với trình xin phê duyệt. Không tự thêm người hoặc kết luận chắc chắn trễ hạn chỉ vì nhóm đã fully committed. Sau khi thống nhất đề xuất, tuân thủ change control và thẩm quyền trước khi thực hiện hoặc sửa baseline.
+
 Khi đề hỏi tránh scope creep với fixed budget và scope chịu quy định của cơ quan nhà nước, ưu tiên đưa thay đổi scope qua quy trình đánh giá và phê duyệt chính thức trước khi thực hiện. Scope creep là mở rộng phạm vi mà không kiểm soát hoặc điều chỉnh tương ứng về thời gian, chi phí và nguồn lực. Daily stand-up và báo cáo có thể giúp phát hiện sai lệch nhưng không thay thế quyền phê duyệt; cấm stakeholder giao tiếp với nhóm làm giảm cộng tác mà không tạo cơ chế kiểm soát thay đổi.
 
 **Bẫy:** Không chọn “thực hiện ngay” chỉ vì stakeholder yêu cầu. Không mặc định PM được duyệt mọi thay đổi hoặc mọi backlog refinement đều cần change control board (CCB). Agile vẫn có cơ chế kiểm soát.
@@ -69,6 +74,8 @@ Khi nhiều thay đổi được nhận diện trong execution và nhóm chưa t
 **Liên hệ lý thuyết:** Risk là sự kiện hoặc điều kiện chưa chắc chắn, có thể tác động tích cực hoặc tiêu cực đến mục tiêu. Issue là vấn đề hiện tại cần xử lý. Risk register lưu rủi ro và phương án ứng phó; issue log theo dõi vấn đề, người chịu trách nhiệm và tiến độ giải quyết.
 
 **Cách phân tích đáp án:** Nếu sự kiện chưa xảy ra, xem lựa chọn có hỗ trợ nhận diện, phân tích hoặc lập risk response không. Nếu đã xảy ra, kiểm tra contingency response đã có và chọn hành động xử lý phù hợp, đồng thời cập nhật theo dõi. Một sự kiện đã xảy ra vẫn có thể tạo thêm risk trong tương lai.
+
+Khi threat đã được ghi trong risk register, nay thực sự xảy ra và làm chậm deliverable nhưng chưa có response được lập, ghi sự kiện vào issue log và cùng nhóm đánh giá tác động, xác định người chịu trách nhiệm và cách xử lý (workaround). Workaround là ứng phó chưa được hoạch định trước đối với vấn đề phát sinh; việc risk đã được nhận diện không có nghĩa contingency response đã tồn tại. Cập nhật trạng thái risk register vẫn hữu ích nhưng chỉ đánh dấu rồi tiếp tục theo dõi không đủ khi tác động đang diễn ra. Không đánh giá lại xác suất xảy ra của chính sự kiện đã xảy ra hoặc coi độ trễ hiện tại là một risk mới; chỉ ghi thêm risk nếu có hệ quả tương lai còn chưa chắc chắn. Nếu cách xử lý làm thay đổi baseline được kiểm soát, tuân thủ [PMP-002](#pmp-002).
 
 **Bẫy:** Chỉ cập nhật sổ theo dõi không giải quyết được vấn đề. Đừng tiếp tục coi vấn đề đã xảy ra là một khả năng trong tương lai hoặc lập lại phương án ứng phó đã có mà không có lý do.
 
@@ -273,6 +280,42 @@ Phân biệt câu hỏi nhận diện hoạt động đang làm với câu hỏi
 **Cách phân tích đáp án:** Việc nhóm chưa biết tạo backlog trong quá trình chuyển đổi cho thấy nhu cầu học tập cụ thể. Khi đề hỏi PM nên làm gì và có lựa chọn đào tạo nhóm về agile, ưu tiên hành động này để giải quyết khoảng trống năng lực đang gây chậm trễ. Rà soát lựa chọn đào tạo có thể là bước chuẩn bị hữu ích, nhưng đề chưa nêu nhu cầu chọn khóa học hoặc điều kiện khiến việc đào tạo chưa thể thực hiện. Không tự suy ra PM thiếu khả năng hướng dẫn nhóm. Nội dung nên tập trung vào cách xây dựng backlog và trách nhiệm của các vai trò.
 
 **Bẫy:** Không biến thành quy tắc “luôn đào tạo ngay”: nếu chưa rõ nhóm thiếu gì, cần xác định nhu cầu; nếu cần chọn hình thức hoặc người đào tạo phù hợp, rà soát lựa chọn có thể là bước tiếp theo. PM có thể trực tiếp hướng dẫn trong phạm vi năng lực hoặc tổ chức hỗ trợ phù hợp. PM không mặc nhiên là người tạo và sở hữu product backlog. Sponsor phù hợp khi cần quyết định, kinh phí hoặc hỗ trợ tổ chức vượt thẩm quyền; chưa có căn cứ chuyển một khó khăn học tập thông thường lên sponsor. Nếu nhóm đã hiểu agile nhưng bất đồng về ưu tiên hoặc giá trị, cần làm rõ với product owner thay vì lặp lại đào tạo chung.
+
+<a id="pmp-018"></a>
+
+## PMP-018 | Theo dõi tiến độ agile bằng burnup và burndown
+
+**Dấu hiệu:** Nhóm agile theo dõi schedule status hoặc tiến độ Sprint/release. Domain chính: Process theo ECO tháng 7/2026; cách tiếp cận adaptive/agile.
+
+**Liên hệ lý thuyết:** Burnup chart thể hiện khối lượng công việc đã hoàn thành theo thời gian, thường kèm đường tổng scope để thấy thay đổi phạm vi. Burndown chart thể hiện khối lượng công việc còn lại theo thời gian, thường so với đường tiến độ lý tưởng.
+
+**Cách phân tích đáp án:** Khi đề hỏi chọn hai công cụ theo dõi tiến độ agile, chọn burnup và burndown: một biểu diễn phần đã hoàn thành, một biểu diễn phần còn lại. Network diagram mô tả trình tự và dependencies, hữu ích khi phân tích quan hệ công việc hoặc critical path. Pareto chart giúp ưu tiên nhóm nguyên nhân theo mức đóng góp; fishbone diagram giúp khám phá nguyên nhân có thể gây vấn đề.
+
+**Bẫy:** Network diagram vẫn hữu ích trong agile/hybrid khi cần quản lý dependencies, nhưng hai biểu đồ trên trực tiếp hơn cho mục tiêu câu hỏi. Đường burndown tăng có thể do thêm scope hoặc ước tính lại, không nhất thiết do nhóm làm chậm. Burnup có đường tổng scope giúp phân biệt thay đổi phạm vi với tiến độ thực hiện. Các biểu đồ hỗ trợ dự báo, không bảo đảm ngày hoàn thành.
+
+<a id="pmp-019"></a>
+
+## PMP-019 | Dùng velocity để dự báo khối lượng công việc iteration tiếp theo
+
+**Dấu hiệu:** Nhóm agile xem lượng công việc hoàn thành trong Sprint trước để ước lượng lượng công việc có thể hoàn thành trong iteration tiếp theo. Domain chính: Process theo ECO tháng 7/2026; cách tiếp cận adaptive/agile.
+
+**Liên hệ lý thuyết:** Velocity là tổng đơn vị ước lượng của công việc hoàn thành trong một iteration, thường tính bằng story points. Chỉ tính công việc đáp ứng Definition of Done. Dữ liệu nhiều iteration tương đồng giúp dự báo ổn định hơn chỉ một Sprint.
+
+**Cách phân tích đáp án:** Khi đề nối “work completed last Sprint” với dự báo iteration tiếp theo, chọn velocity. Ví dụ nhóm hoàn thành 24, 27 và 21 story points trong ba Sprint có độ dài như nhau thì velocity trung bình là 24 story points/Sprint; đây là dữ liệu tham khảo khi lập kế hoạch. Methods và approach nói về cách làm, không phải chỉ số khối lượng hoàn thành. Limits là giới hạn hoặc ràng buộc; WIP limits kiểm soát lượng việc đang làm đồng thời, không đo lượng việc đã hoàn thành mỗi Sprint.
+
+**Bẫy:** Velocity là cơ sở dự báo, không phải cam kết cứng hoặc chỉ tiêu bắt buộc tăng. Điều chỉnh dự báo theo capacity, ngày nghỉ, thay đổi thành viên và tính chất công việc. Không tính story chưa hoàn thành theo phần trăm, không so sánh trực tiếp velocity giữa các nhóm dùng thang ước lượng khác nhau, và không đồng nhất story points với số giờ hay giá trị kinh doanh.
+
+<a id="pmp-020"></a>
+
+## PMP-020 | Chủ động tháo gỡ blocker liên phòng ban vượt khả năng của nhóm
+
+**Dấu hiệu:** Nhóm agile nhiều lần báo phê duyệt từ phòng ban khác bị chậm, cản trở hoàn thành công việc đã cam kết và không thể tự giải quyết dependency. Domain chính: Business Environment theo ECO tháng 7/2026 vì quyết định trọng tâm là xử lý impediment; liên quan People qua servant leadership.
+
+**Liên hệ lý thuyết:** Servant leadership bao gồm hỗ trợ tháo gỡ trở ngại vượt khả năng của nhóm. Nhóm tự quản không có nghĩa phải tự xử lý mọi rào cản tổ chức. Dependency đang chặn công việc là issue/impediment hiện tại, không chỉ là risk tương lai.
+
+**Cách phân tích đáp án:** PM chủ động làm việc với phòng ban liên quan, làm rõ điểm nghẽn, thống nhất người phụ trách và thời điểm phản hồi, rồi theo dõi đến khi blocker được giải quyết. Khi đề đã nêu nhóm không thể tự xử lý, chỉ coaching để nhóm tiếp tục tự liên hệ chưa đáp ứng nhu cầu hỗ trợ. Làm việc khác có thể là biện pháp tạm thời theo ưu tiên phù hợp nhưng không thay thế tháo gỡ dependency; bảo vệ velocity không phải mục tiêu cao hơn hoàn thành công việc có giá trị. Ghi risk register và chờ iteration sau bỏ chậm việc xử lý vấn đề đang tồn tại.
+
+**Bẫy:** Nếu nhóm chưa thử và có khả năng tự phối hợp, coaching có thể phù hợp. PM hỗ trợ phối hợp và escalation theo thẩm quyền khi cần, không tự phê duyệt thay phòng ban khác hoặc bỏ qua governance. Phân biệt blocker tổ chức ở đây với vấn đề kỹ thuật còn có thể giải quyết bằng cộng tác nội bộ ở [PMP-014](#pmp-014).
 
 ## Công thức cần nhớ
 
