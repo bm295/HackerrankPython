@@ -1,6 +1,6 @@
 ---
 name: pmp-question-solver
-description: Solve PMP certification practice questions supplied as text or images, classify their exam domain and project management topic, explain the answer choices, estimate domain readiness when learners supply their answers, and maintain the repository PMP cheat sheet after each resolved question.
+description: Solve PMP certification practice questions supplied as text or images, classify their exam domain and project management topic, explain the answer choices, estimate domain readiness when learners supply their answers, and maintain the learner's study history and the repository PMP cheat sheet.
 ---
 
 # PMP Question Solver
@@ -61,7 +61,7 @@ For stable concepts, reason directly. Verify changing exam details, uncertain do
 When the user submits a question as an image or text and explicitly supplies their own answer, grade it and add a Vietnamese readiness snapshot. Accept labels, answer text, or screenshot selections the user identifies as theirs. Treat an answer key or unexplained marks as reference material. If the user's choice or the correct answer is unclear, defer that item. With no user answer, use the normal tutoring format without a readiness snapshot.
 
 - For each eligible item, report the user's answer, the correct answer, correct/incorrect, primary ECO domain, and difficulty with a brief reason. Rate difficulty independently of the user's result: Easy (one direct distinction), Medium (plausible distractors and contextual reasoning), or Hard (competing plausible actions requiring several constraints, sequencing, or trade-offs). Use exact matching for multiple-response items unless the practice source explicitly supplies a partial-credit rule. Keep partial credit separate from the binary readiness tally.
-- Pool only distinct, independently attempted, gradable questions whose original answers are available in the conversation or a practice history supplied by the user. Count each question once under its primary domain using the same ECO version. Exclude retries after feedback, ambiguous keys, and examples with answers already revealed. Correct a prior tally if the grading changes. State the evidence scope and never assume unseen history.
+- Pool only distinct, independently attempted, gradable questions whose original answers are available in the conversation, the repository study history, or a practice history supplied by the user. Count each question once under its primary domain using the same ECO version. Exclude retries after feedback, ambiguous keys, and examples with answers already revealed. Correct a prior tally if the grading changes. State the evidence scope and never assume unseen history.
 - Show all three ECO domains in a compact table with correct/attempted, difficulty-adjusted practice score when available, estimated band, and evidence confidence. Under five eligible items in a domain, report **Insufficient evidence** and show any item-level signal separately. For five or more, compute the weighted proportion correct using weights Easy = 1, Medium = 1.25, Hard = 1.5. Compare the unrounded proportion against these local study bands: **Above Target** at 85% or more, **Target** at 70% to below 85%, **Below Target** at 55% to below 70%, and **Needs Improvement** below 55%. Treat 5–14 items as low confidence and 15 or more as at most moderate confidence. Flag narrow topic or difficulty coverage even when the sample is large.
 - For overall readiness, defer the estimate until every domain has at least 15 eligible items with varied topics and difficulties. Then combine the three weighted proportions using the applicable ECO domain weights and apply the same practice bands. Report the overall band as a qualitative readiness estimate and point out the domain that most needs review. These are study heuristics inspired by the [PMI sample result report](https://www.pmi.org/-/media/pmi/microsites/update-center/exam-result-report.pdf). Do not present the thresholds as PMI cutoffs or report a numerical probability of passing.
 
@@ -76,11 +76,21 @@ Consult the relevant source when verifying a lesson; do not open every source fo
 
 Keep additional useful, inspected external sources here with a short explanation of when to consult them and what they support. Put question-specific citations in the chat answer when needed. Keep the cheat sheet self-contained, with internal keyword and lesson links only.
 
+## Maintain the learner's study history
+
+Use [PMP_STUDY_HISTORY.md](../../PMP_STUDY_HISTORY.md) for the learner's practice history across conversations. Read it before solving or estimating readiness. Read and update it on the repository ref supplying this skill when that ref is a writable branch, otherwise use the repository default branch. Always resolve both paths relative to this skill. Keep reusable theory in the cheat sheet and learner-specific practice in the history.
+
+- Log each resolved question in Vietnamese, including questions discussed without a personal answer. Store the date (user's local date in YYYY-MM-DD), ECO version, primary domain, topic, a short paraphrase that distinguishes the question, difficulty, the learner's original selection, the correct selection, outcome, a reasoning note, and a cheat-sheet lesson link when available. Use the next unused `PMP-HNNN` ID. For labels, include a short option paraphrase where needed to make the record useful later. Escape Markdown table separators and keep one row per question.
+- Record the learner's first independent answer as **Đúng** or **Sai** when gradable. For walkthroughs or answers supplied after feedback, use **Đã xem lời giải** and leave the original-answer field blank if there was no independent attempt. Keep retries in the same row as review notes without changing the original result. Leave unresolved items out until they can be graded. When grading is corrected, update the existing row. Before appending, match the scenario and decision being tested as well as any source question identifier available; do not deduplicate by topic or question number alone.
+- Save only concise study data. Do not copy images, full question text, unrelated personal details, or inferred motives. Describe a misconception only when the learner's answer or explanation supports it. Do not reconstruct historical answers from cheat-sheet lessons.
+- In later explanations, use relevant history to compare similar scenarios, identify repeated errors supported by multiple records, or reinforce a prior lesson. Reference the matching history ID where it helps. Readiness may use eligible stored attempts and current answers; deduplicate them, retain the original ECO version, and state the evidence scope. A walkthrough does not contribute to readiness.
+- Save only the changed history rows, preserving unrelated entries. Use the latest file version for each write. If a concurrent edit rejects the write, reload and reconcile before retrying. Report whether the row was saved, already present, or could not be saved. If the history cannot be read, proceed with available evidence and state that limitation.
+
 ## Maintain the cheat sheet
 
 The cheat sheet teaches readers how to analyze answer choices and connect scenario facts to PMP theory. For each lesson, explain the recognition cues, relevant theory, reasoning that distinguishes the choices, and traps or exceptions. Use a short comparison or worked example when useful. Keep agent workflow, language rules, maintenance instructions, output templates, validation procedures, and the general exam reference in this skill only. Do not add empty placeholder sections or repetitive administrative metadata. Preserve useful formulas and stable lesson IDs.
 
-Updating the repository cheat sheet after a resolved question is part of this skill's normal workflow and needs no separate confirmation. Honor explicit requests to answer without editing. Modify only the cheat sheet unless the user requests other changes.
+Updating the repository cheat sheet after a resolved question is part of this skill's normal workflow and needs no separate confirmation. Honor explicit requests to answer without editing. Limit routine question updates to the cheat sheet and study history.
 
 Maintain a compact Vietnamese `Tra nhanh theo keyword trong câu hỏi` section immediately after the sheet title. Include a short reader-oriented explanation and a table mapping important English question keywords or scenario cues to linked PMP lesson IDs and the reasoning tip to look for. Cover every confirmed lesson once; indicate useful combinations when a question spans lessons. Explain that keywords route the reader to relevant guidance, not automatically to an answer. When adding or refining a lesson, update its index row and maintain a stable lowercase anchor such as `<a id="pmp-007"></a>` directly before its heading. Check that every index link resolves to the matching lesson; pending lessons should not appear as confirmed tips.
 
@@ -123,6 +133,7 @@ Takeaway: [conditional rule worth remembering]
 Confidence: [high / medium / low, with a concrete reason if uncertain]
 PMP readiness: [only with the user's own answer; item verdict, difficulty, domain table, and overall estimate or insufficient evidence]
 Cheat sheet: [link and entry IDs; added / refined / already covered / pending / not saved]
+Study history: [saved or existing row ID, or save status]
 Sources: [only sources actually consulted, when needed]
 ```
 
