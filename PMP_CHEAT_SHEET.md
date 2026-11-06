@@ -33,6 +33,7 @@ Tìm keyword và mục tiêu câu hỏi trong bảng, rồi đọc mục PMP tư
 | Morale has dropped, going through the motions, lasting engagement, broader vision | [PMP-025](#pmp-025) | Kết nối công việc hằng ngày của cả nhóm với mục tiêu và tác động thực tế lên khách hàng. |
 | High-performing agile team, approve each task, delivery slows | [PMP-026](#pmp-026) | Bỏ bước phê duyệt từng task do PM tự thêm và khôi phục quyền tự quản. |
 | Customer urgency, technical sequencing, next sprint, delivers most value | [PMP-027](#pmp-027) | Phân biệt sắp xếp Product Backlog theo giá trị với chọn việc khả thi cho Sprint. |
+| Directive PMO, mandated methodology, prescribed templates, reports directly | [PMP-028](#pmp-028) | Xác định thẩm quyền của PMO và tuân thủ phương pháp bắt buộc. |
 
 Ví dụ: **frustrated + changing requirements + FIRST** → PMP-004 và PMP-001; **Sprint + prevent errors from happening again** → PMP-007.
 
@@ -427,3 +428,15 @@ Bổ sung cho PMP-006. Chọn công thức có giả định phù hợp với đ
 **Cách phân tích đáp án:** Đưa nhu cầu khách hàng và phụ thuộc kỹ thuật vào cùng cuộc thảo luận để Product Owner có đủ căn cứ xếp thứ tự. Nếu một thành phần kỹ thuật là điều kiện để giao tính năng có giá trị, xem xét ưu tiên phần tối thiểu cần thiết của nó.
 
 **Bẫy:** Hiểu trình tự kỹ thuật giúp đánh giá tính khả thi. Chia công việc giữa hai ý kiến chỉ hợp lý khi cách kết hợp thực sự phục vụ Sprint Goal và giá trị sản phẩm.
+
+<a id="pmp-028"></a>
+
+## PMP-028 | Tuân thủ phương pháp bắt buộc của directive PMO
+
+**Dấu hiệu:** PMO trực tiếp phân công PM, nhận báo cáo tiến độ và quy định cả phương pháp lẫn mẫu biểu bắt buộc. PM muốn dùng cách triển khai khác.
+
+**Liên hệ lý thuyết:** Directive PMO trực tiếp quản lý dự án. Trách nhiệm giao dự án của PM đi kèm thẩm quyền được giao và các yêu cầu governance của tổ chức.
+
+**Cách phân tích đáp án:** Áp dụng phương pháp và mẫu biểu bắt buộc. Chỉ điều chỉnh trong phạm vi được phép. Việc dùng đúng mẫu biểu vẫn chưa đủ nếu cách triển khai trái với phương pháp quy định.
+
+**Bẫy:** Sở thích cá nhân chưa đủ căn cứ xin ngoại lệ. Nếu có nhu cầu cụ thể của dự án và quy trình cho phép, trình PMO phương án, lợi ích và tác động để được xem xét trước khi thay đổi.
