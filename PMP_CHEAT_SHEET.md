@@ -26,6 +26,7 @@ Tìm keyword và mục tiêu câu hỏi trong bảng, rồi đọc mục PMP tư
 | Agile schedule status, burnup, burndown, work completed, work remaining | [PMP-018](#pmp-018) | Burnup theo dõi phần hoàn thành; burndown theo dõi phần còn lại theo thời gian. |
 | Work completed last Sprint, estimate next iteration, velocity | [PMP-019](#pmp-019) | Dùng khối lượng đã hoàn thành mỗi iteration để dự báo, có điều chỉnh theo capacity và bối cảnh. |
 | Slow approvals, another department, blocked, unable to resolve dependency | [PMP-020](#pmp-020) | Khi nhóm không tự tháo gỡ được blocker liên phòng ban, PM chủ động phối hợp và theo dõi đến khi giải quyết. |
+| Neighboring business, believes it will be affected, stakeholder register | [PMP-021](#pmp-021) | Nhận diện bên cho rằng mình chịu ảnh hưởng và lên cách trao đổi phù hợp ngay khi lập kế hoạch. |
 
 Ví dụ: **frustrated + changing requirements + FIRST** → PMP-004 và PMP-001; **Sprint + prevent errors from happening again** → PMP-007.
 
@@ -316,6 +317,18 @@ Phân biệt câu hỏi nhận diện hoạt động đang làm với câu hỏi
 **Cách phân tích đáp án:** PM chủ động làm việc với phòng ban liên quan, làm rõ điểm nghẽn, thống nhất người phụ trách và thời điểm phản hồi, rồi theo dõi đến khi blocker được giải quyết. Khi đề đã nêu nhóm không thể tự xử lý, chỉ coaching để nhóm tiếp tục tự liên hệ chưa đáp ứng nhu cầu hỗ trợ. Làm việc khác có thể là biện pháp tạm thời theo ưu tiên phù hợp nhưng không thay thế tháo gỡ dependency; bảo vệ velocity không phải mục tiêu cao hơn hoàn thành công việc có giá trị. Ghi risk register và chờ iteration sau bỏ chậm việc xử lý vấn đề đang tồn tại.
 
 **Bẫy:** Nếu nhóm chưa thử và có khả năng tự phối hợp, coaching có thể phù hợp. PM hỗ trợ phối hợp và escalation theo thẩm quyền khi cần, không tự phê duyệt thay phòng ban khác hoặc bỏ qua governance. Phân biệt blocker tổ chức ở đây với vấn đề kỹ thuật còn có thể giải quyết bằng cộng tác nội bộ ở [PMP-014](#pmp-014).
+
+<a id="pmp-021"></a>
+
+## PMP-021 | Nhận diện stakeholder dựa trên tác động họ cảm nhận
+
+**Dấu hiệu:** Một bên bên ngoài dự án tin rằng công việc sẽ ảnh hưởng đến họ, dù phân tích của nhóm chưa cho thấy tác động dự kiến. Domain chính là People.
+
+**Liên hệ lý thuyết:** Một bên có thể là stakeholder nếu họ cho rằng mình chịu ảnh hưởng bởi dự án. Stakeholder register ghi nhận bên liên quan và thông tin cần thiết để lên kế hoạch tương tác.
+
+**Cách phân tích đáp án:** Bổ sung bên đó vào stakeholder register và lên cách tương tác phù hợp. Ví dụ, hỏi doanh nghiệp lân cận họ lo hoạt động nào sẽ bị gián đoạn, chia sẻ căn cứ phân tích và thống nhất đầu mối liên hệ.
+
+**Bẫy:** Phạm vi thi công và phạm vi nhận diện stakeholder phục vụ hai mục đích khác nhau. Có thể dùng issue log để theo dõi một vấn đề cụ thể cần xử lý. Việc nhận diện và tương tác có thể bắt đầu ngay khi biết mối lo, kể cả khi chưa có phản đối chính thức.
 
 ## Công thức cần nhớ
 
