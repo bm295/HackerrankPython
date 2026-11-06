@@ -35,6 +35,7 @@ Tìm keyword và mục tiêu câu hỏi trong bảng, rồi đọc mục PMP tư
 | Customer urgency, technical sequencing, next sprint, delivers most value | [PMP-027](#pmp-027) | Phân biệt sắp xếp Product Backlog theo giá trị với chọn việc khả thi cho Sprint. |
 | Directive PMO, mandated methodology, prescribed templates, reports directly | [PMP-028](#pmp-028) | Xác định thẩm quyền của PMO và tuân thủ phương pháp bắt buộc. |
 | Regulatory work specified up front, evolving customer requirements, user feedback | [PMP-029](#pmp-029) | Chọn hybrid khi hai phần việc có độ ổn định yêu cầu và nhu cầu lập kế hoạch khác nhau. |
+| Ongoing maintenance, run and monitor, no planned end date | [PMP-030](#pmp-030) | Bàn giao hoạt động thường xuyên cho đội vận hành khi hoàn tất dự án. |
 
 Ví dụ: **frustrated + changing requirements + FIRST** → PMP-004 và PMP-001; **Sprint + prevent errors from happening again** → PMP-007.
 
@@ -453,3 +454,15 @@ Bổ sung cho PMP-006. Chọn công thức có giả định phù hợp với đ
 **Cách phân tích đáp án:** Lập kế hoạch và chuẩn bị hồ sơ sớm cho phần tuân thủ. Với phần hướng đến khách hàng, giao từng phần, lấy phản hồi và cập nhật ưu tiên. Dùng các mốc tích hợp để kiểm tra thay đổi của phần adaptive có ảnh hưởng đến ràng buộc đã xác lập không.
 
 **Bẫy:** Có yêu cầu tuân thủ không mặc định toàn dự án phải dùng predictive. Adaptive vẫn có thể lập tài liệu và tuân thủ quy định. Hybrid có thể triển khai nối tiếp hoặc song song tùy phụ thuộc và không đòi hỏi khởi động lại dự án.
+
+<a id="pmp-030"></a>
+
+## PMP-030 | Bàn giao hệ thống từ dự án sang vận hành
+
+**Dấu hiệu:** Hệ thống đã triển khai. Việc chạy, giám sát và bảo trì sẽ tiếp tục thường xuyên, không có ngày kết thúc dự kiến.
+
+**Liên hệ lý thuyết:** Dự án có thời hạn và tạo ra kết quả xác định. Operations duy trì dịch vụ sau khi kết quả được đưa vào sử dụng.
+
+**Cách phân tích đáp án:** Giải thích tính chất vận hành của công việc còn lại, xác định đội tiếp nhận và xác nhận họ sẵn sàng vận hành trước khi hoàn tất đóng dự án. Bàn giao tài liệu, quyền truy cập và đầu mối xử lý sự cố theo kế hoạch chuyển giao.
+
+**Bẫy:** Hỗ trợ ổn định sau triển khai có thể nằm trong dự án nếu đã thống nhất phạm vi và tiêu chí kết thúc. Việc bảo trì thường xuyên cần chủ sở hữu vận hành.
