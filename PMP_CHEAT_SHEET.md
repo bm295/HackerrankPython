@@ -29,6 +29,7 @@ Tìm keyword và mục tiêu câu hỏi trong bảng, rồi đọc mục PMP tư
 | Neighboring business, believes it will be affected, stakeholder register | [PMP-021](#pmp-021) | Nhận diện bên cho rằng mình chịu ảnh hưởng và lên cách trao đổi phù hợp ngay khi lập kế hoạch. |
 | Balanced matrix, functional manager, competing demands, key team member, milestone at risk | [PMP-022](#pmp-022) | Thương lượng phân bổ thời gian với functional manager trước khi chọn phương án dự phòng hoặc escalation. |
 | No additional revenue, financial return, user safety, nonfinancial benefits | [PMP-023](#pmp-023) | Cùng stakeholder đánh giá tổng giá trị trước khi ưu tiên hoặc loại tính năng. |
+| Related projects, duplicating effort, conflicting decisions, combined benefit | [PMP-024](#pmp-024) | Nhận diện nhu cầu điều phối cấp program để đạt lợi ích chung. |
 
 Ví dụ: **frustrated + changing requirements + FIRST** → PMP-004 và PMP-001; **Sprint + prevent errors from happening again** → PMP-007.
 
@@ -375,3 +376,15 @@ Bổ sung cho PMP-006. Chọn công thức có giả định phù hợp với đ
 **Cách phân tích đáp án:** Làm rõ nguy cơ được giảm, người hưởng lợi, chi phí triển khai và cách đo hiệu quả. Dùng đánh giá này để hỗ trợ người có thẩm quyền quyết định ưu tiên.
 
 **Bẫy:** Không suy ra tính năng vô giá trị vì không có doanh thu mới, cũng không mặc định mọi phương án cải thiện an toàn đều phải được chọn. Nếu có yêu cầu an toàn bắt buộc, chỉ so sánh các phương án đáp ứng yêu cầu đó.
+
+<a id="pmp-024"></a>
+
+## PMP-024 | Điều phối các dự án liên quan để đạt lợi ích chung
+
+**Dấu hiệu:** Các dự án liên quan làm trùng việc, đưa ra quyết định mâu thuẫn và không đạt lợi ích chung vì mỗi dự án chỉ tối ưu mục tiêu riêng.
+
+**Liên hệ lý thuyết:** Program management điều phối các dự án liên quan để quản lý phụ thuộc, giải quyết quyết định chung và hiện thực hóa lợi ích mà từng dự án riêng lẻ khó đạt được. Portfolio management tập trung vào lựa chọn và ưu tiên đầu tư theo mục tiêu chiến lược.
+
+**Cách phân tích đáp án:** Khi đề hỏi nguyên nhân, tìm cơ chế điều phối đang thiếu. Các dự án có thể giữ phạm vi và đầu ra riêng, đồng thời thống nhất công việc dùng chung, quyết định liên dự án và cách đo lợi ích cấp program.
+
+**Bẫy:** Gộp dự án là một phương án tổ chức cần thêm căn cứ. Chuẩn hóa công cụ và mẫu biểu có thể hỗ trợ phối hợp, nhưng tự nó không xử lý phụ thuộc hay quyết định mâu thuẫn.
