@@ -34,6 +34,7 @@ Tìm keyword và mục tiêu câu hỏi trong bảng, rồi đọc mục PMP tư
 | High-performing agile team, approve each task, delivery slows | [PMP-026](#pmp-026) | Bỏ bước phê duyệt từng task do PM tự thêm và khôi phục quyền tự quản. |
 | Customer urgency, technical sequencing, next sprint, delivers most value | [PMP-027](#pmp-027) | Phân biệt sắp xếp Product Backlog theo giá trị với chọn việc khả thi cho Sprint. |
 | Directive PMO, mandated methodology, prescribed templates, reports directly | [PMP-028](#pmp-028) | Xác định thẩm quyền của PMO và tuân thủ phương pháp bắt buộc. |
+| Regulatory work specified up front, evolving customer requirements, user feedback | [PMP-029](#pmp-029) | Chọn hybrid khi hai phần việc có độ ổn định yêu cầu và nhu cầu lập kế hoạch khác nhau. |
 
 Ví dụ: **frustrated + changing requirements + FIRST** → PMP-004 và PMP-001; **Sprint + prevent errors from happening again** → PMP-007.
 
@@ -440,3 +441,15 @@ Bổ sung cho PMP-006. Chọn công thức có giả định phù hợp với đ
 **Cách phân tích đáp án:** Áp dụng phương pháp và mẫu biểu bắt buộc. Chỉ điều chỉnh trong phạm vi được phép. Việc dùng đúng mẫu biểu vẫn chưa đủ nếu cách triển khai trái với phương pháp quy định.
 
 **Bẫy:** Sở thích cá nhân chưa đủ căn cứ xin ngoại lệ. Nếu có nhu cầu cụ thể của dự án và quy trình cho phép, trình PMO phương án, lợi ích và tác động để được xem xét trước khi thay đổi.
+
+<a id="pmp-029"></a>
+
+## PMP-029 | Chọn vòng đời hybrid theo đặc điểm từng phần việc
+
+**Dấu hiệu:** Phần tuân thủ có yêu cầu ổn định, được hiểu rõ và phải đặc tả, lập tài liệu đầy đủ từ đầu. Yêu cầu phần hướng đến khách hàng còn thay đổi theo phản hồi.
+
+**Liên hệ lý thuyết:** Tailoring cho phép kết hợp predictive cho phần cần đặc tả sớm và adaptive cho phần cần học từ phản hồi. Hai phần nằm trong một vòng đời hybrid với các phụ thuộc và mốc tích hợp được quản lý chung.
+
+**Cách phân tích đáp án:** Lập kế hoạch và chuẩn bị hồ sơ sớm cho phần tuân thủ. Với phần hướng đến khách hàng, giao từng phần, lấy phản hồi và cập nhật ưu tiên. Dùng các mốc tích hợp để kiểm tra thay đổi của phần adaptive có ảnh hưởng đến ràng buộc đã xác lập không.
+
+**Bẫy:** Có yêu cầu tuân thủ không mặc định toàn dự án phải dùng predictive. Adaptive vẫn có thể lập tài liệu và tuân thủ quy định. Hybrid có thể triển khai nối tiếp hoặc song song tùy phụ thuộc và không đòi hỏi khởi động lại dự án.
