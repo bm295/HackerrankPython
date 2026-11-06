@@ -32,6 +32,7 @@ Tìm keyword và mục tiêu câu hỏi trong bảng, rồi đọc mục PMP tư
 | Related projects, duplicating effort, conflicting decisions, combined benefit | [PMP-024](#pmp-024) | Nhận diện nhu cầu điều phối cấp program để đạt lợi ích chung. |
 | Morale has dropped, going through the motions, lasting engagement, broader vision | [PMP-025](#pmp-025) | Kết nối công việc hằng ngày của cả nhóm với mục tiêu và tác động thực tế lên khách hàng. |
 | High-performing agile team, approve each task, delivery slows | [PMP-026](#pmp-026) | Bỏ bước phê duyệt từng task do PM tự thêm và khôi phục quyền tự quản. |
+| Customer urgency, technical sequencing, next sprint, delivers most value | [PMP-027](#pmp-027) | Phân biệt sắp xếp Product Backlog theo giá trị với chọn việc khả thi cho Sprint. |
 
 Ví dụ: **frustrated + changing requirements + FIRST** → PMP-004 và PMP-001; **Sprint + prevent errors from happening again** → PMP-007.
 
@@ -414,3 +415,15 @@ Bổ sung cho PMP-006. Chọn công thức có giả định phù hợp với đ
 **Cách phân tích đáp án:** Bỏ bước phê duyệt từng task do PM tự thêm. Rút ngắn thời gian duyệt hoặc giao quyền duyệt cho lead vẫn giữ điểm chờ. Báo cáo hằng ngày cho PM có thể bỏ điểm chờ nhưng lại thêm việc hành chính khi đề không nêu nhu cầu đó.
 
 **Bẫy:** Phân biệt quyền tự quản với các kiểm soát chất lượng hoặc phê duyệt bắt buộc theo governance. Nếu có kiểm soát bắt buộc, xác định cách đáp ứng mà vẫn giữ quyền tự chủ trong phạm vi cho phép.
+
+<a id="pmp-027"></a>
+
+## PMP-027 | Phân biệt ưu tiên Product Backlog và chọn việc cho Sprint
+
+**Dấu hiệu:** PM nêu nhu cầu cấp bách của khách hàng, còn Developers muốn làm các thành phần kỹ thuật trước. Hai bên bất đồng về Sprint tiếp theo.
+
+**Liên hệ lý thuyết:** Product Owner chịu trách nhiệm sắp xếp Product Backlog để tối đa hóa giá trị. Trong Sprint Planning, Developers trao đổi với Product Owner để chọn các mục phù hợp với Sprint Goal và năng lực thực tế, rồi lập kế hoạch thực hiện.
+
+**Cách phân tích đáp án:** Đưa nhu cầu khách hàng và phụ thuộc kỹ thuật vào cùng cuộc thảo luận để Product Owner có đủ căn cứ xếp thứ tự. Nếu một thành phần kỹ thuật là điều kiện để giao tính năng có giá trị, xem xét ưu tiên phần tối thiểu cần thiết của nó.
+
+**Bẫy:** Hiểu trình tự kỹ thuật giúp đánh giá tính khả thi. Chia công việc giữa hai ý kiến chỉ hợp lý khi cách kết hợp thực sự phục vụ Sprint Goal và giá trị sản phẩm.
