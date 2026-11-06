@@ -27,6 +27,7 @@ Tìm keyword và mục tiêu câu hỏi trong bảng, rồi đọc mục PMP tư
 | Work completed last Sprint, estimate next iteration, velocity | [PMP-019](#pmp-019) | Dùng khối lượng đã hoàn thành mỗi iteration để dự báo, có điều chỉnh theo capacity và bối cảnh. |
 | Slow approvals, another department, blocked, unable to resolve dependency | [PMP-020](#pmp-020) | Khi nhóm không tự tháo gỡ được blocker liên phòng ban, PM chủ động phối hợp và theo dõi đến khi giải quyết. |
 | Neighboring business, believes it will be affected, stakeholder register | [PMP-021](#pmp-021) | Nhận diện bên cho rằng mình chịu ảnh hưởng và lên cách trao đổi phù hợp ngay khi lập kế hoạch. |
+| Balanced matrix, functional manager, competing demands, key team member, milestone at risk | [PMP-022](#pmp-022) | Thương lượng phân bổ thời gian với functional manager trước khi chọn phương án dự phòng hoặc escalation. |
 
 Ví dụ: **frustrated + changing requirements + FIRST** → PMP-004 và PMP-001; **Sprint + prevent errors from happening again** → PMP-007.
 
@@ -350,3 +351,14 @@ Bổ sung cho PMP-006. Chọn công thức có giả định phù hợp với đ
 | Thời lượng kỳ vọng theo PERT | (lạc quan + 4 × có khả năng nhất + bi quan) / 6 | Ước tính ba điểm theo trọng số beta; cùng đơn vị thời gian. |
 | Số kênh giao tiếp tiềm năng giữa từng cặp | n(n - 1) / 2 | n là số người trong mô hình kết nối đầy đủ; không phải số tin nhắn thực tế hay số tuyến báo cáo bắt buộc. |
 
+<a id="pmp-022"></a>
+
+## PMP-022 | Thương lượng phân bổ nhân sự trong balanced matrix
+
+**Dấu hiệu:** Functional manager nhiều lần điều một thành viên chủ chốt sang công việc vận hành, khiến milestone có nguy cơ trễ. Đề hỏi PM làm gì trước.
+
+**Liên hệ lý thuyết:** Trong balanced matrix, PM và functional manager chia sẻ thẩm quyền. Xung đột ưu tiên cần được xử lý bằng trao đổi và thương lượng về nhu cầu nguồn lực của hai bên.
+
+**Cách phân tích đáp án:** Trao đổi trực tiếp với functional manager về nhu cầu vận hành và tác động lên milestone. Thống nhất khung thời gian dành cho dự án, ưu tiên và cách xử lý khi vận hành phát sinh việc đột xuất.
+
+**Bẫy:** Escalation có thể phù hợp khi hai bên không đạt được thỏa thuận trong thẩm quyền. Giao lại công việc cần kiểm tra năng lực và thời gian bàn giao. Ghi issue log giúp theo dõi xung đột, còn việc điều chỉnh milestone cần xem xét tác động và thẩm quyền phê duyệt.
