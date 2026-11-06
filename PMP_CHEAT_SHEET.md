@@ -30,6 +30,7 @@ Tìm keyword và mục tiêu câu hỏi trong bảng, rồi đọc mục PMP tư
 | Balanced matrix, functional manager, competing demands, key team member, milestone at risk | [PMP-022](#pmp-022) | Thương lượng phân bổ thời gian với functional manager trước khi chọn phương án dự phòng hoặc escalation. |
 | No additional revenue, financial return, user safety, nonfinancial benefits | [PMP-023](#pmp-023) | Cùng stakeholder đánh giá tổng giá trị trước khi ưu tiên hoặc loại tính năng. |
 | Related projects, duplicating effort, conflicting decisions, combined benefit | [PMP-024](#pmp-024) | Nhận diện nhu cầu điều phối cấp program để đạt lợi ích chung. |
+| Morale has dropped, going through the motions, lasting engagement, broader vision | [PMP-025](#pmp-025) | Kết nối công việc hằng ngày của cả nhóm với mục tiêu và tác động thực tế lên khách hàng. |
 
 Ví dụ: **frustrated + changing requirements + FIRST** → PMP-004 và PMP-001; **Sprint + prevent errors from happening again** → PMP-007.
 
@@ -388,3 +389,15 @@ Bổ sung cho PMP-006. Chọn công thức có giả định phù hợp với đ
 **Cách phân tích đáp án:** Khi đề hỏi nguyên nhân, tìm cơ chế điều phối đang thiếu. Các dự án có thể giữ phạm vi và đầu ra riêng, đồng thời thống nhất công việc dùng chung, quyết định liên dự án và cách đo lợi ích cấp program.
 
 **Bẫy:** Gộp dự án là một phương án tổ chức cần thêm căn cứ. Chuẩn hóa công cụ và mẫu biểu có thể hỗ trợ phối hợp, nhưng tự nó không xử lý phụ thuộc hay quyết định mâu thuẫn.
+
+<a id="pmp-025"></a>
+
+## PMP-025 | Khôi phục sự gắn kết bằng mục tiêu chung
+
+**Dấu hiệu:** Giữa một dự án dài, tinh thần cả nhóm giảm và các thành viên làm việc theo quán tính. Đề hỏi cách khôi phục sự gắn kết lâu dài.
+
+**Liên hệ lý thuyết:** Shared vision giúp nhóm hiểu công việc đang phục vụ mục tiêu nào. Thấy được tác động lên khách hàng có thể củng cố động lực nội tại thông qua ý nghĩa công việc.
+
+**Cách phân tích đáp án:** Kết nối công việc hằng ngày với kết quả khách hàng sẽ nhận được. Có thể dùng phản hồi thực tế hoặc chỉ số tác động để nhóm thấy đóng góp của mình. Thưởng theo milestone nhắm vào kết quả ngắn hạn, còn tăng check-in để giám sát chủ yếu cung cấp thông tin tiến độ.
+
+**Bẫy:** Trao quyền cũng có thể tăng động lực nội tại. Tuy nhiên, nếu đề mô tả sự mất gắn kết của cả nhóm và không cho thấy thiếu tự chủ, chỉ trao quyền cho thành viên giàu kinh nghiệm có phạm vi hẹp hơn. Nếu phát hiện quá tải hoặc kiệt sức, cần xử lý nguyên nhân đó.
