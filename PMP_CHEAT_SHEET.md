@@ -31,6 +31,7 @@ Tìm keyword và mục tiêu câu hỏi trong bảng, rồi đọc mục PMP tư
 | No additional revenue, financial return, user safety, nonfinancial benefits | [PMP-023](#pmp-023) | Cùng stakeholder đánh giá tổng giá trị trước khi ưu tiên hoặc loại tính năng. |
 | Related projects, duplicating effort, conflicting decisions, combined benefit | [PMP-024](#pmp-024) | Nhận diện nhu cầu điều phối cấp program để đạt lợi ích chung. |
 | Morale has dropped, going through the motions, lasting engagement, broader vision | [PMP-025](#pmp-025) | Kết nối công việc hằng ngày của cả nhóm với mục tiêu và tác động thực tế lên khách hàng. |
+| High-performing agile team, approve each task, delivery slows | [PMP-026](#pmp-026) | Bỏ bước phê duyệt từng task do PM tự thêm và khôi phục quyền tự quản. |
 
 Ví dụ: **frustrated + changing requirements + FIRST** → PMP-004 và PMP-001; **Sprint + prevent errors from happening again** → PMP-007.
 
@@ -401,3 +402,15 @@ Bổ sung cho PMP-006. Chọn công thức có giả định phù hợp với đ
 **Cách phân tích đáp án:** Kết nối công việc hằng ngày với kết quả khách hàng sẽ nhận được. Có thể dùng phản hồi thực tế hoặc chỉ số tác động để nhóm thấy đóng góp của mình. Thưởng theo milestone nhắm vào kết quả ngắn hạn, còn tăng check-in để giám sát chủ yếu cung cấp thông tin tiến độ.
 
 **Bẫy:** Trao quyền cũng có thể tăng động lực nội tại. Tuy nhiên, nếu đề mô tả sự mất gắn kết của cả nhóm và không cho thấy thiếu tự chủ, chỉ trao quyền cho thành viên giàu kinh nghiệm có phạm vi hẹp hơn. Nếu phát hiện quá tải hoặc kiệt sức, cần xử lý nguyên nhân đó.
+
+<a id="pmp-026"></a>
+
+## PMP-026 | Khôi phục quyền tự quản cho nhóm agile
+
+**Dấu hiệu:** Nhóm agile giàu kinh nghiệm từng giao hàng tốt. PM mới yêu cầu duyệt từng task trước khi làm, khiến công việc chậm và nhóm bức xúc.
+
+**Liên hệ lý thuyết:** Nhóm tự quản quyết định cách thực hiện công việc. Theo servant leadership, PM hỗ trợ tháo gỡ trở ngại và giúp nhóm duy trì minh bạch về tiến độ.
+
+**Cách phân tích đáp án:** Bỏ bước phê duyệt từng task do PM tự thêm. Rút ngắn thời gian duyệt hoặc giao quyền duyệt cho lead vẫn giữ điểm chờ. Báo cáo hằng ngày cho PM có thể bỏ điểm chờ nhưng lại thêm việc hành chính khi đề không nêu nhu cầu đó.
+
+**Bẫy:** Phân biệt quyền tự quản với các kiểm soát chất lượng hoặc phê duyệt bắt buộc theo governance. Nếu có kiểm soát bắt buộc, xác định cách đáp ứng mà vẫn giữ quyền tự chủ trong phạm vi cho phép.
