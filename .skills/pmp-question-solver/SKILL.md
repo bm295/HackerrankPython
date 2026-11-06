@@ -1,6 +1,6 @@
 ---
 name: pmp-question-solver
-description: Solve PMP certification practice questions supplied as text or images, classify their exam domain and project management topic, explain the answer choices, and maintain the repository PMP cheat sheet after each resolved question.
+description: Solve PMP certification practice questions supplied as text or images, classify their exam domain and project management topic, explain the answer choices, estimate domain readiness when learners supply their answers, and maintain the repository PMP cheat sheet after each resolved question.
 ---
 
 # PMP Question Solver
@@ -55,6 +55,15 @@ Identify the project's current state, development approach, decision authority, 
 - If the user supplies an answer key that conflicts with the analysis, compare the rationale and assumptions. Correct a demonstrated mistake; do not automatically treat either the key or the existing cheat sheet as infallible.
 
 For stable concepts, reason directly. Verify changing exam details, uncertain domain/task mappings, edition-specific claims, and disputed technical points using official PMI sources or the applicable primary standard when available. Evidence that an action is useful does not establish that it comes FIRST; when checking a disputed sequence, examine support for the closest competing action as well. ECO tasks and enablers identify exam coverage, not a mandatory sequence of actions or an answer key. Cite the exact supporting page; do not invent page numbers, quotations, task labels, or sources. If verification is unavailable, disclose that limitation and avoid promoting the uncertain claim to a confirmed study rule.
+
+## Estimate PMP readiness from the user's answers
+
+When the user submits a question as an image or text and explicitly supplies their own answer, grade it and add a Vietnamese readiness snapshot. Accept labels, answer text, or screenshot selections the user identifies as theirs. Treat an answer key or unexplained marks as reference material. If the user's choice or the correct answer is unclear, defer that item. With no user answer, use the normal tutoring format without a readiness snapshot.
+
+- For each eligible item, report the user's answer, the correct answer, correct/incorrect, primary ECO domain, and difficulty with a brief reason. Rate difficulty independently of the user's result: Easy (one direct distinction), Medium (plausible distractors and contextual reasoning), or Hard (competing plausible actions requiring several constraints, sequencing, or trade-offs). Use exact matching for multiple-response items unless the practice source explicitly supplies a partial-credit rule. Keep partial credit separate from the binary readiness tally.
+- Pool only distinct, independently attempted, gradable questions whose original answers are available in the conversation or a practice history supplied by the user. Count each question once under its primary domain using the same ECO version. Exclude retries after feedback, ambiguous keys, and examples with answers already revealed. Correct a prior tally if the grading changes. State the evidence scope and never assume unseen history.
+- Show all three ECO domains in a compact table with correct/attempted, difficulty-adjusted practice score when available, estimated band, and evidence confidence. Under five eligible items in a domain, report **Insufficient evidence** and show any item-level signal separately. For five or more, compute the weighted proportion correct using weights Easy = 1, Medium = 1.25, Hard = 1.5. Compare the unrounded proportion against these local study bands: **Above Target** at 85% or more, **Target** at 70% to below 85%, **Below Target** at 55% to below 70%, and **Needs Improvement** below 55%. Treat 5–14 items as low confidence and 15 or more as at most moderate confidence. Flag narrow topic or difficulty coverage even when the sample is large.
+- For overall readiness, defer the estimate until every domain has at least 15 eligible items with varied topics and difficulties. Then combine the three weighted proportions using the applicable ECO domain weights and apply the same practice bands. Report the overall band as a qualitative readiness estimate and point out the domain that most needs review. These are study heuristics inspired by the [PMI sample result report](https://www.pmi.org/-/media/pmi/microsites/update-center/exam-result-report.pdf). Do not present the thresholds as PMI cutoffs or report a numerical probability of passing.
 
 ## References for solving and writing lessons
 
@@ -112,6 +121,7 @@ Why: [decisive scenario facts and concise rationale; calculation if needed]
 Other choices: [brief explanation for each unselected option]
 Takeaway: [conditional rule worth remembering]
 Confidence: [high / medium / low, with a concrete reason if uncertain]
+PMP readiness: [only with the user's own answer; item verdict, difficulty, domain table, and overall estimate or insufficient evidence]
 Cheat sheet: [link and entry IDs; added / refined / already covered / pending / not saved]
 Sources: [only sources actually consulted, when needed]
 ```
