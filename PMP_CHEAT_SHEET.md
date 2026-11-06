@@ -28,6 +28,7 @@ Tìm keyword và mục tiêu câu hỏi trong bảng, rồi đọc mục PMP tư
 | Slow approvals, another department, blocked, unable to resolve dependency | [PMP-020](#pmp-020) | Khi nhóm không tự tháo gỡ được blocker liên phòng ban, PM chủ động phối hợp và theo dõi đến khi giải quyết. |
 | Neighboring business, believes it will be affected, stakeholder register | [PMP-021](#pmp-021) | Nhận diện bên cho rằng mình chịu ảnh hưởng và lên cách trao đổi phù hợp ngay khi lập kế hoạch. |
 | Balanced matrix, functional manager, competing demands, key team member, milestone at risk | [PMP-022](#pmp-022) | Thương lượng phân bổ thời gian với functional manager trước khi chọn phương án dự phòng hoặc escalation. |
+| No additional revenue, financial return, user safety, nonfinancial benefits | [PMP-023](#pmp-023) | Cùng stakeholder đánh giá tổng giá trị trước khi ưu tiên hoặc loại tính năng. |
 
 Ví dụ: **frustrated + changing requirements + FIRST** → PMP-004 và PMP-001; **Sprint + prevent errors from happening again** → PMP-007.
 
@@ -362,3 +363,15 @@ Bổ sung cho PMP-006. Chọn công thức có giả định phù hợp với đ
 **Cách phân tích đáp án:** Trao đổi trực tiếp với functional manager về nhu cầu vận hành và tác động lên milestone. Thống nhất khung thời gian dành cho dự án, ưu tiên và cách xử lý khi vận hành phát sinh việc đột xuất.
 
 **Bẫy:** Escalation có thể phù hợp khi hai bên không đạt được thỏa thuận trong thẩm quyền. Giao lại công việc cần kiểm tra năng lực và thời gian bàn giao. Ghi issue log giúp theo dõi xung đột, còn việc điều chỉnh milestone cần xem xét tác động và thẩm quyền phê duyệt.
+
+<a id="pmp-023"></a>
+
+## PMP-023 | Đánh giá giá trị của tính năng ngoài doanh thu
+
+**Dấu hiệu:** Tính năng cải thiện an toàn người dùng, không tăng doanh thu trực tiếp, còn sponsor ưu tiên lợi tức tài chính. Domain chính là Process theo ECO tháng 7/2026, về giao giá trị.
+
+**Liên hệ lý thuyết:** PM cùng stakeholder xác định các thành phần của giá trị, gồm lợi ích tài chính và phi tài chính. Mức giảm nguy cơ cho người dùng là một lợi ích cần đánh giá cùng chi phí và các phương án khả thi.
+
+**Cách phân tích đáp án:** Làm rõ nguy cơ được giảm, người hưởng lợi, chi phí triển khai và cách đo hiệu quả. Dùng đánh giá này để hỗ trợ người có thẩm quyền quyết định ưu tiên.
+
+**Bẫy:** Không suy ra tính năng vô giá trị vì không có doanh thu mới, cũng không mặc định mọi phương án cải thiện an toàn đều phải được chọn. Nếu có yêu cầu an toàn bắt buộc, chỉ so sánh các phương án đáp ứng yêu cầu đó.
