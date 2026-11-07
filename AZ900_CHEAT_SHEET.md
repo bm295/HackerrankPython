@@ -23,6 +23,7 @@ Keywords giúp tìm phần hướng dẫn phù hợp; luôn đọc yêu cầu v�
 | telemetry, performance and health, alerts, user experiences, NOT use | [AZ900-015](#az900-015) | Monitor là nền tảng, Log Analytics truy vấn logs, Application Insights là APM; DevOps phục vụ phát triển. |
 | Advisor, recommendations, cost saving, reliability, real-time monitoring | [AZ900-016](#az900-016) | Advisor đề xuất tối ưu; Monitor theo dõi telemetry và cảnh báo. |
 | match Region, Availability Zone, Fault Domain, Georedundancy | [AZ900-017](#az900-017) | Phân biệt phạm vi địa lý, zone độc lập, phần cứng chung và sao chép liên region. |
+| direct OS control, specialized software, isolated environment | [AZ900-018](#az900-018) | Chọn VM theo nhu cầu kiểm soát guest OS; phân biệt với môi trường container được quản lý. |
 
 <a id="az900-001"></a>
 
@@ -261,3 +262,17 @@ Keywords giúp tìm phần hướng dẫn phù hợp; luôn đọc yêu cầu v�
 **Cách phân tích đáp án:** Với bốn mô tả theo thứ tự cô lập zone, chung điện/switch, khu vực địa lý và sao chép liên region, ghép Availability Zone → Fault Domain → Region → Georedundancy.
 
 **Bẫy:** Availability Zone không phải một phần bên trong một datacenter. Lợi ích fault domain có được khi phân bố instance qua nhiều domain. Geo replication và failover phụ thuộc dịch vụ và cấu hình, không mặc nhiên đồng bộ tức thời hay không mất dữ liệu.
+
+<a id="az900-018"></a>
+
+## AZ900-018 | Chọn VM khi cần kiểm soát hệ điều hành
+
+**Dấu hiệu:** Direct control over operating system, specialized software installations, complex computations, isolated hosting.
+
+**Nhóm kiến thức:** Describe Azure architecture and services → compute → Virtual Machines và containers.
+
+**Liên hệ lý thuyết:** Azure VM cung cấp guest OS có thể cấu hình, cài phần mềm và vá lỗi theo nhu cầu. Microsoft quản lý phần cứng vật lý; khách hàng quản lý guest OS và ứng dụng.
+
+**Cách phân tích đáp án:** Yêu cầu kiểm soát trực tiếp OS và cài phần mềm chuyên dụng hướng tới VM. Functions chạy mã theo trigger. ACI chạy container trên hạ tầng được quản lý. AKS điều phối container, có khả năng cấu hình node nhưng không phải lựa chọn đơn giản nhất khi đề chỉ yêu cầu môi trường OS riêng.
+
+**Bẫy:** Từ isolated hoặc sensitive data không đủ để chọn VM. Container cũng có khả năng cô lập; dữ kiện phân biệt là mức kiểm soát OS cần thiết. VM không mặc nhiên cấp host vật lý độc quyền hay bảo đảm tuân thủ tài chính; cần cấu hình bảo mật và vận hành phù hợp.
