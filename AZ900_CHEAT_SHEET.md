@@ -11,6 +11,7 @@ Keywords giúp tìm phần hướng dẫn phù hợp; luôn đọc yêu cầu v�
 | Infrastructure as Code, ARM, scripting language, Terraform, repeatability | [AZ900-003](#az900-003) | Phân biệt dịch vụ triển khai, ngôn ngữ khai báo và công cụ IaC. |
 | frequently accessed, monthly reports, historical backups, Hot, Cold, Archive | [AZ900-004](#az900-004) | Cân nhắc tần suất đọc, thời gian giữ, phí truy xuất và độ trễ rehydration. |
 | distributing traffic, multiple instances, availability zones within a region | [AZ900-005](#az900-005) | Load Balancer chia traffic tới backend khỏe mạnh; kiểm tra cấu hình đa zone và tách biệt autoscale. |
+| various formats, Blob, Table, Queue, File, Storage Account | [AZ900-006](#az900-006) | Nhận diện nhóm dịch vụ Azure Storage và phân biệt Table Storage với SQL Database. |
 
 <a id="az900-001"></a>
 
@@ -81,3 +82,17 @@ Keywords giúp tìm phần hướng dẫn phù hợp; luôn đọc yêu cầu v�
 **Cách phân tích đáp án:** Chọn Load Balancer khi yêu cầu chính là chia traffic giữa nhiều instance. Virtual Network cung cấp mạng riêng và kết nối. Logic Apps tự động hóa workflow và tích hợp. ARM triển khai và quản lý tài nguyên.
 
 **Bẫy:** Muốn chịu lỗi zone cần backend trải qua nhiều zone và frontend zone-redundant phù hợp. Load Balancer không tự tạo thêm VM hoặc tự bố trí backend đa zone. Autoscale tăng/giảm số instance là cơ chế riêng.
+
+<a id="az900-006"></a>
+
+## AZ900-006 | Storage Account và bốn dịch vụ lưu trữ
+
+**Dấu hiệu:** Store data in various formats; Blob, Table, Queue, File Storage.
+
+**Nhóm kiến thức:** Describe Azure architecture and services → Azure storage services → storage accounts.
+
+**Liên hệ lý thuyết:** Storage Account cung cấp namespace và phạm vi quản lý cho dữ liệu Azure Storage. Standard general-purpose v2 hỗ trợ Blob, Table, Queue và Azure Files. Blob lưu object như ảnh, video, backup; Table lưu dữ liệu NoSQL key-value; Queue lưu message cho xử lý bất đồng bộ; Files cung cấp file share.
+
+**Cách phân tích đáp án:** Với danh sách Blob/Table/Queue/File, chọn Azure Storage Account. Azure SQL Database là cơ sở dữ liệu quan hệ; Virtual Machines cung cấp compute; Microsoft Entra ID quản lý danh tính và truy cập.
+
+**Bẫy:** Từ “Table” trong Table Storage chỉ dịch vụ NoSQL, khác bảng quan hệ trong SQL Database. Loại Storage Account quyết định dịch vụ hỗ trợ; các tài khoản premium chuyên dụng không đồng thời hỗ trợ cả bốn dịch vụ.
