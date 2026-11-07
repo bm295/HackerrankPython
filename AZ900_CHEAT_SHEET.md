@@ -18,6 +18,7 @@ Keywords giúp tìm phần hướng dẫn phù hợp; luôn đọc yêu cầu v�
 | sovereign region, national cloud, China, East US, Germany | [AZ900-010](#az900-010) | Phân biệt loại cloud với đơn vị vận hành; kiểm tra thông tin Azure Germany cũ. |
 | varying traffic, lunchtime peaks, schedule, VM Scale Sets, Availability Sets | [AZ900-011](#az900-011) | Tải biến động cần autoscale bằng VMSS; Availability Sets xử lý phân tán lỗi và bảo trì. |
 | numerous subscriptions, business units, governance, delegate management | [AZ900-012](#az900-012) | Management Groups tạo scope trên subscription để tổ chức và kế thừa Policy/RBAC. |
+| Azure Policy, organizational standards, compliance, audit, deny | [AZ900-013](#az900-013) | Kiểm tra cấu hình theo quy tắc và effect; phân biệt Policy với RBAC, chi phí và monitoring. |
 
 <a id="az900-001"></a>
 
@@ -186,3 +187,17 @@ Keywords giúp tìm phần hướng dẫn phù hợp; luôn đọc yêu cầu v�
 **Cách phân tích đáp án:** Chọn Management Groups khi cần quản trị và phân quyền thống nhất trên nhiều subscription. Azure Policy định nghĩa và đánh giá/áp điều kiện tuân thủ; Management Groups cung cấp cấu trúc và scope để áp dụng. ARM templates khai báo triển khai hạ tầng; Functions thực thi mã theo trigger.
 
 **Bẫy:** Resource Group nằm trong một subscription. Management Group chứa subscription và management group con, không trực tiếp chứa VM hay resource group. Management Groups tự nó không định nghĩa mọi quy tắc hoặc cấp quyền; cần cấu hình Policy và RBAC tại scope phù hợp.
+
+<a id="az900-013"></a>
+
+## AZ900-013 | Mục đích của Azure Policy
+
+**Dấu hiệu:** Organizational standards, compliance, enforce rules, allowed locations, required tags.
+
+**Nhóm kiến thức:** Describe Azure management and governance → governance and compliance → Azure Policy.
+
+**Liên hệ lý thuyết:** Azure Policy đánh giá cấu hình tài nguyên theo quy tắc tổ chức và áp dụng hành vi tương ứng với policy effect. Ví dụ giới hạn region được phép, kiểm tra tag hoặc cấu hình bảo mật.
+
+**Cách phân tích đáp án:** Chọn tiêu chuẩn tổ chức và compliance khi hỏi mục đích chính. Cost Management theo dõi và phân tích chi phí; CI/CD tự động hóa phát triển và triển khai; Azure Monitor thu thập telemetry và cảnh báo. Policy có thể hỗ trợ kiểm soát chi phí qua giới hạn SKU nhưng mục đích rộng hơn là governance.
+
+**Bẫy:** Audit chỉ ghi nhận trạng thái tuân thủ; Deny chặn yêu cầu không phù hợp. Tài nguyên hiện hữu không tự được sửa bởi mọi policy; remediation phụ thuộc effect và cấu hình. RBAC kiểm soát ai được làm gì, Policy kiểm tra cấu hình tài nguyên có đáp ứng quy tắc hay không. Có thể gán Policy tại Management Group để áp xuống nhiều subscription.
