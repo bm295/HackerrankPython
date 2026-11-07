@@ -16,6 +16,7 @@ Keywords giúp tìm phần hướng dẫn phù hợp; luôn đọc yêu cầu v�
 | web tier, 250 GB, dedicated compute, custom domain, SSL | [AZ900-008](#az900-008) | Xác định 250 GB là quota App Service hay dữ liệu ở Azure Storage riêng trước khi chọn tier. |
 | consumption-based, pay only, capacity utilized, reservation, fixed-cost serverless | [AZ900-009](#az900-009) | Xác định đơn vị tính phí và phạm vi cam kết; consumption bao gồm nhiều loại tài nguyên. |
 | sovereign region, national cloud, China, East US, Germany | [AZ900-010](#az900-010) | Phân biệt loại cloud với đơn vị vận hành; kiểm tra thông tin Azure Germany cũ. |
+| varying traffic, lunchtime peaks, schedule, VM Scale Sets, Availability Sets | [AZ900-011](#az900-011) | Tải biến động cần autoscale bằng VMSS; Availability Sets xử lý phân tán lỗi và bảo trì. |
 
 <a id="az900-001"></a>
 
@@ -156,3 +157,17 @@ Keywords giúp tìm phần hướng dẫn phù hợp; luôn đọc yêu cầu v�
 **Cách phân tích đáp án:** Nếu hỏi lựa chọn nào không thuộc sovereign cloud, East US phù hợp. Nếu hỏi Microsoft không trực tiếp vận hành môi trường nào, Azure China phù hợp vì 21Vianet vận hành. Phải phân biệt hai tiêu chí.
 
 **Bẫy:** Câu hỏi dùng “Microsoft does not manage sovereign region” mơ hồ giữa phân loại cloud và đơn vị vận hành. Azure Germany sovereign cloud cũ đã đóng ngày 29/10/2021; các region public hiện tại ở Đức là phạm vi khác. Không dùng câu cũ có các mơ hồ này để đánh giá readiness.
+
+<a id="az900-011"></a>
+
+## AZ900-011 | VM Scale Sets và Availability Sets
+
+**Dấu hiệu:** Varying traffic, lunchtime peaks, scheduled scaling, efficient resource management, scalable and fault-tolerant.
+
+**Nhóm kiến thức:** Describe Azure architecture and services → compute → VM Scale Sets và availability options.
+
+**Liên hệ lý thuyết:** Virtual Machine Scale Sets quản lý một nhóm VM và hỗ trợ autoscale theo metric hoặc lịch. Availability Sets phân bố VM qua fault domains và update domains để giảm nguy cơ nhiều VM cùng gián đoạn vì lỗi hạ tầng hoặc bảo trì.
+
+**Cách phân tích đáp án:** Khi đề vừa cần high availability vừa cần tăng giảm số VM theo tải, chọn VM Scale Sets. Có thể đặt lịch tăng VM trước giờ cao điểm và giảm khi tải thấp. Azure Virtual Desktop cung cấp desktop/ứng dụng từ xa. VM riêng lẻ cần thêm cơ chế quản lý và mở rộng.
+
+**Bẫy:** Availability Sets không tự tăng giảm số lượng VM theo nhu cầu. VMSS cần cấu hình autoscale và triển khai nhiều instance, kết hợp load balancing và bố trí fault domain/zone phù hợp để đạt mục tiêu chịu lỗi. Scale Sets không tự đồng bộ dữ liệu ứng dụng giữa các VM.
