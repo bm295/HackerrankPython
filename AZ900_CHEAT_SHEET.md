@@ -15,6 +15,7 @@ Keywords giúp tìm phần hướng dẫn phù hợp; luôn đọc yêu cầu v�
 | fully serverless compute, Functions, Virtual Machines, triggers | [AZ900-007](#az900-007) | Functions chạy logic theo trigger; VM là IaaS; Cosmos DB serverless phục vụ database. |
 | web tier, 250 GB, dedicated compute, custom domain, SSL | [AZ900-008](#az900-008) | Xác định 250 GB là quota App Service hay dữ liệu ở Azure Storage riêng trước khi chọn tier. |
 | consumption-based, pay only, capacity utilized, reservation, fixed-cost serverless | [AZ900-009](#az900-009) | Xác định đơn vị tính phí và phạm vi cam kết; consumption bao gồm nhiều loại tài nguyên. |
+| sovereign region, national cloud, China, East US, Germany | [AZ900-010](#az900-010) | Phân biệt loại cloud với đơn vị vận hành; kiểm tra thông tin Azure Germany cũ. |
 
 <a id="az900-001"></a>
 
@@ -141,3 +142,17 @@ Keywords giúp tìm phần hướng dẫn phù hợp; luôn đọc yêu cầu v�
 **Cách phân tích đáp án:** Phát biểu chỉ trả data transfer bỏ qua compute và storage nên sai. Phát biểu serverless là fixed-cost consumption cũng sai. Reservation là cam kết kỳ hạn để được giảm giá cho usage phù hợp trong phạm vi đã mua, thay cho đơn giá pay-as-you-go của phần đó.
 
 **Bẫy:** Giảm CPU utilization bên trong VM đang được cấp phát không tự giảm phí compute của VM. Reservation không bao phủ mọi khoản trong hóa đơn; VM reservation vẫn có thể phát sinh phí storage, networking và phần mềm riêng. Các hosting plan serverless khác nhau có cách tính phí khác nhau.
+
+<a id="az900-010"></a>
+
+## AZ900-010 | Sovereign cloud, region public và đơn vị vận hành
+
+**Dấu hiệu:** Sovereign region, national cloud, Azure China, US Government, East US, Azure Germany.
+
+**Nhóm kiến thức:** Describe Azure architecture and services → core architectural components → regions và sovereign clouds.
+
+**Liên hệ lý thuyết:** Sovereign/national cloud là môi trường Azure tách biệt để đáp ứng yêu cầu chủ quyền dữ liệu và tuân thủ. Azure Government và Azure China thuộc nhóm này; Azure China do 21Vianet vận hành. East US là region của Azure public cloud.
+
+**Cách phân tích đáp án:** Nếu hỏi lựa chọn nào không thuộc sovereign cloud, East US phù hợp. Nếu hỏi Microsoft không trực tiếp vận hành môi trường nào, Azure China phù hợp vì 21Vianet vận hành. Phải phân biệt hai tiêu chí.
+
+**Bẫy:** Câu hỏi dùng “Microsoft does not manage sovereign region” mơ hồ giữa phân loại cloud và đơn vị vận hành. Azure Germany sovereign cloud cũ đã đóng ngày 29/10/2021; các region public hiện tại ở Đức là phạm vi khác. Không dùng câu cũ có các mơ hồ này để đánh giá readiness.
