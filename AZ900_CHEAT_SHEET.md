@@ -13,6 +13,7 @@ Keywords giúp tìm phần hướng dẫn phù hợp; luôn đọc yêu cầu v�
 | distributing traffic, multiple instances, availability zones within a region | [AZ900-005](#az900-005) | Load Balancer chia traffic tới backend khỏe mạnh; kiểm tra cấu hình đa zone và tách biệt autoscale. |
 | various formats, Blob, Table, Queue, File, Storage Account | [AZ900-006](#az900-006) | Nhận diện nhóm dịch vụ Azure Storage và phân biệt Table Storage với SQL Database. |
 | fully serverless compute, Functions, Virtual Machines, triggers | [AZ900-007](#az900-007) | Functions chạy logic theo trigger; VM là IaaS; Cosmos DB serverless phục vụ database. |
+| web tier, 250 GB, dedicated compute, custom domain, SSL | [AZ900-008](#az900-008) | Xác định 250 GB là quota App Service hay dữ liệu ở Azure Storage riêng trước khi chọn tier. |
 
 <a id="az900-001"></a>
 
@@ -111,3 +112,17 @@ Keywords giúp tìm phần hướng dẫn phù hợp; luôn đọc yêu cầu v�
 **Cách phân tích đáp án:** Chọn Functions khi cần serverless compute để thực thi logic ứng dụng. Key Vault quản lý secrets, keys và certificates. Cosmos DB là database và có chế độ serverless. Cần đọc cả từ “compute” và phạm vi “listed”.
 
 **Bẫy:** “Serverless” vẫn sử dụng máy chủ do nhà cung cấp quản lý. Functions có nhiều hosting plan nên cách tính phí và mở rộng phụ thuộc plan. Không suy rộng rằng Functions là dịch vụ serverless duy nhất của Azure.
+
+<a id="az900-008"></a>
+
+## AZ900-008 | App Service plan và dung lượng lưu trữ bên ngoài
+
+**Dấu hiệu:** Web tier, custom domain, SSL, dedicated compute, 250 GB, minimize costs.
+
+**Nhóm kiến thức:** Describe Azure architecture and services → compute → web app hosting.
+
+**Liên hệ lý thuyết:** Basic, Standard và Premium là các tier dedicated compute của App Service. Quota storage của plan và dung lượng Azure Storage riêng là hai phạm vi khác nhau. Bảng quota App Service được kiểm tra ngày 07/11/2026 ghi Basic 10 GB, Standard 50 GB, Premium 250 GB, Shared 1 GB.
+
+**Cách phân tích đáp án:** Nếu chính App Service plan phải cung cấp 250 GB thì chọn Premium trong bốn lựa chọn Shared/Basic/Standard/Premium. Standard không đạt quota đó. Nếu file đặt trong Blob Storage bên ngoài, không dùng 250 GB này để tự động ép chọn Premium; xét riêng yêu cầu compute, TLS và tính năng của web app.
+
+**Bẫy:** Custom domain và SSL không tự buộc chọn Standard hay Premium; cần phân biệt SNI TLS với IP-based TLS. Các quota và tính năng phụ thuộc SKU và phiên bản, cần kiểm tra khi áp dụng. Đề trộn Power Apps Portal với việc chọn App Service plan cần làm rõ mô hình hosting trước khi triển khai thực tế.
