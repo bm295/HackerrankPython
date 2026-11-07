@@ -20,6 +20,7 @@ Keywords giúp tìm phần hướng dẫn phù hợp; luôn đọc yêu cầu v�
 | numerous subscriptions, business units, governance, delegate management | [AZ900-012](#az900-012) | Management Groups tạo scope trên subscription để tổ chức và kế thừa Policy/RBAC. |
 | Azure Policy, organizational standards, compliance, audit, deny | [AZ900-013](#az900-013) | Kiểm tra cấu hình theo quy tắc và effect; phân biệt Policy với RBAC, chi phí và monitoring. |
 | Azure CLI, list all VMs, az vm list | [AZ900-014](#az900-014) | az + nhóm vm + thao tác list; kiểm tra subscription và resource-group scope. |
+| telemetry, performance and health, alerts, user experiences, NOT use | [AZ900-015](#az900-015) | Monitor là nền tảng, Log Analytics truy vấn logs, Application Insights là APM; DevOps phục vụ phát triển. |
 
 <a id="az900-001"></a>
 
@@ -216,3 +217,17 @@ Keywords giúp tìm phần hướng dẫn phù hợp; luôn đọc yêu cầu v�
 **Cách phân tích đáp án:** Cấu trúc là `az <nhóm lệnh> <thao tác>`; VM dùng nhóm `vm`, liệt kê dùng `list`. Có thể thêm `--output table` để hiển thị bảng, `--subscription <ID>` để chọn subscription, hoặc `--resource-group <tên>` để giới hạn một resource group. PowerShell dùng `Get-AzVM`.
 
 **Bẫy:** `azure vm list` thuộc cú pháp CLI cũ. `azure list vm` và `az list virtualmachines` không phải cú pháp hiện tại để liệt kê VM. Một lệnh không mặc nhiên quét mọi subscription; kết quả phụ thuộc quyền truy cập và subscription đang chọn.
+
+<a id="az900-015"></a>
+
+## AZ900-015 | Monitor, Log Analytics, Application Insights và Azure DevOps
+
+**Dấu hiệu:** Performance and health, telemetry, alerts, user experiences, NOT use.
+
+**Nhóm kiến thức:** Describe Azure management and governance → monitoring tools → Azure Monitor, Log Analytics và Application Insights.
+
+**Liên hệ lý thuyết:** Azure Monitor thu thập, phân tích và phản ứng với telemetry. Log Analytics là công cụ truy vấn log bằng KQL trong Azure Monitor. Application Insights là tính năng APM của Azure Monitor, theo dõi request, lỗi, dependency, hiệu năng và trải nghiệm người dùng.
+
+**Cách phân tích đáp án:** Nếu hỏi dịch vụ không phù hợp làm công cụ chính cho giám sát runtime, chọn Azure DevOps trong nhóm lựa chọn này. Azure DevOps cung cấp công cụ quản lý mã nguồn, công việc và CI/CD. Ba lựa chọn còn lại là các phần của hệ sinh thái monitoring, có vai trò bổ trợ.
+
+**Bẫy:** Azure DevOps có thể tích hợp alerts hoặc dùng dữ liệu monitoring trong quy trình triển khai; điều đó không biến nó thành công cụ APM chính. Telemetry cần được thu thập và cấu hình phù hợp; không mặc nhiên có toàn bộ log, trace và dữ liệu người dùng ngay khi tạo tài nguyên.
