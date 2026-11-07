@@ -10,6 +10,7 @@ Keywords giúp tìm phần hướng dẫn phù hợp; luôn đọc yêu cầu v�
 | cloud arrangement, support infrastructure in a data center | [AZ900-002](#az900-002) | Xác định ai vận hành hạ tầng vật lý và phân biệt cloud deployment model với serverless. |
 | Infrastructure as Code, ARM, scripting language, Terraform, repeatability | [AZ900-003](#az900-003) | Phân biệt dịch vụ triển khai, ngôn ngữ khai báo và công cụ IaC. |
 | frequently accessed, monthly reports, historical backups, Hot, Cold, Archive | [AZ900-004](#az900-004) | Cân nhắc tần suất đọc, thời gian giữ, phí truy xuất và độ trễ rehydration. |
+| distributing traffic, multiple instances, availability zones within a region | [AZ900-005](#az900-005) | Load Balancer chia traffic tới backend khỏe mạnh; kiểm tra cấu hình đa zone và tách biệt autoscale. |
 
 <a id="az900-001"></a>
 
@@ -66,3 +67,17 @@ Keywords giúp tìm phần hướng dẫn phù hợp; luôn đọc yêu cầu v�
 **Cách phân tích đáp án:** Với tổ hợp Hot/Cold/Archive cho giao dịch thường xuyên/báo cáo tháng/backup dài hạn, đây là lựa chọn hợp lý nhất trong các phương án nếu báo cáo được giữ đủ lâu và backup chấp nhận độ trễ khôi phục. Dùng Hot cho backup ít đọc làm tăng chi phí lưu.
 
 **Bẫy:** “Báo cáo tháng” không tự quyết định Cold. Cần xét dung lượng đọc, số lần đọc, thời gian giữ và chi phí giao dịch. Thời gian lưu tối thiểu tính phí thường là Cool 30 ngày, Cold 90 ngày trên tài khoản general-purpose v2, Archive 180 ngày. Xóa hoặc chuyển tier sớm có thể phát sinh phí. Archive yêu cầu rehydration nên không phù hợp yêu cầu đọc ngay.
+
+<a id="az900-005"></a>
+
+## AZ900-005 | Phân phối traffic đa zone bằng Azure Load Balancer
+
+**Dấu hiệu:** Automatically distributing traffic, multiple instances, different availability zones within a region.
+
+**Nhóm kiến thức:** Describe Azure architecture and services → networking → load balancing.
+
+**Liên hệ lý thuyết:** Azure Load Balancer phân phối traffic TCP/UDP ở Layer 4 tới các instance khỏe mạnh trong backend pool. Health probes phát hiện backend lỗi để ngừng gửi kết nối mới đến backend đó.
+
+**Cách phân tích đáp án:** Chọn Load Balancer khi yêu cầu chính là chia traffic giữa nhiều instance. Virtual Network cung cấp mạng riêng và kết nối. Logic Apps tự động hóa workflow và tích hợp. ARM triển khai và quản lý tài nguyên.
+
+**Bẫy:** Muốn chịu lỗi zone cần backend trải qua nhiều zone và frontend zone-redundant phù hợp. Load Balancer không tự tạo thêm VM hoặc tự bố trí backend đa zone. Autoscale tăng/giảm số instance là cơ chế riêng.
