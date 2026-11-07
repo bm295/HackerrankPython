@@ -14,6 +14,7 @@ Keywords giúp tìm phần hướng dẫn phù hợp; luôn đọc yêu cầu v�
 | various formats, Blob, Table, Queue, File, Storage Account | [AZ900-006](#az900-006) | Nhận diện nhóm dịch vụ Azure Storage và phân biệt Table Storage với SQL Database. |
 | fully serverless compute, Functions, Virtual Machines, triggers | [AZ900-007](#az900-007) | Functions chạy logic theo trigger; VM là IaaS; Cosmos DB serverless phục vụ database. |
 | web tier, 250 GB, dedicated compute, custom domain, SSL | [AZ900-008](#az900-008) | Xác định 250 GB là quota App Service hay dữ liệu ở Azure Storage riêng trước khi chọn tier. |
+| consumption-based, pay only, capacity utilized, reservation, fixed-cost serverless | [AZ900-009](#az900-009) | Xác định đơn vị tính phí và phạm vi cam kết; consumption bao gồm nhiều loại tài nguyên. |
 
 <a id="az900-001"></a>
 
@@ -126,3 +127,17 @@ Keywords giúp tìm phần hướng dẫn phù hợp; luôn đọc yêu cầu v�
 **Cách phân tích đáp án:** Nếu chính App Service plan phải cung cấp 250 GB thì chọn Premium trong bốn lựa chọn Shared/Basic/Standard/Premium. Standard không đạt quota đó. Nếu file đặt trong Blob Storage bên ngoài, không dùng 250 GB này để tự động ép chọn Premium; xét riêng yêu cầu compute, TLS và tính năng của web app.
 
 **Bẫy:** Custom domain và SSL không tự buộc chọn Standard hay Premium; cần phân biệt SNI TLS với IP-based TLS. Các quota và tính năng phụ thuộc SKU và phiên bản, cần kiểm tra khi áp dụng. Đề trộn Power Apps Portal với việc chọn App Service plan cần làm rõ mô hình hosting trước khi triển khai thực tế.
+
+<a id="az900-009"></a>
+
+## AZ900-009 | Consumption-based pricing và phạm vi reservation
+
+**Dấu hiệu:** Pay only for data sent, capacity utilized, long-term reservation, serverless fixed cost.
+
+**Nhóm kiến thức:** Describe cloud concepts → consumption-based model và cloud pricing models.
+
+**Liên hệ lý thuyết:** Consumption-based pricing tính phí theo đơn vị sử dụng có thể là thời gian compute, dung lượng lưu, request hoặc data transfer. Giảm lượng tài nguyên tính phí thường giảm chi phí biến đổi. Serverless Consumption tính phí theo hoạt động sử dụng thay vì một tổng phí cố định.
+
+**Cách phân tích đáp án:** Phát biểu chỉ trả data transfer bỏ qua compute và storage nên sai. Phát biểu serverless là fixed-cost consumption cũng sai. Reservation là cam kết kỳ hạn để được giảm giá cho usage phù hợp trong phạm vi đã mua, thay cho đơn giá pay-as-you-go của phần đó.
+
+**Bẫy:** Giảm CPU utilization bên trong VM đang được cấp phát không tự giảm phí compute của VM. Reservation không bao phủ mọi khoản trong hóa đơn; VM reservation vẫn có thể phát sinh phí storage, networking và phần mềm riêng. Các hosting plan serverless khác nhau có cách tính phí khác nhau.
