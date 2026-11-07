@@ -12,6 +12,7 @@ Keywords giúp tìm phần hướng dẫn phù hợp; luôn đọc yêu cầu v�
 | frequently accessed, monthly reports, historical backups, Hot, Cold, Archive | [AZ900-004](#az900-004) | Cân nhắc tần suất đọc, thời gian giữ, phí truy xuất và độ trễ rehydration. |
 | distributing traffic, multiple instances, availability zones within a region | [AZ900-005](#az900-005) | Load Balancer chia traffic tới backend khỏe mạnh; kiểm tra cấu hình đa zone và tách biệt autoscale. |
 | various formats, Blob, Table, Queue, File, Storage Account | [AZ900-006](#az900-006) | Nhận diện nhóm dịch vụ Azure Storage và phân biệt Table Storage với SQL Database. |
+| fully serverless compute, Functions, Virtual Machines, triggers | [AZ900-007](#az900-007) | Functions chạy logic theo trigger; VM là IaaS; Cosmos DB serverless phục vụ database. |
 
 <a id="az900-001"></a>
 
@@ -96,3 +97,17 @@ Keywords giúp tìm phần hướng dẫn phù hợp; luôn đọc yêu cầu v�
 **Cách phân tích đáp án:** Với danh sách Blob/Table/Queue/File, chọn Azure Storage Account. Azure SQL Database là cơ sở dữ liệu quan hệ; Virtual Machines cung cấp compute; Microsoft Entra ID quản lý danh tính và truy cập.
 
 **Bẫy:** Từ “Table” trong Table Storage chỉ dịch vụ NoSQL, khác bảng quan hệ trong SQL Database. Loại Storage Account quyết định dịch vụ hỗ trợ; các tài khoản premium chuyên dụng không đồng thời hỗ trợ cả bốn dịch vụ.
+
+<a id="az900-007"></a>
+
+## AZ900-007 | Azure Functions và serverless compute
+
+**Dấu hiệu:** Serverless compute, event-driven code, triggers.
+
+**Nhóm kiến thức:** Describe Azure architecture and services → Azure compute → functions.
+
+**Liên hệ lý thuyết:** Azure Functions chạy mã ứng dụng theo trigger như HTTP, timer hoặc message mà người dùng không trực tiếp quản lý máy chủ nền. Azure Virtual Machines là IaaS, khách hàng quản lý hệ điều hành khách và phần mềm.
+
+**Cách phân tích đáp án:** Chọn Functions khi cần serverless compute để thực thi logic ứng dụng. Key Vault quản lý secrets, keys và certificates. Cosmos DB là database và có chế độ serverless. Cần đọc cả từ “compute” và phạm vi “listed”.
+
+**Bẫy:** “Serverless” vẫn sử dụng máy chủ do nhà cung cấp quản lý. Functions có nhiều hosting plan nên cách tính phí và mở rộng phụ thuộc plan. Không suy rộng rằng Functions là dịch vụ serverless duy nhất của Azure.
