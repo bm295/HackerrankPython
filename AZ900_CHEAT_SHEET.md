@@ -9,6 +9,7 @@ Keywords giúp tìm phần hướng dẫn phù hợp; luôn đọc yêu cầu v�
 | hardware failures, data center outages, remain operational, Availability Zones | [AZ900-001](#az900-001) | Cần high availability qua nhiều zone trong cùng region; backup chỉ hỗ trợ khôi phục. |
 | cloud arrangement, support infrastructure in a data center | [AZ900-002](#az900-002) | Xác định ai vận hành hạ tầng vật lý và phân biệt cloud deployment model với serverless. |
 | Infrastructure as Code, ARM, scripting language, Terraform, repeatability | [AZ900-003](#az900-003) | Phân biệt dịch vụ triển khai, ngôn ngữ khai báo và công cụ IaC. |
+| frequently accessed, monthly reports, historical backups, Hot, Cold, Archive | [AZ900-004](#az900-004) | Cân nhắc tần suất đọc, thời gian giữ, phí truy xuất và độ trễ rehydration. |
 
 <a id="az900-001"></a>
 
@@ -51,3 +52,17 @@ Keywords giúp tìm phần hướng dẫn phù hợp; luôn đọc yêu cầu v�
 **Cách phân tích đáp án:** IaC mô tả hạ tầng bằng mã để triển khai nhất quán và lặp lại được. Thay đổi thông thường đi qua mã cấu hình và quy trình triển khai.
 
 **Bẫy:** Cụm “ARM is a scripting language” nhầm dịch vụ ARM với cách viết cấu hình hạ tầng. Thay đổi tài nguyên trực tiếp qua Portal có thể khiến cấu hình thực tế lệch khỏi mã.
+
+<a id="az900-004"></a>
+
+## AZ900-004 | Chọn Blob Storage access tier theo tần suất và độ trễ
+
+**Dấu hiệu:** Frequently accessed transactions, monthly reports, historical backups, storage cost optimization.
+
+**Nhóm kiến thức:** Describe Azure architecture and services → Azure storage services → storage tiers.
+
+**Liên hệ lý thuyết:** Hot phù hợp dữ liệu truy cập thường xuyên. Cool và Cold giữ dữ liệu online, truy cập nhanh, giảm chi phí lưu nhưng tăng chi phí đọc. Archive dành cho dữ liệu rất ít truy cập và chấp nhận chờ hàng giờ để rehydrate trước khi đọc.
+
+**Cách phân tích đáp án:** Với tổ hợp Hot/Cold/Archive cho giao dịch thường xuyên/báo cáo tháng/backup dài hạn, đây là lựa chọn hợp lý nhất trong các phương án nếu báo cáo được giữ đủ lâu và backup chấp nhận độ trễ khôi phục. Dùng Hot cho backup ít đọc làm tăng chi phí lưu.
+
+**Bẫy:** “Báo cáo tháng” không tự quyết định Cold. Cần xét dung lượng đọc, số lần đọc, thời gian giữ và chi phí giao dịch. Thời gian lưu tối thiểu tính phí thường là Cool 30 ngày, Cold 90 ngày trên tài khoản general-purpose v2, Archive 180 ngày. Xóa hoặc chuyển tier sớm có thể phát sinh phí. Archive yêu cầu rehydration nên không phù hợp yêu cầu đọc ngay.
