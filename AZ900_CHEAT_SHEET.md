@@ -17,6 +17,7 @@ Keywords giúp tìm phần hướng dẫn phù hợp; luôn đọc yêu cầu v�
 | consumption-based, pay only, capacity utilized, reservation, fixed-cost serverless | [AZ900-009](#az900-009) | Xác định đơn vị tính phí và phạm vi cam kết; consumption bao gồm nhiều loại tài nguyên. |
 | sovereign region, national cloud, China, East US, Germany | [AZ900-010](#az900-010) | Phân biệt loại cloud với đơn vị vận hành; kiểm tra thông tin Azure Germany cũ. |
 | varying traffic, lunchtime peaks, schedule, VM Scale Sets, Availability Sets | [AZ900-011](#az900-011) | Tải biến động cần autoscale bằng VMSS; Availability Sets xử lý phân tán lỗi và bảo trì. |
+| numerous subscriptions, business units, governance, delegate management | [AZ900-012](#az900-012) | Management Groups tạo scope trên subscription để tổ chức và kế thừa Policy/RBAC. |
 
 <a id="az900-001"></a>
 
@@ -171,3 +172,17 @@ Keywords giúp tìm phần hướng dẫn phù hợp; luôn đọc yêu cầu v�
 **Cách phân tích đáp án:** Khi đề vừa cần high availability vừa cần tăng giảm số VM theo tải, chọn VM Scale Sets. Có thể đặt lịch tăng VM trước giờ cao điểm và giảm khi tải thấp. Azure Virtual Desktop cung cấp desktop/ứng dụng từ xa. VM riêng lẻ cần thêm cơ chế quản lý và mở rộng.
 
 **Bẫy:** Availability Sets không tự tăng giảm số lượng VM theo nhu cầu. VMSS cần cấu hình autoscale và triển khai nhiều instance, kết hợp load balancing và bố trí fault domain/zone phù hợp để đạt mục tiêu chịu lỗi. Scale Sets không tự đồng bộ dữ liệu ứng dụng giữa các VM.
+
+<a id="az900-012"></a>
+
+## AZ900-012 | Management Groups quản lý nhiều subscription
+
+**Dấu hiệu:** Numerous subscriptions, multiple business units, organize resources, enforce policies, delegate management.
+
+**Nhóm kiến thức:** Describe Azure architecture and services → core architectural components → management groups và resource hierarchy. Có liên quan governance và access control.
+
+**Liên hệ lý thuyết:** Management Groups tổ chức các subscription thành cây phân cấp, cung cấp scope phía trên subscription. Azure Policy assignments và Azure RBAC role assignments đặt tại management group được kế thừa xuống các scope con theo cơ chế tương ứng.
+
+**Cách phân tích đáp án:** Chọn Management Groups khi cần quản trị và phân quyền thống nhất trên nhiều subscription. Azure Policy định nghĩa và đánh giá/áp điều kiện tuân thủ; Management Groups cung cấp cấu trúc và scope để áp dụng. ARM templates khai báo triển khai hạ tầng; Functions thực thi mã theo trigger.
+
+**Bẫy:** Resource Group nằm trong một subscription. Management Group chứa subscription và management group con, không trực tiếp chứa VM hay resource group. Management Groups tự nó không định nghĩa mọi quy tắc hoặc cấp quyền; cần cấu hình Policy và RBAC tại scope phù hợp.
