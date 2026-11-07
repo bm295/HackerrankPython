@@ -8,6 +8,7 @@ Keywords giúp tìm phần hướng dẫn phù hợp; luôn đọc yêu cầu v�
 | --- | --- | --- |
 | hardware failures, data center outages, remain operational, Availability Zones | [AZ900-001](#az900-001) | Cần high availability qua nhiều zone trong cùng region; backup chỉ hỗ trợ khôi phục. |
 | cloud arrangement, support infrastructure in a data center | [AZ900-002](#az900-002) | Xác định ai vận hành hạ tầng vật lý và phân biệt cloud deployment model với serverless. |
+| Infrastructure as Code, ARM, scripting language, Terraform, repeatability | [AZ900-003](#az900-003) | Phân biệt dịch vụ triển khai, ngôn ngữ khai báo và công cụ IaC. |
 
 <a id="az900-001"></a>
 
@@ -36,3 +37,17 @@ Keywords giúp tìm phần hướng dẫn phù hợp; luôn đọc yêu cầu v�
 **Cách phân tích đáp án:** Khi đề hỏi mô hình triển khai mà khách hàng giao việc vận hành datacenter vật lý cho nhà cung cấp, chọn public cloud. Serverless mô tả cách chạy workload mà khách hàng không trực tiếp quản lý máy chủ.
 
 **Bẫy:** Việc thuê bên thứ ba lưu trữ private cloud không biến môi trường dành riêng đó thành public cloud. Trong public cloud, khách hàng vẫn có trách nhiệm với dữ liệu và quyền truy cập.
+
+<a id="az900-003"></a>
+
+## AZ900-003 | Phân biệt ARM, ARM templates, Bicep và Terraform
+
+**Dấu hiệu:** Infrastructure as Code, scripting language, repeatability, manual Portal changes, Terraform providers.
+
+**Nhóm kiến thức:** Describe Azure management and governance → managing and deploying Azure resources → IaC, ARM và ARM templates.
+
+**Liên hệ lý thuyết:** Azure Resource Manager (ARM) là dịch vụ triển khai và quản lý tài nguyên Azure. ARM templates là tệp JSON khai báo tài nguyên và cấu hình. Bicep là ngôn ngữ khai báo cho tài nguyên Azure. Terraform là công cụ IaC hỗ trợ Azure và các nền tảng khác thông qua provider.
+
+**Cách phân tích đáp án:** IaC mô tả hạ tầng bằng mã để triển khai nhất quán và lặp lại được. Thay đổi thông thường đi qua mã cấu hình và quy trình triển khai.
+
+**Bẫy:** Cụm “ARM is a scripting language” nhầm dịch vụ ARM với cách viết cấu hình hạ tầng. Thay đổi tài nguyên trực tiếp qua Portal có thể khiến cấu hình thực tế lệch khỏi mã.
