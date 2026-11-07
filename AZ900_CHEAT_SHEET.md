@@ -22,6 +22,7 @@ Keywords giúp tìm phần hướng dẫn phù hợp; luôn đọc yêu cầu v�
 | Azure CLI, list all VMs, az vm list | [AZ900-014](#az900-014) | az + nhóm vm + thao tác list; kiểm tra subscription và resource-group scope. |
 | telemetry, performance and health, alerts, user experiences, NOT use | [AZ900-015](#az900-015) | Monitor là nền tảng, Log Analytics truy vấn logs, Application Insights là APM; DevOps phục vụ phát triển. |
 | Advisor, recommendations, cost saving, reliability, real-time monitoring | [AZ900-016](#az900-016) | Advisor đề xuất tối ưu; Monitor theo dõi telemetry và cảnh báo. |
+| match Region, Availability Zone, Fault Domain, Georedundancy | [AZ900-017](#az900-017) | Phân biệt phạm vi địa lý, zone độc lập, phần cứng chung và sao chép liên region. |
 
 <a id="az900-001"></a>
 
@@ -246,3 +247,17 @@ Keywords giúp tìm phần hướng dẫn phù hợp; luôn đọc yêu cầu v�
 **Cách phân tích đáp án:** Chọn real-time performance monitoring khi hỏi chức năng không thuộc mục đích chính của Advisor. Azure Monitor phục vụ thu thập telemetry, phân tích và cảnh báo. Advisor đưa đề xuất tối ưu hiệu năng, giảm chi phí và cải thiện độ tin cậy dựa trên dữ liệu và cấu hình.
 
 **Bẫy:** Advisor dùng telemetry không có nghĩa nó là công cụ dashboard/alert giám sát thời gian thực. Nhóm Performance của Advisor nói về khuyến nghị cải thiện. Khuyến nghị reliability cần được xem xét và triển khai phù hợp để mang lại hiệu quả.
+
+<a id="az900-017"></a>
+
+## AZ900-017 | Region, Zone, Fault Domain và Georedundancy
+
+**Dấu hiệu:** Match datacenter concepts; common power source and network switch; different geographic regions.
+
+**Nhóm kiến thức:** Describe Azure architecture and services → core architectural components.
+
+**Liên hệ lý thuyết:** Region là khu vực triển khai gồm các datacenter kết nối với nhau. Availability Zone là nhóm datacenter tách biệt trong cùng region với điện, mạng và làm mát độc lập. Fault Domain nhóm phần cứng dùng chung nguồn điện và network switch. Georedundancy tạo bản sao tại các region khác nhau.
+
+**Cách phân tích đáp án:** Với bốn mô tả theo thứ tự cô lập zone, chung điện/switch, khu vực địa lý và sao chép liên region, ghép Availability Zone → Fault Domain → Region → Georedundancy.
+
+**Bẫy:** Availability Zone không phải một phần bên trong một datacenter. Lợi ích fault domain có được khi phân bố instance qua nhiều domain. Geo replication và failover phụ thuộc dịch vụ và cấu hình, không mặc nhiên đồng bộ tức thời hay không mất dữ liệu.
