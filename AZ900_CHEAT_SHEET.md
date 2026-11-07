@@ -19,6 +19,7 @@ Keywords giúp tìm phần hướng dẫn phù hợp; luôn đọc yêu cầu v�
 | varying traffic, lunchtime peaks, schedule, VM Scale Sets, Availability Sets | [AZ900-011](#az900-011) | Tải biến động cần autoscale bằng VMSS; Availability Sets xử lý phân tán lỗi và bảo trì. |
 | numerous subscriptions, business units, governance, delegate management | [AZ900-012](#az900-012) | Management Groups tạo scope trên subscription để tổ chức và kế thừa Policy/RBAC. |
 | Azure Policy, organizational standards, compliance, audit, deny | [AZ900-013](#az900-013) | Kiểm tra cấu hình theo quy tắc và effect; phân biệt Policy với RBAC, chi phí và monitoring. |
+| Azure CLI, list all VMs, az vm list | [AZ900-014](#az900-014) | az + nhóm vm + thao tác list; kiểm tra subscription và resource-group scope. |
 
 <a id="az900-001"></a>
 
@@ -201,3 +202,17 @@ Keywords giúp tìm phần hướng dẫn phù hợp; luôn đọc yêu cầu v�
 **Cách phân tích đáp án:** Chọn tiêu chuẩn tổ chức và compliance khi hỏi mục đích chính. Cost Management theo dõi và phân tích chi phí; CI/CD tự động hóa phát triển và triển khai; Azure Monitor thu thập telemetry và cảnh báo. Policy có thể hỗ trợ kiểm soát chi phí qua giới hạn SKU nhưng mục đích rộng hơn là governance.
 
 **Bẫy:** Audit chỉ ghi nhận trạng thái tuân thủ; Deny chặn yêu cầu không phù hợp. Tài nguyên hiện hữu không tự được sửa bởi mọi policy; remediation phụ thuộc effect và cấu hình. RBAC kiểm soát ai được làm gì, Policy kiểm tra cấu hình tài nguyên có đáp ứng quy tắc hay không. Có thể gán Policy tại Management Group để áp xuống nhiều subscription.
+
+<a id="az900-014"></a>
+
+## AZ900-014 | Liệt kê VM bằng Azure CLI
+
+**Dấu hiệu:** Azure CLI, list all virtual machines, subscription.
+
+**Nhóm kiến thức:** Describe Azure management and governance → managing and deploying resources → Azure CLI.
+
+**Liên hệ lý thuyết:** Azure CLI hiện tại dùng tiền tố `az`. Lệnh `az vm list` liệt kê VM trong subscription được chọn, với phạm vi chịu ảnh hưởng của tùy chọn và cấu hình mặc định.
+
+**Cách phân tích đáp án:** Cấu trúc là `az <nhóm lệnh> <thao tác>`; VM dùng nhóm `vm`, liệt kê dùng `list`. Có thể thêm `--output table` để hiển thị bảng, `--subscription <ID>` để chọn subscription, hoặc `--resource-group <tên>` để giới hạn một resource group. PowerShell dùng `Get-AzVM`.
+
+**Bẫy:** `azure vm list` thuộc cú pháp CLI cũ. `azure list vm` và `az list virtualmachines` không phải cú pháp hiện tại để liệt kê VM. Một lệnh không mặc nhiên quét mọi subscription; kết quả phụ thuộc quyền truy cập và subscription đang chọn.
