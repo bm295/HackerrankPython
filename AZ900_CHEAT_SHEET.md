@@ -30,6 +30,7 @@ Keywords giúp tìm phần hướng dẫn phù hợp; luôn đọc yêu cầu v�
 | containers dependencies, Docker, full OS, Kubernetes | [AZ900-022](#az900-022) | Image đóng gói dependencies; container chia sẻ kernel; Kubernetes điều phối đa môi trường. |
 | slow performance, delayed response, latency, initial concern | [AZ900-023](#az900-023) | Latency mô tả độ trễ; cần đo để tìm nguyên nhân chậm. |
 | regulated workloads, move to Azure, retain private infrastructure, hybrid | [AZ900-024](#az900-024) | Hybrid phù hợp khi kết hợp public với private/on-premises theo yêu cầu workload. |
+| spare capacity, tolerate interruptions, batch, commit in advance, Spot, Reservations | [AZ900-025](#az900-025) | Spot dùng công suất dư có thể bị thu hồi; Reservations giảm giá theo cam kết thời hạn. |
 
 <a id="az900-001"></a>
 
@@ -366,3 +367,17 @@ Keywords giúp tìm phần hướng dẫn phù hợp; luôn đọc yêu cầu v�
 **Cách phân tích đáp án:** Khi ý định đề là đưa workload phù hợp lên Azure và giữ một phần workload cần kiểm soát riêng trong private/on-premises, chọn Hybrid Cloud. Private-only không tận dụng đầy đủ public cloud; datacenter đơn thuần không thể hiện mô hình kết hợp.
 
 **Bẫy:** Chỉ có dữ liệu nhạy cảm hoặc nhắc GDPR chưa đủ để bắt buộc hybrid/private. Public cloud có thể hỗ trợ yêu cầu tuân thủ khi được thiết kế và vận hành phù hợp. Hybrid không mặc nhiên rẻ hơn; cần tính cả chi phí kết nối và vận hành hai môi trường. Nếu đề không yêu cầu giữ workload riêng, cần nêu giả định khi chọn hybrid.
+
+<a id="az900-025"></a>
+
+## AZ900-025 | Spot, Reservations và Hybrid Benefit
+
+**Dấu hiệu:** Non-critical batch, tolerate interruptions, spare capacity, lower price, committing in advance.
+
+**Nhóm kiến thức:** Describe Azure management and governance → cost management → factors affecting costs. Liên quan compute và VM pricing.
+
+**Liên hệ lý thuyết:** Azure Spot VMs dùng công suất Azure chưa sử dụng với giá giảm, nhưng có thể bị thu hồi khi Azure cần capacity hoặc điều kiện giá không còn đáp ứng. VM Reservations cung cấp giảm giá cho usage đủ điều kiện theo cam kết thời hạn 1 hoặc 3 năm. Azure Hybrid Benefit tận dụng bản quyền phần mềm hiện có đủ điều kiện.
+
+**Cách phân tích đáp án:** Spare capacity và chịu gián đoạn hướng tới Spot Instances. Cam kết sử dụng trước hướng tới VM Reservations. Availability Zones phục vụ cô lập lỗi và high availability, không phải cơ chế giảm giá dựa trên capacity dư.
+
+**Bẫy:** Reservation là cam kết giá/usage, không mặc nhiên bảo đảm capacity; capacity reservation là khái niệm khác. Không cần hiểu cam kết trước là luôn thanh toán toàn bộ ngay lập tức. Workload Spot cần có khả năng khởi động lại hoặc checkpoint khi bị thu hồi. Hai đáp án mô tả hai chiến lược riêng, không có nghĩa cùng áp ưu đãi reservation lên một Spot VM.
