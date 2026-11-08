@@ -24,6 +24,7 @@ Keywords giúp tìm phần hướng dẫn phù hợp; luôn đọc yêu cầu v�
 | Advisor, recommendations, cost saving, reliability, real-time monitoring | [AZ900-016](#az900-016) | Advisor đề xuất tối ưu; Monitor theo dõi telemetry và cảnh báo. |
 | match Region, Availability Zone, Fault Domain, Georedundancy | [AZ900-017](#az900-017) | Phân biệt phạm vi địa lý, zone độc lập, phần cứng chung và sao chép liên region. |
 | direct OS control, specialized software, isolated environment | [AZ900-018](#az900-018) | Chọn VM theo nhu cầu kiểm soát guest OS; phân biệt với môi trường container được quản lý. |
+| service incidents, outages, status updates, incident details, maintenance | [AZ900-019](#az900-019) | Service Health thông báo sự cố nền tảng; Monitor phân tích telemetry workload. |
 
 <a id="az900-001"></a>
 
@@ -276,3 +277,17 @@ Keywords giúp tìm phần hướng dẫn phù hợp; luôn đọc yêu cầu v�
 **Cách phân tích đáp án:** Yêu cầu kiểm soát trực tiếp OS và cài phần mềm chuyên dụng hướng tới VM. Functions chạy mã theo trigger. ACI chạy container trên hạ tầng được quản lý. AKS điều phối container, có khả năng cấu hình node nhưng không phải lựa chọn đơn giản nhất khi đề chỉ yêu cầu môi trường OS riêng.
 
 **Bẫy:** Từ isolated hoặc sensitive data không đủ để chọn VM. Container cũng có khả năng cô lập; dữ kiện phân biệt là mức kiểm soát OS cần thiết. VM không mặc nhiên cấp host vật lý độc quyền hay bảo đảm tuân thủ tài chính; cần cấu hình bảo mật và vận hành phù hợp.
+
+<a id="az900-019"></a>
+
+## AZ900-019 | Service Health và Monitor
+
+**Dấu hiệu:** Azure service incidents, outages, service status updates, incident details, planned maintenance.
+
+**Nhóm kiến thức:** Describe Azure management and governance → monitoring tools → Azure Service Health.
+
+**Liên hệ lý thuyết:** Service Health cung cấp thông tin sự cố dịch vụ Azure, bảo trì và advisories liên quan đến subscription, region và dịch vụ đang dùng. Có thể cấu hình alert để nhận thông báo. Monitor thu thập metrics, logs và telemetry của workload để phân tích và cảnh báo.
+
+**Cách phân tích đáp án:** Sự cố nền tảng được Azure công bố hướng tới Service Health. CPU cao, lỗi request hay độ trễ ứng dụng hướng tới Monitor/Application Insights. ARM triển khai và quản lý tài nguyên; Traffic Manager định tuyến DNS giữa các endpoint.
+
+**Bẫy:** Service Health alerts dùng cơ chế Azure Monitor alerts, nhưng nguồn thông tin sự cố nền tảng trong câu hỏi là Service Health. Resource Health theo dõi tài nguyên cụ thể; Azure Status cung cấp thông tin công khai về sự cố diện rộng. Cập nhật Service Health gần thời gian thực khi Microsoft phát hiện và xác nhận vấn đề.
