@@ -25,6 +25,7 @@ Keywords giúp tìm phần hướng dẫn phù hợp; luôn đọc yêu cầu v�
 | match Region, Availability Zone, Fault Domain, Georedundancy | [AZ900-017](#az900-017) | Phân biệt phạm vi địa lý, zone độc lập, phần cứng chung và sao chép liên region. |
 | direct OS control, specialized software, isolated environment | [AZ900-018](#az900-018) | Chọn VM theo nhu cầu kiểm soát guest OS; phân biệt với môi trường container được quản lý. |
 | service incidents, outages, status updates, incident details, maintenance | [AZ900-019](#az900-019) | Service Health thông báo sự cố nền tảng; Monitor phân tích telemetry workload. |
+| centralized management, monitoring, unified console, Azure Portal | [AZ900-020](#az900-020) | Portal là giao diện tập trung để truy cập và quản lý dịch vụ; phân biệt với engine tự động hóa. |
 
 <a id="az900-001"></a>
 
@@ -291,3 +292,17 @@ Keywords giúp tìm phần hướng dẫn phù hợp; luôn đọc yêu cầu v�
 **Cách phân tích đáp án:** Sự cố nền tảng được Azure công bố hướng tới Service Health. CPU cao, lỗi request hay độ trễ ứng dụng hướng tới Monitor/Application Insights. ARM triển khai và quản lý tài nguyên; Traffic Manager định tuyến DNS giữa các endpoint.
 
 **Bẫy:** Service Health alerts dùng cơ chế Azure Monitor alerts, nhưng nguồn thông tin sự cố nền tảng trong câu hỏi là Service Health. Resource Health theo dõi tài nguyên cụ thể; Azure Status cung cấp thông tin công khai về sự cố diện rộng. Cập nhật Service Health gần thời gian thực khi Microsoft phát hiện và xác nhận vấn đề.
+
+<a id="az900-020"></a>
+
+## AZ900-020 | Azure Portal là giao diện quản lý tập trung
+
+**Dấu hiệu:** Centralized management, monitoring, unified console, graphical interface.
+
+**Nhóm kiến thức:** Describe Azure management and governance → tools for managing and deploying resources → Azure Portal.
+
+**Liên hệ lý thuyết:** Azure Portal là giao diện web hợp nhất để tạo, quản lý và giám sát tài nguyên Azure. Portal tích hợp các màn hình quản lý của từng dịch vụ, dashboards và truy cập công cụ liên quan.
+
+**Cách phân tích đáp án:** Khi hỏi điểm truy cập tập trung để quản lý nhiều loại tài nguyên, chọn Portal trong các lựa chọn VM/Entra ID/Portal/Monitor. VM cung cấp compute; Entra ID quản lý danh tính; Monitor thu thập và phân tích telemetry.
+
+**Bẫy:** Automation trong câu mô tả giao diện truy cập và cấu hình công cụ tự động hóa. Portal không phải engine thực thi mọi automation; chức năng được cung cấp bởi dịch vụ nền và công cụ như Azure Automation, ARM, CLI/PowerShell. Đừng chỉ thấy monitoring mà bỏ qua phạm vi quản lý tổng thể.
