@@ -26,6 +26,7 @@ Keywords giúp tìm phần hướng dẫn phù hợp; luôn đọc yêu cầu v�
 | direct OS control, specialized software, isolated environment | [AZ900-018](#az900-018) | Chọn VM theo nhu cầu kiểm soát guest OS; phân biệt với môi trường container được quản lý. |
 | service incidents, outages, status updates, incident details, maintenance | [AZ900-019](#az900-019) | Service Health thông báo sự cố nền tảng; Monitor phân tích telemetry workload. |
 | centralized management, monitoring, unified console, Azure Portal | [AZ900-020](#az900-020) | Portal là giao diện tập trung để truy cập và quản lý dịch vụ; phân biệt với engine tự động hóa. |
+| TCO calculator, cost savings, on-premises versus Azure, first step | [AZ900-021](#az900-021) | TCO so sánh tổng chi phí; Pricing calculator ước tính chi phí dịch vụ Azure. |
 
 <a id="az900-001"></a>
 
@@ -306,3 +307,17 @@ Keywords giúp tìm phần hướng dẫn phù hợp; luôn đọc yêu cầu v�
 **Cách phân tích đáp án:** Khi hỏi điểm truy cập tập trung để quản lý nhiều loại tài nguyên, chọn Portal trong các lựa chọn VM/Entra ID/Portal/Monitor. VM cung cấp compute; Entra ID quản lý danh tính; Monitor thu thập và phân tích telemetry.
 
 **Bẫy:** Automation trong câu mô tả giao diện truy cập và cấu hình công cụ tự động hóa. Portal không phải engine thực thi mọi automation; chức năng được cung cấp bởi dịch vụ nền và công cụ như Azure Automation, ARM, CLI/PowerShell. Đừng chỉ thấy monitoring mà bỏ qua phạm vi quản lý tổng thể.
+
+<a id="az900-021"></a>
+
+## AZ900-021 | TCO calculator và Pricing calculator
+
+**Dấu hiệu:** First step, cost savings, on-premises versus Azure, conversion and implementation costs.
+
+**Nhóm kiến thức:** Describe Azure management and governance → cost management → cost estimation tools. TCO là kiến thức bổ trợ theo tài liệu luyện thi.
+
+**Liên hệ lý thuyết:** TCO calculator so sánh tổng chi phí sở hữu hạ tầng on-premises với triển khai tương đương trên Azure để ước tính tiết kiệm. Pricing calculator ước tính chi phí sử dụng dịch vụ Azure theo cấu hình và lượng dùng dự kiến.
+
+**Cách phân tích đáp án:** Đề xuất dùng TCO làm bước đầu đánh giá lợi ích chi phí chuyển từ on-premises sang Azure là phù hợp. Đầu ra hỗ trợ business case và phụ thuộc dữ liệu, giả định nhập vào.
+
+**Bẫy:** TCO không thay thế dự toán đầy đủ cho refactor, chuyển dữ liệu, đào tạo, nhân công triển khai hay so sánh mọi cloud vendor. Nếu yêu cầu chỉ là báo giá dịch vụ Azure dự kiến thì xét Pricing calculator. Đọc kỹ phạm vi “first step” khi chấm Yes/No.
