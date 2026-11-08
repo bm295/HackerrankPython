@@ -33,6 +33,7 @@ Keywords giúp tìm phần hướng dẫn phù hợp; luôn đọc yêu cầu v�
 | spare capacity, tolerate interruptions, batch, commit in advance, Spot, Reservations | [AZ900-025](#az900-025) | Spot dùng công suất dư có thể bị thu hồi; Reservations giảm giá theo cam kết thời hạn. |
 | resource locks, accidental deletion, modification, shared resource group, ReadOnly, CanNotDelete | [AZ900-026](#az900-026) | Locks bảo vệ thao tác quản lý; RBAC xác định quyền theo danh tính. |
 | first required step, trial account, subscription, resource group | [AZ900-027](#az900-027) | Cần subscription hoạt động trước khi tạo resource group và triển khai workload. |
+| reliability, predictability, unpredictable costs, business continuity, compliance | [AZ900-028](#az900-028) | Predictability là dự báo performance/cost; compliance thuộc security/governance. |
 
 <a id="az900-001"></a>
 
@@ -411,3 +412,17 @@ Keywords giúp tìm phần hướng dẫn phù hợp; luôn đọc yêu cầu v�
 **Cách phân tích đáp án:** Trong các lựa chọn Availability Zone, Resource Group, ARM template và Subscription, chọn Subscription làm điều kiện đầu tiên. Resource group được tạo trong subscription. ARM template là một cách triển khai tùy chọn; không phải tài nguyên nào cũng cần chọn availability zone.
 
 **Bẫy:** Đăng ký Azure Trial thường đã cấp subscription, nên không cần tạo thêm subscription chỉ để thử dịch vụ. Nếu đề hỏi thao tác tiếp theo sau khi đã có subscription hoạt động thì resource group có thể là bước kế tiếp. Azure account là danh tính/tài khoản truy cập; subscription là phạm vi sử dụng dịch vụ và billing, không phải hai từ đồng nghĩa.
+
+<a id="az900-028"></a>
+
+## AZ900-028 | Reliability, predictability và compliance
+
+**Dấu hiệu:** NOT a benefit of reliability/predictability, unpredictable costs, reliable performance, global scale and business continuity.
+
+**Nhóm kiến thức:** Describe cloud concepts → benefits of cloud services → reliability, predictability, security and governance.
+
+**Liên hệ lý thuyết:** Reliability là khả năng phục hồi sau lỗi và tiếp tục hoạt động. Predictability gồm dự báo hiệu năng/tài nguyên cần thiết và chi phí. Compliance thuộc lợi ích security/governance; cloud hỗ trợ tuân thủ nhưng không tự bảo đảm mọi workload tuân thủ.
+
+**Cách phân tích đáp án:** Performance ổn định phù hợp predictability; thiết kế đa region hỗ trợ business continuity và reliability. Chi phí khó dự đoán không phải lợi ích cost predictability. Với lựa chọn A “Ability to Handle Unpredictable Costs”, A có vẻ là đáp án tác giả dự kiến nhưng chưa có key xác nhận.
+
+**Bẫy:** Nếu stem hỏi nghiêm ngặt lựa chọn ngoài nhóm reliability/predictability, D về industry regulations/compliance cũng có cơ sở vì thuộc governance. Câu LinkedIn 23/60 trộn tiêu chí phân nhóm với lợi ích triển khai, nên không dùng để đánh giá readiness khi chưa làm rõ. Nguồn: https://learn.microsoft.com/en-us/training/modules/describe-benefits-use-cloud-services/3-reliability-predictability-cloud và https://learn.microsoft.com/en-us/training/modules/describe-benefits-use-cloud-services/4-security-governance-cloud.
