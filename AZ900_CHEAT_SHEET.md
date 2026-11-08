@@ -28,6 +28,7 @@ Keywords giúp tìm phần hướng dẫn phù hợp; luôn đọc yêu cầu v�
 | centralized management, monitoring, unified console, Azure Portal | [AZ900-020](#az900-020) | Portal là giao diện tập trung để truy cập và quản lý dịch vụ; phân biệt với engine tự động hóa. |
 | TCO calculator, cost savings, on-premises versus Azure, first step | [AZ900-021](#az900-021) | TCO so sánh tổng chi phí; Pricing calculator ước tính chi phí dịch vụ Azure. |
 | containers dependencies, Docker, full OS, Kubernetes | [AZ900-022](#az900-022) | Image đóng gói dependencies; container chia sẻ kernel; Kubernetes điều phối đa môi trường. |
+| slow performance, delayed response, latency, initial concern | [AZ900-023](#az900-023) | Latency mô tả độ trễ; cần đo để tìm nguyên nhân chậm. |
 
 <a id="az900-001"></a>
 
@@ -336,3 +337,17 @@ Keywords giúp tìm phần hướng dẫn phù hợp; luôn đọc yêu cầu v�
 **Cách phân tích đáp án:** Với bốn phát biểu đóng gói dependencies / Docker quản lý containers / containers luôn cần full OS / Kubernetes tự động triển khai và scale trên Azure, kết quả là True, True, False, True.
 
 **Bẫy:** Cụm “in Azure” không đồng nghĩa “chỉ dành cho Azure”. Cần phân biệt Kubernetes và dịch vụ AKS. Nếu bộ lựa chọn thiếu T,T,F,T, đó là lỗi lựa chọn của đề, không đổi kiến thức để khớp đáp án.
+
+<a id="az900-023"></a>
+
+## AZ900-023 | Latency và triệu chứng phản hồi chậm
+
+**Dấu hiệu:** Slow performance, delayed response, initial concern, common user problem.
+
+**Nhóm kiến thức:** Describe cloud concepts → performance và cloud benefits.
+
+**Liên hệ lý thuyết:** Latency là độ trễ từ khi gửi yêu cầu đến khi có phản hồi hoặc hoàn thành thao tác, tùy phép đo. Fault tolerance là khả năng tiếp tục hoạt động khi thành phần lỗi. Dynamic scalability là khả năng điều chỉnh năng lực theo tải. Agility là khả năng nhanh chóng triển khai và thích ứng.
+
+**Cách phân tích đáp án:** Khi hỏi thuật ngữ mô tả trải nghiệm người dùng phải chờ lâu, latency phù hợp nhất trong các lựa chọn. Thiếu tài nguyên có thể gây chậm nhưng scalability mô tả khả năng đáp ứng tải, không phải tên triệu chứng.
+
+**Bẫy:** Phản hồi chậm chưa chứng minh nguyên nhân là mạng. Cần đo compute, disk I/O, database, network và thời gian xử lý để tìm bottleneck. Định nghĩa latency phụ thuộc phép đo như round-trip time hoặc end-to-end response time.
