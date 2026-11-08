@@ -67,7 +67,7 @@ Keywords giúp tìm phần hướng dẫn phù hợp; luôn đọc yêu cầu v�
 
 **Cách phân tích đáp án:** IaC mô tả hạ tầng bằng mã để triển khai nhất quán và lặp lại được. Thay đổi thông thường đi qua mã cấu hình và quy trình triển khai.
 
-**Bẫy:** Cụm “ARM is a scripting language” nhầm dịch vụ ARM với cách viết cấu hình hạ tầng. Thay đổi tài nguyên trực tiếp qua Portal có thể khiến cấu hình thực tế lệch khỏi mã.
+**Bẫy:** Khi đáp án gọi ARM templates là “scripts”, hiểu chính xác là tệp JSON dùng cú pháp khai báo trạng thái mong muốn; ARM xử lý triển khai và dependency. Templates hỗ trợ nhiều loại tài nguyên, không chỉ VM. Cụm “ARM is a scripting language” nhầm dịch vụ ARM với cách viết cấu hình hạ tầng. Thay đổi tài nguyên trực tiếp qua Portal có thể khiến cấu hình thực tế lệch khỏi mã.
 
 <a id="az900-004"></a>
 
