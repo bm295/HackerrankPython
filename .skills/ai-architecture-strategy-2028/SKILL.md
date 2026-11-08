@@ -50,6 +50,16 @@ Trace important quality requirements to concrete architecture decisions and veri
 
 Separate probabilistic model suggestions from deterministic business rules and transaction authority. Describe synchronous/asynchronous paths, consistency, data ownership, failure handling, and migration compatibility. Draw a compact Mermaid diagram when boundaries or flows need clarification. Create ADRs for the consequential decisions using the workbook schema.
 
+## Engineer context, memory and knowledge
+
+For RAG or agent strategies, read [context-architecture.md](references/context-architecture.md). Distinguish active inference context, persistent task/session memory and curated domain knowledge; identify authoritative business records separately.
+
+Specify the context lifecycle: selection and access filtering, structured injection, optional compression, expiration and refresh. Define provenance, freshness, conflict resolution, retention/deletion and tenant isolation for each information class. Balance live facts with historical state; revalidate volatile information before consequential actions. Keep authorization and business rules outside the model.
+
+Compare simple bounded retrieval with richer context assembly using held-out task success, groundedness, context tokens, p50/p95 latency and cost per successful task. Test stale or conflicting facts, permission revocation, memory poisoning and compression loss. Choose storage tiers and service boundaries from measured needs; do not assume more memory, less context or more components improves results.
+
+Treat context lifecycle engineering as a candidate 2028 trend supported by dated evidence, not a certainty. Separate the source author's position from this skill's recommendations; do not claim context engineering eliminates hallucinations.
+
 ## Build the investment and delivery plan
 
 - Work backward from the agreed 2028 target using calendar periods relative to the actual current date. Never schedule completed or past phases as future work. If the target has passed, ask whether to evaluate historical achievement or rebase the horizon.
