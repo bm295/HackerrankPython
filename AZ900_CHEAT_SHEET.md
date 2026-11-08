@@ -29,6 +29,7 @@ Keywords giúp tìm phần hướng dẫn phù hợp; luôn đọc yêu cầu v�
 | TCO calculator, cost savings, on-premises versus Azure, first step | [AZ900-021](#az900-021) | TCO so sánh tổng chi phí; Pricing calculator ước tính chi phí dịch vụ Azure. |
 | containers dependencies, Docker, full OS, Kubernetes | [AZ900-022](#az900-022) | Image đóng gói dependencies; container chia sẻ kernel; Kubernetes điều phối đa môi trường. |
 | slow performance, delayed response, latency, initial concern | [AZ900-023](#az900-023) | Latency mô tả độ trễ; cần đo để tìm nguyên nhân chậm. |
+| regulated workloads, move to Azure, retain private infrastructure, hybrid | [AZ900-024](#az900-024) | Hybrid phù hợp khi kết hợp public với private/on-premises theo yêu cầu workload. |
 
 <a id="az900-001"></a>
 
@@ -351,3 +352,17 @@ Keywords giúp tìm phần hướng dẫn phù hợp; luôn đọc yêu cầu v�
 **Cách phân tích đáp án:** Khi hỏi thuật ngữ mô tả trải nghiệm người dùng phải chờ lâu, latency phù hợp nhất trong các lựa chọn. Thiếu tài nguyên có thể gây chậm nhưng scalability mô tả khả năng đáp ứng tải, không phải tên triệu chứng.
 
 **Bẫy:** Phản hồi chậm chưa chứng minh nguyên nhân là mạng. Cần đo compute, disk I/O, database, network và thời gian xử lý để tìm bottleneck. Định nghĩa latency phụ thuộc phép đo như round-trip time hoặc end-to-end response time.
+
+<a id="az900-024"></a>
+
+## AZ900-024 | Hybrid Cloud cho workload có yêu cầu khác nhau
+
+**Dấu hiệu:** Move to Azure, retain control for some workloads, regulated banking data, reduce operational costs.
+
+**Nhóm kiến thức:** Describe cloud concepts → cloud deployment models → hybrid cloud.
+
+**Liên hệ lý thuyết:** Hybrid Cloud kết hợp public cloud với hạ tầng on-premises/private hoạt động cùng nhau. Tổ chức có thể chọn vị trí workload theo yêu cầu kiểm soát, tích hợp và vận hành.
+
+**Cách phân tích đáp án:** Khi ý định đề là đưa workload phù hợp lên Azure và giữ một phần workload cần kiểm soát riêng trong private/on-premises, chọn Hybrid Cloud. Private-only không tận dụng đầy đủ public cloud; datacenter đơn thuần không thể hiện mô hình kết hợp.
+
+**Bẫy:** Chỉ có dữ liệu nhạy cảm hoặc nhắc GDPR chưa đủ để bắt buộc hybrid/private. Public cloud có thể hỗ trợ yêu cầu tuân thủ khi được thiết kế và vận hành phù hợp. Hybrid không mặc nhiên rẻ hơn; cần tính cả chi phí kết nối và vận hành hai môi trường. Nếu đề không yêu cầu giữ workload riêng, cần nêu giả định khi chọn hybrid.
