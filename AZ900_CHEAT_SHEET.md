@@ -34,6 +34,7 @@ Keywords giúp tìm phần hướng dẫn phù hợp; luôn đọc yêu cầu v�
 | resource locks, accidental deletion, modification, shared resource group, ReadOnly, CanNotDelete | [AZ900-026](#az900-026) | Locks bảo vệ thao tác quản lý; RBAC xác định quyền theo danh tính. |
 | first required step, trial account, subscription, resource group | [AZ900-027](#az900-027) | Cần subscription hoạt động trước khi tạo resource group và triển khai workload. |
 | reliability, predictability, unpredictable costs, business continuity, compliance | [AZ900-028](#az900-028) | Predictability là dự báo performance/cost; compliance thuộc security/governance. |
+| large amounts of unstructured data, documents, images, videos, backups | [AZ900-029](#az900-029) | Chọn Blob cho object storage; Files khi cần file share SMB/NFS. |
 
 <a id="az900-001"></a>
 
@@ -426,3 +427,17 @@ Keywords giúp tìm phần hướng dẫn phù hợp; luôn đọc yêu cầu v�
 **Cách phân tích đáp án:** Performance ổn định phù hợp predictability; thiết kế đa region hỗ trợ business continuity và reliability. Chi phí khó dự đoán không phải lợi ích cost predictability. Với lựa chọn A “Ability to Handle Unpredictable Costs”, A có vẻ là đáp án tác giả dự kiến nhưng chưa có key xác nhận.
 
 **Bẫy:** Nếu stem hỏi nghiêm ngặt lựa chọn ngoài nhóm reliability/predictability, D về industry regulations/compliance cũng có cơ sở vì thuộc governance. Câu LinkedIn 23/60 trộn tiêu chí phân nhóm với lợi ích triển khai, nên không dùng để đánh giá readiness khi chưa làm rõ. Nguồn: https://learn.microsoft.com/en-us/training/modules/describe-benefits-use-cloud-services/3-reliability-predictability-cloud và https://learn.microsoft.com/en-us/training/modules/describe-benefits-use-cloud-services/4-security-governance-cloud.
+
+<a id="az900-029"></a>
+
+## AZ900-029 | Blob Storage cho dữ liệu phi cấu trúc
+
+**Dấu hiệu:** Large amounts of unstructured data, documents, images, videos, backups.
+
+**Nhóm kiến thức:** Describe Azure architecture and services → Azure storage services → Blob, Files, Table và Queue.
+
+**Liên hệ lý thuyết:** Azure Blob Storage là object storage tối ưu lưu lượng lớn dữ liệu phi cấu trúc, như văn bản hoặc dữ liệu nhị phân. Các trường hợp phổ biến gồm tài liệu, hình ảnh, audio/video và backup/archive.
+
+**Cách phân tích đáp án:** Chọn Blob khi đề nhấn mạnh unstructured data và object storage. Azure Files cung cấp file shares qua SMB/NFS; Table Storage lưu NoSQL entities theo key/attributes; Queue Storage lưu messages để xử lý bất đồng bộ.
+
+**Bẫy:** Azure Files cũng lưu được ảnh và tài liệu; khác biệt quan trọng là cách truy cập và nhu cầu file share, không chỉ phần mở rộng file. Blob có thể lưu cả file chứa dữ liệu có cấu trúc như CSV/JSON; cụm optimized for unstructured data không phải giới hạn tuyệt đối. Phân biệt chọn dịch vụ Blob với chọn access tier Hot/Cool/Cold/Archive và với storage account chứa dịch vụ. Nguồn: https://learn.microsoft.com/en-us/azure/storage/common/storage-introduction.
