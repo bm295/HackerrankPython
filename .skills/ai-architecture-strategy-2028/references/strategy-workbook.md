@@ -62,3 +62,13 @@ Include pilot, production hardening, scaling and optimization only if the remain
 - Can a model change pass quality gates and still worsen business outcomes?
 - Which decision is expensive to reverse, and what experiment reduces that uncertainty?
 - What observable threshold triggers scaling, pausing, migration or retirement?
+
+## Context architecture decision worksheet
+Use [context-architecture.md](context-architecture.md) for RAG and agent strategies.
+- Identify authoritative records, curated knowledge, session/durable memory and active inference context.
+- Complete the information contract: source, permissions, version/event time, freshness, retention/deletion, conflict rule and unavailable-source behavior.
+- Record context assembly boundaries, input/output token allocation, compression risks and cache invalidation.
+- Compare bounded retrieval against proposed context lifecycle changes on identical held-out tasks and workload.
+- Include stale/conflicting facts, cross-tenant access, revoked permissions, deletion propagation, poisoned memory and compression-loss cases in quality gates.
+- Capture quality, latency and cost trade-offs in the ADR; set an owner and a measurable stop/pivot trigger.
+- Label the context engineering trend as a forecast; record supporting and contrary evidence, uncertainty and the decision it would change.
