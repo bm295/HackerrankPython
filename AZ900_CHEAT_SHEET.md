@@ -27,6 +27,7 @@ Keywords giúp tìm phần hướng dẫn phù hợp; luôn đọc yêu cầu v�
 | service incidents, outages, status updates, incident details, maintenance | [AZ900-019](#az900-019) | Service Health thông báo sự cố nền tảng; Monitor phân tích telemetry workload. |
 | centralized management, monitoring, unified console, Azure Portal | [AZ900-020](#az900-020) | Portal là giao diện tập trung để truy cập và quản lý dịch vụ; phân biệt với engine tự động hóa. |
 | TCO calculator, cost savings, on-premises versus Azure, first step | [AZ900-021](#az900-021) | TCO so sánh tổng chi phí; Pricing calculator ước tính chi phí dịch vụ Azure. |
+| containers dependencies, Docker, full OS, Kubernetes | [AZ900-022](#az900-022) | Image đóng gói dependencies; container chia sẻ kernel; Kubernetes điều phối đa môi trường. |
 
 <a id="az900-001"></a>
 
@@ -321,3 +322,17 @@ Keywords giúp tìm phần hướng dẫn phù hợp; luôn đọc yêu cầu v�
 **Cách phân tích đáp án:** Đề xuất dùng TCO làm bước đầu đánh giá lợi ích chi phí chuyển từ on-premises sang Azure là phù hợp. Đầu ra hỗ trợ business case và phụ thuộc dữ liệu, giả định nhập vào.
 
 **Bẫy:** TCO không thay thế dự toán đầy đủ cho refactor, chuyển dữ liệu, đào tạo, nhân công triển khai hay so sánh mọi cloud vendor. Nếu yêu cầu chỉ là báo giá dịch vụ Azure dự kiến thì xét Pricing calculator. Đọc kỹ phạm vi “first step” khi chấm Yes/No.
+
+<a id="az900-022"></a>
+
+## AZ900-022 | Container, Docker và Kubernetes
+
+**Dấu hiệu:** Package dependencies, consistent environments, full OS, deployment and scaling.
+
+**Nhóm kiến thức:** Describe Azure architecture and services → compute → containers.
+
+**Liên hệ lý thuyết:** Container image đóng gói mã và dependencies để giữ môi trường chạy nhất quán trên host tương thích. Docker cung cấp công cụ build, phân phối image và chạy/quản lý container. Container dạng process isolation chia sẻ kernel của host, không cần mỗi container có full guest OS như VM. Kubernetes là nền tảng mã nguồn mở điều phối triển khai, mở rộng và quản lý container, dùng được trên Azure và các môi trường khác.
+
+**Cách phân tích đáp án:** Với bốn phát biểu đóng gói dependencies / Docker quản lý containers / containers luôn cần full OS / Kubernetes tự động triển khai và scale trên Azure, kết quả là True, True, False, True.
+
+**Bẫy:** Cụm “in Azure” không đồng nghĩa “chỉ dành cho Azure”. Cần phân biệt Kubernetes và dịch vụ AKS. Nếu bộ lựa chọn thiếu T,T,F,T, đó là lỗi lựa chọn của đề, không đổi kiến thức để khớp đáp án.
