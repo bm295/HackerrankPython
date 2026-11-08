@@ -31,6 +31,7 @@ Keywords giúp tìm phần hướng dẫn phù hợp; luôn đọc yêu cầu v�
 | slow performance, delayed response, latency, initial concern | [AZ900-023](#az900-023) | Latency mô tả độ trễ; cần đo để tìm nguyên nhân chậm. |
 | regulated workloads, move to Azure, retain private infrastructure, hybrid | [AZ900-024](#az900-024) | Hybrid phù hợp khi kết hợp public với private/on-premises theo yêu cầu workload. |
 | spare capacity, tolerate interruptions, batch, commit in advance, Spot, Reservations | [AZ900-025](#az900-025) | Spot dùng công suất dư có thể bị thu hồi; Reservations giảm giá theo cam kết thời hạn. |
+| resource locks, accidental deletion, modification, shared resource group, ReadOnly, CanNotDelete | [AZ900-026](#az900-026) | Locks bảo vệ thao tác quản lý; RBAC xác định quyền theo danh tính. |
 
 <a id="az900-001"></a>
 
@@ -381,3 +382,17 @@ Keywords giúp tìm phần hướng dẫn phù hợp; luôn đọc yêu cầu v�
 **Cách phân tích đáp án:** Spare capacity và chịu gián đoạn hướng tới Spot Instances. Cam kết sử dụng trước hướng tới VM Reservations. Availability Zones phục vụ cô lập lỗi và high availability, không phải cơ chế giảm giá dựa trên capacity dư.
 
 **Bẫy:** Reservation là cam kết giá/usage, không mặc nhiên bảo đảm capacity; capacity reservation là khái niệm khác. Không cần hiểu cam kết trước là luôn thanh toán toàn bộ ngay lập tức. Workload Spot cần có khả năng khởi động lại hoặc checkpoint khi bị thu hồi. Hai đáp án mô tả hai chiến lược riêng, không có nghĩa cùng áp ưu đãi reservation lên một Spot VM.
+
+<a id="az900-026"></a>
+
+## AZ900-026 | Resource locks và phân quyền RBAC
+
+**Dấu hiệu:** Protect critical production VM, accidental deletion or modification, shared resource group.
+
+**Nhóm kiến thức:** Describe Azure management and governance → governance and compliance → resource locks.
+
+**Liên hệ lý thuyết:** CanNotDelete cho phép đọc và sửa nhưng chặn xóa tài nguyên. ReadOnly cho phép đọc nhưng chặn sửa và xóa ở control plane. Locks có thể đặt tại subscription, resource group hoặc resource và kế thừa xuống scope con; áp hạn chế cho mọi user/role khi còn hiệu lực.
+
+**Cách phân tích đáp án:** Bảo vệ VM quan trọng khỏi xóa/sửa và bảo vệ resource group dùng chung là hai tình huống phù hợp nhất trong bộ lựa chọn. Autoscale đáp ứng tải; Advisor/Cost Management hỗ trợ tối ưu chi phí, không phải chức năng resource locks.
+
+**Bẫy:** Từ unauthorized trong lựa chọn resource group chưa chuẩn: RBAC kiểm soát ai có quyền làm gì, locks là lớp bảo vệ bổ sung ngay cả khi người dùng có quyền thay đổi tài nguyên. Người có quyền quản lý lock có thể gỡ lock. Locks chỉ bảo vệ control plane, không chặn mọi thao tác data plane như sửa/xóa dữ liệu bên trong tài nguyên. Chọn đúng loại lock: CanNotDelete không ngăn sửa cấu hình.
