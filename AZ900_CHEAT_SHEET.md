@@ -32,6 +32,7 @@ Keywords giúp tìm phần hướng dẫn phù hợp; luôn đọc yêu cầu v�
 | regulated workloads, move to Azure, retain private infrastructure, hybrid | [AZ900-024](#az900-024) | Hybrid phù hợp khi kết hợp public với private/on-premises theo yêu cầu workload. |
 | spare capacity, tolerate interruptions, batch, commit in advance, Spot, Reservations | [AZ900-025](#az900-025) | Spot dùng công suất dư có thể bị thu hồi; Reservations giảm giá theo cam kết thời hạn. |
 | resource locks, accidental deletion, modification, shared resource group, ReadOnly, CanNotDelete | [AZ900-026](#az900-026) | Locks bảo vệ thao tác quản lý; RBAC xác định quyền theo danh tính. |
+| first required step, trial account, subscription, resource group | [AZ900-027](#az900-027) | Cần subscription hoạt động trước khi tạo resource group và triển khai workload. |
 
 <a id="az900-001"></a>
 
@@ -396,3 +397,17 @@ Keywords giúp tìm phần hướng dẫn phù hợp; luôn đọc yêu cầu v�
 **Cách phân tích đáp án:** Bảo vệ VM quan trọng khỏi xóa/sửa và bảo vệ resource group dùng chung là hai tình huống phù hợp nhất trong bộ lựa chọn. Autoscale đáp ứng tải; Advisor/Cost Management hỗ trợ tối ưu chi phí, không phải chức năng resource locks.
 
 **Bẫy:** Từ unauthorized trong lựa chọn resource group chưa chuẩn: RBAC kiểm soát ai có quyền làm gì, locks là lớp bảo vệ bổ sung ngay cả khi người dùng có quyền thay đổi tài nguyên. Người có quyền quản lý lock có thể gỡ lock. Locks chỉ bảo vệ control plane, không chặn mọi thao tác data plane như sửa/xóa dữ liệu bên trong tài nguyên. Chọn đúng loại lock: CanNotDelete không ngăn sửa cấu hình.
+
+<a id="az900-027"></a>
+
+## AZ900-027 | Subscription là điều kiện trước khi triển khai workload
+
+**Dấu hiệu:** First required step, Azure trial account, create database and AI services.
+
+**Nhóm kiến thức:** Describe Azure architecture and services → core architectural components → subscriptions, resource groups và resources.
+
+**Liên hệ lý thuyết:** Subscription là phạm vi quản lý và thanh toán cho tài nguyên Azure. Với các dịch vụ workload thông thường, thứ tự tổ chức là Subscription → Resource Group → Resource.
+
+**Cách phân tích đáp án:** Trong các lựa chọn Availability Zone, Resource Group, ARM template và Subscription, chọn Subscription làm điều kiện đầu tiên. Resource group được tạo trong subscription. ARM template là một cách triển khai tùy chọn; không phải tài nguyên nào cũng cần chọn availability zone.
+
+**Bẫy:** Đăng ký Azure Trial thường đã cấp subscription, nên không cần tạo thêm subscription chỉ để thử dịch vụ. Nếu đề hỏi thao tác tiếp theo sau khi đã có subscription hoạt động thì resource group có thể là bước kế tiếp. Azure account là danh tính/tài khoản truy cập; subscription là phạm vi sử dụng dịch vụ và billing, không phải hai từ đồng nghĩa.
