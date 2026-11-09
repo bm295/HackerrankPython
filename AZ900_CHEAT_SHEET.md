@@ -39,6 +39,7 @@ Keywords giúp tìm phần hướng dẫn phù hợp; luôn đọc yêu cầu v�
 | Azure Security Center, Microsoft Defender for Cloud, security posture, regulatory compliance, potential threats | [AZ900-031](#az900-031) | Đánh giá cấu hình, khoảng trống tuân thủ và khả năng bảo vệ workload trước mối đe dọa. |
 | region-wide failure, unplanned outage, disaster recovery, elasticity and scalability | [AZ900-032](#az900-032) | Lập kế hoạch khôi phục tại region khác và kiểm tra công suất region đích. |
 | remote workers, Windows virtual desktop, personalized access, RemoteApp | [AZ900-033](#az900-033) | Chọn AVD khi cần cung cấp desktop Windows hoặc ứng dụng từ xa cho người dùng. |
+| isolated network environments, departments, segmentation, VNet, subnet | [AZ900-034](#az900-034) | VNet riêng tạo ranh giới mạng. Subnet chia mạng và có thể áp quy tắc lọc lưu lượng. |
 
 <a id="az900-001"></a>
 
@@ -503,3 +504,15 @@ Keywords giúp tìm phần hướng dẫn phù hợp; luôn đọc yêu cầu v�
 **Cách phân tích đáp án** Chọn AVD khi trọng tâm là cung cấp desktop hoặc ứng dụng từ xa cho nhân viên. Azure VM cung cấp máy ảo để chạy workload. VM Scale Sets giúp quản lý và mở rộng nhóm VM. Availability Sets phân tán VM qua fault domain và update domain để giảm tác động của lỗi phần cứng và bảo trì.
 
 **Bẫy** AVD có thể dùng Azure VM làm session host. Người dùng vẫn truy cập từ thiết bị đầu cuối tương thích. Nhu cầu cấp quyền theo từng người không tự động đồng nghĩa mỗi người cần một VM riêng.
+
+<a id="az900-034"></a>
+
+## AZ900-034 | Cô lập mạng bằng VNet và phân đoạn bằng subnet
+
+**Dấu hiệu** Isolated network environments, different departments, segmentation and isolation.
+
+**Nhóm kiến thức** Describe Azure architecture and services → Azure compute and networking services → virtual networks và subnets.
+
+**Liên hệ lý thuyết** Một VNet tạo môi trường mạng riêng trong Azure. Có thể dùng VNet riêng cho từng phòng ban và kết nối có chủ đích khi cần. Subnet chia không gian địa chỉ bên trong VNet. Azure định tuyến giữa các subnet trong cùng VNet theo mặc định. Có thể dùng NSG hoặc firewall phù hợp để giới hạn luồng được phép.
+
+**Cách phân tích đáp án** Khi đề yêu cầu các môi trường mạng độc lập, chọn Azure Virtual Network. Nếu đề yêu cầu chia một VNet hiện có thành nhiều dải mạng, chọn subnet và bổ sung quy tắc nếu cần cô lập lưu lượng. ExpressRoute cung cấp kết nối riêng từ mạng doanh nghiệp tới Azure. Azure DNS phục vụ phân giải tên.
