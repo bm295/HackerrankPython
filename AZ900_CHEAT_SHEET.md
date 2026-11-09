@@ -40,6 +40,7 @@ Keywords giúp tìm phần hướng dẫn phù hợp; luôn đọc yêu cầu v�
 | region-wide failure, unplanned outage, disaster recovery, elasticity and scalability | [AZ900-032](#az900-032) | Lập kế hoạch khôi phục tại region khác và kiểm tra công suất region đích. |
 | remote workers, Windows virtual desktop, personalized access, RemoteApp | [AZ900-033](#az900-033) | Chọn AVD khi cần cung cấp desktop Windows hoặc ứng dụng từ xa cho người dùng. |
 | isolated network environments, departments, segmentation, VNet, subnet | [AZ900-034](#az900-034) | VNet riêng tạo ranh giới mạng. Subnet chia mạng và có thể áp quy tắc lọc lưu lượng. |
+| data discovery, cataloging, data governance, lineage, Azure Purview | [AZ900-035](#az900-035) | Dùng Purview để thu thập metadata và tìm kiếm tài sản dữ liệu. |
 
 <a id="az900-001"></a>
 
@@ -518,3 +519,17 @@ Keywords giúp tìm phần hướng dẫn phù hợp; luôn đọc yêu cầu v�
 **Liên hệ lý thuyết** Một VNet tạo môi trường mạng riêng trong Azure. Có thể dùng VNet riêng cho từng phòng ban và kết nối có chủ đích khi cần. Subnet chia không gian địa chỉ bên trong VNet. Azure định tuyến giữa các subnet trong cùng VNet theo mặc định. Có thể dùng NSG hoặc firewall phù hợp để giới hạn luồng được phép.
 
 **Cách phân tích đáp án** Khi đề yêu cầu các môi trường mạng độc lập, chọn Azure Virtual Network. Nếu đề yêu cầu chia một VNet hiện có thành nhiều dải mạng, chọn subnet và bổ sung quy tắc nếu cần cô lập lưu lượng. ExpressRoute cung cấp kết nối riêng từ mạng doanh nghiệp tới Azure. Azure DNS phục vụ phân giải tên.
+
+<a id="az900-035"></a>
+
+## AZ900-035 | Microsoft Purview cho khám phá và quản trị dữ liệu
+
+**Dấu hiệu** Data discovery, cataloging, data governance, lineage, metadata.
+
+**Nhóm kiến thức** Describe Azure management and governance → governance and compliance → Microsoft Purview.
+
+**Liên hệ lý thuyết** Azure Purview là tên cũ của dịch vụ quản trị dữ liệu nay thuộc Microsoft Purview. Data Map quét nguồn dữ liệu được hỗ trợ để thu thập metadata. Unified Catalog giúp người dùng tìm và quản lý tài sản dữ liệu đã đăng ký.
+
+**Cách phân tích đáp án** Khi đề hỏi về khám phá, lập danh mục và quản trị dữ liệu, chọn Purview. Azure Machine Learning phục vụ vòng đời mô hình, Azure DevOps hỗ trợ quản lý mã nguồn và CI/CD, còn Cost Management & Billing phục vụ theo dõi chi phí và hóa đơn.
+
+**Bẫy** Cụm “integrating seamlessly” không quyết định đáp án và không bảo đảm mọi kết nối. Phạm vi tích hợp phụ thuộc nguồn và cấu hình. Tìm thấy metadata trong catalog không tự cấp quyền đọc dữ liệu gốc.
