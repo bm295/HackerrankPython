@@ -1,11 +1,11 @@
 ---
 name: ai-architecture-strategy-2028
-description: Build and review evidence-based AI architecture technology strategies targeting 2028. Use for AI technology strategy, target architecture, AI platform investment, build-versus-buy decisions, RAG and agent adoption, model hosting choices, and phased AI architecture roadmaps for an organization or repository.
+description: Build and review evidence-based AI architecture technology strategies targeting 2028. Use for AI technology strategy, target architecture, AI platform investment, build-versus-buy decisions, RAG and agent adoption, model hosting choices, and phased AI architecture roadmaps for an organization or repository. Create or revise a persistent 2028 strategy file with a 2027 execution timeline when asked for a full strategy or given new references for the strategy.
 ---
 
 # AI Architecture Strategy 2028
 
-Act as a technology strategist and software architect. Produce actionable investment and architecture decisions, rather than a technology trend list. Write in Vietnamese unless requested otherwise; retain useful technical terms. Treat 2028 as the target planning horizon, not as the current date or a known future.
+Act as a technology strategist and software architect. Produce actionable investment and architecture decisions. Write in Vietnamese unless requested otherwise and retain useful technical terms. Treat 2028 as a planning horizon and express forecasts as conditional.
 
 Read [strategy-workbook.md](references/strategy-workbook.md) when building a full strategy, comparing alternatives, or reviewing an existing plan. Scale the output to the request.
 
@@ -68,20 +68,29 @@ Treat context lifecycle engineering as a candidate 2028 trend supported by dated
 - Include load and price sensitivity, vendor concentration and exit cost, skills and operating model, and quarterly review triggers.
 - Preserve decision history when an existing strategy is supplied. Reconcile changed assumptions rather than overwriting unrelated decisions.
 
+## Maintain the strategy file
+
+- For a full strategy or a reference update, write one canonical Markdown file named `AI_ARCHITECTURE_STRATEGY_2028.md`. Use the existing strategy path or the destination specified by the user. When working in the repository containing this skill and no destination is specified, use its root. For standalone work, save to a persistent user-accessible destination when available. Check the existing version before writing, keep the same path on updates, and link to the saved file.
+- Include a 2027 execution timeline grouped by quarter, with monthly windows when the planning detail permits. For each task give a stable ID, date window, owner role, prerequisite task IDs, linked 2028 outcome or decision, deliverable, and measurable completion criterion. Label proposed work and distinguish it from committed, in-progress, and completed work. Keep historical dates and actual results when revising a plan after work has started. Flag overdue tasks and make any proposed reschedule explicit.
+- Keep a source register in the strategy file. Use stable IDs, canonical URLs or file paths, title, publication/version date, inspection date, supported claims, and limitations. Link material decisions and changes to those IDs. Record inaccessible references as pending without attributing findings to them.
+- For each new or revised reference, read the original when available, check for duplicates by source and version, and compare the relevant claims with the current strategy, assumptions and counterevidence. Identify affected decision IDs, roadmap tasks, dependencies, and gates. Revise the affected sections together and preserve unrelated content, actual progress, and accepted decisions. Flag proposed changes to accepted decisions for review.
+- Update this skill's instructions or its bundled references when the evidence changes the reusable workflow, evaluation criteria, or architecture guidance. Keep context-specific evidence in the strategy file. If a source adds evidence without changing a decision or the skill, record that outcome in the source register and revision history. For a duplicate with no change, leave the files as they are.
+- For a material revision, record the date, source IDs, affected decisions/tasks and why they changed. When both the strategy and skill change in the same repository, submit them together. Verify file links, task dependencies and the relationship between 2027 deliverables and 2028 outcomes before reporting success.
+
 ## Deliver and review
 
-For a full strategy, return:
+For a full strategy, include these sections in the saved file:
 1. Executive recommendation and decisions required.
 2. Current-state evidence, gaps, assumptions and research cutoff.
 3. Prioritized use-case portfolio and non-AI baseline.
 4. Three 2028 scenarios and implications.
 5. Alternatives matrix, hard constraints, sensitivity and chosen direction.
 6. Target architecture and critical ADRs.
-7. Transition roadmap, investment assumptions and ownership.
+7. 2027 execution timeline and investment assumptions.
 8. Evaluation gates, operational metrics and rollback.
 9. Risks, leading indicators, review triggers and first 90 days.
-10. Sources actually inspected and unresolved questions.
+10. Source register, revision history and unresolved questions.
 
 For a narrow question, return only the relevant decisions and supporting evidence. Never fill every section with generic prose. Mark proposed thresholds as proposals until agreed or measured. Report unresolved decisions candidly.
 
-When asked to save artifacts, use the requested repository or document destination and follow its instructions; otherwise provide the strategy in chat. Do not claim files were saved, code was implemented, a strategy was approved, or a skill was installed unless verified.
+In chat, link the verified strategy file and summarize material changes or unresolved blockers. Follow the destination instructions. Report implementation, approval, installation and publication only when verified.

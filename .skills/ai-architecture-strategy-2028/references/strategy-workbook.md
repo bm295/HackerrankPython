@@ -46,11 +46,18 @@ Keep offline quality separate from business benefit. Prevent evaluation leakage 
 - Break-even volume = incremental fixed cost / positive per-task contribution, only when the linear assumptions hold.
 - Show low/base/high workload and price assumptions, peak capacity, currency/price date, and sensitivity. Do not use token price alone to justify a platform choice.
 
-## Roadmap
-| Period | Outcome | Owner role | Dependencies | Effort/cost range | Deliverable | Exit gate | Stop/pivot/rollback |
+## Roadmap 2027
+| ID | Period | 2028 outcome or decision | Owner role | Prerequisites | Deliverable | Completion gate | Status |
 | --- | --- | --- | --- | --- | --- | --- | --- |
 
-Include pilot, production hardening, scaling and optimization only if the remaining time permits. Allocate the first 90 days from the actual current date; shorten to the deadline if needed. Distinguish committed work from options and research spikes.
+Group by quarter and use monthly windows where useful. Schedule prerequisites before their dependents. Record phase-level staffing/effort and cost assumptions, plus stop, pivot or rollback conditions. Include pilot, production hardening, scaling and optimization only if time permits. Allocate the first 90 days from the actual current date and shorten to the deadline if needed.
+
+## Source register and revision history
+| Source ID | Title and link/path | Published/version | Inspected | Claim and limitation | Decisions/tasks affected |
+| --- | --- | --- | --- | --- | --- |
+
+| Revision date | Source IDs | Decisions/tasks changed | Rationale and follow-up |
+| --- | --- | --- | --- |
 
 ## Review prompts
 - What evidence would make the recommendation wrong?
