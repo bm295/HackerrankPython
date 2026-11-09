@@ -12,7 +12,7 @@ Keywords giúp tìm phần hướng dẫn phù hợp; luôn đọc yêu cầu v�
 | frequently accessed, monthly reports, historical backups, Hot, Cold, Archive | [AZ900-004](#az900-004) | Cân nhắc tần suất đọc, thời gian giữ, phí truy xuất và độ trễ rehydration. |
 | distributing traffic, multiple instances, availability zones within a region | [AZ900-005](#az900-005) | Load Balancer chia traffic tới backend khỏe mạnh; kiểm tra cấu hình đa zone và tách biệt autoscale. |
 | various formats, Blob, Table, Queue, File, Storage Account | [AZ900-006](#az900-006) | Nhận diện nhóm dịch vụ Azure Storage và phân biệt Table Storage với SQL Database. |
-| fully serverless compute, Functions, Virtual Machines, triggers | [AZ900-007](#az900-007) | Functions chạy logic theo trigger; VM là IaaS; Cosmos DB serverless phục vụ database. |
+| fully serverless compute, Functions, triggers, storage account, language, event-driven scaling | [AZ900-007](#az900-007) | Phân biệt hạ tầng máy chủ với storage, trigger và cách scale theo hosting plan. |
 | web tier, 250 GB, dedicated compute, custom domain, SSL | [AZ900-008](#az900-008) | Xác định 250 GB là quota App Service hay dữ liệu ở Azure Storage riêng trước khi chọn tier. |
 | consumption-based, pay only, capacity utilized, reservation, fixed-cost serverless | [AZ900-009](#az900-009) | Xác định đơn vị tính phí và phạm vi cam kết; consumption bao gồm nhiều loại tài nguyên. |
 | sovereign region, national cloud, China, East US, Germany | [AZ900-010](#az900-010) | Phân biệt loại cloud với đơn vị vận hành; kiểm tra thông tin Azure Germany cũ. |
@@ -134,7 +134,7 @@ Keywords giúp tìm phần hướng dẫn phù hợp; luôn đọc yêu cầu v�
 
 **Cách phân tích đáp án:** Chọn Functions khi cần serverless compute để thực thi logic ứng dụng. Key Vault quản lý secrets, keys và certificates. Cosmos DB là database và có chế độ serverless. Cần đọc cả từ “compute” và phạm vi “listed”.
 
-**Bẫy:** “Serverless” vẫn sử dụng máy chủ do nhà cung cấp quản lý. Functions có nhiều hosting plan nên cách tính phí và mở rộng phụ thuộc plan. Không suy rộng rằng Functions là dịch vụ serverless duy nhất của Azure.
+**Bẫy:** “Serverless” vẫn sử dụng máy chủ do nhà cung cấp quản lý. Function app vẫn cần quyền truy cập Azure Storage account mặc định. Azure Functions hỗ trợ nhiều ngôn ngữ như C#, JavaScript và Python ở cấp nền tảng. Một function app chọn runtime ngôn ngữ khi cấu hình. Flex Consumption hỗ trợ mở rộng theo tải sự kiện, còn cách scale và tính phí phụ thuộc hosting plan. Azure cũng có các dịch vụ serverless khác.
 
 <a id="az900-008"></a>
 
