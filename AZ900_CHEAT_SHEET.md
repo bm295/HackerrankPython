@@ -37,6 +37,7 @@ Keywords giúp tìm phần hướng dẫn phù hợp; luôn đọc yêu cầu v�
 | large amounts of unstructured data, documents, images, videos, backups | [AZ900-029](#az900-029) | Chọn Blob cho object storage; Files khi cần file share SMB/NFS. |
 | Public Preview, support, SLA, General Availability | [AZ900-030](#az900-030) | Kiểm tra điều khoản của tính năng. Public Preview thường không có SLA. |
 | Azure Security Center, Microsoft Defender for Cloud, security posture, regulatory compliance, potential threats | [AZ900-031](#az900-031) | Đánh giá cấu hình, khoảng trống tuân thủ và khả năng bảo vệ workload trước mối đe dọa. |
+| region-wide failure, unplanned outage, disaster recovery, elasticity and scalability | [AZ900-032](#az900-032) | Lập kế hoạch khôi phục tại region khác và kiểm tra công suất region đích. |
 
 <a id="az900-001"></a>
 
@@ -471,3 +472,17 @@ Keywords giúp tìm phần hướng dẫn phù hợp; luôn đọc yêu cầu v�
 **Cách phân tích đáp án** Chọn Defender for Cloud khi cần kết hợp đánh giá bảo mật, theo dõi khoảng trống tuân thủ và bảo vệ workload. Availability Zones hỗ trợ chịu lỗi hạ tầng. Azure Virtual Network cung cấp kết nối và phân đoạn mạng. Cognitive Services cung cấp tính năng AI cho ứng dụng.
 
 **Bẫy** Phân biệt chịu lỗi hạ tầng với chống mối đe dọa bảo mật. Dashboard giúp tìm khoảng trống tuân thủ, còn một số kiểm soát cần doanh nghiệp tự đánh giá và cung cấp bằng chứng.
+
+<a id="az900-032"></a>
+
+## AZ900-032 | Khôi phục khi mất cả Azure region
+
+**Dấu hiệu** Region-wide failure, unplanned outage, recover, VMs in one region.
+
+**Nhóm kiến thức** Describe cloud concepts → lợi ích của cloud → reliability và disaster recovery.
+
+**Liên hệ lý thuyết** Disaster Recovery lập phương án khôi phục ứng dụng và dữ liệu sau sự cố lớn. Khi mất cả region, cần nơi phục hồi và dữ liệu sẵn có ở region khác, cùng quy trình failover hoặc restore. Azure Site Recovery có thể sao chép VM sang region đích để failover. Kiểm tra quota, khả năng tạo VM phù hợp và năng lực xử lý tải sau khi chuyển vùng.
+
+**Cách phân tích đáp án** Disaster Recovery đáp ứng trực tiếp yêu cầu khôi phục. Nếu đề yêu cầu hai lựa chọn như tình huống này, Elasticity and Scalability là lựa chọn bổ trợ để lập kế hoạch công suất tại nơi phục hồi. Agility nói về tốc độ triển khai. VM Scale Sets hỗ trợ quản lý và mở rộng nhóm VM.
+
+**Bẫy** Scale Sets hoặc Availability Zones triển khai trong cùng region chỉ có phạm vi bảo vệ bên trong region đó. Tăng số VM ở nơi đã mất dịch vụ không thay thế được phương án khôi phục tại một region khác.
