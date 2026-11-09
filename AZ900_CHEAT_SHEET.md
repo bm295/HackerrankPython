@@ -23,7 +23,7 @@ Keywords giúp tìm phần hướng dẫn phù hợp; luôn đọc yêu cầu v�
 | telemetry, performance and health, alerts, user experiences, NOT use | [AZ900-015](#az900-015) | Monitor là nền tảng, Log Analytics truy vấn logs, Application Insights là APM; DevOps phục vụ phát triển. |
 | Advisor, recommendations, cost saving, reliability, real-time monitoring | [AZ900-016](#az900-016) | Advisor đề xuất tối ưu; Monitor theo dõi telemetry và cảnh báo. |
 | match Region, Availability Zone, Fault Domain, Georedundancy | [AZ900-017](#az900-017) | Phân biệt phạm vi địa lý, zone độc lập, phần cứng chung và sao chép liên region. |
-| direct OS control, specialized software, isolated environment | [AZ900-018](#az900-018) | Chọn VM theo nhu cầu kiểm soát guest OS; phân biệt với môi trường container được quản lý. |
+| direct OS control, specialized software, isolated environment, Web Apps, consistent application performance | [AZ900-018](#az900-018) | So sánh quyền kiểm soát guest OS, hạ tầng được quản lý và mức cô lập. |
 | service incidents, outages, status updates, incident details, maintenance | [AZ900-019](#az900-019) | Service Health thông báo sự cố nền tảng; Monitor phân tích telemetry workload. |
 | centralized management, monitoring, unified console, Azure Portal | [AZ900-020](#az900-020) | Portal là giao diện tập trung để truy cập và quản lý dịch vụ; phân biệt với engine tự động hóa. |
 | TCO calculator, cost savings, on-premises versus Azure, first step | [AZ900-021](#az900-021) | TCO so sánh tổng chi phí; Pricing calculator ước tính chi phí dịch vụ Azure. |
@@ -283,13 +283,13 @@ Keywords giúp tìm phần hướng dẫn phù hợp; luôn đọc yêu cầu v�
 
 **Dấu hiệu:** Direct control over operating system, specialized software installations, complex computations, isolated hosting.
 
-**Nhóm kiến thức:** Describe Azure architecture and services → compute → Virtual Machines và containers.
+**Nhóm kiến thức:** Describe Azure architecture and services → compute → Virtual Machines, containers và Web Apps.
 
-**Liên hệ lý thuyết:** Azure VM cung cấp guest OS có thể cấu hình, cài phần mềm và vá lỗi theo nhu cầu. Microsoft quản lý phần cứng vật lý; khách hàng quản lý guest OS và ứng dụng.
+**Liên hệ lý thuyết:** Azure VM cung cấp guest OS có thể cấu hình, cài phần mềm và vá lỗi theo nhu cầu. Microsoft quản lý phần cứng vật lý. Khách hàng quản lý guest OS và ứng dụng. Azure Web Apps (App Service) là PaaS, Microsoft quản lý hạ tầng và hệ điều hành nền để khách hàng tập trung triển khai ứng dụng.
 
 **Cách phân tích đáp án:** Yêu cầu kiểm soát trực tiếp OS và cài phần mềm chuyên dụng hướng tới VM. Functions chạy mã theo trigger. ACI chạy container trên hạ tầng được quản lý. AKS điều phối container, có khả năng cấu hình node nhưng không phải lựa chọn đơn giản nhất khi đề chỉ yêu cầu môi trường OS riêng.
 
-**Bẫy:** Từ isolated hoặc sensitive data không đủ để chọn VM. Container cũng có khả năng cô lập; dữ kiện phân biệt là mức kiểm soát OS cần thiết. VM không mặc nhiên cấp host vật lý độc quyền hay bảo đảm tuân thủ tài chính; cần cấu hình bảo mật và vận hành phù hợp.
+**Bẫy:** Từ isolated hoặc sensitive data không đủ để chọn VM. Container ở chế độ cô lập tiến trình thường dùng chung kernel của host, còn VM có kernel riêng. Image giúp môi trường chạy nhất quán. Hiệu năng còn phụ thuộc CPU, RAM và tải thực tế. VM không mặc nhiên cấp host vật lý độc quyền hay bảo đảm tuân thủ tài chính; cần cấu hình bảo mật và vận hành phù hợp.
 
 <a id="az900-019"></a>
 
