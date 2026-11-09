@@ -35,6 +35,7 @@ Keywords giúp tìm phần hướng dẫn phù hợp; luôn đọc yêu cầu v�
 | first required step, trial account, subscription, resource group | [AZ900-027](#az900-027) | Cần subscription hoạt động trước khi tạo resource group và triển khai workload. |
 | reliability, predictability, unpredictable costs, business continuity, compliance | [AZ900-028](#az900-028) | Predictability là dự báo performance/cost; compliance thuộc security/governance. |
 | large amounts of unstructured data, documents, images, videos, backups | [AZ900-029](#az900-029) | Chọn Blob cho object storage; Files khi cần file share SMB/NFS. |
+| Public Preview, support, SLA, General Availability | [AZ900-030](#az900-030) | Kiểm tra điều khoản của tính năng. Public Preview thường không có SLA. |
 
 <a id="az900-001"></a>
 
@@ -441,3 +442,17 @@ Keywords giúp tìm phần hướng dẫn phù hợp; luôn đọc yêu cầu v�
 **Cách phân tích đáp án:** Chọn Blob khi đề nhấn mạnh unstructured data và object storage. Azure Files cung cấp file shares qua SMB/NFS; Table Storage lưu NoSQL entities theo key/attributes; Queue Storage lưu messages để xử lý bất đồng bộ.
 
 **Bẫy:** Azure Files cũng lưu được ảnh và tài liệu; khác biệt quan trọng là cách truy cập và nhu cầu file share, không chỉ phần mở rộng file. Blob có thể lưu cả file chứa dữ liệu có cấu trúc như CSV/JSON; cụm optimized for unstructured data không phải giới hạn tuyệt đối. Phân biệt chọn dịch vụ Blob với chọn access tier Hot/Cool/Cold/Archive và với storage account chứa dịch vụ. Nguồn: https://learn.microsoft.com/en-us/azure/storage/common/storage-introduction.
+
+<a id="az900-030"></a>
+
+## AZ900-030 | Public Preview và cam kết SLA
+
+**Dấu hiệu** Public Preview, support, service-level agreement, General Availability (GA).
+
+**Nhóm kiến thức** Kiến thức bổ trợ về vòng đời dịch vụ Azure. Đề cương AZ-900 ngày 20/07/2026 không liệt kê điều khoản SLA của Preview thành mục tiêu riêng.
+
+**Liên hệ lý thuyết** Public Preview cho phép khách hàng thử nghiệm tính năng trước GA. Phạm vi hỗ trợ phụ thuộc điều khoản của tính năng, và Public Preview thường không có SLA.
+
+**Cách phân tích đáp án** Chọn No khi đề giả định mặc định nhận được hỗ trợ kèm SLA. Khi so sánh nhà cung cấp, đọc SLA và điều kiện áp dụng của dịch vụ và cấu hình dự kiến. Dự toán chi phí là bước riêng.
+
+**Bẫy** Hỗ trợ kỹ thuật và SLA là hai cam kết riêng. Một tính năng có thể được hỗ trợ ở mức giới hạn trong giai đoạn Preview mà không có SLA. Kiểm tra điều khoản cụ thể nếu đề nêu ngoại lệ.
