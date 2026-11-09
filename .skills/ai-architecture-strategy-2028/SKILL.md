@@ -37,6 +37,8 @@ Compare relevant alternatives rather than prescribing all of them:
 
 Use hard constraints to eliminate infeasible options before weighted scoring. Explain weights, scoring anchors, unknowns, confidence, and sensitivity. Do not let a high aggregate score override a mandatory data, safety, quality, or latency constraint. Add complexity only when measured outcomes justify it; do not assume multi-agent systems, vector databases, fine-tuning, or microservices are required.
 
+For coding-agent references, distinguish engineering delivery workflows from agents embedded in the product. Apply evidence to decisions in the relevant scope. When comparing single-agent and multi-agent delivery, keep task difficulty, CI checks and independent review comparable. Specify editing boundaries, role permissions and traceable handoffs. Measure lead time to approved PR, review effort, rework, integration errors and cost. Define promotion gates before the trial and treat practitioner reports as hypotheses until measured.
+
 ## Design the target and transition architecture
 
 Describe the application/domain boundary, ingestion and data lineage, identity and authorization, retrieval and access filtering, model access/routing, orchestration and tool contracts, evaluation, telemetry, human review, and feedback lifecycle. Include only applicable components; explain omissions.
