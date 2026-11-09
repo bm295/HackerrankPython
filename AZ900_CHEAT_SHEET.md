@@ -36,6 +36,7 @@ Keywords giúp tìm phần hướng dẫn phù hợp; luôn đọc yêu cầu v�
 | reliability, predictability, unpredictable costs, business continuity, compliance | [AZ900-028](#az900-028) | Predictability là dự báo performance/cost; compliance thuộc security/governance. |
 | large amounts of unstructured data, documents, images, videos, backups | [AZ900-029](#az900-029) | Chọn Blob cho object storage; Files khi cần file share SMB/NFS. |
 | Public Preview, support, SLA, General Availability | [AZ900-030](#az900-030) | Kiểm tra điều khoản của tính năng. Public Preview thường không có SLA. |
+| Azure Security Center, Microsoft Defender for Cloud, security posture, regulatory compliance, potential threats | [AZ900-031](#az900-031) | Đánh giá cấu hình, khoảng trống tuân thủ và khả năng bảo vệ workload trước mối đe dọa. |
 
 <a id="az900-001"></a>
 
@@ -456,3 +457,17 @@ Keywords giúp tìm phần hướng dẫn phù hợp; luôn đọc yêu cầu v�
 **Cách phân tích đáp án** Chọn No khi đề giả định mặc định nhận được hỗ trợ kèm SLA. Khi so sánh nhà cung cấp, đọc SLA và điều kiện áp dụng của dịch vụ và cấu hình dự kiến. Dự toán chi phí là bước riêng.
 
 **Bẫy** Hỗ trợ kỹ thuật và SLA là hai cam kết riêng. Một tính năng có thể được hỗ trợ ở mức giới hạn trong giai đoạn Preview mà không có SLA. Kiểm tra điều khoản cụ thể nếu đề nêu ngoại lệ.
+
+<a id="az900-031"></a>
+
+## AZ900-031 | Microsoft Defender for Cloud và tên cũ Azure Security Center
+
+**Dấu hiệu** Security posture, industry regulations, regulatory compliance, potential threats, migration to Azure.
+
+**Nhóm kiến thức** Describe Azure architecture and services → Azure identity, access, and security → Microsoft Defender for Cloud.
+
+**Liên hệ lý thuyết** Microsoft Defender for Cloud, tên hiện hành của Azure Security Center, đánh giá cấu hình bảo mật và đưa ra khuyến nghị khắc phục. Regulatory compliance dashboard theo dõi tài nguyên theo các kiểm soát của tiêu chuẩn được gán. Các gói bảo vệ workload cung cấp khả năng phát hiện mối đe dọa theo phạm vi từng gói.
+
+**Cách phân tích đáp án** Chọn Defender for Cloud khi cần kết hợp đánh giá bảo mật, theo dõi khoảng trống tuân thủ và bảo vệ workload. Availability Zones hỗ trợ chịu lỗi hạ tầng. Azure Virtual Network cung cấp kết nối và phân đoạn mạng. Cognitive Services cung cấp tính năng AI cho ứng dụng.
+
+**Bẫy** Phân biệt chịu lỗi hạ tầng với chống mối đe dọa bảo mật. Dashboard giúp tìm khoảng trống tuân thủ, còn một số kiểm soát cần doanh nghiệp tự đánh giá và cung cấp bằng chứng.
