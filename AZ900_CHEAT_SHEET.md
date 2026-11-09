@@ -327,11 +327,11 @@ Keywords giúp tìm phần hướng dẫn phù hợp; luôn đọc yêu cầu v�
 
 **Nhóm kiến thức:** Describe Azure management and governance → cost management → cost estimation tools. TCO là kiến thức bổ trợ theo tài liệu luyện thi.
 
-**Liên hệ lý thuyết:** TCO calculator so sánh tổng chi phí sở hữu hạ tầng on-premises với triển khai tương đương trên Azure để ước tính tiết kiệm. Pricing calculator ước tính chi phí sử dụng dịch vụ Azure theo cấu hình và lượng dùng dự kiến.
+**Liên hệ lý thuyết:** TCO Calculator trong đề cũ so sánh tổng chi phí sở hữu hạ tầng on-premises với triển khai tương đương trên Azure để ước tính tiết kiệm. Pricing Calculator ước tính chi phí theo cấu hình và lượng dùng của từng dịch vụ, rồi cộng nhiều dịch vụ trong cùng một dự toán. Khi lập business case di chuyển hiện nay, Microsoft hướng dẫn dùng Azure Migrate Business Case để phân tích TCO/ROI.
 
 **Cách phân tích đáp án:** Đề xuất dùng TCO làm bước đầu đánh giá lợi ích chi phí chuyển từ on-premises sang Azure là phù hợp. Đầu ra hỗ trợ business case và phụ thuộc dữ liệu, giả định nhập vào.
 
-**Bẫy:** TCO không thay thế dự toán đầy đủ cho refactor, chuyển dữ liệu, đào tạo, nhân công triển khai hay so sánh mọi cloud vendor. Nếu yêu cầu chỉ là báo giá dịch vụ Azure dự kiến thì xét Pricing calculator. Đọc kỹ phạm vi “first step” khi chấm Yes/No.
+**Bẫy:** TCO không thay thế dự toán đầy đủ cho refactor, chuyển dữ liệu, đào tạo, nhân công triển khai hay so sánh mọi cloud vendor. Nếu yêu cầu chỉ là báo giá dịch vụ Azure dự kiến thì xét Pricing calculator. Đọc kỹ phạm vi “first step” khi chấm Yes/No. Khi đề đối chiếu hai calculator, tiêu chí phân biệt là dự toán tiêu thụ Azure so với so sánh tổng chi phí sở hữu giữa hai phương án. Mức độ chi tiết hay số lượng dịch vụ không phải tiêu chí phân biệt.
 
 <a id="az900-022"></a>
 
