@@ -38,6 +38,7 @@ Keywords giúp tìm phần hướng dẫn phù hợp; luôn đọc yêu cầu v�
 | Public Preview, support, SLA, General Availability | [AZ900-030](#az900-030) | Kiểm tra điều khoản của tính năng. Public Preview thường không có SLA. |
 | Azure Security Center, Microsoft Defender for Cloud, security posture, regulatory compliance, potential threats | [AZ900-031](#az900-031) | Đánh giá cấu hình, khoảng trống tuân thủ và khả năng bảo vệ workload trước mối đe dọa. |
 | region-wide failure, unplanned outage, disaster recovery, elasticity and scalability | [AZ900-032](#az900-032) | Lập kế hoạch khôi phục tại region khác và kiểm tra công suất region đích. |
+| remote workers, Windows virtual desktop, personalized access, RemoteApp | [AZ900-033](#az900-033) | Chọn AVD khi cần cung cấp desktop Windows hoặc ứng dụng từ xa cho người dùng. |
 
 <a id="az900-001"></a>
 
@@ -486,3 +487,17 @@ Keywords giúp tìm phần hướng dẫn phù hợp; luôn đọc yêu cầu v�
 **Cách phân tích đáp án** Disaster Recovery đáp ứng trực tiếp yêu cầu khôi phục. Nếu đề yêu cầu hai lựa chọn như tình huống này, Elasticity and Scalability là lựa chọn bổ trợ để lập kế hoạch công suất tại nơi phục hồi. Agility nói về tốc độ triển khai. VM Scale Sets hỗ trợ quản lý và mở rộng nhóm VM.
 
 **Bẫy** Scale Sets hoặc Availability Zones triển khai trong cùng region chỉ có phạm vi bảo vệ bên trong region đó. Tăng số VM ở nơi đã mất dịch vụ không thay thế được phương án khôi phục tại một region khác.
+
+<a id="az900-033"></a>
+
+## AZ900-033 | Azure Virtual Desktop cho nhân viên làm việc từ xa
+
+**Dấu hiệu** Windows remote desktop, virtualized desktop, personalized access to apps and data.
+
+**Nhóm kiến thức** Describe Azure architecture and services → Azure compute and networking services → Azure Virtual Desktop.
+
+**Liên hệ lý thuyết** Azure Virtual Desktop cung cấp desktop Windows đầy đủ hoặc từng ứng dụng qua RemoteApp. Personal host pool cho phép gán máy riêng, còn pooled host pool cho phép nhiều người dùng chia sẻ các session host theo cấu hình.
+
+**Cách phân tích đáp án** Chọn AVD khi trọng tâm là cung cấp desktop hoặc ứng dụng từ xa cho nhân viên. Azure VM cung cấp máy ảo để chạy workload. VM Scale Sets giúp quản lý và mở rộng nhóm VM. Availability Sets phân tán VM qua fault domain và update domain để giảm tác động của lỗi phần cứng và bảo trì.
+
+**Bẫy** AVD có thể dùng Azure VM làm session host. Người dùng vẫn truy cập từ thiết bị đầu cuối tương thích. Nhu cầu cấp quyền theo từng người không tự động đồng nghĩa mỗi người cần một VM riêng.
