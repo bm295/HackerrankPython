@@ -1,6 +1,6 @@
 # Chiến lược kiến trúc AI 2028
 
-**Bản đề xuất 0.1 · Cập nhật 09/11/2026 · Nguồn kiểm tra đến 09/11/2026**
+**Bản đề xuất 0.2 · Cập nhật 09/11/2026 · Nguồn kiểm tra đến 09/11/2026**
 
 ## Phạm vi và quyết định cần chốt
 
@@ -40,6 +40,7 @@ Luồng đọc đi từ ứng dụng qua xác thực và phân quyền, rồi tr
 | ADR-02 · Model API hay tự vận hành | Thử model API qua adapter nếu chính sách dữ liệu cho phép. Đánh giá self-hosted nếu yêu cầu kiểm soát dữ liệu hoặc TCO khiến model API không khả thi. | So sánh trên cùng tải, bộ dữ liệu và ngưỡng chất lượng. Điều kiện dữ liệu là gate bắt buộc. Kiểm chứng ở R27-05. |
 | ADR-03 · Workflow cố định hay agent | Ưu tiên workflow cố định. Thử gọi công cụ chỉ đọc có allowlist, schema và giới hạn thời gian nếu workflow cần chọn bước động. [S02] | Dừng nếu mức cải thiện không bù chi phí và độ phức tạp, hoặc có thao tác ngoài quyền. Kiểm chứng ở R27-10. |
 | ADR-04 · Mức độ phức tạp của context | Dùng retrieval có giới hạn và trích dẫn làm baseline. Thử xếp hạng theo độ mới hoặc nén context khi có bằng chứng về lỗi dữ liệu cũ, nhiễu hoặc vượt ngân sách token. [S01] | Chỉ giữ phần cải thiện được chất lượng hoặc chi phí trên cùng workload mà vẫn qua gate về quyền và độ đúng. Kiểm chứng ở R27-09. |
+| ADR-05 · Điều phối coding agent trong quy trình phát triển | Dùng một coding agent với kiểm chứng độc lập làm baseline. Thử nhiều agent khi tác vụ có thể chia theo phạm vi chỉnh sửa rõ ràng. Cách này có thể giảm xung đột nhưng tăng công điều phối và bàn giao. [S04] | Xét áp dụng năm 2028 nếu R27-13 đạt gate trên tác vụ đại diện và đội có năng lực vận hành. |
 
 ## Timeline thực thi năm 2027
 
@@ -57,10 +58,17 @@ Mỗi nhiệm vụ ở trạng thái **Đề xuất**. Mốc tháng là cửa s�
 | R27-08 | Q3 · Tháng 8 | O28-01, O28-02 | Product Owner | R27-07 | Pilot có giới hạn, kèm báo cáo so sánh thời gian, tỷ lệ hoàn thành và chi phí với baseline. Chốt tiếp tục, thu hẹp hoặc dừng. |
 | R27-09 | Q3 · Tháng 9 | O28-03, ADR-04 | AI Engineer | R27-08 | Thử nghiệm context có kiểm soát nếu pilot tiếp tục. So sánh độ đúng, độ mới, token, p95 và chi phí mỗi tác vụ thành công. Kiểm tra lỗi do nén hoặc dữ liệu xung đột. |
 | R27-10 | Q4 · Tháng 10 | O28-03, ADR-03 | Tech Lead | R27-08 | Nếu use case cần nhiều bước, so sánh workflow cố định với tool calling chỉ đọc trong sandbox. Nếu chưa có nhu cầu, ghi quyết định hoãn và điều kiện mở lại. |
+| R27-13 | Q4 · Tháng 10, tùy chọn | ADR-05 | Tech Lead | — | Khi có năng lực thử nghiệm và repo sandbox được phép sử dụng, so sánh hai cách điều phối trên các tác vụ tương đương. Báo cáo số liệu, kết quả gate và quyết định giữ baseline hoặc mở pilot 2028. Nếu thiếu điều kiện, ghi nhận hoãn. |
 | R27-11 | Q4 · Tháng 11 | O28-02, ADR-02 | Platform Lead | R27-08 | Kiểm thử tải và chuyển adapter hoặc hoàn nguyên về tìm kiếm. Cập nhật chi phí theo dữ liệu pilot và ghi kết quả diễn tập. |
-| R27-12 | Q4 · Tháng 12 | O28-01, O28-02, O28-03 | Product Owner | R27-09, R27-10, R27-11 | Hồ sơ quyết định đầu tư 2028, gồm kết quả đã đo, các lựa chọn giữ/mở rộng/dừng, chủ sở hữu và điều kiện giải ngân. Ghi rõ các thử nghiệm đã hoãn. |
+| R27-12 | Q4 · Tháng 12 | O28-01, O28-02, O28-03 | Product Owner | R27-09, R27-10, R27-11 | Hồ sơ quyết định đầu tư 2028, gồm kết quả đã đo, các lựa chọn giữ/mở rộng/dừng, chủ sở hữu và điều kiện giải ngân. Ghi rõ các thử nghiệm đã hoãn. Nếu R27-13 có kết quả, đính kèm quyết định về coding agent riêng. |
 
 **90 ngày đầu kể từ 09/11/2026.** Chọn ứng viên use case, xác định ai có thể cấp quyền đọc tài liệu và đối chiếu năng lực đội trong tháng 11–12. Dùng tháng 1 để chốt R27-01, sau đó bắt đầu thu thập bộ đánh giá nếu đã có quyền và người phụ trách.
+
+### Cách đo thử nghiệm coding agent R27-13
+
+- Dùng các tác vụ có độ khó tương đương, cùng điều kiện truy cập, bộ kiểm tra CI và quy trình review. Giữ người duyệt PR độc lập với bên tạo thay đổi ở cả hai phương án.
+- Với nhiều agent, phân quyền theo vai trò và cô lập nhánh hoặc vùng chỉnh sửa. Ghi lại nhiệm vụ, trạng thái bàn giao, phiên bản thay đổi và kết quả kiểm tra để truy vết từng PR. [S04]
+- Đo thời gian từ lúc nhận tác vụ đến lúc PR được duyệt, thời gian review của con người, số vòng làm lại, xung đột tích hợp và chi phí mỗi PR được duyệt. Chốt mức cải thiện tối thiểu và trần chi phí trước khi chạy. Chỉ xét mở pilot nếu giảm thời gian đầu cuối đủ mức đã chốt, công review và lỗi tích hợp không tăng, chi phí trong trần và không quan sát thấy vi phạm quyền nghiêm trọng. Nếu mẫu quá ít để kết luận, tiếp tục dùng baseline.
 
 ## Gate, chi phí và quyết định dừng
 
@@ -80,9 +88,11 @@ TCO tháng = inference + truy xuất + lưu trữ + chi phí tích hợp phân b
 | S01 | [Adi Polak, Systemic Approach to Memory, Knowledge, and Context in Agentic AI Architectures](https://www.infoq.com/articles/agentic-ai-context-memory-knowledge/) | 02/11/2026 / 09/11/2026 | Góc nhìn về context, memory và knowledge. Dùng để thiết kế ADR-04 và R27-09. Bài viết đưa ra quan điểm thiết kế và thiếu benchmark cho workload này. |
 | S02 | [Anthropic, Building effective AI agents](https://www.anthropic.com/research/building-effective-agents) | 19/12/2024 / 09/11/2026 | Các mẫu workflow và agent, cùng lý do bắt đầu từ cấu trúc đơn giản. Dùng cho ADR-03 và R27-10. Phạm vi sử dụng là mẫu thiết kế, vì công cụ cụ thể đã thay đổi từ thời điểm bài đăng. |
 | S03 | [NIST AI 600-1, Generative AI Profile](https://doi.org/10.6028/NIST.AI.600-1) | 26/07/2024 / 09/11/2026 | Hướng dẫn tự nguyện về quản lý rủi ro AI tạo sinh. Dùng để định hướng đánh giá trước triển khai và giám sát ở R27-06–07. Các gate trong file là đề xuất cho kế hoạch này. |
+| S04 | [Denis Shokhirev, Why one agent is no longer enough](https://gerdennisai.com/blog/multi-agent-cli-orchestration-without-chaos) | 09/11/2026 / 09/11/2026 | Kinh nghiệm triển khai tách vai trò, cô lập vùng sửa và lưu trạng thái điều phối. Dùng để thiết kế ADR-05 và R27-13. Bài viết chưa đưa ra benchmark đối chứng cho hiệu quả multi-agent. |
 
 | Phiên bản | Ngày | Nguồn | Thay đổi |
 | --- | --- | --- | --- |
 | 0.1 | 09/11/2026 | S01–S03 | Tạo chiến lược, ADR đề xuất và 12 nhiệm vụ năm 2027. Chờ xác nhận bối cảnh triển khai và đo baseline. |
+| 0.2 | 09/11/2026 | S04 | Bổ sung ADR-05 và thử nghiệm coding agent tùy chọn R27-13, tách khỏi pilot tra cứu tài liệu và workflow gọi công cụ của sản phẩm. |
 
 Khi có reference mới, cập nhật các ADR, nhiệm vụ và gate chịu ảnh hưởng theo [quy trình duy trì chiến lược](.skills/ai-architecture-strategy-2028/SKILL.md#maintain-the-strategy-file). Rà soát lại các giả định và quyết định đầu tư vào cuối mỗi quý.
