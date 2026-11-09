@@ -32,7 +32,7 @@ Keywords giúp tìm phần hướng dẫn phù hợp; luôn đọc yêu cầu v�
 | regulated workloads, move to Azure, retain private infrastructure, hybrid | [AZ900-024](#az900-024) | Hybrid phù hợp khi kết hợp public với private/on-premises theo yêu cầu workload. |
 | spare capacity, tolerate interruptions, batch, commit in advance, Spot, Reservations | [AZ900-025](#az900-025) | Spot dùng công suất dư có thể bị thu hồi; Reservations giảm giá theo cam kết thời hạn. |
 | resource locks, accidental deletion, modification, shared resource group, ReadOnly, CanNotDelete | [AZ900-026](#az900-026) | Locks bảo vệ thao tác quản lý; RBAC xác định quyền theo danh tính. |
-| first required step, trial account, subscription, resource group | [AZ900-027](#az900-027) | Cần subscription hoạt động trước khi tạo resource group và triển khai workload. |
+| first required step, trial account, resource group, multiple regions, nested groups | [AZ900-027](#az900-027) | Subscription chứa Resource Group. Nhóm có thể chứa tài nguyên ở nhiều region. |
 | reliability, predictability, unpredictable costs, business continuity, compliance | [AZ900-028](#az900-028) | Predictability là dự báo performance/cost; compliance thuộc security/governance. |
 | large amounts of unstructured data, documents, images, videos, backups | [AZ900-029](#az900-029) | Chọn Blob cho object storage; Files khi cần file share SMB/NFS. |
 | Public Preview, support, SLA, General Availability | [AZ900-030](#az900-030) | Kiểm tra điều khoản của tính năng. Public Preview thường không có SLA. |
@@ -417,6 +417,8 @@ Keywords giúp tìm phần hướng dẫn phù hợp; luôn đọc yêu cầu v�
 **Cách phân tích đáp án:** Trong các lựa chọn Availability Zone, Resource Group, ARM template và Subscription, chọn Subscription làm điều kiện đầu tiên. Resource group được tạo trong subscription. ARM template là một cách triển khai tùy chọn; không phải tài nguyên nào cũng cần chọn availability zone.
 
 **Bẫy:** Đăng ký Azure Trial thường đã cấp subscription, nên không cần tạo thêm subscription chỉ để thử dịch vụ. Nếu đề hỏi thao tác tiếp theo sau khi đã có subscription hoạt động thì resource group có thể là bước kế tiếp. Azure account là danh tính/tài khoản truy cập; subscription là phạm vi sử dụng dịch vụ và billing, không phải hai từ đồng nghĩa.
+
+**Region và cấu trúc nhóm:** Resource Group gom tài nguyên liên quan như VM và Web App để quản lý chung. Region chọn khi tạo nhóm là nơi lưu metadata. Các tài nguyên thuộc cùng nhóm có thể triển khai ở nhiều region trong cùng subscription. Resource Groups không lồng nhau. Management Groups có thể lồng nhau ở cấp trên subscription.
 
 <a id="az900-028"></a>
 
