@@ -29,7 +29,7 @@ Keywords giúp tìm phần hướng dẫn phù hợp; luôn đọc yêu cầu v�
 | TCO calculator, cost savings, on-premises versus Azure, first step | [AZ900-021](#az900-021) | TCO so sánh tổng chi phí; Pricing calculator ước tính chi phí dịch vụ Azure. |
 | containers dependencies, Docker, full OS, Kubernetes | [AZ900-022](#az900-022) | Image đóng gói dependencies; container chia sẻ kernel; Kubernetes điều phối đa môi trường. |
 | slow performance, delayed response, latency, initial concern | [AZ900-023](#az900-023) | Latency mô tả độ trễ; cần đo để tìm nguyên nhân chậm. |
-| regulated workloads, move to Azure, retain private infrastructure, hybrid | [AZ900-024](#az900-024) | Hybrid phù hợp khi kết hợp public với private/on-premises theo yêu cầu workload. |
+| regulated workloads, move to Azure, retain existing infrastructure, hybrid | [AZ900-024](#az900-024) | Hybrid phù hợp khi kết hợp public với private/on-premises theo yêu cầu workload. |
 | spare capacity, tolerate interruptions, batch, commit in advance, Spot, Reservations | [AZ900-025](#az900-025) | Spot dùng công suất dư có thể bị thu hồi; Reservations giảm giá theo cam kết thời hạn. |
 | resource locks, accidental deletion, modification, shared resource group, ReadOnly, CanNotDelete | [AZ900-026](#az900-026) | Locks bảo vệ thao tác quản lý; RBAC xác định quyền theo danh tính. |
 | first required step, trial account, resource group, multiple regions, nested groups | [AZ900-027](#az900-027) | Subscription chứa Resource Group. Nhóm có thể chứa tài nguyên ở nhiều region. |
@@ -376,6 +376,8 @@ Keywords giúp tìm phần hướng dẫn phù hợp; luôn đọc yêu cầu v�
 **Cách phân tích đáp án:** Khi ý định đề là đưa workload phù hợp lên Azure và giữ một phần workload cần kiểm soát riêng trong private/on-premises, chọn Hybrid Cloud. Private-only không tận dụng đầy đủ public cloud; datacenter đơn thuần không thể hiện mô hình kết hợp.
 
 **Bẫy:** Chỉ có dữ liệu nhạy cảm hoặc nhắc GDPR chưa đủ để bắt buộc hybrid/private. Public cloud có thể hỗ trợ yêu cầu tuân thủ khi được thiết kế và vận hành phù hợp. Hybrid không mặc nhiên rẻ hơn; cần tính cả chi phí kết nối và vận hành hai môi trường. Nếu đề không yêu cầu giữ workload riêng, cần nêu giả định khi chọn hybrid.
+
+**Phân biệt:** Nếu hạ tầng giữ lại là một public cloud khác và tổ chức dùng thêm Azure, cách gọi phù hợp là multicloud. Hybrid cloud trong câu hỏi AZ-900 thường ngụ ý có môi trường private hoặc on-premises kết hợp với Azure.
 
 <a id="az900-025"></a>
 
