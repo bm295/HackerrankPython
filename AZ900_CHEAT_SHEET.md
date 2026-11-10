@@ -27,7 +27,7 @@ Keywords giúp tìm phần hướng dẫn phù hợp; luôn đọc yêu cầu v�
 | service incidents, outages, status updates, incident details, maintenance | [AZ900-019](#az900-019) | Service Health thông báo sự cố nền tảng; Monitor phân tích telemetry workload. |
 | centralized management, monitoring, unified console, Azure Portal | [AZ900-020](#az900-020) | Portal là giao diện tập trung để truy cập và quản lý dịch vụ; phân biệt với engine tự động hóa. |
 | TCO calculator, cost savings, on-premises versus Azure, first step | [AZ900-021](#az900-021) | TCO so sánh tổng chi phí; Pricing calculator ước tính chi phí dịch vụ Azure. |
-| containers dependencies, Docker, full OS, Kubernetes | [AZ900-022](#az900-022) | Image đóng gói dependencies; container chia sẻ kernel; Kubernetes điều phối đa môi trường. |
+| containers dependencies, Docker, full OS, microservices hosting, independent scaling, Kubernetes, AKS | [AZ900-022](#az900-022) | Container image đóng gói mã và dependencies. Kubernetes điều phối container, còn AKS cung cấp Kubernetes được quản lý trên Azure. |
 | slow performance, delayed response, latency, initial concern | [AZ900-023](#az900-023) | Latency mô tả độ trễ; cần đo để tìm nguyên nhân chậm. |
 | regulated workloads, move to Azure, retain existing infrastructure, hybrid | [AZ900-024](#az900-024) | Hybrid phù hợp khi kết hợp public với private/on-premises theo yêu cầu workload. |
 | spare capacity, tolerate interruptions, batch, commit in advance, Spot, Reservations | [AZ900-025](#az900-025) | Spot dùng công suất dư có thể bị thu hồi; Reservations giảm giá theo cam kết thời hạn. |
@@ -354,6 +354,8 @@ Keywords giúp tìm phần hướng dẫn phù hợp; luôn đọc yêu cầu v�
 **Cách phân tích đáp án:** Với bốn phát biểu đóng gói dependencies / Docker quản lý containers / containers luôn cần full OS / Kubernetes tự động triển khai và scale trên Azure, kết quả là True, True, False, True.
 
 **Bẫy:** Cụm “in Azure” không đồng nghĩa “chỉ dành cho Azure”. Cần phân biệt Kubernetes và dịch vụ AKS. Nếu bộ lựa chọn thiếu T,T,F,T, đó là lỗi lựa chọn của đề, không đổi kiến thức để khớp đáp án.
+
+**Chọn nền tảng hosting cho microservices:** Mỗi dịch vụ có thể đóng gói bằng một container image và triển khai độc lập. Khi cần một nền tảng Azure để điều phối nhiều workload, AKS cung cấp Kubernetes được quản lý và hỗ trợ cấu hình số replica hoặc autoscaling riêng cho từng dịch vụ. Container là đơn vị đóng gói và chạy. Azure Web Apps phù hợp để host web app hoặc API, còn Azure Virtual Desktop cung cấp desktop và ứng dụng từ xa.
 
 <a id="az900-023"></a>
 
