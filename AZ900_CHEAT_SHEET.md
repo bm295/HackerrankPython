@@ -324,6 +324,8 @@ Keywords giúp tìm phần hướng dẫn phù hợp; luôn đọc yêu cầu v�
 
 **Bẫy:** Automation trong câu mô tả giao diện truy cập và cấu hình công cụ tự động hóa. Portal không phải engine thực thi mọi automation; chức năng được cung cấp bởi dịch vụ nền và công cụ như Azure Automation, ARM, CLI/PowerShell. Đừng chỉ thấy monitoring mà bỏ qua phạm vi quản lý tổng thể.
 
+**Chọn theo cách thao tác:** Azure Portal phù hợp khi cần một giao diện web để tạo VM, cấu hình load balancer và xem hiệu năng qua Azure Monitor hoặc Application Insights. Azure CLI và Azure PowerShell cũng có thể triển khai tài nguyên và truy xuất dữ liệu giám sát, phù hợp khi cần thao tác bằng lệnh hoặc viết script.
+
 <a id="az900-021"></a>
 
 ## AZ900-021 | TCO calculator và Pricing calculator
