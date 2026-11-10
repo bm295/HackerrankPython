@@ -133,7 +133,7 @@ Keywords giúp tìm phần hướng dẫn phù hợp; luôn đọc yêu cầu v�
 
 ## AZ900-007 | Azure Functions và serverless compute
 
-**Dấu hiệu:** Serverless compute, event-driven code, triggers.
+**Dấu hiệu:** Serverless compute, event-driven code, HTTP trigger, short tasks, minimal management overhead.
 
 **Nhóm kiến thức:** Describe Azure architecture and services → Azure compute → functions.
 
@@ -142,6 +142,8 @@ Keywords giúp tìm phần hướng dẫn phù hợp; luôn đọc yêu cầu v�
 **Cách phân tích đáp án:** Chọn Functions khi cần serverless compute để thực thi logic ứng dụng. Key Vault quản lý secrets, keys và certificates. Cosmos DB là database và có chế độ serverless. Cần đọc cả từ “compute” và phạm vi “listed”.
 
 **Bẫy:** “Serverless” vẫn sử dụng máy chủ do nhà cung cấp quản lý. Function app vẫn cần quyền truy cập Azure Storage account mặc định. Azure Functions hỗ trợ nhiều ngôn ngữ như C#, JavaScript và Python ở cấp nền tảng. Một function app chọn runtime ngôn ngữ khi cấu hình. Flex Consumption hỗ trợ mở rộng theo tải sự kiện, còn cách scale và tính phí phụ thuộc hosting plan. Azure cũng có các dịch vụ serverless khác.
+
+**Tình huống HTTP:** Với API hoặc webhook nhẹ xử lý ngắn, dùng HTTP trigger để gọi hàm khi có request và trả kết quả trực tiếp. Flex Consumption tự điều chỉnh số instance theo tải HTTP và hỗ trợ giữ instance luôn sẵn sàng khi cần giảm độ trễ khởi động.
 
 <a id="az900-008"></a>
 
