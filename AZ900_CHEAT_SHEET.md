@@ -42,6 +42,7 @@ Keywords giúp tìm phần hướng dẫn phù hợp; luôn đọc yêu cầu v�
 | isolated network environments, departments, segmentation, VNet, subnet | [AZ900-034](#az900-034) | VNet riêng tạo ranh giới mạng. Subnet chia mạng và có thể áp quy tắc lọc lưu lượng. |
 | data discovery, cataloging, data governance, lineage, Azure Purview | [AZ900-035](#az900-035) | Dùng Purview để thu thập metadata và tìm kiếm tài sản dữ liệu. |
 | end-of-quarter traffic spike, variable demand, manage cost, elasticity | [AZ900-036](#az900-036) | Tăng công suất khi tải lên và giảm khi tải hạ để tránh giữ công suất dư. |
+| Azure pricing factors, datacenter location, VM size, inter-region bandwidth, ingress, egress | [AZ900-037](#az900-037) | Tách giá tài nguyên theo region và SKU khỏi phí truyền dữ liệu liên vùng. |
 
 <a id="az900-001"></a>
 
@@ -556,3 +557,15 @@ Keywords giúp tìm phần hướng dẫn phù hợp; luôn đọc yêu cầu v�
 **Cách phân tích đáp án** Nếu nhu cầu tăng mạnh cuối quý rồi trở về mức bình thường, chọn Elasticity. Tăng công suất lúc cao điểm để đáp ứng tải, rồi thu hồi phần công suất dư để kiểm soát chi phí. High Availability tập trung vào duy trì dịch vụ khi có sự cố. Agility tập trung vào tốc độ cấp phát và triển khai.
 
 **Bẫy** Câu hỏi dùng Power BI Embedded làm bối cảnh. Đáp án gọi tên đặc tính cloud, còn cách cấu hình tăng giảm công suất phụ thuộc dịch vụ và gói đang dùng.
+
+<a id="az900-037"></a>
+
+## AZ900-037 | Region, VM size và phí truyền dữ liệu liên vùng
+
+**Dấu hiệu** Pricing factors, datacenter location, virtual machine size, inter-region data transfer.
+
+**Nhóm kiến thức** Describe Azure management and governance → cost management → factors that affect costs.
+
+**Liên hệ lý thuyết** Giá tài nguyên có thể thay đổi theo Azure region và SKU. Với VM, kích cỡ hoặc dòng máy ảnh hưởng đơn giá compute. Theo biểu giá bandwidth chuẩn, dữ liệu liên vùng được tính phí egress ở phía gửi, còn ingress ở phía nhận miễn phí.
+
+**Cách phân tích đáp án** Chọn vị trí triển khai, VM size và dung lượng truyền dữ liệu giữa các region. Azure Portal là giao diện quản lý. Khi tính chi phí cho luồng hai chiều, mỗi chiều có một phía gửi riêng.
