@@ -41,6 +41,7 @@ Keywords giúp tìm phần hướng dẫn phù hợp; luôn đọc yêu cầu v�
 | remote workers, Windows virtual desktop, personalized access, RemoteApp | [AZ900-033](#az900-033) | Chọn AVD khi cần cung cấp desktop Windows hoặc ứng dụng từ xa cho người dùng. |
 | isolated network environments, departments, segmentation, VNet, subnet | [AZ900-034](#az900-034) | VNet riêng tạo ranh giới mạng. Subnet chia mạng và có thể áp quy tắc lọc lưu lượng. |
 | data discovery, cataloging, data governance, lineage, Azure Purview | [AZ900-035](#az900-035) | Dùng Purview để thu thập metadata và tìm kiếm tài sản dữ liệu. |
+| end-of-quarter traffic spike, variable demand, manage cost, elasticity | [AZ900-036](#az900-036) | Tăng công suất khi tải lên và giảm khi tải hạ để tránh giữ công suất dư. |
 
 <a id="az900-001"></a>
 
@@ -537,3 +538,17 @@ Keywords giúp tìm phần hướng dẫn phù hợp; luôn đọc yêu cầu v�
 **Cách phân tích đáp án** Khi đề hỏi về khám phá, lập danh mục và quản trị dữ liệu, chọn Purview. Azure Machine Learning phục vụ vòng đời mô hình, Azure DevOps hỗ trợ quản lý mã nguồn và CI/CD, còn Cost Management & Billing phục vụ theo dõi chi phí và hóa đơn.
 
 **Bẫy** Cụm “integrating seamlessly” không quyết định đáp án và không bảo đảm mọi kết nối. Phạm vi tích hợp phụ thuộc nguồn và cấu hình. Tìm thấy metadata trong catalog không tự cấp quyền đọc dữ liệu gốc.
+
+<a id="az900-036"></a>
+
+## AZ900-036 | Elasticity cho tải tăng theo đợt
+
+**Dấu hiệu** Traffic spike, variable usage, end-of-quarter reporting, manage cost.
+
+**Nhóm kiến thức** Describe cloud concepts → benefits of using cloud services → scalability và elasticity.
+
+**Liên hệ lý thuyết** Scalability mô tả khả năng điều chỉnh công suất bằng cách thay đổi kích thước hoặc số lượng tài nguyên. Elasticity nhấn mạnh việc tự động điều chỉnh công suất theo biến động của tải. Autoscaling là một cách triển khai khi dịch vụ hỗ trợ.
+
+**Cách phân tích đáp án** Nếu nhu cầu tăng mạnh cuối quý rồi trở về mức bình thường, chọn Elasticity. Tăng công suất lúc cao điểm để đáp ứng tải, rồi thu hồi phần công suất dư để kiểm soát chi phí. High Availability tập trung vào duy trì dịch vụ khi có sự cố. Agility tập trung vào tốc độ cấp phát và triển khai.
+
+**Bẫy** Câu hỏi dùng Power BI Embedded làm bối cảnh. Đáp án gọi tên đặc tính cloud, còn cách cấu hình tăng giảm công suất phụ thuộc dịch vụ và gói đang dùng.
