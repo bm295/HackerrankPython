@@ -8,7 +8,7 @@ Keywords giúp tìm phần hướng dẫn phù hợp; luôn đọc yêu cầu v�
 | --- | --- | --- |
 | hardware failures, data center outages, remain operational, Availability Zones | [AZ900-001](#az900-001) | Cần high availability qua nhiều zone trong cùng region; backup chỉ hỗ trợ khôi phục. |
 | cloud arrangement, support infrastructure in a data center | [AZ900-002](#az900-002) | Xác định ai vận hành hạ tầng vật lý và phân biệt cloud deployment model với serverless. |
-| Infrastructure as Code, ARM, scripting language, Terraform, repeatability | [AZ900-003](#az900-003) | Phân biệt dịch vụ triển khai, ngôn ngữ khai báo và công cụ IaC. |
+| Infrastructure as Code, declarative templates, ARM, Bicep, Terraform, repeatability | [AZ900-003](#az900-003) | Phân biệt dịch vụ triển khai, ngôn ngữ khai báo và công cụ IaC. |
 | frequently accessed, monthly reports, historical backups, Hot, Cold, Archive | [AZ900-004](#az900-004) | Cân nhắc tần suất đọc, thời gian giữ, phí truy xuất và độ trễ rehydration. |
 | distributing traffic, multiple instances, availability zones within a region | [AZ900-005](#az900-005) | Load Balancer chia traffic tới backend khỏe mạnh; kiểm tra cấu hình đa zone và tách biệt autoscale. |
 | various formats, Blob, Table, Queue, File, Storage Account | [AZ900-006](#az900-006) | Nhận diện nhóm dịch vụ Azure Storage và phân biệt Table Storage với SQL Database. |
@@ -74,15 +74,17 @@ Keywords giúp tìm phần hướng dẫn phù hợp; luôn đọc yêu cầu v�
 
 ## AZ900-003 | Phân biệt ARM, ARM templates, Bicep và Terraform
 
-**Dấu hiệu:** Infrastructure as Code, scripting language, repeatability, manual Portal changes, Terraform providers.
+**Dấu hiệu:** Infrastructure as Code, declarative templates, ARM or Bicep, infrastructure components, scripting language, repeatability, manual Portal changes, Terraform providers.
 
 **Nhóm kiến thức:** Describe Azure management and governance → managing and deploying Azure resources → IaC, ARM và ARM templates.
 
-**Liên hệ lý thuyết:** Azure Resource Manager (ARM) là dịch vụ triển khai và quản lý tài nguyên Azure. ARM templates là tệp JSON khai báo tài nguyên và cấu hình. Bicep là ngôn ngữ khai báo cho tài nguyên Azure. Terraform là công cụ IaC hỗ trợ Azure và các nền tảng khác thông qua provider.
+**Liên hệ lý thuyết:** Azure Resource Manager (ARM) là dịch vụ triển khai và quản lý tài nguyên Azure. ARM templates là tệp JSON khai báo tài nguyên và cấu hình. Bicep là ngôn ngữ khai báo được chuyển thành ARM template JSON khi triển khai. Terraform là công cụ IaC hỗ trợ Azure và các nền tảng khác thông qua provider.
 
 **Cách phân tích đáp án:** IaC mô tả hạ tầng bằng mã để triển khai nhất quán và lặp lại được. Thay đổi thông thường đi qua mã cấu hình và quy trình triển khai.
 
 **Bẫy:** Khi đáp án gọi ARM templates là “scripts”, hiểu chính xác là tệp JSON dùng cú pháp khai báo trạng thái mong muốn; ARM xử lý triển khai và dependency. Templates hỗ trợ nhiều loại tài nguyên, không chỉ VM. Cụm “ARM is a scripting language” nhầm dịch vụ ARM với cách viết cấu hình hạ tầng. Thay đổi tài nguyên trực tiếp qua Portal có thể khiến cấu hình thực tế lệch khỏi mã.
+
+**Ví dụ AKS:** Dùng ARM template hoặc Bicep để tạo cụm AKS như một tài nguyên Azure. Dùng Kubernetes manifest để khai báo các đối tượng chạy bên trong cụm, chẳng hạn Deployment và Service.
 
 <a id="az900-004"></a>
 
