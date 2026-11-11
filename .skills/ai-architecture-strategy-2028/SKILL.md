@@ -45,6 +45,12 @@ For coding-agent references, distinguish engineering delivery workflows from age
 
 Describe the application/domain boundary, ingestion and data lineage, identity and authorization, retrieval and access filtering, model access/routing, orchestration and tool contracts, evaluation, telemetry, human review, and feedback lifecycle. Include only applicable components; explain omissions.
 
+Review seven capability areas using the workbook: data/knowledge, model/inference, orchestration, security/guardrails, application, observability, and agentic operations. Record responsibility, input/output contract, owner, implementation evidence or proposed status, and omission rationale. Treat these as review areas, not seven mandatory services. Keep presentation separate from workflow logic and deterministic domain authority. Add a shared platform only when reuse and operating costs justify it.
+
+Version the model, prompt, retrieval configuration, tool contracts, and evaluation dataset as a reproducible release configuration. Run held-out regression gates before promoting changes and retain a known-good configuration for rollback. Introduce minimal authorization checks, sanitized traces, latency/token/cost measurement, and evaluation with the first executable MVP; harden them before pilot. Define privacy-aware production evaluation sampling, owner, cadence, alerts, and rollback triggers.
+
+When agents become independently owned or reused, assess a catalog containing owner, capability, version, tool permissions, contract, and lifecycle status. Compare a configuration-based catalog with a discovery service; do not require a registry, protocol, or model router without measured need.
+
 Trace important quality requirements to concrete architecture decisions and verification:
 - Reliability: bounded retries, timeouts, rate limits, circuit breaking, idempotency, deduplication, compensation for partial failure, and degraded operation.
 - Security: tenant isolation, least privilege, authorization outside the model, secret handling, prompt-injection defenses, output validation, data retention/deletion, and auditability.
