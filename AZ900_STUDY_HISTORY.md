@@ -62,6 +62,8 @@ Nhật ký ghi lại câu đã luyện, điểm thô và ghi chú để đối c
 
 | AZ900-H056 | 2026-11-11 | 2026-07-20 | Describe Azure architecture and services | Public endpoints và private endpoints | LinkedIn câu 59/60: bốn mệnh đề về truy cập public/private, cấu hình mặc định và giảm phơi bày Internet | Trung bình | C (T, T, T, F), theo ảnh | B (T, T, F, T) | 2/4 | Một phần | Đúng ý 1, 2; sai ý 3, 4. Điểm cộng/trừ: +2 −2 = 0; domain giữ +13. Private endpoint dùng IP riêng trong VNet và phải được tạo/cấu hình; giảm phơi bày Internet khi kiểm soát public access phù hợp. Tạo private endpoint không tự tắt public endpoint. Public endpoint vẫn có thể được bảo vệ bằng xác thực/firewall; private endpoint có thể truy cập qua mạng kết nối riêng, không chỉ cùng VNet. Xem AZ900-043. |
 
+| AZ900-H057 | 2026-11-11 | 2026-07-20 | Describe Azure architecture and services | Azure ExpressRoute và kết nối hybrid riêng | LinkedIn câu 60/60: chọn mô tả ExpressRoute cho kết nối datacenter on-premises với Azure | Dễ | A | C (private, dedicated connections bypassing public internet) | 0/1 | Sai | A sai ở over the public internet. ExpressRoute cung cấp kết nối riêng qua nhà cung cấp kết nối, không đi qua Internet công cộng. B sai vì không chủ yếu cho nhu cầu mạng tối thiểu; D sai vì không miễn phí. Kết nối riêng không đồng nghĩa mặc định mã hóa. Điểm lượt −1; domain +13 → +12. Xem AZ900-044. |
+
 ## Lịch sử các lần ôn lại
 
 Các dòng dưới đây được chuyển từ ghi chú ôn lại đã có, mỗi lượt tính đúng một lần; điểm domain kế thừa phân loại và độ khó của câu gốc.
@@ -85,6 +87,6 @@ Các dòng dưới đây được chuyển từ ghi chú ôn lại đã có, m�
 | --- | --- | --- | --- | --- | --- | --- |
 | Describe cloud concepts | 9 | 10 | 11/12 | +10 | 91.11% | Vững |
 | Describe Azure management and governance | 16 | 17 | 21/27 | +15 | 75.68% | Đang củng cố |
-| Describe Azure architecture and services | 24 | 29 | 28/43 | +13 | 62.37% | Cần ôn |
+| Describe Azure architecture and services | 25 | 30 | 28/44 | +12 | 60.51% | Cần ôn |
 
 Chưa đủ dữ liệu để kết luận mức sẵn sàng tổng thể: mỗi domain cần ít nhất 15 câu riêng biệt với chủ đề và độ khó đa dạng. Kết quả hiện hành bao gồm các lượt đã xem phản hồi trước đó; không diễn giải thành tỷ lệ đỗ.
