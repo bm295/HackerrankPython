@@ -227,6 +227,8 @@ Keywords giúp tìm phần hướng dẫn phù hợp; luôn đọc yêu cầu v�
 
 **Bẫy:** Resource Group nằm trong một subscription. Management Group chứa subscription và management group con, không trực tiếp chứa VM hay resource group. Management Groups tự nó không định nghĩa mọi quy tắc hoặc cấp quyền; cần cấu hình Policy và RBAC tại scope phù hợp.
 
+**Chứa trực tiếp và gián tiếp:** Cây phân cấp là Management Group → Subscription → Resource Group → Resource. Chỉ subscription hoặc management group con có thể làm con trực tiếp của management group. Khi đề chỉ nói management group contains subscriptions and resource groups mà không có từ directly, có thể hiểu chứa theo cây: TRUE; resource groups được chứa gián tiếp qua subscriptions. Key LinkedIn câu 29 xác nhận cách hiểu này. Không tự thêm điều kiện directly để đổi đáp án thành FALSE.
+
 <a id="az900-013"></a>
 
 ## AZ900-013 | Mục đích của Azure Policy
@@ -369,7 +371,7 @@ Keywords giúp tìm phần hướng dẫn phù hợp; luôn đọc yêu cầu v�
 
 **Bẫy:** Cụm “in Azure” không đồng nghĩa “chỉ dành cho Azure”. Cần phân biệt Kubernetes và dịch vụ AKS. Nếu bộ lựa chọn thiếu T,T,F,T, đó là lỗi lựa chọn của đề, không đổi kiến thức để khớp đáp án.
 
-**Chọn nền tảng hosting cho microservices:** Mỗi dịch vụ có thể đóng gói bằng một container image và triển khai độc lập. Khi cần một nền tảng Azure để điều phối nhiều workload, AKS cung cấp Kubernetes được quản lý và hỗ trợ cấu hình số replica hoặc autoscaling riêng cho từng dịch vụ. Container là đơn vị đóng gói và chạy. Azure Web Apps phù hợp để host web app hoặc API, còn Azure Virtual Desktop cung cấp desktop và ứng dụng từ xa.
+**Chọn approach hay nền tảng hosting cho microservices:** Câu SoftyWare hỏi approach với đóng gói nhẹ, cô lập và triển khai độc lập: chọn Containers theo key LinkedIn câu 44. Không tự suy ra cần Kubernetes chỉ vì đề nhắc microservices hoặc scalability. Khi có yêu cầu điều phối cụm Kubernetes, chọn AKS.  Mỗi dịch vụ có thể đóng gói bằng một container image và triển khai độc lập. Khi cần một nền tảng Azure để điều phối nhiều workload, AKS cung cấp Kubernetes được quản lý và hỗ trợ cấu hình số replica hoặc autoscaling riêng cho từng dịch vụ. Container là đơn vị đóng gói và chạy. Azure Web Apps phù hợp để host web app hoặc API, còn Azure Virtual Desktop cung cấp desktop và ứng dụng từ xa.
 
 <a id="az900-023"></a>
 
