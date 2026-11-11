@@ -50,6 +50,7 @@ Keywords giúp tìm phần hướng dẫn phù hợp; luôn đọc yêu cầu v�
 | regional outage, region pairs, data residency, geo-replication | [AZ900-042](#az900-042) | Chọn vị trí dữ liệu phù hợp và cấu hình replication cùng kế hoạch khôi phục theo dịch vụ. |
 | public endpoints, private endpoints, private IP, VNet, enabled by default | [AZ900-043](#az900-043) | Private endpoint phải tạo/cấu hình; giảm phơi bày Internet nhưng cần kiểm soát public network access riêng. |
 | ExpressRoute, on-premises datacenter, private dedicated connection, bypass public internet | [AZ900-044](#az900-044) | ExpressRoute kết nối riêng tới Azure; private connectivity không đồng nghĩa mã hóa mặc định. |
+| Cost Management and Billing, underutilized resources, optimize spending, NSG, security threats | [AZ900-045](#az900-045) | Cost Management theo dõi/tối ưu chi phí; NSG và cảnh báo threat thuộc chức năng bảo mật/mạng. |
 
 
 <a id="az900-001"></a>
@@ -679,3 +680,17 @@ Keywords giúp tìm phần hướng dẫn phù hợp; luôn đọc yêu cầu v�
 **Cách phân tích đáp án:** Khi cần liên kết riêng từ datacenter tới Azure, chọn mô tả private, dedicated connection bypassing the public internet. Phương án nói ExpressRoute chạy qua public internet là sai. ExpressRoute không chỉ phục vụ doanh nghiệp nhỏ có nhu cầu mạng tối thiểu và không phải dịch vụ miễn phí mặc định theo subscription. VPN Site-to-Site thông thường tạo đường hầm IPsec qua Internet; cũng có thể cấu hình VPN qua ExpressRoute.
 
 **Bẫy:** Kết nối riêng không đồng nghĩa tự động mã hóa. ExpressRoute không mã hóa lưu lượng mặc định; bổ sung TLS, IPsec hoặc MACsec phù hợp khi cần. Độ sẵn sàng còn phụ thuộc thiết kế dự phòng từ đầu tới cuối.
+
+<a id="az900-045"></a>
+
+## AZ900-045 | Phạm vi Cost Management and Billing
+
+**Dấu hiệu:** Cost analysis, budgets, forecast, underutilized resources, optimize spending, invoices.
+
+**Nhóm kiến thức:** Describe Azure management and governance → cost management.
+
+**Liên hệ lý thuyết:** Cost Management phân tích, theo dõi, phân bổ, dự báo và hỗ trợ tối ưu chi phí. Billing quản lý tài khoản thanh toán và hóa đơn. Khuyến nghị Azure Advisor hỗ trợ tìm tài nguyên ít sử dụng để cân chỉnh hoặc ngừng tài nguyên dư; Cost Management có thể hiển thị các khuyến nghị tối ưu liên quan.
+
+**Cách phân tích đáp án:** Chấp nhận phát biểu hỗ trợ nhận diện lãng phí và tối ưu chi tiêu khi xét bộ công cụ tích hợp. Quản lý mã nguồn thuộc công cụ phát triển; triển khai VM thuộc ARM/IaC hoặc công cụ provisioning; cấu hình NSG thuộc quản lý mạng; phát hiện và cảnh báo security threats thuộc dịch vụ bảo mật như Defender for Cloud hoặc Sentinel tùy bối cảnh. Cost alerts không đồng nghĩa security alerts.
+
+**Bẫy:** Key LinkedIn câu 28 đánh dấu A và D dù D nói Cost Management cấu hình NSG. D không phải chức năng của Cost Management; trong bộ năm lựa chọn chỉ A phù hợp. Câu yêu cầu chọn hai thiếu đáp án đúng thứ hai, nên không dùng để đánh giá điểm domain.
