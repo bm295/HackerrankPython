@@ -64,6 +64,8 @@ Nhật ký ghi lại câu đã luyện, điểm thô và ghi chú để đối c
 
 | AZ900-H057 | 2026-11-11 | 2026-07-20 | Describe Azure architecture and services | Azure ExpressRoute và kết nối hybrid riêng | LinkedIn câu 60/60: chọn mô tả ExpressRoute cho kết nối datacenter on-premises với Azure | Dễ | A | C (private, dedicated connections bypassing public internet) | 0/1 | Sai | A sai ở over the public internet. ExpressRoute cung cấp kết nối riêng qua nhà cung cấp kết nối, không đi qua Internet công cộng. B sai vì không chủ yếu cho nhu cầu mạng tối thiểu; D sai vì không miễn phí. Kết nối riêng không đồng nghĩa mặc định mã hóa. Điểm lượt −1; domain +13 → +12. Xem AZ900-044. |
 
+| AZ900-H058 | 2026-11-11 | 2026-07-20 | Describe Azure management and governance | Cost Management, Advisor và NSG | LinkedIn câu 28: chọn hai chức năng Cost Management and Billing trong bộ năm lựa chọn | Dễ về kiến thức; đề lỗi | A, E (ảnh đã chọn) | Key LinkedIn A,D; kỹ thuật chỉ A phù hợp, D sai | 1/2 theo key; không chấm readiness | Mơ hồ | A hỗ trợ tối ưu chi phí, kết hợp Advisor để tìm tài nguyên ít sử dụng. B là code repositories; C là provisioning VM; D là cấu hình mạng NSG; E là phát hiện/cảnh báo threat. Cost Management không cấu hình NSG. Không có đủ hai đáp án đúng về kỹ thuật; loại câu khỏi điểm domain, không thêm điểm hay trừ điểm. Ảnh là kết quả bài làm, không tạo thêm lượt ôn. Xem AZ900-045. |
+
 ## Lịch sử các lần ôn lại
 
 Các dòng dưới đây được chuyển từ ghi chú ôn lại đã có, mỗi lượt tính đúng một lần; điểm domain kế thừa phân loại và độ khó của câu gốc.
