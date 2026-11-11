@@ -118,6 +118,8 @@ Khi threat đã được ghi trong risk register, nay thực sự xảy ra và l
 
 **Cách phân tích đáp án:** Xác định đề muốn bằng chứng về chất lượng hay sự chấp nhận. Kiểm thử, kiểm tra lỗi và đo thông số hướng đến Control Quality; xác nhận chấp nhận từ người có thẩm quyền hướng đến Validate Scope.
 
+Khi khách hàng nhận deliverable nhưng cho rằng chỉ đáp ứng 80% chức năng, trước hết đối chiếu acceptance criteria đã thống nhất với kết quả bàn giao. Con số 80% chưa cho biết đó là thiếu yêu cầu đã cam kết hay kỳ vọng mới. Nếu thiếu chức năng đã thống nhất, xử lý phần chưa đáp ứng; nếu là yêu cầu mới, áp dụng cơ chế quản lý thay đổi phù hợp. Chưa có căn cứ sửa scope management plan hoặc requirements management plan chỉ từ phản hồi này; charter quá tổng quan để xác nhận mức đáp ứng từng chức năng.
+
 **Bẫy:** Deliverable vượt qua kiểm tra nội bộ chưa chắc đã được khách hàng chấp nhận. Definition of Done trong agile quy định tiêu chuẩn hoàn thành; không mặc định thay thế mọi yêu cầu chấp nhận trong hợp đồng.
 
 <a id="pmp-006"></a>
