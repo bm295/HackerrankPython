@@ -479,7 +479,7 @@ Keywords giúp tìm phần hướng dẫn phù hợp; luôn đọc yêu cầu v�
 
 **Cách phân tích đáp án** Chọn No khi đề giả định mặc định nhận được hỗ trợ kèm SLA. Khi so sánh nhà cung cấp, đọc SLA và điều kiện áp dụng của dịch vụ và cấu hình dự kiến. Dự toán chi phí là bước riêng.
 
-**Bẫy** Hỗ trợ kỹ thuật và SLA là hai cam kết riêng. Một tính năng có thể được hỗ trợ ở mức giới hạn trong giai đoạn Preview mà không có SLA. Kiểm tra điều khoản cụ thể nếu đề nêu ngoại lệ.
+**Bẫy** Hỗ trợ kỹ thuật và SLA là hai cam kết riêng. Một tính năng có thể được hỗ trợ ở mức giới hạn trong giai đoạn Preview mà không có SLA. Public Preview có thể miễn phí hoặc tính phí theo điều khoản sản phẩm. Việc trả phí không tự tạo cam kết SLA. Kiểm tra điều khoản cụ thể nếu đề nêu ngoại lệ.
 
 <a id="az900-031"></a>
 
