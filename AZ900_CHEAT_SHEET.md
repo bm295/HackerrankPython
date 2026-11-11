@@ -45,6 +45,7 @@ Keywords giúp tìm phần hướng dẫn phù hợp; luôn đọc yêu cầu v�
 | Azure pricing factors, datacenter location, VM size, inter-region bandwidth, ingress, egress | [AZ900-037](#az900-037) | Tách giá tài nguyên theo region và SKU khỏi phí truyền dữ liệu liên vùng. |
 | large file set, on-premises server, Azure Storage, efficient transfer, AzCopy | [AZ900-038](#az900-038) | Sao chép trực tiếp dùng AzCopy. Data Factory phù hợp pipeline, File Sync phù hợp đồng bộ file share. |
 | centralized management, hybrid infrastructure, multicloud Kubernetes, Azure Arc, compliance | [AZ900-039](#az900-039) | Azure Arc mở rộng quản lý Azure tới tài nguyên bên ngoài Azure để quản trị tập trung. |
+| complex calculations, large datasets, VM resource configuration, CPU cores and memory | [AZ900-040](#az900-040) | Chọn vCPU và RAM theo nhu cầu tính toán và dữ liệu đang xử lý. |
 
 <a id="az900-001"></a>
 
@@ -597,3 +598,17 @@ Keywords giúp tìm phần hướng dẫn phù hợp; luôn đọc yêu cầu v�
 **Cách phân tích đáp án** Chọn Yes khi tổ chức cần quản trị thống nhất tài nguyên on-premises, nhiều cloud và tài nguyên Azure gốc. Azure VM được quản lý trực tiếp trong Azure, còn Arc mở rộng phạm vi tới tài nguyên bên ngoài. Arc-enabled servers dùng Connected Machine agent cho máy ngoài Azure.
 
 **Bẫy** Kết nối Arc tạo khả năng quản lý tập trung. Mức tuân thủ thực tế phụ thuộc policy được gán, cấu hình và xử lý các sai lệch.
+
+<a id="az900-040"></a>
+
+## AZ900-040 | Cấu hình CPU và RAM cho workload VM
+
+**Dấu hiệu** Complex calculations, significant computational power, ample memory, large datasets.
+
+**Nhóm kiến thức** Describe Azure architecture and services → Azure compute → virtual machines.
+
+**Liên hệ lý thuyết** Chọn VM size theo nhu cầu vCPU, RAM, đĩa và mạng. CPU phục vụ tính toán, RAM giữ dữ liệu đang xử lý. Compute optimized và memory optimized đáp ứng các tỷ lệ CPU/RAM khác nhau, còn lựa chọn cụ thể cần số đo tải.
+
+**Cách phân tích đáp án** Khi đề nhấn mạnh tính toán phức tạp và bộ nhớ lớn, ưu tiên CPU cores and memory. Network bandwidth ảnh hưởng truyền dữ liệu. Storage capacity là dung lượng lưu. VM Scale Sets quản lý nhóm VM và điều chỉnh số instance theo tải hoặc lịch.
+
+**Bẫy** Tải mạng cao trong giờ làm việc là yêu cầu bổ sung. Xác định yêu cầu chính của câu hỏi, rồi kiểm tra các giới hạn mạng và đĩa của VM size đã chọn.
