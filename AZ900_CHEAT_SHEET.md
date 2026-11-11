@@ -454,9 +454,9 @@ Keywords giúp tìm phần hướng dẫn phù hợp; luôn đọc yêu cầu v�
 
 **Liên hệ lý thuyết:** Reliability là khả năng phục hồi sau lỗi và tiếp tục hoạt động. Predictability gồm dự báo hiệu năng/tài nguyên cần thiết và chi phí. Compliance thuộc lợi ích security/governance; cloud hỗ trợ tuân thủ nhưng không tự bảo đảm mọi workload tuân thủ.
 
-**Cách phân tích đáp án:** Performance ổn định phù hợp predictability; thiết kế đa region hỗ trợ business continuity và reliability. Chi phí khó dự đoán không phải lợi ích cost predictability. Với lựa chọn A “Ability to Handle Unpredictable Costs”, A có vẻ là đáp án tác giả dự kiến nhưng chưa có key xác nhận.
+**Cách phân tích đáp án:** Performance ổn định phù hợp predictability; thiết kế đa region hỗ trợ business continuity và reliability. Chi phí khó dự đoán không phải lợi ích cost predictability. Với lựa chọn A “Ability to Handle Unpredictable Costs”, A là đáp án theo key LinkedIn đã được xác nhận từ ảnh kết quả. Người học chọn D nên được chấm 0/1 theo key này.
 
-**Bẫy:** Nếu stem hỏi nghiêm ngặt lựa chọn ngoài nhóm reliability/predictability, D về industry regulations/compliance cũng có cơ sở vì thuộc governance. Câu LinkedIn 23/60 trộn tiêu chí phân nhóm với lợi ích triển khai, nên không dùng để đánh giá readiness khi chưa làm rõ. Nguồn: https://learn.microsoft.com/en-us/training/modules/describe-benefits-use-cloud-services/3-reliability-predictability-cloud và https://learn.microsoft.com/en-us/training/modules/describe-benefits-use-cloud-services/4-security-governance-cloud.
+**Bẫy:** Nếu stem hỏi nghiêm ngặt lựa chọn ngoài nhóm reliability/predictability, D về industry regulations/compliance cũng có cơ sở vì thuộc governance. Câu LinkedIn 23/60 trộn tiêu chí phân nhóm với lợi ích triển khai, nên dù đã xác nhận key A, vẫn giữ ngoài đánh giá domain do cách diễn đạt chưa nhất quán. Phân biệt key của tác giả với phân loại khái niệm; không kết luận compliance không phải lợi ích cloud.
 
 <a id="az900-029"></a>
 
