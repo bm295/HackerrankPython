@@ -46,6 +46,7 @@ Keywords giúp tìm phần hướng dẫn phù hợp; luôn đọc yêu cầu v�
 | large file set, on-premises server, Azure Storage, efficient transfer, AzCopy | [AZ900-038](#az900-038) | Sao chép trực tiếp dùng AzCopy. Data Factory phù hợp pipeline, File Sync phù hợp đồng bộ file share. |
 | centralized management, hybrid infrastructure, multicloud Kubernetes, Azure Arc, compliance | [AZ900-039](#az900-039) | Azure Arc mở rộng quản lý Azure tới tài nguyên bên ngoài Azure để quản trị tập trung. |
 | complex calculations, large datasets, VM resource configuration, CPU cores and memory | [AZ900-040](#az900-040) | Chọn vCPU và RAM theo nhu cầu tính toán và dữ liệu đang xử lý. |
+| Microsoft 365, Blob Storage, SaaS, PaaS, IaaS, service models | [AZ900-041](#az900-041) | Phân loại từng dịch vụ theo trách nhiệm quản lý. Microsoft 365 là SaaS, Blob Storage là PaaS. |
 
 <a id="az900-001"></a>
 
@@ -612,3 +613,17 @@ Keywords giúp tìm phần hướng dẫn phù hợp; luôn đọc yêu cầu v�
 **Cách phân tích đáp án** Khi đề nhấn mạnh tính toán phức tạp và bộ nhớ lớn, ưu tiên CPU cores and memory. Network bandwidth ảnh hưởng truyền dữ liệu. Storage capacity là dung lượng lưu. VM Scale Sets quản lý nhóm VM và điều chỉnh số instance theo tải hoặc lịch.
 
 **Bẫy** Tải mạng cao trong giờ làm việc là yêu cầu bổ sung. Xác định yêu cầu chính của câu hỏi, rồi kiểm tra các giới hạn mạng và đĩa của VM size đã chọn.
+
+<a id="az900-041"></a>
+
+## AZ900-041 | Microsoft 365, Blob Storage và mô hình dịch vụ
+
+**Dấu hiệu** Microsoft 365, Azure Blob Storage, SaaS, PaaS, IaaS.
+
+**Nhóm kiến thức** Describe cloud concepts → cloud service types.
+
+**Liên hệ lý thuyết** Microsoft 365 cung cấp ứng dụng hoàn chỉnh theo mô hình SaaS. Azure Blob Storage là dịch vụ object storage được quản lý, được tài liệu Microsoft phân loại là PaaS. Azure Virtual Machines là ví dụ IaaS, nơi khách hàng quản lý guest OS và ứng dụng.
+
+**Cách phân tích đáp án** Phân loại từng dịch vụ khi đề ghép nhiều dịch vụ trong một lựa chọn. Với Microsoft 365 và Blob Storage, tổ hợp là SaaS và PaaS. Nếu bộ lựa chọn chỉ có SaaS và IaaS thì ghi nhận thiếu đáp án phù hợp và loại câu khỏi đánh giá mức sẵn sàng.
+
+**Bẫy** Storage có thể là một thành phần của hạ tầng IaaS, chẳng hạn đĩa của VM. Cần phân biệt vai trò đó với dịch vụ Blob Storage được quản lý.
