@@ -48,6 +48,8 @@ Keywords giúp tìm phần hướng dẫn phù hợp; luôn đọc yêu cầu v�
 | complex calculations, large datasets, VM resource configuration, CPU cores and memory | [AZ900-040](#az900-040) | Chọn vCPU và RAM theo nhu cầu tính toán và dữ liệu đang xử lý. |
 | Microsoft 365, Blob Storage, SaaS, PaaS, IaaS, service models | [AZ900-041](#az900-041) | Phân loại từng dịch vụ theo trách nhiệm quản lý. Microsoft 365 là SaaS, Blob Storage là PaaS. |
 | regional outage, region pairs, data residency, geo-replication | [AZ900-042](#az900-042) | Chọn vị trí dữ liệu phù hợp và cấu hình replication cùng kế hoạch khôi phục theo dịch vụ. |
+| public endpoints, private endpoints, private IP, VNet, enabled by default | [AZ900-043](#az900-043) | Private endpoint phải tạo/cấu hình; giảm phơi bày Internet nhưng cần kiểm soát public network access riêng. |
+
 
 <a id="az900-001"></a>
 
@@ -646,3 +648,17 @@ Keywords giúp tìm phần hướng dẫn phù hợp; luôn đọc yêu cầu v�
 **Cách phân tích đáp án** Khi có cả yêu cầu residency và phục hồi ngoài region, kiểm tra nơi chứa dữ liệu chính cùng bản sao, rồi cấu hình backup, replication và khôi phục phù hợp với dịch vụ. Region Pairs tự nó không cung cấp cơ chế đồng bộ dữ liệu hoặc failover cho mọi ứng dụng.
 
 **Bẫy** Các phát biểu “Regions ensure compliance” và “Region Pairs provide high availability through synchronization” cần điều kiện triển khai cụ thể. Nhiều region không có pair và nhiều dịch vụ cho phép geo-redundancy ngoài pair.
+
+<a id="az900-043"></a>
+
+## AZ900-043 | Public endpoints và Private endpoints
+
+**Dấu hiệu:** Public internet, private IP, Virtual Network, default endpoints, reduced exposure.
+
+**Nhóm kiến thức:** Describe Azure architecture and services → Azure networking → public và private endpoints.
+
+**Liên hệ lý thuyết:** Public endpoint cung cấp đường truy cập qua địa chỉ công khai, có thể được giới hạn bằng firewall và xác thực. Private endpoint dùng IP riêng trong subnet của VNet để kết nối riêng tới dịch vụ hỗ trợ Private Link. Có thể truy cập từ VNet, VNet peering hoặc mạng on-premises kết nối riêng nếu routing và DNS phù hợp.
+
+**Cách phân tích đáp án:** Với bốn mệnh đề nhận diện public/private, truy cập riêng, mặc định bật cả hai và giảm phơi bày Internet, tổ hợp phù hợp là True, True, False, True. Private endpoint cần được tạo và cấu hình; không phải mọi dịch vụ đều mặc định bật cả public và private endpoints.
+
+**Bẫy:** Tạo private endpoint không tự tắt public network access của dịch vụ. Muốn chỉ cho truy cập riêng, cấu hình chặn public access theo dịch vụ và kiểm tra DNS/routing. Private connectivity giảm bề mặt phơi bày nhưng vẫn cần xác thực và phân quyền.
