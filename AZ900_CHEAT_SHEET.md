@@ -44,6 +44,7 @@ Keywords giúp tìm phần hướng dẫn phù hợp; luôn đọc yêu cầu v�
 | end-of-quarter traffic spike, variable demand, manage cost, elasticity | [AZ900-036](#az900-036) | Tăng công suất khi tải lên và giảm khi tải hạ để tránh giữ công suất dư. |
 | Azure pricing factors, datacenter location, VM size, inter-region bandwidth, ingress, egress | [AZ900-037](#az900-037) | Tách giá tài nguyên theo region và SKU khỏi phí truyền dữ liệu liên vùng. |
 | large file set, on-premises server, Azure Storage, efficient transfer, AzCopy | [AZ900-038](#az900-038) | Sao chép trực tiếp dùng AzCopy. Data Factory phù hợp pipeline, File Sync phù hợp đồng bộ file share. |
+| centralized management, hybrid infrastructure, multicloud Kubernetes, Azure Arc, compliance | [AZ900-039](#az900-039) | Azure Arc mở rộng quản lý Azure tới tài nguyên bên ngoài Azure để quản trị tập trung. |
 
 <a id="az900-001"></a>
 
@@ -582,3 +583,17 @@ Keywords giúp tìm phần hướng dẫn phù hợp; luôn đọc yêu cầu v�
 **Liên hệ lý thuyết** AzCopy là công cụ dòng lệnh để sao chép dữ liệu tới, từ hoặc giữa các Storage account. Azure Storage Explorer cung cấp giao diện đồ họa quản lý và truyền dữ liệu. Azure Data Factory dùng Copy activity trong pipeline để chuyển dữ liệu giữa các nguồn và có thể kết hợp xử lý, lịch chạy, điều phối. Azure File Sync đồng bộ Azure Files với các máy chủ Windows và hỗ trợ cloud tiering.
 
 **Cách phân tích đáp án** Với yêu cầu sao chép trực tiếp bộ tệp từ máy chủ lên Storage, AzCopy phù hợp nhất trong bộ lựa chọn. Data Factory cũng thực hiện được nhưng câu chưa yêu cầu pipeline. Khi cần duy trì đồng bộ file share hoặc cache cục bộ, xem xét File Sync.
+
+<a id="az900-039"></a>
+
+## AZ900-039 | Azure Arc cho quản trị hybrid và multicloud
+
+**Dấu hiệu** Centralized management, on-premises servers, Kubernetes in multiple clouds, governance.
+
+**Nhóm kiến thức** Describe Azure management and governance → managing and deploying Azure resources → Azure Arc.
+
+**Liên hệ lý thuyết** Azure Arc đưa máy chủ và cụm Kubernetes được hỗ trợ bên ngoài Azure vào lớp quản lý Azure Resource Manager. Tài nguyên được kết nối có danh tính tài nguyên Azure và có thể dùng các cơ chế quản trị như Policy, RBAC và tags tùy loại tài nguyên và cấu hình.
+
+**Cách phân tích đáp án** Chọn Yes khi tổ chức cần quản trị thống nhất tài nguyên on-premises, nhiều cloud và tài nguyên Azure gốc. Azure VM được quản lý trực tiếp trong Azure, còn Arc mở rộng phạm vi tới tài nguyên bên ngoài. Arc-enabled servers dùng Connected Machine agent cho máy ngoài Azure.
+
+**Bẫy** Kết nối Arc tạo khả năng quản lý tập trung. Mức tuân thủ thực tế phụ thuộc policy được gán, cấu hình và xử lý các sai lệch.
