@@ -49,6 +49,7 @@ Keywords giúp tìm phần hướng dẫn phù hợp; luôn đọc yêu cầu v�
 | Microsoft 365, Blob Storage, SaaS, PaaS, IaaS, service models | [AZ900-041](#az900-041) | Phân loại từng dịch vụ theo trách nhiệm quản lý. Microsoft 365 là SaaS, Blob Storage là PaaS. |
 | regional outage, region pairs, data residency, geo-replication | [AZ900-042](#az900-042) | Chọn vị trí dữ liệu phù hợp và cấu hình replication cùng kế hoạch khôi phục theo dịch vụ. |
 | public endpoints, private endpoints, private IP, VNet, enabled by default | [AZ900-043](#az900-043) | Private endpoint phải tạo/cấu hình; giảm phơi bày Internet nhưng cần kiểm soát public network access riêng. |
+| ExpressRoute, on-premises datacenter, private dedicated connection, bypass public internet | [AZ900-044](#az900-044) | ExpressRoute kết nối riêng tới Azure; private connectivity không đồng nghĩa mã hóa mặc định. |
 
 
 <a id="az900-001"></a>
@@ -662,3 +663,17 @@ Keywords giúp tìm phần hướng dẫn phù hợp; luôn đọc yêu cầu v�
 **Cách phân tích đáp án:** Với bốn mệnh đề nhận diện public/private, truy cập riêng, mặc định bật cả hai và giảm phơi bày Internet, tổ hợp phù hợp là True, True, False, True. Private endpoint cần được tạo và cấu hình; không phải mọi dịch vụ đều mặc định bật cả public và private endpoints.
 
 **Bẫy:** Tạo private endpoint không tự tắt public network access của dịch vụ. Muốn chỉ cho truy cập riêng, cấu hình chặn public access theo dịch vụ và kiểm tra DNS/routing. Private connectivity giảm bề mặt phơi bày nhưng vẫn cần xác thực và phân quyền.
+
+<a id="az900-044"></a>
+
+## AZ900-044 | ExpressRoute và kết nối riêng tới Azure
+
+**Dấu hiệu:** On-premises datacenter, private connection, dedicated connectivity, bypass public internet, consistent latency.
+
+**Nhóm kiến thức:** Describe Azure architecture and services → Azure networking → ExpressRoute.
+
+**Liên hệ lý thuyết:** ExpressRoute mở rộng mạng on-premises tới Microsoft cloud qua kết nối riêng với nhà cung cấp kết nối hoặc ExpressRoute Direct. Lưu lượng trên kết nối ExpressRoute không đi qua Internet công cộng, hỗ trợ độ trễ ổn định và độ tin cậy cao hơn kết nối Internet thông thường. Hiệu năng thực tế phụ thuộc thiết kế, băng thông và các thành phần đường truyền.
+
+**Cách phân tích đáp án:** Khi cần liên kết riêng từ datacenter tới Azure, chọn mô tả private, dedicated connection bypassing the public internet. Phương án nói ExpressRoute chạy qua public internet là sai. ExpressRoute không chỉ phục vụ doanh nghiệp nhỏ có nhu cầu mạng tối thiểu và không phải dịch vụ miễn phí mặc định theo subscription. VPN Site-to-Site thông thường tạo đường hầm IPsec qua Internet; cũng có thể cấu hình VPN qua ExpressRoute.
+
+**Bẫy:** Kết nối riêng không đồng nghĩa tự động mã hóa. ExpressRoute không mã hóa lưu lượng mặc định; bổ sung TLS, IPsec hoặc MACsec phù hợp khi cần. Độ sẵn sàng còn phụ thuộc thiết kế dự phòng từ đầu tới cuối.
