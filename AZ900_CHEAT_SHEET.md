@@ -25,7 +25,7 @@ Keywords giúp tìm phần hướng dẫn phù hợp; luôn đọc yêu cầu v�
 | match Region, Availability Zone, Fault Domain, Georedundancy | [AZ900-017](#az900-017) | Phân biệt phạm vi địa lý, zone độc lập, phần cứng chung và sao chép liên region. |
 | direct OS control, specialized software, isolated environment, Web Apps, consistent application performance | [AZ900-018](#az900-018) | So sánh quyền kiểm soát guest OS, hạ tầng được quản lý và mức cô lập. |
 | service incidents, outages, status updates, incident details, maintenance | [AZ900-019](#az900-019) | Service Health thông báo sự cố nền tảng; Monitor phân tích telemetry workload. |
-| centralized management, monitoring, unified console, Azure Portal | [AZ900-020](#az900-020) | Portal là giao diện tập trung để truy cập và quản lý dịch vụ; phân biệt với engine tự động hóa. |
+| centralized monitoring, alerts, automated response, unified console, Azure Portal | [AZ900-020](#az900-020) | Monitor xử lý telemetry, alerts và hành động tích hợp; Portal là giao diện web quản lý tài nguyên. |
 | TCO calculator, cost savings, on-premises versus Azure, first step | [AZ900-021](#az900-021) | TCO so sánh tổng chi phí; Pricing calculator ước tính chi phí dịch vụ Azure. |
 | containers dependencies, Docker, full OS, microservices hosting, independent scaling, Kubernetes, AKS | [AZ900-022](#az900-022) | Container image đóng gói mã và dependencies. Kubernetes điều phối container, còn AKS cung cấp Kubernetes được quản lý trên Azure. |
 | slow performance, delayed response, latency, initial concern | [AZ900-023](#az900-023) | Latency mô tả độ trễ; cần đo để tìm nguyên nhân chậm. |
@@ -326,19 +326,19 @@ Keywords giúp tìm phần hướng dẫn phù hợp; luôn đọc yêu cầu v�
 
 <a id="az900-020"></a>
 
-## AZ900-020 | Azure Portal là giao diện quản lý tập trung
+## AZ900-020 | Phân biệt Azure Monitor và Azure Portal
 
-**Dấu hiệu:** Centralized management, monitoring, unified console, graphical interface.
+**Dấu hiệu:** Centralized monitoring, telemetry, alerts, automated response, unified web console, graphical interface.
 
-**Nhóm kiến thức:** Describe Azure management and governance → tools for managing and deploying resources → Azure Portal.
+**Nhóm kiến thức:** Describe Azure management and governance → monitoring tools và resource management tools.
 
-**Liên hệ lý thuyết:** Azure Portal là giao diện web hợp nhất để tạo, quản lý và giám sát tài nguyên Azure. Portal tích hợp các màn hình quản lý của từng dịch vụ, dashboards và truy cập công cụ liên quan.
+**Liên hệ lý thuyết:** Azure Monitor thu thập và phân tích metrics, logs, traces để theo dõi sức khỏe, hiệu năng của ứng dụng và hạ tầng. Alert rules phát hiện điều kiện; action groups gửi thông báo hoặc kích hoạt workflow, webhook, runbook và các hành động tích hợp. Azure Portal là giao diện web hợp nhất để tạo, quản lý tài nguyên và truy cập các tính năng Monitor cùng nhiều dịch vụ khác.
 
-**Cách phân tích đáp án:** Khi hỏi điểm truy cập tập trung để quản lý nhiều loại tài nguyên, chọn Portal trong các lựa chọn VM/Entra ID/Portal/Monitor. VM cung cấp compute; Entra ID quản lý danh tính; Monitor thu thập và phân tích telemetry.
+**Cách phân tích đáp án:** Với câu hỏi dịch vụ giám sát tập trung và automation vận hành, chọn Azure Monitor trong bộ VM/Entra ID/Portal/Monitor. Key LinkedIn câu 14 xác nhận Monitor; lời giải Portal trước đây đã được sửa. Khi đề hỏi giao diện web/GUI để tạo hoặc quản lý tài nguyên, chọn Azure Portal. VM cung cấp compute; Entra ID cung cấp quản lý danh tính và truy cập.
 
-**Bẫy:** Automation trong câu mô tả giao diện truy cập và cấu hình công cụ tự động hóa. Portal không phải engine thực thi mọi automation; chức năng được cung cấp bởi dịch vụ nền và công cụ như Azure Automation, ARM, CLI/PowerShell. Đừng chỉ thấy monitoring mà bỏ qua phạm vi quản lý tổng thể.
+**Bẫy:** Portal hiển thị màn hình của Monitor nhưng không thay thế dịch vụ thu thập telemetry, đánh giá alerts và kích hoạt hành động. Từ management riêng lẻ không đủ quyết định; đọc mục tiêu cụ thể. Monitor không phải công cụ quản lý mọi thao tác provisioning; automation tổng quát có thể dùng Azure Automation, ARM hoặc CLI/PowerShell.
 
-**Chọn theo cách thao tác:** Azure Portal phù hợp khi cần một giao diện web để tạo VM, cấu hình load balancer và xem hiệu năng qua Azure Monitor hoặc Application Insights. Azure CLI và Azure PowerShell cũng có thể triển khai tài nguyên và truy xuất dữ liệu giám sát, phù hợp khi cần thao tác bằng lệnh hoặc viết script.
+**Chọn theo cách thao tác:** Azure Portal phù hợp khi cần giao diện web để tạo VM, cấu hình load balancer và xem hiệu năng qua Azure Monitor hoặc Application Insights. Azure CLI và Azure PowerShell cũng có thể triển khai và truy xuất dữ liệu giám sát khi cần lệnh hoặc script.
 
 <a id="az900-021"></a>
 
