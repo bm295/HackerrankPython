@@ -43,6 +43,7 @@ Keywords giúp tìm phần hướng dẫn phù hợp; luôn đọc yêu cầu v�
 | data discovery, cataloging, data governance, lineage, Azure Purview | [AZ900-035](#az900-035) | Dùng Purview để thu thập metadata và tìm kiếm tài sản dữ liệu. |
 | end-of-quarter traffic spike, variable demand, manage cost, elasticity | [AZ900-036](#az900-036) | Tăng công suất khi tải lên và giảm khi tải hạ để tránh giữ công suất dư. |
 | Azure pricing factors, datacenter location, VM size, inter-region bandwidth, ingress, egress | [AZ900-037](#az900-037) | Tách giá tài nguyên theo region và SKU khỏi phí truyền dữ liệu liên vùng. |
+| large file set, on-premises server, Azure Storage, efficient transfer, AzCopy | [AZ900-038](#az900-038) | Sao chép trực tiếp dùng AzCopy. Data Factory phù hợp pipeline, File Sync phù hợp đồng bộ file share. |
 
 <a id="az900-001"></a>
 
@@ -569,3 +570,15 @@ Keywords giúp tìm phần hướng dẫn phù hợp; luôn đọc yêu cầu v�
 **Liên hệ lý thuyết** Giá tài nguyên có thể thay đổi theo Azure region và SKU. Với VM, kích cỡ hoặc dòng máy ảnh hưởng đơn giá compute. Theo biểu giá bandwidth chuẩn, dữ liệu liên vùng được tính phí egress ở phía gửi, còn ingress ở phía nhận miễn phí.
 
 **Cách phân tích đáp án** Chọn vị trí triển khai, VM size và dung lượng truyền dữ liệu giữa các region. Azure Portal là giao diện quản lý. Khi tính chi phí cho luồng hai chiều, mỗi chiều có một phía gửi riêng.
+
+<a id="az900-038"></a>
+
+## AZ900-038 | Chọn công cụ chuyển tệp lên Azure Storage
+
+**Dấu hiệu** Large file set, on-premises server, Azure Storage account, efficiency.
+
+**Nhóm kiến thức** Describe Azure architecture and services → Azure storage services → file movement options.
+
+**Liên hệ lý thuyết** AzCopy là công cụ dòng lệnh để sao chép dữ liệu tới, từ hoặc giữa các Storage account. Azure Storage Explorer cung cấp giao diện đồ họa quản lý và truyền dữ liệu. Azure Data Factory dùng Copy activity trong pipeline để chuyển dữ liệu giữa các nguồn và có thể kết hợp xử lý, lịch chạy, điều phối. Azure File Sync đồng bộ Azure Files với các máy chủ Windows và hỗ trợ cloud tiering.
+
+**Cách phân tích đáp án** Với yêu cầu sao chép trực tiếp bộ tệp từ máy chủ lên Storage, AzCopy phù hợp nhất trong bộ lựa chọn. Data Factory cũng thực hiện được nhưng câu chưa yêu cầu pipeline. Khi cần duy trì đồng bộ file share hoặc cache cục bộ, xem xét File Sync.
