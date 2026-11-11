@@ -79,3 +79,23 @@ Use [context-architecture.md](context-architecture.md) for RAG and agent strateg
 - Include stale/conflicting facts, cross-tenant access, revoked permissions, deletion propagation, poisoned memory and compression-loss cases in quality gates.
 - Capture quality, latency and cost trade-offs in the ADR; set an owner and a measurable stop/pivot trigger.
 - Label the context engineering trend as a forecast; record supporting and contrary evidence, uncertainty and the decision it would change.
+
+## Composable architecture review
+
+| Capability area | Responsibility | Input/output contract | Owner | Evidence/status | Omission rationale |
+| --- | --- | --- | --- | --- | --- |
+| Data and knowledge | | | | | |
+| Model and inference | | | | | |
+| Orchestration | | | | | |
+| Security and guardrails | | | | | |
+| Application | | | | | |
+| Observability | | | | | |
+| Agentic operations | | | | | |
+
+Use logical boundaries; combine deployment units where appropriate. Evaluate platform reuse against ownership and operating cost. Add an agent catalog only when independent ownership or reuse warrants it; record owner, capability, version, tool permissions, contract and lifecycle status before considering dynamic discovery.
+
+## Release configuration and operational evaluation
+- Record model/version, prompt/version, retrieval configuration, tool contract versions and evaluation dataset/version for each release; keep secrets outside this manifest.
+- Start sanitized correlation traces, authorization checks, latency/token/cost measurement and held-out evaluation in the first executable MVP.
+- For each model, prompt, retrieval or tool change, compare quality, authorization, latency and cost with the known-good release on representative tasks; block promotion on failed gates and rehearse configuration rollback.
+- Define privacy-aware production sampling, difficult-case coverage, evaluation cadence, owner, alert thresholds and response. Keep automated scores separate from human-verified correctness and business outcomes. Do not store sensitive payloads by default or require evaluation of every session without assessing cost and privacy.
