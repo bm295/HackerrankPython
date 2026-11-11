@@ -60,6 +60,8 @@ Nhật ký ghi lại câu đã luyện, điểm thô và ghi chú để đối c
 | AZ900-H054 | 2026-11-11 | 2026-07-20 | Kiến thức bổ trợ, ngoài mục tiêu nêu riêng | Public Preview, SLA và giá dịch vụ | LinkedIn câu 56/60: cam kết dịch vụ Public Preview có phụ thuộc miễn phí hay trả phí không | Dễ | D (phụ thuộc miễn phí hay trả phí), theo ảnh | C (There are no SLA terms for items in Public Preview) | 0/1 | Sai | Preview mặc định không được bao phủ bởi SLA. Giá sử dụng và cam kết SLA là hai điều kiện riêng; trả phí không tự tạo SLA. Liên hệ H029. Không tính readiness theo đề cương hiện hành. Xem AZ900-030. |
 | AZ900-H055 | 2026-11-11 | 2026-07-20 | Describe cloud concepts | PaaS, Web Apps và Azure SQL | LinkedIn câu 57/60: phân loại Azure Web Apps và Azure SQL Server | Dễ | A (Platform as a Service), theo ảnh | A (PaaS), hiểu Azure SQL là dịch vụ được quản lý | 1/1 | Đúng | App Service và Azure SQL Database/Managed Instance là PaaS. Cụm Azure SQL Server chưa chính xác: SQL Server cài trên Azure VM thuộc IaaS. Xem AZ900-041. |
 
+| AZ900-H056 | 2026-11-11 | 2026-07-20 | Describe Azure architecture and services | Public endpoints và private endpoints | LinkedIn câu 59/60: bốn mệnh đề về truy cập public/private, cấu hình mặc định và giảm phơi bày Internet | Trung bình | C (T, T, T, F), theo ảnh | B (T, T, F, T) | 2/4 | Một phần | Đúng ý 1, 2; sai ý 3, 4. Điểm cộng/trừ: +2 −2 = 0; domain giữ +13. Private endpoint dùng IP riêng trong VNet và phải được tạo/cấu hình; giảm phơi bày Internet khi kiểm soát public access phù hợp. Tạo private endpoint không tự tắt public endpoint. Public endpoint vẫn có thể được bảo vệ bằng xác thực/firewall; private endpoint có thể truy cập qua mạng kết nối riêng, không chỉ cùng VNet. Xem AZ900-043. |
+
 ## Lịch sử các lần ôn lại
 
 Các dòng dưới đây được chuyển từ ghi chú ôn lại đã có, mỗi lượt tính đúng một lần; điểm domain kế thừa phân loại và độ khó của câu gốc.
@@ -83,6 +85,6 @@ Các dòng dưới đây được chuyển từ ghi chú ôn lại đã có, m�
 | --- | --- | --- | --- | --- | --- | --- |
 | Describe cloud concepts | 9 | 10 | 11/12 | +10 | 91.11% | Vững |
 | Describe Azure management and governance | 16 | 17 | 21/27 | +15 | 75.68% | Đang củng cố |
-| Describe Azure architecture and services | 23 | 28 | 26/39 | +13 | 62.87% | Cần ôn |
+| Describe Azure architecture and services | 24 | 29 | 28/43 | +13 | 62.37% | Cần ôn |
 
 Chưa đủ dữ liệu để kết luận mức sẵn sàng tổng thể: mỗi domain cần ít nhất 15 câu riêng biệt với chủ đề và độ khó đa dạng. Kết quả hiện hành bao gồm các lượt đã xem phản hồi trước đó; không diễn giải thành tỷ lệ đỗ.
