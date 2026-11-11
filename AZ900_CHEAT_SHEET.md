@@ -47,6 +47,7 @@ Keywords giúp tìm phần hướng dẫn phù hợp; luôn đọc yêu cầu v�
 | centralized management, hybrid infrastructure, multicloud Kubernetes, Azure Arc, compliance | [AZ900-039](#az900-039) | Azure Arc mở rộng quản lý Azure tới tài nguyên bên ngoài Azure để quản trị tập trung. |
 | complex calculations, large datasets, VM resource configuration, CPU cores and memory | [AZ900-040](#az900-040) | Chọn vCPU và RAM theo nhu cầu tính toán và dữ liệu đang xử lý. |
 | Microsoft 365, Blob Storage, SaaS, PaaS, IaaS, service models | [AZ900-041](#az900-041) | Phân loại từng dịch vụ theo trách nhiệm quản lý. Microsoft 365 là SaaS, Blob Storage là PaaS. |
+| regional outage, region pairs, data residency, geo-replication | [AZ900-042](#az900-042) | Chọn vị trí dữ liệu phù hợp và cấu hình replication cùng kế hoạch khôi phục theo dịch vụ. |
 
 <a id="az900-001"></a>
 
@@ -629,3 +630,17 @@ Keywords giúp tìm phần hướng dẫn phù hợp; luôn đọc yêu cầu v�
 **Bẫy** Storage có thể là một thành phần của hạ tầng IaaS, chẳng hạn đĩa của VM. Cần phân biệt vai trò đó với dịch vụ Blob Storage được quản lý.
 
 **Tình huống tùy chỉnh Linux và directory:** Chọn IaaS khi ứng dụng yêu cầu kiểm soát hệ điều hành khách và tự vận hành phần mềm directory trên VM. Khách hàng cấu hình, cập nhật và bảo vệ guest OS cùng ứng dụng, còn Microsoft quản lý hạ tầng vật lý và lớp ảo hóa. Trong PaaS và SaaS, nền tảng quản lý hệ điều hành nền. Trách nhiệm quản lý tài khoản và quyền truy cập của khách hàng vẫn tồn tại trong mọi mô hình.
+
+<a id="az900-042"></a>
+
+## AZ900-042 | Region Pairs, khôi phục và data residency
+
+**Dấu hiệu** Regional outage, paired regions, data residency, backup and recovery.
+
+**Nhóm kiến thức** Describe Azure architecture and services → core architectural components → regions và region pairs.
+
+**Liên hệ lý thuyết** Phần lớn region pairs thuộc cùng geography, nhưng có ngoại lệ. Một số dịch vụ dùng cặp region cho geo-replication, chẳng hạn Storage GRS khi được cấu hình. Pairing hỗ trợ chiến lược khôi phục và Azure cố gắng triển khai cập nhật lệch thời điểm giữa hai region.
+
+**Cách phân tích đáp án** Khi có cả yêu cầu residency và phục hồi ngoài region, kiểm tra nơi chứa dữ liệu chính cùng bản sao, rồi cấu hình backup, replication và khôi phục phù hợp với dịch vụ. Region Pairs tự nó không cung cấp cơ chế đồng bộ dữ liệu hoặc failover cho mọi ứng dụng.
+
+**Bẫy** Các phát biểu “Regions ensure compliance” và “Region Pairs provide high availability through synchronization” cần điều kiện triển khai cụ thể. Nhiều region không có pair và nhiều dịch vụ cho phép geo-redundancy ngoài pair.
