@@ -180,6 +180,8 @@ Keywords giúp tìm phần hướng dẫn phù hợp; luôn đọc yêu cầu v�
 
 **Cách phân tích đáp án:** Phát biểu chỉ trả data transfer bỏ qua compute và storage nên sai. Phát biểu serverless là fixed-cost consumption cũng sai. Reservation là cam kết kỳ hạn để được giảm giá cho usage phù hợp trong phạm vi đã mua, thay cho đơn giá pay-as-you-go của phần đó.
 
+**Đối chiếu key của đề:** Ảnh kết quả LinkedIn cho tổ hợp C,D, trong khi A cũng sai rõ ràng vì từ only giới hạn chi phí vào truyền dữ liệu. C thiếu phạm vi: chỉ phần usage được reservation bao phủ mới thay đơn giá PAYG; phần ngoài phạm vi vẫn tính riêng. Vì đề yêu cầu đúng hai lựa chọn nhưng có nhiều phát biểu sai theo cách đọc rộng, ghi nhận câu mơ hồ và loại khỏi đánh giá domain. Không khẳng định A,D hay C,D là tổ hợp duy nhất đúng về kỹ thuật.
+
 **Bẫy:** Giảm CPU utilization bên trong VM đang được cấp phát không tự giảm phí compute của VM. Reservation không bao phủ mọi khoản trong hóa đơn; VM reservation vẫn có thể phát sinh phí storage, networking và phần mềm riêng. Các hosting plan serverless khác nhau có cách tính phí khác nhau.
 
 <a id="az900-010"></a>
