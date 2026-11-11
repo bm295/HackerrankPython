@@ -631,6 +631,8 @@ Keywords giúp tìm phần hướng dẫn phù hợp; luôn đọc yêu cầu v�
 
 **Tình huống tùy chỉnh Linux và directory:** Chọn IaaS khi ứng dụng yêu cầu kiểm soát hệ điều hành khách và tự vận hành phần mềm directory trên VM. Khách hàng cấu hình, cập nhật và bảo vệ guest OS cùng ứng dụng, còn Microsoft quản lý hạ tầng vật lý và lớp ảo hóa. Trong PaaS và SaaS, nền tảng quản lý hệ điều hành nền. Trách nhiệm quản lý tài khoản và quyền truy cập của khách hàng vẫn tồn tại trong mọi mô hình.
 
+**Web Apps và Azure SQL:** Azure Web Apps (App Service), Azure SQL Database và Azure SQL Managed Instance thuộc PaaS: Microsoft quản lý nền tảng và hệ điều hành nền, khách hàng quản lý ứng dụng, dữ liệu và cấu hình truy cập. Khi đề viết Azure SQL Server cùng Web Apps, thường hiểu là Azure SQL được quản lý. SQL Server cài trên Azure Virtual Machines thuộc IaaS; cần đọc rõ cách triển khai.
+
 <a id="az900-042"></a>
 
 ## AZ900-042 | Region Pairs, khôi phục và data residency
