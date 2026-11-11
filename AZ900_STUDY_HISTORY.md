@@ -1,6 +1,6 @@
 # Lịch sử ôn AZ-900
 
-Nhật ký ghi lại câu đã luyện, điểm thô và ghi chú để đối chiếu khi ôn lại. Chỉ lần trả lời độc lập đầu tiên của mỗi câu được dùng để đánh giá mức độ sẵn sàng.
+Nhật ký ghi lại câu đã luyện, điểm thô và ghi chú để đối chiếu khi ôn lại. Từ 11/11/2026, điểm luyện tập hiện hành tính cả lần đầu và các lần ôn lại: mỗi ý đúng +1, mỗi ý sai −1, bỏ trống 0. Điểm có thể âm. Điểm thô của từng lần vẫn giữ dạng số ý đúng/tổng số ý. Lưu lần đầu để đối chiếu và lưu từng lần ôn ở bảng riêng; không cộng hai lần cùng một lượt trả lời. Các ghi chú cũ “giữ điểm lần đầu/không tính readiness” chỉ mô tả quy tắc trước đây, đã được thay thế bằng quy tắc này. Câu mơ hồ và ngoài đề cương không tính vào đánh giá domain.
 
 | ID | Ngày | Phiên bản đề cương | Exam domain | Chủ đề | Tóm tắt câu hỏi | Độ khó | Đáp án ban đầu | Đáp án đúng | Điểm thô | Kết quả | Ghi chú |
 | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- |
@@ -59,3 +59,30 @@ Nhật ký ghi lại câu đã luyện, điểm thô và ghi chú để đối c
 | AZ900-H053 | 2026-11-11 | 2026-07-20 | Describe Azure architecture and services | Regions, region pairs và data residency | LinkedIn câu 54/60: phục hồi khi mất region đồng thời đáp ứng yêu cầu lưu trú dữ liệu | Trung bình, đề khái quát quá mức | B | C (đáp án dự kiến, có điều kiện) | 0/1 theo ý định đề; loại khỏi readiness | Mơ hồ | C đề cập cả residency và geo-replication, nhưng region không tự bảo đảm compliance và pairing không tự đồng bộ hay failover. Phải chọn region hợp lệ và cấu hình replication/DR theo dịch vụ. B bỏ qua residency. Xem AZ900-042. |
 | AZ900-H054 | 2026-11-11 | 2026-07-20 | Kiến thức bổ trợ, ngoài mục tiêu nêu riêng | Public Preview, SLA và giá dịch vụ | LinkedIn câu 56/60: cam kết dịch vụ Public Preview có phụ thuộc miễn phí hay trả phí không | Dễ | D (phụ thuộc miễn phí hay trả phí), theo ảnh | C (There are no SLA terms for items in Public Preview) | 0/1 | Sai | Preview mặc định không được bao phủ bởi SLA. Giá sử dụng và cam kết SLA là hai điều kiện riêng; trả phí không tự tạo SLA. Liên hệ H029. Không tính readiness theo đề cương hiện hành. Xem AZ900-030. |
 | AZ900-H055 | 2026-11-11 | 2026-07-20 | Describe cloud concepts | PaaS, Web Apps và Azure SQL | LinkedIn câu 57/60: phân loại Azure Web Apps và Azure SQL Server | Dễ | A (Platform as a Service), theo ảnh | A (PaaS), hiểu Azure SQL là dịch vụ được quản lý | 1/1 | Đúng | App Service và Azure SQL Database/Managed Instance là PaaS. Cụm Azure SQL Server chưa chính xác: SQL Server cài trên Azure VM thuộc IaaS. Xem AZ900-041. |
+
+## Lịch sử các lần ôn lại
+
+Các dòng dưới đây được chuyển từ ghi chú ôn lại đã có, mỗi lượt tính đúng một lần; điểm domain kế thừa phân loại và độ khó của câu gốc.
+
+| ID lượt ôn | Ngày | Câu gốc | Đáp án người học | Đáp án đúng | Điểm thô | Thay đổi điểm | Ghi chú |
+| --- | --- | --- | --- | --- | --- | --- | --- |
+| AZ900-R001 | 2026-11-07 | AZ900-H001 | Public cloud | Public cloud | 1/1 | +1 | Câu 3/60; đúng sau phản hồi. |
+| AZ900-R002 | 2026-11-10 | AZ900-H002 | C (T, T, F, T) | B (F, T, F, T) | 3/4 | +2 | Câu 46/60; ba ý đúng, một ý sai: +3 −1 = +2. |
+| AZ900-R003 | 2026-11-09 | AZ900-H003 | B (Hot, Cold, Archive) | B (Hot, Cold, Archive) | 1/1 | +1 | Câu 30/60; đúng theo điều kiện đã ghi ở câu gốc. |
+| AZ900-R004 | 2026-11-10 | AZ900-H004 | D (Azure Load Balancer) | D (Azure Load Balancer) | 1/1 | +1 | Câu 41/60; đúng. |
+| AZ900-R005 | 2026-11-11 | AZ900-H005 | A (Agree) | A (Agree) | 1/1 | +1 | Câu 55/60; đúng. |
+| AZ900-R006 | 2026-11-11 | AZ900-H006 | B (Azure Storage Account) | B (Azure Storage Account) | 1/1 | +1 | Câu 58/60; đúng, cộng +1. |
+| AZ900-R007 | 2026-11-07 | AZ900-H007 | A (Azure Functions) | A (Azure Functions) | 1/1 | +1 | Câu 7/60; đúng sau phản hồi. |
+| AZ900-R008 | 2026-11-10 | AZ900-H008 | B (Standard) | D (Premium), nếu 250 GB thuộc plan | 0/1 | Chờ xác minh | Chờ xác minh; câu gốc mơ hồ nên không tính điểm hiện hành. |
+
+## Điểm hiện hành sau khi tính các lần ôn
+
+Điểm cộng/trừ là thước đo luyện tập tự đặt, không phải điểm thi Microsoft. Phần trăm dùng trung bình có trọng số theo từng lượt: Dễ = 1, Trung bình = 1,25, Khó = 1,5. Số câu riêng biệt phục vụ kiểm tra độ phủ; ôn lại tăng số lượt, không tăng số câu riêng biệt.
+
+| Domain | Câu riêng biệt | Lượt tính điểm | Điểm thô các lượt | Điểm cộng/trừ | Trung bình có trọng số | Đánh giá |
+| --- | --- | --- | --- | --- | --- | --- |
+| Describe cloud concepts | 9 | 10 | 11/12 | +10 | 91.11% | Vững |
+| Describe Azure management and governance | 16 | 17 | 21/27 | +15 | 75.68% | Đang củng cố |
+| Describe Azure architecture and services | 23 | 28 | 26/39 | +13 | 62.87% | Cần ôn |
+
+Chưa đủ dữ liệu để kết luận mức sẵn sàng tổng thể: mỗi domain cần ít nhất 15 câu riêng biệt với chủ đề và độ khó đa dạng. Kết quả hiện hành bao gồm các lượt đã xem phản hồi trước đó; không diễn giải thành tỷ lệ đỗ.
