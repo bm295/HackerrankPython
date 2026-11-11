@@ -627,3 +627,5 @@ Keywords giúp tìm phần hướng dẫn phù hợp; luôn đọc yêu cầu v�
 **Cách phân tích đáp án** Phân loại từng dịch vụ khi đề ghép nhiều dịch vụ trong một lựa chọn. Với Microsoft 365 và Blob Storage, tổ hợp là SaaS và PaaS. Nếu bộ lựa chọn chỉ có SaaS và IaaS thì ghi nhận thiếu đáp án phù hợp và loại câu khỏi đánh giá mức sẵn sàng.
 
 **Bẫy** Storage có thể là một thành phần của hạ tầng IaaS, chẳng hạn đĩa của VM. Cần phân biệt vai trò đó với dịch vụ Blob Storage được quản lý.
+
+**Tình huống tùy chỉnh Linux và directory:** Chọn IaaS khi ứng dụng yêu cầu kiểm soát hệ điều hành khách và tự vận hành phần mềm directory trên VM. Khách hàng cấu hình, cập nhật và bảo vệ guest OS cùng ứng dụng, còn Microsoft quản lý hạ tầng vật lý và lớp ảo hóa. Trong PaaS và SaaS, nền tảng quản lý hệ điều hành nền. Trách nhiệm quản lý tài khoản và quyền truy cập của khách hàng vẫn tồn tại trong mọi mô hình.
