@@ -68,6 +68,8 @@ Specify the context lifecycle: selection and access filtering, structured inject
 
 Compare simple bounded retrieval with richer context assembly using held-out task success, groundedness, context tokens, p50/p95 latency and cost per successful task. Test stale or conflicting facts, permission revocation, memory poisoning and compression loss. Choose storage tiers and service boundaries from measured needs; do not assume more memory, less context or more components improves results.
 
+When persistent memory is justified, compare no memory, in-session notes and offline consolidation on the same held-out multi-session tasks. Include memory creation, verification and maintenance in total cost; define provenance, promotion gates, concurrency control and rollback using the context reference. Keep offline processing optional and bound its compute budget.
+
 Treat context lifecycle engineering as a candidate 2028 trend supported by dated evidence, not a certainty. Separate the source author's position from this skill's recommendations; do not claim context engineering eliminates hallucinations.
 
 ## Build the investment and delivery plan

@@ -1,6 +1,6 @@
 # Chiến lược kiến trúc AI 2028
 
-**Bản đề xuất 0.4 · Cập nhật 11/11/2026 · Nguồn kiểm tra đến 11/11/2026**
+**Bản đề xuất 0.5 · Cập nhật 12/11/2026 · Nguồn kiểm tra đến 12/11/2026**
 
 ## Phạm vi và quyết định cần chốt
 
@@ -39,7 +39,7 @@ Luồng đọc đi từ ứng dụng qua xác thực và phân quyền, rồi tr
 | ADR-01 · Tìm kiếm hay RAG | Dùng tìm kiếm làm baseline, thử RAG có trích dẫn cho bộ câu hỏi cần tổng hợp. RAG tăng chi phí và có thể dẫn sai nguồn hoặc dùng dữ liệu cũ. | Giữ tìm kiếm cho các tác vụ mà RAG không cải thiện đủ thời gian hoặc chất lượng. Kiểm chứng ở R27-04. |
 | ADR-02 · Model API hay tự vận hành | Thử model API qua adapter nếu chính sách dữ liệu cho phép. Đánh giá self-hosted nếu yêu cầu kiểm soát dữ liệu hoặc TCO khiến model API không khả thi. Quản lý model/prompt/config theo phiên bản qua contract ổn định. Chỉ thử routing nhiều model khi phân nhóm tác vụ cho thấy tiềm năng cải thiện chất lượng hoặc chi phí. [S06] | So sánh trên cùng tải, bộ dữ liệu và ngưỡng chất lượng. Điều kiện dữ liệu là gate bắt buộc. Thay model hoặc routing phải qua gate hồi quy và diễn tập rollback cấu hình. Kiểm chứng ở R27-05 và R27-11. |
 | ADR-03 · Workflow cố định hay agent | Dùng workflow cố định làm baseline. Chỉ chạy đồng thời các bước độc lập. Thử agent chọn công cụ chỉ đọc khi tác vụ cần chọn bước động. Backend kiểm quyền theo người dùng, tác vụ và ranh giới nghiệp vụ cho từng lần gọi. Áp dụng allowlist, schema và giới hạn thời gian. [S02, S05] | Giữ baseline nếu phương án thử chưa chứng minh lợi ích hoặc trượt gate chất lượng, phân quyền hay truy vết. Chỉ xét nhiều agent nếu workflow đơn giản còn khoảng cách đã đo. Kiểm chứng ở R27-10. |
-| ADR-04 · Mức độ phức tạp của context | Dùng retrieval có giới hạn và trích dẫn làm baseline. Thử xếp hạng theo độ mới hoặc nén context khi có bằng chứng về lỗi dữ liệu cũ, nhiễu hoặc vượt ngân sách token. [S01] | Chỉ giữ phần cải thiện được chất lượng hoặc chi phí trên cùng workload mà vẫn qua gate về quyền và độ đúng. Kiểm chứng ở R27-09. |
+| ADR-04 · Mức độ phức tạp của context | Dùng retrieval có giới hạn và trích dẫn làm baseline. Thử xếp hạng theo độ mới hoặc nén context khi có bằng chứng về lỗi dữ liệu cũ, nhiễu hoặc vượt ngân sách token. Khi cần tái sử dụng kinh nghiệm qua phiên, so sánh không memory, ghi chú trong phiên và hợp nhất/kiểm chứng ngoài phiên có giới hạn. Memory là dữ liệu suy diễn có thể sai; không thay nguồn nghiệp vụ có thẩm quyền. [S01, S07] | Chỉ giữ phần cải thiện được chất lượng hoặc chi phí trên cùng workload mà vẫn qua gate về quyền và độ đúng. Kiểm chứng ở R27-09. |
 | ADR-05 · Điều phối coding agent trong quy trình phát triển | Dùng một coding agent với kiểm chứng độc lập làm baseline. Thử nhiều agent khi tác vụ có thể chia theo phạm vi chỉnh sửa rõ ràng. Cách này có thể giảm xung đột nhưng tăng công điều phối và bàn giao. [S04] | Xét áp dụng năm 2028 nếu R27-13 đạt gate trên tác vụ đại diện và đội có năng lực vận hành. |
 
 ### Rà soát năng lực theo 7 lớp
@@ -72,13 +72,22 @@ Mỗi nhiệm vụ ở trạng thái **Đề xuất**. Mốc tháng là cửa s�
 | R27-06 | Q2 · Tháng 6 | O28-02 | Security Lead | R27-05 | Mở rộng các kiểm soát tối thiểu đã có từ R27-04. Kết quả kiểm thử từ chối truy cập, thu hồi quyền, rò rỉ qua cache/log, prompt injection và xóa dữ liệu khỏi index. Sửa các lỗi nghiêm trọng trước pilot. |
 | R27-07 | Q3 · Tháng 7 | O28-02 | Platform Lead | R27-06 | Hoàn thiện dashboard từ telemetry R27-04 về chất lượng, độ trễ, chi phí và lỗi. Chốt owner, lịch lấy mẫu đánh giá production được phép, ngưỡng cảnh báo và phản ứng khi chất lượng giảm. Phân biệt điểm tự động với mẫu được người kiểm chứng. [S06] Diễn tập timeout, tắt AI và hoàn nguyên. Ghi thời gian khôi phục và chủ sở hữu sự cố. |
 | R27-08 | Q3 · Tháng 8 | O28-01, O28-02 | Product Owner | R27-07 | Pilot có giới hạn, kèm báo cáo so sánh thời gian, tỷ lệ hoàn thành và chi phí với baseline. Vận hành lịch lấy mẫu đánh giá đã chốt ở R27-07, ghi cả ca khó và quyền bị từ chối. Chốt tiếp tục, thu hẹp hoặc dừng. |
-| R27-09 | Q3 · Tháng 9 | O28-03, ADR-04 | AI Engineer | R27-08 | Thử nghiệm context có kiểm soát nếu pilot tiếp tục. So sánh độ đúng, độ mới, token, p95 và chi phí mỗi tác vụ thành công. Kiểm tra lỗi do nén hoặc dữ liệu xung đột. |
+| R27-09 | Q3 · Tháng 9 | O28-03, ADR-04 | AI Engineer | R27-08 | Thử nghiệm context có kiểm soát nếu pilot tiếp tục. So sánh độ đúng, độ mới, token, p95 và chi phí mỗi tác vụ thành công. Kiểm tra lỗi do nén hoặc dữ liệu xung đột. Nếu có nhu cầu qua phiên, thực hiện đối chứng memory theo quy trình R27-09 bên dưới; ghi quyết định giữ, bỏ hoặc hoãn từng phương án và tổng chi phí bảo trì. [S07] |
 | R27-10 | Q4 · Tháng 10 | O28-02, O28-03, ADR-03 | Tech Lead | R27-08 | Nếu use case cần nhiều bước, lập sơ đồ phụ thuộc và ma trận quyền công cụ, sau đó thử trong sandbox theo quy trình dưới đây. Báo cáo kết quả theo nhóm tác vụ và quyết định giữ baseline, thử tiếp hoặc hoãn kèm điều kiện mở lại. |
 | R27-13 | Q4 · Tháng 10, tùy chọn | ADR-05 | Tech Lead | — | Khi có năng lực thử nghiệm và repo sandbox được phép sử dụng, so sánh hai cách điều phối trên các tác vụ tương đương. Báo cáo số liệu, kết quả gate và quyết định giữ baseline hoặc mở pilot 2028. Nếu thiếu điều kiện, ghi nhận hoãn. |
 | R27-11 | Q4 · Tháng 11 | O28-02, ADR-02 | Platform Lead | R27-08 | Kiểm thử tải và chuyển adapter hoặc hoàn nguyên về tìm kiếm. Cập nhật chi phí theo dữ liệu pilot và ghi kết quả diễn tập. |
 | R27-12 | Q4 · Tháng 12 | O28-01, O28-02, O28-03 | Product Owner | R27-09, R27-10, R27-11 | Hồ sơ quyết định đầu tư 2028, gồm kết quả đã đo, các lựa chọn giữ/mở rộng/dừng, chủ sở hữu và điều kiện giải ngân. Ghi rõ các thử nghiệm đã hoãn. Nếu R27-13 có kết quả, đính kèm quyết định về coding agent riêng. |
 
 **90 ngày đầu kể từ 09/11/2026.** Chọn ứng viên use case, xác định ai có thể cấp quyền đọc tài liệu và đối chiếu năng lực đội trong tháng 11–12. Dùng tháng 1 để chốt R27-01, sau đó bắt đầu thu thập bộ đánh giá nếu đã có quyền và người phụ trách.
+
+### Cách đo thử nghiệm memory R27-09
+
+- Chỉ mở nhánh thử này nếu pilot có nhu cầu qua phiên đã ghi nhận; giữ tháng 9, owner AI Engineer và phụ thuộc R27-08. Nếu chưa có nhu cầu, ghi hoãn và giữ retrieval hiện tại.
+- QA Lead tách dữ liệu phát triển và tập giữ riêng theo chuỗi phiên, tránh ghi đáp án kiểm thử vào memory. So sánh retrieval không memory, ghi chú trong phiên và ghi chú có hợp nhất/kiểm chứng ngoài phiên trên cùng tác vụ, model, công cụ và quyền. Đây là thiết kế thử nghiệm đề xuất từ S07, chưa có kết quả nội bộ.
+- Chỉ lưu transcript khi có mục đích, quyền và thời hạn lưu được phê duyệt. Mỗi ghi nhớ có nguồn, phiên bản và trạng thái kiểm chứng; transcript chỉ là bằng chứng tương tác. Kiểm chứng sự thật nghiệp vụ với nguồn có thẩm quyền. Phân biệt ghi chú, wiki tùy chọn và context nhỏ nạp đầu phiên.
+- Trước thử nghiệm, AI Engineer và QA Lead chốt ngưỡng chất lượng, tỷ lệ ghi nhớ sai/cũ, tỷ lệ sửa đúng và độ trễ cập nhật; Platform Lead chốt ngân sách compute, lịch bảo trì và chi phí. Đo task success, groundedness, p95, token và chi phí mỗi tác vụ thành công gồm tạo, xác minh, lưu và bảo trì memory; phân tích theo số lần tái sử dụng.
+- Kiểm thử ghi đè đồng thời, memory poisoning, thu hồi quyền và xóa các bản suy diễn. Dùng owner theo đối tượng, kiểm tra phiên bản khi ghi, snapshot và rollback trước khi đưa memory đã kiểm chứng vào sử dụng. Memory không có quyền sửa policy hoặc mở rộng tool.
+- Chỉ giữ phương án đạt gate quyền/chất lượng và cải thiện đủ mức đã chốt so với retrieval; nếu chi phí bảo trì vượt lợi ích hoặc lỗi tăng, hoàn nguyên snapshot hoặc tắt memory. Không mặc định cần wiki, graph hay agent chạy nền. [S07]
 
 ### Cách đo thử nghiệm điều phối trong sản phẩm R27-10
 
@@ -100,7 +109,10 @@ Mỗi nhiệm vụ ở trạng thái **Đề xuất**. Mốc tháng là cửa s�
 | Quyền và an toàn | Yêu cầu 0 lỗi nghiêm trọng quan sát được trong bộ kiểm thử rò rỉ, thu hồi quyền và thao tác ngoài quyền. Chặn pilot hoặc tắt tính năng khi phát hiện lỗi, sau đó kiểm thử lại trước khi mở. [S03] |
 | Vận hành và kinh tế | Chốt ngân sách p95 và chi phí trên mỗi tác vụ thành công với chủ sở hữu sau baseline. Đo trên tải dự kiến và tải đỉnh trước khi mở rộng. Dùng adapter hoặc tìm kiếm làm đường lui khi inference vượt ngân sách hoặc gián đoạn. |
 | Hồi quy và phát hành | Từ R27-04, mọi thay đổi model, prompt, retrieval hoặc tool phải có cấu hình và bộ đánh giá có phiên bản, so với bản tốt đã biết trên cùng tác vụ. QA Lead chốt ngưỡng trước thử nghiệm; chặn phát hành khi trượt gate chất lượng, quyền, p95 hoặc chi phí. Platform Lead giữ cấu hình rollback; R27-07 diễn tập và R27-08 theo dõi chất lượng bằng mẫu được phép, không lưu payload nhạy cảm mặc định. [S06] |
+| Memory có điều kiện | R27-09 phải chứng minh nguồn và trạng thái kiểm chứng, cách ly quyền, xử lý ghi đồng thời, xóa bản suy diễn và rollback. QA/Platform chốt ngưỡng trước thử nghiệm; chặn đưa memory vào pilot khi trượt gate hoặc chưa tính chi phí bảo trì. [S07] |
 | Mở rộng | Dùng kết quả hai vòng đo liên tiếp trên pilot để xét mở rộng. Đánh giá thêm chi phí vận hành, khả năng phân công trực sự cố và chi phí chuyển đổi nhà cung cấp. |
+
+Nếu thử memory, cộng chi phí tạo/hợp nhất/kiểm chứng, lưu trữ và bảo trì vào TCO; báo cáo chi phí phân bổ theo số lần tái sử dụng, không chỉ token tại thời điểm trả lời. [S07]
 
 TCO tháng = inference + truy xuất + lưu trữ + chi phí tích hợp phân bổ + đánh giá + vận hành + rà soát của con người. Chi phí mỗi tác vụ thành công = tổng chi phí phân bổ, gồm retry và fallback, chia cho số tác vụ hoàn thành đạt chuẩn. Ước tính công sức theo vai trò sau R27-01 và chi phí theo ba mức tải sau R27-03. Ưu tiên cấp ngân sách theo gate từng quý. Hiện chưa có số liệu sử dụng hoặc báo giá để xác lập TCO.
 
@@ -113,15 +125,15 @@ TCO tháng = inference + truy xuất + lưu trữ + chi phí tích hợp phân b
 | S03 | [NIST AI 600-1, Generative AI Profile](https://doi.org/10.6028/NIST.AI.600-1) | 26/07/2024 / 09/11/2026 | Hướng dẫn tự nguyện về quản lý rủi ro AI tạo sinh. Dùng để định hướng đánh giá trước triển khai và giám sát ở R27-06–07. Các gate trong file là đề xuất cho kế hoạch này. |
 | S04 | [Denis Shokhirev, Why one agent is no longer enough](https://gerdennisai.com/blog/multi-agent-cli-orchestration-without-chaos) | 09/11/2026 / 09/11/2026 | Kinh nghiệm triển khai tách vai trò, cô lập vùng sửa và lưu trạng thái điều phối. Dùng để thiết kế ADR-05 và R27-13. Bài viết chưa đưa ra benchmark đối chứng cho hiệu quả multi-agent. |
 | S05 | [Rafał Gancarz, Agentic AI Architecture: Current Challenges and Future Opportunities](https://www.infoq.com/articles/agentic-ai-architecture-challenges-opportunities/) | 09/11/2026 / 10/11/2026 | Phân tích ranh giới nghiệp vụ, điều phối theo loại tác vụ, quyền theo tác vụ và truy vết theo bước. Dùng cho ADR-03 và R27-10. Bài viết tổng hợp góc nhìn và nghiên cứu bên ngoài. Hiệu quả trên workload này cần đo trong pilot. |
-
 | S06 | [AWS, Pluggable Agentic AI Framework: A seven-layer composable enterprise agentic AI reference architecture](https://aws.amazon.com/blogs/machine-learning/pluggable-agentic-ai-framework-a-seven-layer-composable-enterprise-agentic-ai-reference-architecture-on-amazon-bedrock-agentcore/) | 09/11/2026 / 11/11/2026 | Kiến trúc tham chiếu của nhà cung cấp: contract phân lớp, cấu hình inference, observability và continuous evaluation. Dùng cho rà soát 7 năng lực, ADR-02–03, R27-04–08, R27-11 và gate phát hành. Chưa có benchmark cho workload này; không coi dịch vụ AWS, registry, multi-agent hoặc đánh giá mọi session là bắt buộc. Các gate và cách lấy mẫu là đề xuất của chiến lược. |
+| S07 | [Lance Martin, The components of agent memory](https://www.anthropic.com/research/components-of-agent-memory) | 06/11/2026 / 12/11/2026 | Thử nghiệm của Anthropic về phân tầng memory và hợp nhất/kiểm chứng ngoài phiên. Dùng cho ADR-04, R27-09 và gate/TCO memory. Hiệu quả phụ thuộc tác vụ/model; không suy rộng benchmark thành ROI của đội, không coi wiki hoặc dreaming là bắt buộc. |
 
 | Phiên bản | Ngày | Nguồn | Thay đổi |
 | --- | --- | --- | --- |
 | 0.1 | 09/11/2026 | S01–S03 | Tạo chiến lược, ADR đề xuất và 12 nhiệm vụ năm 2027. Chờ xác nhận bối cảnh triển khai và đo baseline. |
 | 0.2 | 09/11/2026 | S04 | Bổ sung ADR-05 và thử nghiệm coding agent tùy chọn R27-13, tách khỏi pilot tra cứu tài liệu và workflow gọi công cụ của sản phẩm. |
 | 0.3 | 10/11/2026 | S05 | Cập nhật ADR-03 và R27-10 với thử nghiệm điều phối theo phụ thuộc, phân quyền theo phạm vi và gate truy vết cho workflow trong sản phẩm. |
-
 | 0.4 | 11/11/2026 | S06 | Bổ sung rà soát 7 năng lực và catalog có điều kiện; cập nhật ADR-02–03, đưa quyền/trace/evaluation vào R27-04, hoàn thiện R27-05–08 và gate hồi quy/rollback liên kết R27-11. Cập nhật skill và workbook cùng đợt; giữ nguyên hướng pilot và trạng thái Đề xuất. |
+| 0.5 | 12/11/2026 | S07 | Mở rộng ADR-04 và R27-09 với đối chứng memory, kiểm chứng nguồn, ghi đồng thời, rollback và TCO bảo trì. Cập nhật skill và context reference cùng đợt; giữ pilot RAG, lịch và trạng thái Đề xuất. |
 
 Khi có reference mới, cập nhật các ADR, nhiệm vụ và gate chịu ảnh hưởng theo [quy trình duy trì chiến lược](.skills/ai-architecture-strategy-2028/SKILL.md#maintain-the-strategy-file). Rà soát lại các giả định và quyết định đầu tư vào cuối mỗi quý.

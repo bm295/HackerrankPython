@@ -47,3 +47,18 @@ Propose thresholds until stakeholders agree or measurements establish them. A sm
 
 ## Use as a 2028 signal
 Record “greater investment in context lifecycle engineering” as a forecast hypothesis, not an observed future. Explain how it changes architecture decisions under baseline, accelerated and constrained scenarios. Seek independent evidence and counterexamples; a single article does not establish industry adoption. Reconsider investment if controlled experiments show no material quality, cost or latency benefit over the simpler baseline.
+
+## Optional offline memory consolidation
+Source: Lance Martin, “The components of agent memory”, Anthropic Engineering, published 2026-11-06, inspected 2026-11-12.
+URL: https://www.anthropic.com/research/components-of-agent-memory
+
+The vendor describes using offline computation (“dreaming”) to check notes against transcripts, correct errors and build representations such as wikis. Reported benefits vary by task and model; some wikis add no clear benefit or exceed the source size. These experiments do not establish benefits for another workload.
+
+Apply the following as engineering recommendations:
+- Distinguish permitted source transcripts, derived notes, optional representations and the small context injected into each session. Do not retain sensitive transcripts by default; require an approved purpose and retention policy.
+- Treat generated memories as fallible claims. Preserve source/version, verification status and corrections. Check against authoritative evidence; transcripts show what was said or observed and are not automatically business ground truth.
+- Promote only validated changes into reusable memory; version snapshots and retain rollback. Keep uncertain claims separate from confirmed facts. Memory must never expand tool permissions or become policy authority.
+- Assign ownership per memory object; use version checks or serialized writes to prevent lost updates. Test concurrent writers, poisoning, stale notes, revoked access and deletion of derived copies.
+- Compare retrieval without memory, notes written during sessions and notes with bounded offline consolidation. Hold tasks, model, tools and access constant; isolate sessions and evaluation splits to prevent answer leakage.
+- Measure task success, groundedness, incorrect/stale memory rate, correction success, p95, injected tokens and total amortized cost including construction, verification, storage and maintenance. Vary reuse volume to expose break-even assumptions.
+- Set owner, cadence, freshness/update-lag bounds and compute limits before running. Stop or roll back if maintenance costs or quality regressions outweigh benefits; keep direct retrieval as fallback. Do not mandate a wiki, graph or background agent.
