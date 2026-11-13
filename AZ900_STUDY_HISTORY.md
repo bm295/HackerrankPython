@@ -66,7 +66,7 @@ Nhật ký ghi lại câu đã luyện, điểm thô và ghi chú để đối c
 
 | AZ900-H058 | 2026-11-11 | 2026-07-20 | Describe Azure management and governance | Cost Management, Advisor và NSG | LinkedIn câu 28: chọn hai chức năng Cost Management and Billing trong bộ năm lựa chọn | Dễ về kiến thức; đề lỗi | A, E (ảnh đã chọn) | Key LinkedIn A,D; kỹ thuật chỉ A phù hợp, D sai | 1/2 theo key; không chấm readiness | Mơ hồ | A hỗ trợ tối ưu chi phí, kết hợp Advisor để tìm tài nguyên ít sử dụng. B là code repositories; C là provisioning VM; D là cấu hình mạng NSG; E là phát hiện/cảnh báo threat. Cost Management không cấu hình NSG. Không có đủ hai đáp án đúng về kỹ thuật; loại câu khỏi điểm domain, không thêm điểm hay trừ điểm. Ảnh là kết quả bài làm, không tạo thêm lượt ôn. Xem AZ900-045. |
 
-| AZ900-H059 | 2026-11-13 | 2026-07-20 | Describe Azure architecture and services | Azure Regions so với Availability Zones | LinkedIn Question 1/1: What are Azure regions? phân biệt nhóm datacenter gần nhau với datacenter có nguồn điện, làm mát và mạng độc lập | Dễ | D (one or more data centers with independent power, cooling, networking) | A (a group of data centers located close together) | 0/1 | Sai | D mô tả Availability Zone chính xác hơn; Region là vùng địa lý chứa một hay nhiều datacenter kết nối qua mạng độ trễ thấp. Lời chấm Correct ban đầu của trợ lý đã được đính chính trong cùng lượt, không tạo lượt ôn. Xem AZ900-017. |
+| AZ900-H059 | 2026-11-13 | 2026-07-20 | Describe cloud concepts | Azure Regions so với Availability Zones | LinkedIn Question 1/1: What are Azure regions? phân biệt nhóm datacenter gần nhau với datacenter có nguồn điện, làm mát và mạng độc lập | Dễ | D (one or more data centers with independent power, cooling, networking) | D (theo key LinkedIn) | 1/1 | Đúng | Ảnh kết quả LinkedIn xác nhận D Correct và A Incorrect. Cách diễn đạt D gần định nghĩa Availability Zone hơn theo thuật ngữ Azure; ghi nhận đúng theo key của bài luyện, lưu ý sự khác biệt, không tạo lượt ôn hoặc cộng điểm hai lần. Xem AZ900-017. |
 
 ## Lịch sử các lần ôn lại
 
@@ -91,8 +91,8 @@ Các dòng dưới đây được chuyển từ ghi chú ôn lại đã có, m�
 
 | Domain | Câu riêng biệt | Lượt tính điểm | Điểm thô các lượt | Điểm cộng/trừ | Trung bình có trọng số | Đánh giá |
 | --- | --- | --- | --- | --- | --- | --- |
-| Describe cloud concepts | 8 | 9 | 9/10 | +8 | 90.00% | Vững |
+| Describe cloud concepts | 9 | 10 | 10/11 | +9 | 90.91% | Vững |
 | Describe Azure management and governance | 16 | 17 | 20/27 | +13 | 69.33% | Đang củng cố |
-| Describe Azure architecture and services | 26 | 32 | 28/46 | +10 | 56.40% | Cần ôn |
+| Describe Azure architecture and services | 25 | 31 | 28/45 | +11 | 58.03% | Cần ôn |
 
 Chưa đủ dữ liệu để kết luận mức sẵn sàng tổng thể: mỗi domain cần ít nhất 15 câu riêng biệt với chủ đề và độ khó đa dạng. Kết quả hiện hành bao gồm các lượt đã xem phản hồi trước đó; không diễn giải thành tỷ lệ đỗ.
