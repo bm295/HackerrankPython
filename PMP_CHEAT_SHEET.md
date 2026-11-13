@@ -91,6 +91,8 @@ Khi threat đã được ghi trong risk register, nay thực sự xảy ra và l
 
 <a id="pmp-004"></a>
 
+**Tình huống dự án agile có nguy cơ trễ:** Khi PM nhận thấy một sự kiện *có thể* gây chậm tiến độ đáng kể (ví dụ bốn tháng) nhưng chưa xảy ra, trước tiên cần nhận diện và đánh giá xác suất cùng mức độ tác động của risk, rồi mới lựa chọn response phù hợp. Việc xin thêm ngân sách, nhờ người quản lý sản phẩm quyết định thay hoặc chỉ bám backlog không thay thế phân tích rủi ro. Nếu sự kiện đã xảy ra hoặc đã có response được phê duyệt, cần chuyển sang xử lý issue hoặc thực thi response phù hợp; không máy móc phân tích lại.
+
 ## PMP-004 | Phân tích câu hỏi về nhóm bức xúc vì thay đổi liên tục
 
 **Dấu hiệu:** Nhóm bức xúc, muốn ít thay đổi hơn; đề hỏi PM nên làm gì FIRST. Domain chính: People.
