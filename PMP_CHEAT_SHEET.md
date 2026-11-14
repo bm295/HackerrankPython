@@ -10,7 +10,7 @@ Tìm keyword và mục tiêu câu hỏi trong bảng, rồi đọc mục PMP tư
 | Change request, scope creep, baseline, approval, backlog; fixed go-live date, additional scope, fully committed; cannot agree how to implement changes; fixed budget, regulated scope | [PMP-002](#pmp-002) | Xác định thẩm quyền và quy trình thay đổi; scope tăng nhưng giữ ngày giao cần phân tích tác động và phương án trước khi xin phê duyệt. |
 | Risk, issue, may occur, has occurred, no response planned, contingency | [PMP-003](#pmp-003) | Risk đã xảy ra và gây tác động cần ghi issue log và xử lý; nếu chưa có response thì cùng nhóm xác định workaround. |
 | Frustrated, conflict, unhappy team, changing requirements | [PMP-004](#pmp-004) | Hiểu mối lo và nguyên nhân trước khi chọn biện pháp; kết hợp PMP-001 nếu hỏi FIRST. |
-| Deliverable, inspection, acceptance, quality, Definition of Done | [PMP-005](#pmp-005) | Phân biệt kiểm tra chất lượng với chấp nhận kết quả. |
+| Deliverable, inspection, acceptance, quality, Definition of Done, signoff, sponsor | [PMP-005](#pmp-005) | Phân biệt kiểm tra chất lượng với chấp nhận kết quả. |
 | PV, EV, AC, BAC, CPI, SPI, EAC, ETC, TCPI; over budget, ahead of schedule | [PMP-006](#pmp-006) | So sánh CPI/SPI với 1 để xác định vấn đề chi phí hay tiến độ; chọn công thức theo giả định. |
 | Sprint, review, retrospective, prevent errors, happen again | [PMP-007](#pmp-007) | Phân biệt phản hồi về sản phẩm với cải thiện cách làm. |
 | Assumptions, high-level risk, high-level scope, expert judgment, business case, charter approval | [PMP-008](#pmp-008) | Nhận diện charter qua nội dung tổng quan; phân biệt đang soạn charter với đã sẵn sàng xin phê duyệt. |
@@ -121,6 +121,8 @@ Khi threat đã được ghi trong risk register, nay thực sự xảy ra và l
 **Cách phân tích đáp án:** Xác định đề muốn bằng chứng về chất lượng hay sự chấp nhận. Kiểm thử, kiểm tra lỗi và đo thông số hướng đến Control Quality; xác nhận chấp nhận từ người có thẩm quyền hướng đến Validate Scope.
 
 Khi khách hàng nhận deliverable nhưng cho rằng chỉ đáp ứng 80% chức năng, trước hết đối chiếu acceptance criteria đã thống nhất với kết quả bàn giao. Con số 80% chưa cho biết đó là thiếu yêu cầu đã cam kết hay kỳ vọng mới. Nếu thiếu chức năng đã thống nhất, xử lý phần chưa đáp ứng; nếu là yêu cầu mới, áp dụng cơ chế quản lý thay đổi phù hợp. Chưa có căn cứ sửa scope management plan hoặc requirements management plan chỉ từ phản hồi này; charter quá tổng quan để xác nhận mức đáp ứng từng chức năng.
+
+Khi đề hỏi ai ký chấp nhận deliverable ở cuối dự án và chỉ đưa ra sponsor, steering committee, giám đốc đơn vị của PM và các quản lý quốc tế, sponsor là lựa chọn phù hợp nhất khi không có phân quyền khác. Quy mô lớn hoặc phạm vi quốc tế không tự chuyển quyền nghiệm thu cho steering committee hay các quản lý địa phương. Trong thực tế, người ký phải là customer/sponsor hoặc đại diện được ủy quyền theo thỏa thuận và governance; không mặc định sponsor luôn là người duy nhất ký.
 
 **Bẫy:** Deliverable vượt qua kiểm tra nội bộ chưa chắc đã được khách hàng chấp nhận. Definition of Done trong agile quy định tiêu chuẩn hoàn thành; không mặc định thay thế mọi yêu cầu chấp nhận trong hợp đồng.
 
