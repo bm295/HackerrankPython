@@ -44,6 +44,19 @@ Identify the exact capability requested, responsibility boundary, service model,
 
 Reason directly for stable concepts. Browse official Microsoft sources for changing or uncertain claims, disputed answers, and version-sensitive details. Cite only pages actually consulted and directly supporting the claim. If verification is unavailable, state the limitation and do not promote the uncertain claim into a confirmed rule.
 
+## Official answer-key reconciliation and corrections
+
+When a learner later provides an official result screenshot or a source-provided answer key for an already graded question:
+
+1. Identify the existing question by its stem, distinguishing scenario, options and history ID. Check whether the screenshot is a **result for the same attempt**, rather than a new learner submission. Do not create a new H/R ID or award another attempt merely for receiving the result.
+2. Extract the provider's marked correct option(s), the learner's selected option(s), and any explanation. Record that the key is **provider-confirmed** (for example, LinkedIn Learning), not a Microsoft certification exam key. Do not claim provider keys are infallible.
+3. If the provider key differs from the tutor's provisional answer, **use the provider key for the provider-quiz verdict and practice score**. Show the correction explicitly, acknowledge the earlier grading mistake, and explain the provider's intended AZ-900 concept. Independently distinguish technical caveats, overbroad wording and conflicting official Azure documentation; do not silently rewrite technical truth to match a flawed key.
+4. Correct the **existing** history entry: selected answer, provider-confirmed correct answer, raw credit, verdict, and rationale. Preserve the original selection and any important ambiguity. Recalculate the original attempt's signed delta and all affected domain aggregates from source rows; the net score change is **new signed delta minus previously recorded signed delta** (e.g., +1 to −1 changes the domain total by −2, not −1). Recompute weighted readiness using the documented formula, not the raw-credit ratio if difficulty weights differ. If the question is ambiguous or out of current scope, mark its readiness eligibility explicitly.
+5. Correct the existing cheat-sheet lesson when the previous teaching rule or answer cue was misleading; keep the provider's intended answer distinct from implementation caveats. Update the skill itself only when the workflow/rubric needs improvement, not for every corrected key.
+6. Commit the reconciled history and necessary cheat-sheet changes, verify success, and report exact history ID, net delta, resulting domain total, commit reference and any unresolved uncertainty. If persistence fails, say it was not saved. Never report a corrected score as committed before the tool confirms success.
+
+For initial grading **before** the provider key is shown, distinguish a reasoned provisional answer from a confirmed provider key. In particular, for exam-style PaaS migration scenarios, assess the **intended service-model benefit** (less platform administration) before treating broad phrasing such as "any custom applications" as an absolute technical guarantee. If wording is ambiguous, flag it and avoid presenting the provisional verdict as provider-confirmed.
+
 ## Grade the learner's answer
 
 Grade only an answer explicitly identified as the learner's, whether supplied as text or marked on a screenshot. Treat an answer key or unexplained marks as reference material. With no personal answer, explain the question and log it as a walkthrough. Defer grading if the question, selection, key, or required scoring details are unclear.
