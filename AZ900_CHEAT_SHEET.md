@@ -709,3 +709,7 @@ Keywords giúp tìm phần hướng dẫn phù hợp; luôn đọc yêu cầu v�
 **Liên hệ lý thuyết:** Azure Blueprints trước đây đóng gói các artifacts gồm policy assignments, role assignments, ARM templates và resource groups để triển khai cấu hình quản trị nhất quán. Blueprint được gán ở cấp subscription, không gán trực tiếp cho resource group. Azure Policy là cơ chế áp dụng/đánh giá quy tắc quản trị; policy assignment có thể là một artifact trong Blueprint, nhưng Policy không chỉ là một 'standard'. Azure Blueprints đã ngừng hoạt động năm 2026; không khuyến nghị thiết kế mới dựa trên dịch vụ này.
 
 **Cách phân tích đáp án:** Với ba mệnh đề về khả năng đóng gói artifacts, gán trực tiếp vào resource group và policy artifacts, tổ hợp bài luyện legacy là True, False, True. Cần phân biệt lịch sử dịch vụ với kiến thức AZ-900 hiện hành.
+
+### Bổ sung phân biệt Functions, Container Instances và Kubernetes (16/11/2026)
+
+Khi câu hỏi yêu cầu dịch vụ **serverless compute** chạy mã theo sự kiện, Azure Functions là lựa chọn điển hình. Azure Container Instances cho chạy containers mà không cần quản lý máy ảo, cũng thường được mô tả là serverless containers; do đó từ “without servers” riêng lẻ không đủ phân biệt nếu không có các lựa chọn và ngữ cảnh. Kubernetes là hệ thống điều phối container; Azure Kubernetes Service là dịch vụ quản lý cụm Kubernetes nhưng không đồng nghĩa Azure Functions. Tránh suy luận rằng Kubernetes là một dịch vụ serverless chỉ vì hạ tầng chạy trên public cloud.
