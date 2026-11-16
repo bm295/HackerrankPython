@@ -18,6 +18,7 @@ Keywords giúp tìm phần hướng dẫn phù hợp; luôn đọc yêu cầu v�
 | sovereign region, national cloud, China, East US, Germany | [AZ900-010](#az900-010) | Phân biệt loại cloud với đơn vị vận hành; kiểm tra thông tin Azure Germany cũ. |
 | varying traffic, lunchtime peaks, schedule, VM Scale Sets, Availability Sets | [AZ900-011](#az900-011) | Tải biến động cần autoscale bằng VMSS; Availability Sets xử lý phân tán lỗi và bảo trì. |
 | numerous subscriptions, business units, governance, delegate management | [AZ900-012](#az900-012) | Management Groups tạo scope trên subscription để tổ chức và kế thừa Policy/RBAC. |
+| Azure Blueprint, blueprint artifacts, policy assignments, subscription assignment, retired service | [AZ900-046](#az900-046) | Blueprint cũ gom artifacts và gán tại subscription; không nhầm với Policy và ARM; dịch vụ đã ngừng hoạt động. |
 | Azure Policy, organizational standards, compliance, audit, deny | [AZ900-013](#az900-013) | Kiểm tra cấu hình theo quy tắc và effect; phân biệt Policy với RBAC, chi phí và monitoring. |
 | Azure CLI, list all VMs, az vm list | [AZ900-014](#az900-014) | az + nhóm vm + thao tác list; kiểm tra subscription và resource-group scope. |
 | telemetry, performance and health, alerts, user experiences, NOT use | [AZ900-015](#az900-015) | Monitor là nền tảng, Log Analytics truy vấn logs, Application Insights là APM; DevOps phục vụ phát triển. |
@@ -696,3 +697,15 @@ Keywords giúp tìm phần hướng dẫn phù hợp; luôn đọc yêu cầu v�
 **Cách phân tích đáp án:** Chấp nhận phát biểu hỗ trợ nhận diện lãng phí và tối ưu chi tiêu khi xét bộ công cụ tích hợp. Quản lý mã nguồn thuộc công cụ phát triển; triển khai VM thuộc ARM/IaC hoặc công cụ provisioning; cấu hình NSG thuộc quản lý mạng; phát hiện và cảnh báo security threats thuộc dịch vụ bảo mật như Defender for Cloud hoặc Sentinel tùy bối cảnh. Cost alerts không đồng nghĩa security alerts.
 
 **Bẫy:** Key LinkedIn câu 28 đánh dấu A và D dù D nói Cost Management cấu hình NSG. D không phải chức năng của Cost Management; trong bộ năm lựa chọn chỉ A phù hợp. Câu yêu cầu chọn hai thiếu đáp án đúng thứ hai, nên không dùng để đánh giá điểm domain.
+
+<a id="az900-046"></a>
+
+## AZ900-046 | Azure Blueprints (dịch vụ legacy)
+
+**Dấu hiệu:** Blueprint artifacts, role assignments, policy assignments, ARM templates, resource group artifacts, subscription assignment.
+
+**Nhóm kiến thức:** Describe Azure management and governance → governance and compliance; kiến thức lịch sử, không tính readiness hiện hành.
+
+**Liên hệ lý thuyết:** Azure Blueprints trước đây đóng gói các artifacts gồm policy assignments, role assignments, ARM templates và resource groups để triển khai cấu hình quản trị nhất quán. Blueprint được gán ở cấp subscription, không gán trực tiếp cho resource group. Azure Policy là cơ chế áp dụng/đánh giá quy tắc quản trị; policy assignment có thể là một artifact trong Blueprint, nhưng Policy không chỉ là một 'standard'. Azure Blueprints đã ngừng hoạt động năm 2026; không khuyến nghị thiết kế mới dựa trên dịch vụ này.
+
+**Cách phân tích đáp án:** Với ba mệnh đề về khả năng đóng gói artifacts, gán trực tiếp vào resource group và policy artifacts, tổ hợp bài luyện legacy là True, False, True. Cần phân biệt lịch sử dịch vụ với kiến thức AZ-900 hiện hành.
