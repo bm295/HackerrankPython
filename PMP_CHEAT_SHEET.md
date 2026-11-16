@@ -87,6 +87,9 @@ Khi nhiều thay đổi được nhận diện trong execution và nhóm chưa t
 
 Khi threat đã được ghi trong risk register, nay thực sự xảy ra và làm chậm deliverable nhưng chưa có response được lập, ghi sự kiện vào issue log và cùng nhóm đánh giá tác động, xác định người chịu trách nhiệm và cách xử lý (workaround). Workaround là ứng phó chưa được hoạch định trước đối với vấn đề phát sinh; việc risk đã được nhận diện không có nghĩa contingency response đã tồn tại. Cập nhật trạng thái risk register vẫn hữu ích nhưng chỉ đánh dấu rồi tiếp tục theo dõi không đủ khi tác động đang diễn ra. Không đánh giá lại xác suất xảy ra của chính sự kiện đã xảy ra hoặc coi độ trễ hiện tại là một risk mới; chỉ ghi thêm risk nếu có hệ quả tương lai còn chưa chắc chắn. Nếu cách xử lý làm thay đổi baseline được kiểm soát, tuân thủ [PMP-002](#pmp-002).
 
+
+**Tình huống trợ cấp chính phủ dự kiến (hybrid):** Khi dự án *có thể* không đáp ứng điều kiện nhận government subsidy, đây là risk về khả năng đủ điều kiện và nguồn tài trợ, chưa mặc định là issue. Ghi hoặc cập nhật risk register; đánh giá probability, impact đối với ngân sách, business case và các giả định tài trợ, rồi xác định response cùng stakeholder có thẩm quyền. Không tự động tăng risk level chỉ vì mới nghe tin: mức độ cần dựa trên đánh giá. Nếu câu trắc nghiệm chỉ đưa lựa chọn “increase the project's risk level”, đây có thể là lựa chọn gần nhất so với ghi issue log, dùng contingency reserve hoặc gửi change request ngay, nhưng cách diễn đạt thiếu bước đánh giá và không nên biến thành quy tắc chung. Khi xác nhận không đủ điều kiện hoặc thiếu hụt tài trợ đã hiện hữu, theo dõi issue và đánh giá thay đổi cần thiết; contingency reserve chỉ dùng đúng mục đích, thẩm quyền và kế hoạch ứng phó đã phê duyệt.
+
 **Bẫy:** Chỉ cập nhật sổ theo dõi không giải quyết được vấn đề. Đừng tiếp tục coi vấn đề đã xảy ra là một khả năng trong tương lai hoặc lập lại phương án ứng phó đã có mà không có lý do.
 
 <a id="pmp-004"></a>
