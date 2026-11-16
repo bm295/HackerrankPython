@@ -70,6 +70,8 @@ Nhật ký ghi lại câu đã luyện, điểm thô và ghi chú để đối c
 
 | AZ900-H060 | 2026-11-16 | 2026-07-20 | Describe Azure management and governance | Azure Blueprints, artifacts và assignment scope (legacy) | LinkedIn Question 1/2: ba mệnh đề về gói artifacts, gán blueprint ở resource group và Azure Policy artifact | Trung bình | B (True, False, True) | B (True, False, True), theo kiến thức Azure Blueprints cũ | 3/3 | Đúng | Blueprint definition có thể chứa resource group artifacts, policy assignments, role assignments và ARM templates; blueprint assignment ở subscription, không trực tiếp resource group. Policy assignments có thể là artifact; cụm 'nothing more than a standard' là diễn đạt thiếu chính xác. Azure Blueprints đã ngừng hoạt động năm 2026; câu mang tính lịch sử, loại khỏi readiness theo syllabus hiện hành, vẫn lưu +3 điểm luyện tập riêng. Xem AZ900-046. |
 
+| AZ900-H061 | 2026-11-16 | 2026-07-20 | Describe Azure architecture and services | Azure Functions và serverless compute so với Kubernetes | LinkedIn Question 2/2: chọn dịch vụ serverless do Azure lưu trữ trong public cloud; lựa chọn gồm VM, Container Instances, Functions, Kubernetes | Dễ | D (Kubernetes) | C (Azure Functions), đáp án phù hợp nhất | 0/1 | Sai | Functions là serverless compute chạy mã theo trigger. Kubernetes điều phối containers, không phải bản thân một dịch vụ serverless do Azure host; Azure Container Instances cũng không cần quản lý máy chủ nhưng đề hỏi dịch vụ serverless điển hình. Khác H007 ở bộ lựa chọn và tình huống, ghi lượt mới. Xem AZ900-007. |
+
 ## Lịch sử các lần ôn lại
 
 Các dòng dưới đây được chuyển từ ghi chú ôn lại đã có, mỗi lượt tính đúng một lần; điểm domain kế thừa phân loại và độ khó của câu gốc.
@@ -95,10 +97,14 @@ Các dòng dưới đây được chuyển từ ghi chú ôn lại đã có, m�
 | --- | --- | --- | --- | --- | --- | --- |
 | Describe cloud concepts | 9 | 10 | 10/11 | +9 | 90.91% | Vững |
 | Describe Azure management and governance | 16 | 17 | 20/27 | +13 | 69.33% | Đang củng cố |
-| Describe Azure architecture and services | 25 | 31 | 28/45 | +11 | 58.03% | Cần ôn |
+| Describe Azure architecture and services | 26 | 32 | 28/46 | +10 | 56.77% | Cần ôn |
 
 Chưa đủ dữ liệu để kết luận mức sẵn sàng tổng thể: mỗi domain cần ít nhất 15 câu riêng biệt với chủ đề và độ khó đa dạng. Kết quả hiện hành bao gồm các lượt đã xem phản hồi trước đó; không diễn giải thành tỷ lệ đỗ.
 
 ### Bổ sung ngày 2026-11-16: câu dịch vụ đã ngừng hoạt động
 
 AZ900-H060: trả lời đúng 3/3, thay đổi điểm học tập +3. Vì Azure Blueprints đã ngừng hoạt động, lưu riêng vào điểm kiến thức legacy; không cộng vào các domain readiness theo đề cương hiện hành. Điểm governance readiness vẫn +13; tổng điểm học tập tính cả legacy tăng thêm +3. Không chấm lại câu AZ900-H059: trước đó đã ghi một kết quả theo key LinkedIn, và ảnh mới không phải lượt trả lời bổ sung.
+
+### Bổ sung câu 2/2 ngày 2026-11-16
+
+AZ900-H061: Kubernetes (D) sai; Azure Functions (C) đúng. Điểm thô 0/1, signed delta −1. Đã cập nhật domain architecture: 26 câu riêng biệt, 32 lượt, 28/46 ý đúng, điểm +10. Ảnh Azure regions không có đáp án được chọn; AZ900-H059 đã lưu từ lượt trước, không tạo lượt mới.
