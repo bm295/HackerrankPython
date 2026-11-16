@@ -8,6 +8,7 @@ Tìm keyword và mục tiêu câu hỏi trong bảng, rồi đọc mục PMP tư
 | --- | --- | --- |
 | FIRST, NEXT; hành động đầu tiên hoặc tiếp theo | [PMP-001](#pmp-001) | Phân biệt bước cần làm ngay với giải pháp cuối cùng. |
 | Change request, scope creep, baseline, approval, backlog; fixed go-live date, additional scope, fully committed; cannot agree how to implement changes; fixed budget, regulated scope | [PMP-002](#pmp-002) | Xác định thẩm quyền và quy trình thay đổi; scope tăng nhưng giữ ngày giao cần phân tích tác động và phương án trước khi xin phê duyệt. |
+| Multiple teams, combined deliverables, integration conflicts, team leads | [PMP-031](#pmp-031) | Phối hợp sớm, thống nhất interface và dependencies thay vì đợi testing. |
 | Risk, issue, may occur, has occurred, no response planned, contingency | [PMP-003](#pmp-003) | Risk đã xảy ra và gây tác động cần ghi issue log và xử lý; nếu chưa có response thì cùng nhóm xác định workaround. |
 | Frustrated, conflict, unhappy team, changing requirements | [PMP-004](#pmp-004) | Hiểu mối lo và nguyên nhân trước khi chọn biện pháp; kết hợp PMP-001 nếu hỏi FIRST. |
 | Deliverable, inspection, acceptance, quality, Definition of Done, signoff, sponsor | [PMP-005](#pmp-005) | Phân biệt kiểm tra chất lượng với chấp nhận kết quả. |
@@ -475,3 +476,15 @@ Bổ sung cho PMP-006. Chọn công thức có giả định phù hợp với đ
 **Cách phân tích đáp án:** Giải thích tính chất vận hành của công việc còn lại, xác định đội tiếp nhận và xác nhận họ sẵn sàng vận hành trước khi hoàn tất đóng dự án. Bàn giao tài liệu, quyền truy cập và đầu mối xử lý sự cố theo kế hoạch chuyển giao.
 
 **Bẫy:** Hỗ trợ ổn định sau triển khai có thể nằm trong dự án nếu đã thống nhất phạm vi và tiêu chí kết thúc. Việc bảo trì thường xuyên cần chủ sở hữu vận hành.
+
+<a id="pmp-031"></a>
+
+## PMP-031 | Phối hợp tích hợp deliverables giữa nhiều nhóm
+
+**Dấu hiệu:** Dự án hybrid có nhiều nhóm phát triển các deliverables riêng, PM lo ngại xung đột khi tích hợp; các phương án gồm họp định kỳ giữa team leads, ưu tiên đơn phương, xử lý riêng lẻ hoặc đợi testing.
+
+**Liên hệ lý thuyết:** Integration Management và quản lý cross-team dependencies đòi hỏi phối hợp sớm về interface, tiêu chí tích hợp, trách nhiệm và thời điểm bàn giao. Nguy cơ xung đột chưa xảy ra cần được chủ động theo dõi và giảm thiểu.
+
+**Cách phân tích đáp án:** Trong các lựa chọn này, họp định kỳ với team leads để rà soát công việc và vấn đề là phương án tốt nhất vì tạo cơ chế nhận diện và giải quyết phụ thuộc liên nhóm trước khi tích hợp. Kết hợp các cuộc họp với thỏa thuận interface, integration checkpoints và theo dõi rủi ro thực tế; không coi họp hàng tuần là đủ trong mọi hoàn cảnh.
+
+**Bẫy:** Không để một lead tự quyết ưu tiên của cả hai nhóm khi chưa có thẩm quyền; xử lý xung đột riêng lẻ bỏ qua phụ thuộc chung; đợi đến testing làm tăng chi phí khắc phục. Phân biệt risk về xung đột tiềm tàng với issue đã xảy ra.
