@@ -78,6 +78,8 @@ Nhật ký ghi lại câu đã luyện, điểm thô và ghi chú để đối c
 
 | AZ900-H064 | 2026-11-16 | 2026-07-20 | Describe Azure management and governance | Management Groups và kế thừa Azure Policy đa subscription | LinkedIn Question 3/4: tính năng enforce compliance của Azure resources across multiple subscriptions; chọn giữa Azure policies, compliance groups, App Service plans, Management groups | Trung bình | D (Management groups) | D (Management groups), theo nhấn mạnh scope nhiều subscriptions | 1/1 | Đúng theo ý định đề | Management groups tạo scope quản trị phía trên subscriptions để gán Azure Policy và RBAC kế thừa. Azure Policy là cơ chế thực thi compliance, vì vậy A cũng liên quan; từ across multiple subscriptions khiến D là lựa chọn phân biệt phù hợp. Xem AZ900-012 và AZ900-013. |
 
+| AZ900-H065 | 2026-11-16 | 2026-07-20 | Describe Azure architecture and services | Authentication so với Authorization | LinkedIn Question 4/4: thuật ngữ cho phép người đã chứng minh danh tính truy cập dữ liệu; lựa chọn Authentication, Security, Authorization, Azure Active Directory | Dễ | C (Authorization) | C (Authorization) | 1/1 | Đúng | Authentication xác minh danh tính; authorization xác định quyền truy cập tài nguyên sau xác thực. Azure Active Directory nay là Microsoft Entra ID, dịch vụ danh tính chứ không phải thuật ngữ được hỏi. |
+
 ## Lịch sử các lần ôn lại
 
 Các dòng dưới đây được chuyển từ ghi chú ôn lại đã có, mỗi lượt tính đúng một lần; điểm domain kế thừa phân loại và độ khó của câu gốc.
@@ -103,7 +105,7 @@ Các dòng dưới đây được chuyển từ ghi chú ôn lại đã có, m�
 | --- | --- | --- | --- | --- | --- | --- |
 | Describe cloud concepts | 11 | 12 | 12/13 | +11 | 92.31% | Vững |
 | Describe Azure management and governance | 17 | 18 | 21/28 | +14 | 70.43% | Đang củng cố |
-| Describe Azure architecture and services | 26 | 32 | 28/46 | +10 | 56.77% | Cần ôn |
+| Describe Azure architecture and services | 27 | 33 | 29/47 | +11 | 57.69% | Cần ôn |
 
 Chưa đủ dữ liệu để kết luận mức sẵn sàng tổng thể: mỗi domain cần ít nhất 15 câu riêng biệt với chủ đề và độ khó đa dạng. Kết quả hiện hành bao gồm các lượt đã xem phản hồi trước đó; không diễn giải thành tỷ lệ đỗ.
 
@@ -126,3 +128,7 @@ AZ900-H063: NO, đúng theo cách hiểu từ 'any' tuyệt đối, 1/1, +1 đi�
 ### Bổ sung 2026-11-16: Management Groups và compliance
 
 AZ900-H064: D (Management groups), đúng theo ý định đề, 1/1, signed +1. Domain governance: 17 câu riêng biệt, 18 lượt, 21/28 ý đúng, +14. Azure Policy trực tiếp định nghĩa và enforce compliance; Management Groups là scope để áp dụng đồng nhất trên nhiều subscriptions. Nội dung đã có tại AZ900-012 và AZ900-013 nên không tạo bài học trùng.
+
+### Bổ sung 2026-11-16: Authentication vs Authorization
+
+AZ900-H065: C (Authorization), đúng 1/1, +1. Domain architecture hiện 27 câu riêng biệt, 33 lượt, 29/47 ý đúng, signed +11, trung bình có trọng số xấp xỉ 57.69% theo cập nhật từ bảng hiện hành.
