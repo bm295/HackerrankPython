@@ -72,6 +72,8 @@ Nhật ký ghi lại câu đã luyện, điểm thô và ghi chú để đối c
 
 | AZ900-H061 | 2026-11-16 | 2026-07-20 | Describe Azure architecture and services | Azure Functions và serverless compute so với Kubernetes | LinkedIn Question 2/2: chọn dịch vụ serverless do Azure lưu trữ trong public cloud; lựa chọn gồm VM, Container Instances, Functions, Kubernetes | Dễ | D (Kubernetes) | C (Azure Functions), đáp án phù hợp nhất | 0/1 | Sai | Functions là serverless compute chạy mã theo trigger. Kubernetes điều phối containers, không phải bản thân một dịch vụ serverless do Azure host; Azure Container Instances cũng không cần quản lý máy chủ nhưng đề hỏi dịch vụ serverless điển hình. Khác H007 ở bộ lựa chọn và tình huống, ghi lượt mới. Xem AZ900-007. |
 
+| AZ900-H062 | 2026-11-16 | 2026-07-20 | Describe cloud concepts | Azure App Service thuộc PaaS | LinkedIn Question 1/4: phân loại Azure App Service giữa SaaS, PaaS, IaaS và FaaS | Dễ | B (Platform as a Service) | B (Platform as a Service) | 1/1 | Đúng | App Service là nền tảng được quản lý để triển khai web apps và APIs; người dùng quản lý ứng dụng, dữ liệu và cấu hình thay vì guest OS. Khác H055 vì câu này chỉ hỏi App Service và có FaaS là distractor. Xem AZ900-041. |
+
 ## Lịch sử các lần ôn lại
 
 Các dòng dưới đây được chuyển từ ghi chú ôn lại đã có, mỗi lượt tính đúng một lần; điểm domain kế thừa phân loại và độ khó của câu gốc.
@@ -95,7 +97,7 @@ Các dòng dưới đây được chuyển từ ghi chú ôn lại đã có, m�
 
 | Domain | Câu riêng biệt | Lượt tính điểm | Điểm thô các lượt | Điểm cộng/trừ | Trung bình có trọng số | Đánh giá |
 | --- | --- | --- | --- | --- | --- | --- |
-| Describe cloud concepts | 9 | 10 | 10/11 | +9 | 90.91% | Vững |
+| Describe cloud concepts | 10 | 11 | 11/12 | +10 | 91.67% | Vững |
 | Describe Azure management and governance | 16 | 17 | 20/27 | +13 | 69.33% | Đang củng cố |
 | Describe Azure architecture and services | 26 | 32 | 28/46 | +10 | 56.77% | Cần ôn |
 
@@ -108,3 +110,7 @@ AZ900-H060: trả lời đúng 3/3, thay đổi điểm học tập +3. Vì Azur
 ### Bổ sung câu 2/2 ngày 2026-11-16
 
 AZ900-H061: Kubernetes (D) sai; Azure Functions (C) đúng. Điểm thô 0/1, signed delta −1. Đã cập nhật domain architecture: 26 câu riêng biệt, 32 lượt, 28/46 ý đúng, điểm +10. Ảnh Azure regions không có đáp án được chọn; AZ900-H059 đã lưu từ lượt trước, không tạo lượt mới.
+
+### Bổ sung ngày 2026-11-16: Azure App Service
+
+AZ900-H062: chọn B (PaaS), đúng 1/1, signed delta +1. Domain cloud concepts hiện có 10 câu riêng biệt, 11 lượt, 11/12 điểm thô, signed +10; weighted mean 91.67%. Bài học PaaS/App Service đã có tại AZ900-041, không tạo ghi chú trùng.
