@@ -76,6 +76,8 @@ Nhật ký ghi lại câu đã luyện, điểm thô và ghi chú để đối c
 
 | AZ900-H063 | 2026-11-16 | 2026-07-20 | Describe cloud concepts | App Service PaaS và giới hạn khi migrate custom applications | LinkedIn: tổ chức ít IT support muốn chuyển ứng dụng và relational databases lên Azure; đánh giá đề xuất migrate any custom applications to App Service | Trung bình | NO | NO (theo nghĩa mọi ứng dụng tùy chỉnh) | 1/1 | Đúng | App Service phù hợp web apps/APIs tương thích nhưng không bảo đảm chạy mọi custom application; database cần đánh giá riêng. Câu có thể được hiểu YES nếu chỉ nói ứng dụng web phù hợp; từ any khiến khẳng định quá rộng. Xem AZ900-041. |
 
+| AZ900-H064 | 2026-11-16 | 2026-07-20 | Describe Azure management and governance | Management Groups và kế thừa Azure Policy đa subscription | LinkedIn Question 3/4: tính năng enforce compliance của Azure resources across multiple subscriptions; chọn giữa Azure policies, compliance groups, App Service plans, Management groups | Trung bình | D (Management groups) | D (Management groups), theo nhấn mạnh scope nhiều subscriptions | 1/1 | Đúng theo ý định đề | Management groups tạo scope quản trị phía trên subscriptions để gán Azure Policy và RBAC kế thừa. Azure Policy là cơ chế thực thi compliance, vì vậy A cũng liên quan; từ across multiple subscriptions khiến D là lựa chọn phân biệt phù hợp. Xem AZ900-012 và AZ900-013. |
+
 ## Lịch sử các lần ôn lại
 
 Các dòng dưới đây được chuyển từ ghi chú ôn lại đã có, mỗi lượt tính đúng một lần; điểm domain kế thừa phân loại và độ khó của câu gốc.
@@ -100,7 +102,7 @@ Các dòng dưới đây được chuyển từ ghi chú ôn lại đã có, m�
 | Domain | Câu riêng biệt | Lượt tính điểm | Điểm thô các lượt | Điểm cộng/trừ | Trung bình có trọng số | Đánh giá |
 | --- | --- | --- | --- | --- | --- | --- |
 | Describe cloud concepts | 11 | 12 | 12/13 | +11 | 92.31% | Vững |
-| Describe Azure management and governance | 16 | 17 | 20/27 | +13 | 69.33% | Đang củng cố |
+| Describe Azure management and governance | 17 | 18 | 21/28 | +14 | 70.43% | Đang củng cố |
 | Describe Azure architecture and services | 26 | 32 | 28/46 | +10 | 56.77% | Cần ôn |
 
 Chưa đủ dữ liệu để kết luận mức sẵn sàng tổng thể: mỗi domain cần ít nhất 15 câu riêng biệt với chủ đề và độ khó đa dạng. Kết quả hiện hành bao gồm các lượt đã xem phản hồi trước đó; không diễn giải thành tỷ lệ đỗ.
@@ -120,3 +122,7 @@ AZ900-H062: chọn B (PaaS), đúng 1/1, signed delta +1. Domain cloud concepts 
 ### Bổ sung 2026-11-16: Migration sang App Service
 
 AZ900-H063: NO, đúng theo cách hiểu từ 'any' tuyệt đối, 1/1, +1 điểm. Câu có thể gây tranh luận nếu nhà ra đề ngầm giới hạn custom applications thành web apps tương thích; không có official key trong ảnh. Domain cloud concepts hiện 11 câu riêng biệt, 12 lượt, 12/13 điểm thô, +11, trung bình 92.31%. Không thêm lesson trùng AZ900-041.
+
+### Bổ sung 2026-11-16: Management Groups và compliance
+
+AZ900-H064: D (Management groups), đúng theo ý định đề, 1/1, signed +1. Domain governance: 17 câu riêng biệt, 18 lượt, 21/28 ý đúng, +14. Azure Policy trực tiếp định nghĩa và enforce compliance; Management Groups là scope để áp dụng đồng nhất trên nhiều subscriptions. Nội dung đã có tại AZ900-012 và AZ900-013 nên không tạo bài học trùng.
