@@ -68,6 +68,8 @@ Nhật ký ghi lại câu đã luyện, điểm thô và ghi chú để đối c
 
 | AZ900-H059 | 2026-11-13 | 2026-07-20 | Describe cloud concepts | Azure Regions so với Availability Zones | LinkedIn Question 1/1: What are Azure regions? phân biệt nhóm datacenter gần nhau với datacenter có nguồn điện, làm mát và mạng độc lập | Dễ | D (one or more data centers with independent power, cooling, networking) | D (theo key LinkedIn) | 1/1 | Đúng | Ảnh kết quả LinkedIn xác nhận D Correct và A Incorrect. Cách diễn đạt D gần định nghĩa Availability Zone hơn theo thuật ngữ Azure; ghi nhận đúng theo key của bài luyện, lưu ý sự khác biệt, không tạo lượt ôn hoặc cộng điểm hai lần. Xem AZ900-017. |
 
+| AZ900-H060 | 2026-11-16 | 2026-07-20 | Describe Azure management and governance | Azure Blueprints, artifacts và assignment scope (legacy) | LinkedIn Question 1/2: ba mệnh đề về gói artifacts, gán blueprint ở resource group và Azure Policy artifact | Trung bình | B (True, False, True) | B (True, False, True), theo kiến thức Azure Blueprints cũ | 3/3 | Đúng | Blueprint definition có thể chứa resource group artifacts, policy assignments, role assignments và ARM templates; blueprint assignment ở subscription, không trực tiếp resource group. Policy assignments có thể là artifact; cụm 'nothing more than a standard' là diễn đạt thiếu chính xác. Azure Blueprints đã ngừng hoạt động năm 2026; câu mang tính lịch sử, loại khỏi readiness theo syllabus hiện hành, vẫn lưu +3 điểm luyện tập riêng. Xem AZ900-046. |
+
 ## Lịch sử các lần ôn lại
 
 Các dòng dưới đây được chuyển từ ghi chú ôn lại đã có, mỗi lượt tính đúng một lần; điểm domain kế thừa phân loại và độ khó của câu gốc.
@@ -96,3 +98,7 @@ Các dòng dưới đây được chuyển từ ghi chú ôn lại đã có, m�
 | Describe Azure architecture and services | 25 | 31 | 28/45 | +11 | 58.03% | Cần ôn |
 
 Chưa đủ dữ liệu để kết luận mức sẵn sàng tổng thể: mỗi domain cần ít nhất 15 câu riêng biệt với chủ đề và độ khó đa dạng. Kết quả hiện hành bao gồm các lượt đã xem phản hồi trước đó; không diễn giải thành tỷ lệ đỗ.
+
+### Bổ sung ngày 2026-11-16: câu dịch vụ đã ngừng hoạt động
+
+AZ900-H060: trả lời đúng 3/3, thay đổi điểm học tập +3. Vì Azure Blueprints đã ngừng hoạt động, lưu riêng vào điểm kiến thức legacy; không cộng vào các domain readiness theo đề cương hiện hành. Điểm governance readiness vẫn +13; tổng điểm học tập tính cả legacy tăng thêm +3. Không chấm lại câu AZ900-H059: trước đó đã ghi một kết quả theo key LinkedIn, và ảnh mới không phải lượt trả lời bổ sung.
