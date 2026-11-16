@@ -713,3 +713,7 @@ Keywords giúp tìm phần hướng dẫn phù hợp; luôn đọc yêu cầu v�
 ### Bổ sung phân biệt Functions, Container Instances và Kubernetes (16/11/2026)
 
 Khi câu hỏi yêu cầu dịch vụ **serverless compute** chạy mã theo sự kiện, Azure Functions là lựa chọn điển hình. Azure Container Instances cho chạy containers mà không cần quản lý máy ảo, cũng thường được mô tả là serverless containers; do đó từ “without servers” riêng lẻ không đủ phân biệt nếu không có các lựa chọn và ngữ cảnh. Kubernetes là hệ thống điều phối container; Azure Kubernetes Service là dịch vụ quản lý cụm Kubernetes nhưng không đồng nghĩa Azure Functions. Tránh suy luận rằng Kubernetes là một dịch vụ serverless chỉ vì hạ tầng chạy trên public cloud.
+
+### Đính chính theo đáp án LinkedIn 16/11/2026 — Azure Policy và Management Groups
+
+Trong câu hỏi hỏi **what feature enforces compliance across multiple subscriptions**, đáp án nhà cung cấp xác nhận là **Azure Policy**, không phải Management Groups. Management Groups là phạm vi phân cấp để áp dụng policy assignments cho nhiều subscriptions; chính Azure Policy mới định nghĩa và đánh giá/thực thi quy tắc. Khi đề nhấn mạnh động từ **enforce compliance**, ưu tiên cơ chế enforcement thay vì phạm vi tổ chức, dù có cụm **across multiple subscriptions**. Đây là sửa lỗi suy luận ở AZ900-H064, không phải lượt trả lời mới.
