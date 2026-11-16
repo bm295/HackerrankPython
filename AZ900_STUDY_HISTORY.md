@@ -76,7 +76,7 @@ Nhật ký ghi lại câu đã luyện, điểm thô và ghi chú để đối c
 
 | AZ900-H063 | 2026-11-16 | 2026-07-20 | Describe cloud concepts | App Service PaaS khi migrate ứng dụng | LinkedIn: tổ chức ít IT support muốn chuyển applications và relational databases lên Azure; giải pháp migrate custom applications to App Service | Trung bình | NO | YES (key LinkedIn xác nhận bằng ảnh kết quả 16/11) | 0/1 | Sai | LinkedIn xác nhận YES vì App Service là PaaS được quản lý, giảm gánh nặng IT. Cách diễn giải NO trước đó của trợ lý quá tuyệt đối theo từ any; trên thực tế cần đánh giá tương thích từng ứng dụng và database. Sửa điểm từ +1 thành −1, không tạo lượt mới. Xem AZ900-041. |
 
-| AZ900-H064 | 2026-11-16 | 2026-07-20 | Describe Azure management and governance | Management Groups và kế thừa Azure Policy đa subscription | LinkedIn Question 3/4: tính năng enforce compliance của Azure resources across multiple subscriptions; chọn giữa Azure policies, compliance groups, App Service plans, Management groups | Trung bình | D (Management groups) | D (Management groups), theo nhấn mạnh scope nhiều subscriptions | 1/1 | Đúng theo ý định đề | Management groups tạo scope quản trị phía trên subscriptions để gán Azure Policy và RBAC kế thừa. Azure Policy là cơ chế thực thi compliance, vì vậy A cũng liên quan; từ across multiple subscriptions khiến D là lựa chọn phân biệt phù hợp. Xem AZ900-012 và AZ900-013. |
+| AZ900-H064 | 2026-11-16 | 2026-07-20 | Describe Azure management and governance | Azure Policy thực thi compliance so với Management Groups | LinkedIn Question 3/4: tính năng enforce compliance của Azure resources across multiple subscriptions | Trung bình | D (Management groups) | A (Azure policies), xác nhận bởi ảnh kết quả LinkedIn 16/11 | 0/1 | Sai | Azure Policy định nghĩa, đánh giá và thực thi các quy tắc compliance; Management Groups là phạm vi tổ chức subscriptions và kế thừa policy assignments, không phải cơ chế enforcement. Sửa nhận định ban đầu của trợ lý; net −2 điểm so với bản ghi +1 trước đó. Xem AZ900-012 và AZ900-013. |
 
 | AZ900-H065 | 2026-11-16 | 2026-07-20 | Describe Azure architecture and services | Authentication so với Authorization | LinkedIn Question 4/4: thuật ngữ cho phép người đã chứng minh danh tính truy cập dữ liệu; lựa chọn Authentication, Security, Authorization, Azure Active Directory | Dễ | C (Authorization) | C (Authorization) | 1/1 | Đúng | Authentication xác minh danh tính; authorization xác định quyền truy cập tài nguyên sau xác thực. Azure Active Directory nay là Microsoft Entra ID, dịch vụ danh tính chứ không phải thuật ngữ được hỏi. |
 
@@ -104,7 +104,7 @@ Các dòng dưới đây được chuyển từ ghi chú ôn lại đã có, m�
 | Domain | Câu riêng biệt | Lượt tính điểm | Điểm thô các lượt | Điểm cộng/trừ | Trung bình có trọng số | Đánh giá |
 | --- | --- | --- | --- | --- | --- | --- |
 | Describe cloud concepts | 11 | 12 | 11/13 | +9 | 84.62% | Vững |
-| Describe Azure management and governance | 17 | 18 | 21/28 | +14 | 70.43% | Đang củng cố |
+| Describe Azure management and governance | 17 | 18 | 20/28 | +12 | Cần tính lại theo trọng số từng lượt | Đang củng cố |
 | Describe Azure architecture and services | 27 | 33 | 29/47 | +11 | 57.69% | Cần ôn |
 
 Chưa đủ dữ liệu để kết luận mức sẵn sàng tổng thể: mỗi domain cần ít nhất 15 câu riêng biệt với chủ đề và độ khó đa dạng. Kết quả hiện hành bao gồm các lượt đã xem phản hồi trước đó; không diễn giải thành tỷ lệ đỗ.
@@ -127,7 +127,7 @@ AZ900-H063: NO, sai theo key LinkedIn (YES), 0/1, −1 điểm. Ảnh kết qu�
 
 ### Bổ sung 2026-11-16: Management Groups và compliance
 
-AZ900-H064: D (Management groups), đúng theo ý định đề, 1/1, signed +1. Domain governance: 17 câu riêng biệt, 18 lượt, 21/28 ý đúng, +14. Azure Policy trực tiếp định nghĩa và enforce compliance; Management Groups là scope để áp dụng đồng nhất trên nhiều subscriptions. Nội dung đã có tại AZ900-012 và AZ900-013 nên không tạo bài học trùng.
+AZ900-H064: D (Management groups) sai theo đáp án LinkedIn chính thức A (Azure policies), 0/1, signed −1. Đính chính lượt cũ, thay đổi tổng domain −2 (từ +14 thành +12), 17 câu riêng biệt, 18 lượt, 20/28 điểm thô. Management Groups chỉ tạo scope quản trị; Azure Policy thực thi compliance. Đã có bài học AZ900-012/013.
 
 ### Bổ sung 2026-11-16: Authentication vs Authorization
 
