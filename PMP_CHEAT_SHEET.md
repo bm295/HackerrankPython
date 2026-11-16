@@ -19,6 +19,7 @@ Tìm keyword và mục tiêu câu hỏi trong bảng, rồi đọc mục PMP tư
 | Complaints about communication methods, communications management plan, stakeholder engagement plan | [PMP-009](#pmp-009) | Đối chiếu nhu cầu thông tin và cách thu hút stakeholder trước khi quyết định sửa kế hoạch. |
 | In parallel, overlap, finish sooner, schedule compression, fast tracking, crashing | [PMP-010](#pmp-010) | Chồng lấn công việc là fast tracking; thêm nguồn lực để rút thời lượng là crashing. |
 | Insufficient resources, major tasks to be outsourced, outside consultants, procurement management plan | [PMP-011](#pmp-011) | Nhu cầu thuê ngoài mới làm thay đổi cách mua sắm dịch vụ; cập nhật kế hoạch procurement trước khi triển khai việc thuê ngoài. |
+| Vendor defective parts, rejected deliverable, refuses repair, contract | [PMP-033](#pmp-033) | Kiểm tra nghĩa vụ và quyền khắc phục trong hợp đồng trước khi xử lý tranh chấp. |
 | Bidder conference, vendors understand requirements, prebid conference | [PMP-012](#pmp-012) | Làm rõ yêu cầu chung trước khi nhà cung cấp nộp đề xuất và thương lượng hợp đồng. |
 | Industry best practices, compare similar projects, benchmarking | [PMP-013](#pmp-013) | So sánh thực hành để tìm chuẩn tham chiếu và cơ hội cải thiện; phân biệt với thu thập ý kiến khách hàng. |
 | Agile technical issue, brainstorm with team, servant leadership, team ownership | [PMP-014](#pmp-014) | Hỗ trợ nhóm cùng tìm giải pháp trước khi thay nhóm quyết định hoặc tìm chuyên gia bên ngoài khi chưa có căn cứ. |
@@ -501,3 +502,15 @@ Bổ sung cho PMP-006. Chọn công thức có giả định phù hợp với đ
 **Cách phân tích đáp án:** Khi trọng tâm là *cách thông báo và chuyển cấp vấn đề* đến stakeholders, chọn communications management plan trong các lựa chọn nêu trên. Cung cấp tình trạng, tác động, hành động đã thử và quyết định cần hỗ trợ theo cơ chế escalation. Nếu câu hỏi chuyển sang việc sửa baseline hoặc phê duyệt corrective change, tham chiếu quy trình change control phù hợp.
 
 **Bẫy:** Đừng nhầm việc giao tiếp với stakeholders là stakeholder engagement strategy; escalation không đồng nghĩa với change request được duyệt. Trong dự án thực tế, escalation path cũng có thể nằm trong issue management hoặc governance procedures tùy cách lập tài liệu.
+
+<a id="pmp-033"></a>
+
+## PMP-033 | Kiểm tra hợp đồng khi vendor từ chối khắc phục lỗi chất lượng
+
+**Dấu hiệu:** Khách hàng từ chối deliverable do lỗi chất lượng từ linh kiện do vendor cung cấp; vendor không đồng ý sửa; đề hỏi PM làm gì trước khi quyết định bước tiếp theo.
+
+**Liên hệ lý thuyết:** Procurement Management Plan hướng dẫn quản lý mua sắm; contract agreements xác định yêu cầu chất lượng, nghiệm thu, bảo hành, trách nhiệm sửa lỗi, điều khoản khắc phục và dispute resolution. Quyền xử lý phụ thuộc hợp đồng cụ thể.
+
+**Cách phân tích đáp án:** Trước tiên rà soát procurement management plan và contract agreements để xác định nghĩa vụ, quyền yêu cầu khắc phục và cơ chế xử lý tranh chấp. Sau đó có thể gặp vendor, thương lượng hoặc áp dụng escalation và remedies theo điều khoản. Ghi nhận issue chất lượng và phối hợp với khách hàng về ảnh hưởng đến nghiệm thu.
+
+**Bẫy:** Không tự ý loại vendor trước khi kiểm tra điều khoản termination; không giả định vendor đã vi phạm hợp đồng nếu chưa đối chiếu phạm vi cam kết. Gặp trực tiếp có ích nhưng chưa thay thế việc hiểu quyền hợp đồng. Đổi quality management plan không giải quyết nghĩa vụ của vendor.
