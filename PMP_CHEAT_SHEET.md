@@ -15,6 +15,7 @@ Tìm keyword và mục tiêu câu hỏi trong bảng, rồi đọc mục PMP tư
 | PV, EV, AC, BAC, CPI, SPI, EAC, ETC, TCPI; over budget, ahead of schedule | [PMP-006](#pmp-006) | So sánh CPI/SPI với 1 để xác định vấn đề chi phí hay tiến độ; chọn công thức theo giả định. |
 | Sprint, review, retrospective, prevent errors, happen again | [PMP-007](#pmp-007) | Phân biệt phản hồi về sản phẩm với cải thiện cách làm. |
 | Assumptions, high-level risk, high-level scope, expert judgment, business case, charter approval | [PMP-008](#pmp-008) | Nhận diện charter qua nội dung tổng quan; phân biệt đang soạn charter với đã sẵn sàng xin phê duyệt. |
+| Schedule delay, unresolved issue, escalate to stakeholders, which plan | [PMP-032](#pmp-032) | Communications management plan hướng dẫn báo cáo và escalation; phân biệt với engagement/change control. |
 | Complaints about communication methods, communications management plan, stakeholder engagement plan | [PMP-009](#pmp-009) | Đối chiếu nhu cầu thông tin và cách thu hút stakeholder trước khi quyết định sửa kế hoạch. |
 | In parallel, overlap, finish sooner, schedule compression, fast tracking, crashing | [PMP-010](#pmp-010) | Chồng lấn công việc là fast tracking; thêm nguồn lực để rút thời lượng là crashing. |
 | Insufficient resources, major tasks to be outsourced, outside consultants, procurement management plan | [PMP-011](#pmp-011) | Nhu cầu thuê ngoài mới làm thay đổi cách mua sắm dịch vụ; cập nhật kế hoạch procurement trước khi triển khai việc thuê ngoài. |
@@ -488,3 +489,15 @@ Bổ sung cho PMP-006. Chọn công thức có giả định phù hợp với đ
 **Cách phân tích đáp án:** Trong các lựa chọn này, họp định kỳ với team leads để rà soát công việc và vấn đề là phương án tốt nhất vì tạo cơ chế nhận diện và giải quyết phụ thuộc liên nhóm trước khi tích hợp. Kết hợp các cuộc họp với thỏa thuận interface, integration checkpoints và theo dõi rủi ro thực tế; không coi họp hàng tuần là đủ trong mọi hoàn cảnh.
 
 **Bẫy:** Không để một lead tự quyết ưu tiên của cả hai nhóm khi chưa có thẩm quyền; xử lý xung đột riêng lẻ bỏ qua phụ thuộc chung; đợi đến testing làm tăng chi phí khắc phục. Phân biệt risk về xung đột tiềm tàng với issue đã xảy ra.
+
+<a id="pmp-032"></a>
+
+## PMP-032 | Chọn kế hoạch khi escalation vấn đề tiến độ
+
+**Dấu hiệu:** Dự án đã trễ tiến độ; điều chỉnh ưu tiên công việc chưa giải quyết được; đề hỏi PM tham chiếu kế hoạch nào để escalation issue tới stakeholders.
+
+**Liên hệ lý thuyết:** Communications management plan xác định nhu cầu thông tin, người nhận, thời điểm, kênh truyền đạt và có thể quy định escalation procedures. Stakeholder engagement plan tập trung vào chiến lược tham gia của các bên liên quan; change management plan điều chỉnh và phê duyệt thay đổi; scope baseline là chuẩn so sánh phạm vi.
+
+**Cách phân tích đáp án:** Khi trọng tâm là *cách thông báo và chuyển cấp vấn đề* đến stakeholders, chọn communications management plan trong các lựa chọn nêu trên. Cung cấp tình trạng, tác động, hành động đã thử và quyết định cần hỗ trợ theo cơ chế escalation. Nếu câu hỏi chuyển sang việc sửa baseline hoặc phê duyệt corrective change, tham chiếu quy trình change control phù hợp.
+
+**Bẫy:** Đừng nhầm việc giao tiếp với stakeholders là stakeholder engagement strategy; escalation không đồng nghĩa với change request được duyệt. Trong dự án thực tế, escalation path cũng có thể nằm trong issue management hoặc governance procedures tùy cách lập tài liệu.
