@@ -97,13 +97,15 @@ Các dòng dưới đây được chuyển từ ghi chú ôn lại đã có, m�
 
 | AZ900-R009 | 2026-11-11 | AZ900-H032 | B (FALSE), ảnh kết quả câu 29 | A (TRUE), chứa gián tiếp | 0/1 | −1 | Lựa chọn khác lần đầu TRUE; đúng theo key phải là TRUE. Lời giải cũ của trợ lý đã áp sai giả định chứa trực tiếp. |
 
+| AZ900-R010 | 2026-11-17 | AZ900-H001 | C (In a public cloud) | C (In a public cloud) | 1/1 | +1 | LinkedIn Question 1/1: tổ chức không cần hỗ trợ hạ tầng datacenter; đáp án đúng Public cloud. Lượt ôn lại mới, khác lần R001 ngày 07/11; +1 điểm. |
+
 ## Điểm hiện hành sau khi tính các lần ôn
 
 Điểm cộng/trừ là thước đo luyện tập tự đặt, không phải điểm thi Microsoft. Phần trăm dùng trung bình có trọng số theo từng lượt: Dễ = 1, Trung bình = 1,25, Khó = 1,5. Số câu riêng biệt phục vụ kiểm tra độ phủ; ôn lại tăng số lượt, không tăng số câu riêng biệt.
 
 | Domain | Câu riêng biệt | Lượt tính điểm | Điểm thô các lượt | Điểm cộng/trừ | Trung bình có trọng số | Đánh giá |
 | --- | --- | --- | --- | --- | --- | --- |
-| Describe cloud concepts | 11 | 12 | 11/13 | +9 | 84.62% | Vững |
+| Describe cloud concepts | 11 | 13 | 12/14 | +10 | Cần tính lại theo trọng số từng lượt | Vững |
 | Describe Azure management and governance | 17 | 18 | 20/28 | +12 | Cần tính lại theo trọng số từng lượt | Đang củng cố |
 | Describe Azure architecture and services | 27 | 33 | 29/47 | +11 | 57.69% | Cần ôn |
 
@@ -132,3 +134,7 @@ AZ900-H064: D (Management groups) sai theo đáp án LinkedIn chính thức A (A
 ### Bổ sung 2026-11-16: Authentication vs Authorization
 
 AZ900-H065: C (Authorization), đúng 1/1, +1. Domain architecture hiện 27 câu riêng biệt, 33 lượt, 29/47 ý đúng, signed +11, trung bình có trọng số xấp xỉ 57.69% theo cập nhật từ bảng hiện hành.
+
+### Ôn lại ngày 2026-11-17: Public cloud
+
+AZ900-R010 liên kết AZ900-H001: C (In a public cloud), đúng 1/1, signed +1. Domain cloud concepts: 11 câu riêng biệt, 13 lượt, 12/14 điểm thô, signed +10. Không tạo câu mới vì cùng kiến thức và cùng tình huống với H001. Cheat sheet AZ900-002 đã bao phủ.
