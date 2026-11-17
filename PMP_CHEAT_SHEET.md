@@ -154,6 +154,9 @@ Với CPI/SPI, **1** là mức đúng kế hoạch: CPI > 1 biểu thị hiệu 
 | < 1 | < 1 | Cả tiến độ và chi phí đều bất lợi; cần xem xét cả hai. |
 | > 1 | > 1 | Cả hai chỉ số thuận lợi; tìm thêm dữ kiện nếu stakeholder vẫn không hài lòng. |
 
+
+**Ví dụ chọn hai đáp án (SV = −200, CV = +900):** SV âm cho thấy giá trị công việc hoàn thành thấp hơn kế hoạch (*behind schedule*), còn CV dương cho thấy chi phí thực tế thấp hơn earned value (*under budget*). Vì vậy chọn hai mô tả chính xác là **under budget** và **behind schedule**, không chọn *ahead of schedule*. Phương án *not progressing as planned* quá chung chung nếu đề yêu cầu chọn đúng hai mô tả riêng về chi phí và tiến độ. Khi ôn, kiểm tra dấu của SV và CV độc lập trước khi nhìn đáp án.
+
 **Cách phân tích đáp án:** Diễn giải tình trạng trước khi tính dự báo. Ví dụ EV = 80, AC = 100, PV = 90 thì CPI = 0,8 và SPI ≈ 0,89: vượt chi phí và chậm so với kế hoạch về giá trị công việc. Sau đó đọc giả định: hiệu suất chi phí tiếp tục như hiện tại, chênh lệch chỉ là bất thường hay phần còn lại được ước tính lại? Chọn công thức EAC theo giả định đó trong bảng bên dưới.
 
 Ví dụ **SPI = 1,2; CPI = 0,76**: giá trị công việc đạt được bằng 120% kế hoạch, nhưng mỗi 1 đơn vị tiền thực chi chỉ tạo ra 0,76 đơn vị giá trị theo ngân sách. Nếu đề hỏi nhóm cần bàn cách khắc phục gì, tập trung vào **budget/cost**. Không chọn sửa cả schedule và budget chỉ vì stakeholder không hài lòng; chưa có dữ kiện cho thấy scope có vấn đề.
