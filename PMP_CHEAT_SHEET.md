@@ -6,6 +6,7 @@ Tìm keyword và mục tiêu câu hỏi trong bảng, rồi đọc mục PMP tư
 
 | Keyword / dấu hiệu trong đề | Mục nên đọc | Tip cần tìm |
 | --- | --- | --- |
+| Lessons learned, busy team, multiple projects, project meetings, deliverable accepted | [PMP-035](#pmp-035) | Thu thập liên tục trong các cuộc họp phù hợp và cập nhật register, không chờ nghiệm thu. |
 | FIRST, NEXT; hành động đầu tiên hoặc tiếp theo | [PMP-001](#pmp-001) | Phân biệt bước cần làm ngay với giải pháp cuối cùng. |
 | Change request, scope creep, baseline, approval, backlog; fixed go-live date, additional scope, fully committed; cannot agree how to implement changes; fixed budget, regulated scope | [PMP-002](#pmp-002) | Xác định thẩm quyền và quy trình thay đổi; scope tăng nhưng giữ ngày giao cần phân tích tác động và phương án trước khi xin phê duyệt. |
 | Multiple teams, combined deliverables, integration conflicts, team leads | [PMP-031](#pmp-031) | Phối hợp sớm, thống nhất interface và dependencies thay vì đợi testing. |
@@ -532,3 +533,15 @@ Bổ sung cho PMP-006. Chọn công thức có giả định phù hợp với đ
 **Cách phân tích đáp án:** Trong các lựa chọn, trước tiên đề nghị gặp stakeholder để tìm hiểu vấn đề và tác động của kết quả dự án; xác minh mối quan ngại rồi thống nhất phương án khắc phục và theo dõi. Chưa vội báo management, yêu cầu sponsor loại stakeholder hay chỉ thông báo cho team khi nguyên nhân chưa rõ.
 
 **Bẫy:** Không biến thành quy tắc luôn chờ đối thoại: nếu việc rút người đang diễn ra hoặc có nguy cơ khẩn cấp ngoài thẩm quyền PM, cần bảo vệ tiến độ và escalation phù hợp. Phân biệt lời đe dọa (risk) với mất nguồn lực thực tế (issue).
+
+<a id="pmp-035"></a>
+
+## PMP-035 | Thu thập lessons learned liên tục khi nhóm thiếu thời gian
+
+**Dấu hiệu:** Thành viên bận nhiều dự án, không có thời gian cập nhật lessons learned; đề đưa lựa chọn chờ nghiệm thu deliverable, thảo luận trong họp, đổi quy định PMO hoặc thuê consultant.
+
+**Liên hệ lý thuyết:** Manage Project Knowledge và Lessons Learned Register hướng đến ghi nhận, chia sẻ kiến thức trong suốt vòng đời dự án. Việc tích hợp vào nhịp làm việc sẵn có giảm nguy cơ quên bài học và giảm công việc hành chính bổ sung.
+
+**Cách phân tích đáp án:** Trong các lựa chọn, lồng ghép thảo luận lessons learned vào các cuộc họp dự án phù hợp là cách chủ động và ít gián đoạn hơn. Ghi lại bài học, tác động và hành động cải thiện trong register, không chỉ trao đổi miệng. Có thể dùng retrospective hoặc checkpoint phù hợp với cách tiếp cận dự án.
+
+**Bẫy:** Không mặc định phải thảo luận trong *mọi* cuộc họp; chọn đúng thời điểm và mục đích. Chờ deliverable được chấp nhận có thể bỏ sót kiến thức giữa chừng. Chưa đủ căn cứ xin thay đổi chính sách PMO hay thuê ngoài.
