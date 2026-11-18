@@ -185,6 +185,8 @@ Ví dụ **SPI = 1,2; CPI = 0,76**: giá trị công việc đạt được bằ
 <a id="pmp-008"></a>
 
 ## PMP-008 | Nhận diện charter và hiểu business case trước khi xin phê duyệt
+**PM mới được phân công vào dự án agile:** Nếu tổ chức khởi động dự án mới và hỏi hành động *FIRST*, lựa chọn rà soát **project charter** giúp PM nắm mục tiêu, high-level deliverables, ràng buộc và thẩm quyền trước khi điều chỉnh schedule hay ngân sách. Không suy ra có former PM và project diary khi đề không nói đến việc bàn giao. Agile không tự động loại bỏ charter; tuy nhiên không mặc định mọi sáng kiến agile đều có charter nếu đề không cung cấp căn cứ.
+
 
 **Dấu hiệu:** Dự án mới có assumptions, high-level risks và preliminary scope; câu hỏi yêu cầu bước tiếp theo. Thường gặp trong bối cảnh predictive hoặc hybrid.
 
