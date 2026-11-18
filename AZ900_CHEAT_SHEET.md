@@ -717,3 +717,7 @@ Khi câu hỏi yêu cầu dịch vụ **serverless compute** chạy mã theo s�
 ### Đính chính theo đáp án LinkedIn 16/11/2026 — Azure Policy và Management Groups
 
 Trong câu hỏi hỏi **what feature enforces compliance across multiple subscriptions**, đáp án nhà cung cấp xác nhận là **Azure Policy**, không phải Management Groups. Management Groups là phạm vi phân cấp để áp dụng policy assignments cho nhiều subscriptions; chính Azure Policy mới định nghĩa và đánh giá/thực thi quy tắc. Khi đề nhấn mạnh động từ **enforce compliance**, ưu tiên cơ chế enforcement thay vì phạm vi tổ chức, dù có cụm **across multiple subscriptions**. Đây là sửa lỗi suy luận ở AZ900-H064, không phải lượt trả lời mới.
+
+### Đối chiếu kết quả LinkedIn 18/11/2026 — Cost Management (AZ900-H066)
+
+LinkedIn Learning đánh dấu cả **B (Cost Management cấu hình NSG)** và **D (phát hiện tài nguyên sử dụng chưa hiệu quả, tối ưu chi phí)** là đúng, nhưng B là lỗi kiến thức: Azure Cost Management and Billing không trực tiếp cấu hình Network Security Groups. Người học chọn D, kết quả LinkedIn là Incorrect vì yêu cầu hai lựa chọn. Ghi nhớ key B,D chỉ để giải thích kết quả provider, không biến B thành quy tắc AZ-900; loại câu này khỏi readiness hiện hành.
