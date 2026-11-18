@@ -80,7 +80,7 @@ Nhật ký ghi lại câu đã luyện, điểm thô và ghi chú để đối c
 
 | AZ900-H065 | 2026-11-16 | 2026-07-20 | Describe Azure architecture and services | Authentication so với Authorization | LinkedIn Question 4/4: thuật ngữ cho phép người đã chứng minh danh tính truy cập dữ liệu; lựa chọn Authentication, Security, Authorization, Azure Active Directory | Dễ | C (Authorization) | C (Authorization) | 1/1 | Đúng | Authentication xác minh danh tính; authorization xác định quyền truy cập tài nguyên sau xác thực. Azure Active Directory nay là Microsoft Entra ID, dịch vụ danh tính chứ không phải thuật ngữ được hỏi. |
 
-| AZ900-H066 | 2026-11-18 | 2026-07-20 | Describe Azure management and governance | Cost Management and Billing, phạm vi chức năng | LinkedIn Question 1/2: select two, security threat monitoring; NSG configuration; code repositories; identify underutilized resources; VM deployment | Trung bình; đề lỗi | D (identify underutilized resources) | Chỉ D đúng về kỹ thuật trong 5 lựa chọn; yêu cầu chọn 2 không nhất quán | Chờ xác minh | Mơ hồ; loại readiness | Người học chọn đúng D, nhưng chỉ 1/2 yêu cầu; không có phương án đúng thứ hai. Trùng chủ đề với H058 nhưng bộ lựa chọn sắp xếp khác và ảnh này chưa phải kết quả chính thức; không cộng/trừ điểm, chờ key của lần làm này. Xem AZ900-045. |
+| AZ900-H066 | 2026-11-18 | 2026-07-20 | Describe Azure management and governance | Cost Management and Billing, phạm vi chức năng | LinkedIn Question 1/2: select two; threat monitoring, NSG configuration, code repositories, underutilized resources, VM deployment | Trung bình; đề lỗi | D (identify underutilized resources) | B, D (key LinkedIn xác nhận bằng ảnh kết quả 18/11); kỹ thuật chỉ D đúng | 1/2 theo key; không tính readiness | Sai theo LinkedIn; key có lỗi kỹ thuật | LinkedIn đánh dấu B và D đúng, người học chỉ chọn D. Cost Management không trực tiếp cấu hình NSG; B là đáp án sai về kỹ thuật. Lưu kết quả provider, loại khỏi readiness và giữ điểm Governance +12 không đổi. Xem AZ900-045. |
 
 ## Lịch sử các lần ôn lại
 
@@ -145,7 +145,7 @@ AZ900-R010 liên kết AZ900-H001: C (In a public cloud), đúng 1/1, signed +1.
 
 ### 2026-11-18 — Cost Management câu chọn hai nhưng chỉ có một lựa chọn đúng
 
-AZ900-H066: D được chọn và đúng theo kiến thức, nhưng đề yêu cầu hai đáp án; A/B/C/E đều không thuộc chức năng Cost Management. Đánh dấu pending/ambiguous, không thay đổi điểm Governance (+12) hoặc readiness. H058 là câu tương tự từng có key LinkedIn bất nhất với chức năng kỹ thuật. Nếu người dùng gửi ảnh kết quả, đối chiếu và sửa H066 thay vì tạo lượt mới.
+AZ900-H066: Ảnh kết quả LinkedIn xác nhận key B,D; người học chỉ chọn D, được 1/2 lựa chọn theo key, LinkedIn báo Incorrect. Tuy nhiên B (Cost Management cấu hình NSG) sai về chức năng Azure. Đánh dấu provider-confirmed / technically flawed, không tính readiness hoặc điểm domain; Governance vẫn +12. Không tạo lượt mới.
 
 ### Ôn lại 2026-11-18: VM Scale Sets vs Availability Sets
 
