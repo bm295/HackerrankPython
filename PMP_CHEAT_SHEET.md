@@ -10,6 +10,7 @@ Tìm keyword và mục tiêu câu hỏi trong bảng, rồi đọc mục PMP tư
 | Change request, scope creep, baseline, approval, backlog; fixed go-live date, additional scope, fully committed; cannot agree how to implement changes; fixed budget, regulated scope | [PMP-002](#pmp-002) | Xác định thẩm quyền và quy trình thay đổi; scope tăng nhưng giữ ngày giao cần phân tích tác động và phương án trước khi xin phê duyệt. |
 | Multiple teams, combined deliverables, integration conflicts, team leads | [PMP-031](#pmp-031) | Phối hợp sớm, thống nhất interface và dependencies thay vì đợi testing. |
 | Risk, issue, may occur, has occurred, no response planned, contingency | [PMP-003](#pmp-003) | Risk đã xảy ra và gây tác động cần ghi issue log và xử lý; nếu chưa có response thì cùng nhóm xác định workaround. |
+| Key stakeholder unhappy, threatens to remove team members, stop project | [PMP-034](#pmp-034) | Gặp để hiểu nguyên nhân trước khi escalation; xử lý khẩn nếu mất nhân sự thực tế. |
 | Frustrated, conflict, unhappy team, changing requirements | [PMP-004](#pmp-004) | Hiểu mối lo và nguyên nhân trước khi chọn biện pháp; kết hợp PMP-001 nếu hỏi FIRST. |
 | Deliverable, inspection, acceptance, quality, Definition of Done, signoff, sponsor | [PMP-005](#pmp-005) | Phân biệt kiểm tra chất lượng với chấp nhận kết quả. |
 | PV, EV, AC, BAC, CPI, SPI, EAC, ETC, TCPI; over budget, ahead of schedule | [PMP-006](#pmp-006) | So sánh CPI/SPI với 1 để xác định vấn đề chi phí hay tiến độ; chọn công thức theo giả định. |
@@ -519,3 +520,15 @@ Bổ sung cho PMP-006. Chọn công thức có giả định phù hợp với đ
 **Cách phân tích đáp án:** Trước tiên rà soát procurement management plan và contract agreements để xác định nghĩa vụ, quyền yêu cầu khắc phục và cơ chế xử lý tranh chấp. Sau đó có thể gặp vendor, thương lượng hoặc áp dụng escalation và remedies theo điều khoản. Ghi nhận issue chất lượng và phối hợp với khách hàng về ảnh hưởng đến nghiệm thu.
 
 **Bẫy:** Không tự ý loại vendor trước khi kiểm tra điều khoản termination; không giả định vendor đã vi phạm hợp đồng nếu chưa đối chiếu phạm vi cam kết. Gặp trực tiếp có ích nhưng chưa thay thế việc hiểu quyền hợp đồng. Đổi quality management plan không giải quyết nghĩa vụ của vendor.
+
+<a id="pmp-034"></a>
+
+## PMP-034 | Stakeholder bất mãn và đe dọa rút nhân sự dự án
+
+**Dấu hiệu:** Key stakeholder không hài lòng với output và nói sẽ rút nhân sự quan trọng để dừng dự án; chưa xác nhận việc rút người đã xảy ra.
+
+**Liên hệ lý thuyết:** Stakeholder engagement, active listening và collaborative conflict resolution giúp PM hiểu nguyên nhân, kỳ vọng và quyền ảnh hưởng của stakeholder. Nguy cơ mất nhân sự cần được đánh giá song song với trao đổi trực tiếp.
+
+**Cách phân tích đáp án:** Trong các lựa chọn, trước tiên đề nghị gặp stakeholder để tìm hiểu vấn đề và tác động của kết quả dự án; xác minh mối quan ngại rồi thống nhất phương án khắc phục và theo dõi. Chưa vội báo management, yêu cầu sponsor loại stakeholder hay chỉ thông báo cho team khi nguyên nhân chưa rõ.
+
+**Bẫy:** Không biến thành quy tắc luôn chờ đối thoại: nếu việc rút người đang diễn ra hoặc có nguy cơ khẩn cấp ngoài thẩm quyền PM, cần bảo vệ tiến độ và escalation phù hợp. Phân biệt lời đe dọa (risk) với mất nguồn lực thực tế (issue).
