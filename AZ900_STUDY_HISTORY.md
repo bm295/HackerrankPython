@@ -101,6 +101,8 @@ Các dòng dưới đây được chuyển từ ghi chú ôn lại đã có, m�
 
 | AZ900-R010 | 2026-11-17 | AZ900-H001 | C (In a public cloud) | C (In a public cloud) | 1/1 | +1 | LinkedIn Question 1/1: tổ chức không cần hỗ trợ hạ tầng datacenter; đáp án đúng Public cloud. Lượt ôn lại mới, khác lần R001 ngày 07/11; +1 điểm. |
 
+| AZ900-R011 | 2026-11-18 | AZ900-H010 | A (Azure Availability Sets) | D (Azure Virtual Machine Scale Sets) | 0/1 | −1 | Lặp lại tình huống web app có peak giờ trưa và trước tan tầm; VMSS hỗ trợ autoscale, Availability Sets không tự scale. Chưa có ảnh key LinkedIn; đáp án dựa trên kiến thức kỹ thuật. |
+
 ## Điểm hiện hành sau khi tính các lần ôn
 
 Điểm cộng/trừ là thước đo luyện tập tự đặt, không phải điểm thi Microsoft. Phần trăm dùng trung bình có trọng số theo từng lượt: Dễ = 1, Trung bình = 1,25, Khó = 1,5. Số câu riêng biệt phục vụ kiểm tra độ phủ; ôn lại tăng số lượt, không tăng số câu riêng biệt.
@@ -109,7 +111,7 @@ Các dòng dưới đây được chuyển từ ghi chú ôn lại đã có, m�
 | --- | --- | --- | --- | --- | --- | --- |
 | Describe cloud concepts | 11 | 13 | 12/14 | +10 | Cần tính lại theo trọng số từng lượt | Vững |
 | Describe Azure management and governance | 17 | 18 | 20/28 | +12 | Cần tính lại theo trọng số từng lượt | Đang củng cố |
-| Describe Azure architecture and services | 27 | 33 | 29/47 | +11 | 57.69% | Cần ôn |
+| Describe Azure architecture and services | 27 | 34 | 29/48 | +10 | Cần tính lại theo trọng số từng lượt | Cần ôn |
 
 Chưa đủ dữ liệu để kết luận mức sẵn sàng tổng thể: mỗi domain cần ít nhất 15 câu riêng biệt với chủ đề và độ khó đa dạng. Kết quả hiện hành bao gồm các lượt đã xem phản hồi trước đó; không diễn giải thành tỷ lệ đỗ.
 
@@ -144,3 +146,7 @@ AZ900-R010 liên kết AZ900-H001: C (In a public cloud), đúng 1/1, signed +1.
 ### 2026-11-18 — Cost Management câu chọn hai nhưng chỉ có một lựa chọn đúng
 
 AZ900-H066: D được chọn và đúng theo kiến thức, nhưng đề yêu cầu hai đáp án; A/B/C/E đều không thuộc chức năng Cost Management. Đánh dấu pending/ambiguous, không thay đổi điểm Governance (+12) hoặc readiness. H058 là câu tương tự từng có key LinkedIn bất nhất với chức năng kỹ thuật. Nếu người dùng gửi ảnh kết quả, đối chiếu và sửa H066 thay vì tạo lượt mới.
+
+### Ôn lại 2026-11-18: VM Scale Sets vs Availability Sets
+
+AZ900-R011 liên kết AZ900-H010, người học chọn Availability Sets (A) nhưng đáp án kỹ thuật là VM Scale Sets (D); 0/1, −1 điểm. Domain architecture: 27 câu riêng biệt, 34 lượt tính điểm, 29/48 ý đúng, +10. Đây là lượt ôn mới, không tạo H mới. Bài học AZ900-011 đã bao phủ; nếu có ảnh kết quả LinkedIn, đối chiếu key và sửa chính lượt R011.
