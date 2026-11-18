@@ -131,6 +131,9 @@ Entry schema (the placeholders below describe what to write; write the actual ti
 
 Add a concise uncertainty note only when needed to assess the lesson; keep source links in this skill or the chat answer.
 
+
+- When a dissatisfied key stakeholder threatens to withdraw project team members, prefer direct engagement to understand the dissatisfaction and its causes before escalating to management or seeking removal of the stakeholder, provided no immediate safety, compliance, or irreversible resource action requires urgent protection. Distinguish a threat from actual withdrawal; document and escalate promptly if the risk materializes or exceeds the PM's authority.
+
 ## Answer format
 
 Use this structure, scaled to the question's complexity and translated into the user's preferred language:
