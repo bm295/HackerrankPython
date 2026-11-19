@@ -1,6 +1,6 @@
 # Chiến lược kiến trúc AI 2028
 
-**Bản đề xuất 0.5 · Cập nhật 12/11/2026 · Nguồn kiểm tra đến 12/11/2026**
+**Bản đề xuất 0.6 · Cập nhật 19/11/2026 · Nguồn kiểm tra đến 19/11/2026**
 
 ## Phạm vi và quyết định cần chốt
 
@@ -10,7 +10,7 @@ Xây dựng năng lực AI cho một đội phát triển phần mềm, bắt đ
 | --- | --- |
 | O28-01 · Trợ lý tra cứu hữu ích | Người dùng tìm được câu trả lời đúng và kiểm được nguồn. Thử nghiệm cho thấy thời gian hoàn thành tác vụ giảm so với tìm kiếm hiện tại. |
 | O28-02 · Vận hành có kiểm soát | Hệ thống đo được chất lượng, p95 và chi phí trên mỗi tác vụ thành công. Đội vận hành diễn tập ngắt AI, hoàn nguyên và xử lý sự cố phân quyền. |
-| O28-03 · Mở rộng theo bằng chứng | Có quyết định mở rộng, thu hẹp hoặc dừng dựa trên kết quả pilot. Workflow gọi công cụ chỉ được đầu tư khi có lợi ích tăng thêm và kiểm soát quyền ở tầng ứng dụng. |
+| O28-04 · Quyết định có quản trị | Đề xuất AI có bằng chứng nguồn, kiểm chính sách có phiên bản, người duyệt có danh tính và audit; hành động rủi ro không được tự thực thi. |\n| O28-03 · Mở rộng theo bằng chứng | Có quyết định mở rộng, thu hẹp hoặc dừng dựa trên kết quả pilot. Workflow gọi công cụ chỉ được đầu tư khi có lợi ích tăng thêm và kiểm soát quyền ở tầng ứng dụng. |
 
 ## Danh mục use case
 
@@ -20,7 +20,7 @@ Xây dựng năng lực AI cho một đội phát triển phần mềm, bắt đ
 | 2 | Đề xuất bước xử lý hoặc soạn nháp | Mẫu và checklist hiện hành. Đo thời gian hoàn thành, tỷ lệ phải sửa và lỗi nghiêm trọng. | Chỉ thử sau khi pilot chỉ đọc đạt gate. Người dùng duyệt trước khi tác động tới nghiệp vụ. |
 | 3 | Workflow AI gọi công cụ | Workflow cố định hoặc quy tắc nghiệp vụ. Đo thành công đầu cuối, chi phí và thao tác ngoài quyền. | Thử trong sandbox với công cụ chỉ đọc. Hành động ghi cần một quyết định riêng về quyền, phê duyệt, idempotency và phục hồi. |
 
-## Kịch bản 2028
+| 4 | Đề xuất bổ sung tồn kho có kiểm soát | Quy tắc tồn kho + người quản lý làm baseline. Đo decision correctness, policy violation, approval latency, audit completeness và cost per valid decision. | Thử sandbox sau gate an toàn, không tự tạo đơn mua. [S08] |\n\n## Kịch bản 2028
 
 | Kịch bản | Giả định và tín hiệu theo dõi | Quyết định nếu xảy ra |
 | --- | --- | --- |
@@ -41,6 +41,12 @@ Luồng đọc đi từ ứng dụng qua xác thực và phân quyền, rồi tr
 | ADR-03 · Workflow cố định hay agent | Dùng workflow cố định làm baseline. Chỉ chạy đồng thời các bước độc lập. Thử agent chọn công cụ chỉ đọc khi tác vụ cần chọn bước động. Backend kiểm quyền theo người dùng, tác vụ và ranh giới nghiệp vụ cho từng lần gọi. Áp dụng allowlist, schema và giới hạn thời gian. [S02, S05] | Giữ baseline nếu phương án thử chưa chứng minh lợi ích hoặc trượt gate chất lượng, phân quyền hay truy vết. Chỉ xét nhiều agent nếu workflow đơn giản còn khoảng cách đã đo. Kiểm chứng ở R27-10. |
 | ADR-04 · Mức độ phức tạp của context | Dùng retrieval có giới hạn và trích dẫn làm baseline. Thử xếp hạng theo độ mới hoặc nén context khi có bằng chứng về lỗi dữ liệu cũ, nhiễu hoặc vượt ngân sách token. Khi cần tái sử dụng kinh nghiệm qua phiên, so sánh không memory, ghi chú trong phiên và hợp nhất/kiểm chứng ngoài phiên có giới hạn. Memory là dữ liệu suy diễn có thể sai; không thay nguồn nghiệp vụ có thẩm quyền. [S01, S07] | Chỉ giữ phần cải thiện được chất lượng hoặc chi phí trên cùng workload mà vẫn qua gate về quyền và độ đúng. Kiểm chứng ở R27-09. |
 | ADR-05 · Điều phối coding agent trong quy trình phát triển | Dùng một coding agent với kiểm chứng độc lập làm baseline. Thử nhiều agent khi tác vụ có thể chia theo phạm vi chỉnh sửa rõ ràng. Cách này có thể giảm xung đột nhưng tăng công điều phối và bàn giao. [S04] | Xét áp dụng năm 2028 nếu R27-13 đạt gate trên tác vụ đại diện và đội có năng lực vận hành. |
+
+### ADR-06 · Governed Decision Intelligence [S08]
+
+Đề xuất ranh giới logic: `Knowledge/Evidence → AI Recommendation → Deterministic Policy Gate → Human Approval (khi cần) → Authorized Execution → Audit/Feedback`. Model không có quyền giao dịch. Backend xác minh danh tính, phân quyền, policy version và trạng thái phê duyệt trước hành động; lưu provenance, correlation ID, người duyệt, kết quả và lý do từ chối. Kiểm thử policy drift, replay/idempotency, race condition, giả mạo reviewer và rollback. Không mặc định cần microservices hoặc multi-agent.
+
+Chỉ đầu tư sau khi R27-14 so sánh với baseline quy tắc + người duyệt, đạt gate quyền và audit, chứng minh cải thiện chất lượng hoặc thời gian với chi phí chấp nhận được. S08 là kiến trúc khái niệm, không phải benchmark thực tế.
 
 ### Rà soát năng lực theo 7 lớp
 
@@ -75,10 +81,10 @@ Mỗi nhiệm vụ ở trạng thái **Đề xuất**. Mốc tháng là cửa s�
 | R27-09 | Q3 · Tháng 9 | O28-03, ADR-04 | AI Engineer | R27-08 | Thử nghiệm context có kiểm soát nếu pilot tiếp tục. So sánh độ đúng, độ mới, token, p95 và chi phí mỗi tác vụ thành công. Kiểm tra lỗi do nén hoặc dữ liệu xung đột. Nếu có nhu cầu qua phiên, thực hiện đối chứng memory theo quy trình R27-09 bên dưới; ghi quyết định giữ, bỏ hoặc hoãn từng phương án và tổng chi phí bảo trì. [S07] |
 | R27-10 | Q4 · Tháng 10 | O28-02, O28-03, ADR-03 | Tech Lead | R27-08 | Nếu use case cần nhiều bước, lập sơ đồ phụ thuộc và ma trận quyền công cụ, sau đó thử trong sandbox theo quy trình dưới đây. Báo cáo kết quả theo nhóm tác vụ và quyết định giữ baseline, thử tiếp hoặc hoãn kèm điều kiện mở lại. |
 | R27-13 | Q4 · Tháng 10, tùy chọn | ADR-05 | Tech Lead | — | Khi có năng lực thử nghiệm và repo sandbox được phép sử dụng, so sánh hai cách điều phối trên các tác vụ tương đương. Báo cáo số liệu, kết quả gate và quyết định giữ baseline hoặc mở pilot 2028. Nếu thiếu điều kiện, ghi nhận hoãn. |
-| R27-11 | Q4 · Tháng 11 | O28-02, ADR-02 | Platform Lead | R27-08 | Kiểm thử tải và chuyển adapter hoặc hoàn nguyên về tìm kiếm. Cập nhật chi phí theo dữ liệu pilot và ghi kết quả diễn tập. |
+| R27-14 | Q4 · Tháng 11, tùy chọn | O28-04, ADR-06 | Tech Lead + Security Lead | R27-08, R27-10 | Sandbox so sánh quyết định theo quy tắc + người duyệt với đề xuất AI có policy gate. Kiểm quyền trước hành động, idempotency, policy version, provenance và audit. Đo decision correctness, policy violation, approval latency, audit completeness và cost per valid decision; chặn triển khai nếu có vi phạm quyền. FnBAz PR #7 là proof of concept chưa đạt production gate. [S08] |\n| R27-11 | Q4 · Tháng 11 | O28-02, ADR-02 | Platform Lead | R27-08 | Kiểm thử tải và chuyển adapter hoặc hoàn nguyên về tìm kiếm. Cập nhật chi phí theo dữ liệu pilot và ghi kết quả diễn tập. |
 | R27-12 | Q4 · Tháng 12 | O28-01, O28-02, O28-03 | Product Owner | R27-09, R27-10, R27-11 | Hồ sơ quyết định đầu tư 2028, gồm kết quả đã đo, các lựa chọn giữ/mở rộng/dừng, chủ sở hữu và điều kiện giải ngân. Ghi rõ các thử nghiệm đã hoãn. Nếu R27-13 có kết quả, đính kèm quyết định về coding agent riêng. |
 
-**90 ngày đầu kể từ 09/11/2026.** Chọn ứng viên use case, xác định ai có thể cấp quyền đọc tài liệu và đối chiếu năng lực đội trong tháng 11–12. Dùng tháng 1 để chốt R27-01, sau đó bắt đầu thu thập bộ đánh giá nếu đã có quyền và người phụ trách.
+**90 ngày đầu kể từ 19/11/2026.** Chọn ứng viên use case, xác định ai có thể cấp quyền đọc tài liệu và đối chiếu năng lực đội trong tháng 11–12. Dùng tháng 1 để chốt R27-01, sau đó bắt đầu thu thập bộ đánh giá nếu đã có quyền và người phụ trách.
 
 ### Cách đo thử nghiệm memory R27-09
 
@@ -110,7 +116,7 @@ Mỗi nhiệm vụ ở trạng thái **Đề xuất**. Mốc tháng là cửa s�
 | Vận hành và kinh tế | Chốt ngân sách p95 và chi phí trên mỗi tác vụ thành công với chủ sở hữu sau baseline. Đo trên tải dự kiến và tải đỉnh trước khi mở rộng. Dùng adapter hoặc tìm kiếm làm đường lui khi inference vượt ngân sách hoặc gián đoạn. |
 | Hồi quy và phát hành | Từ R27-04, mọi thay đổi model, prompt, retrieval hoặc tool phải có cấu hình và bộ đánh giá có phiên bản, so với bản tốt đã biết trên cùng tác vụ. QA Lead chốt ngưỡng trước thử nghiệm; chặn phát hành khi trượt gate chất lượng, quyền, p95 hoặc chi phí. Platform Lead giữ cấu hình rollback; R27-07 diễn tập và R27-08 theo dõi chất lượng bằng mẫu được phép, không lưu payload nhạy cảm mặc định. [S06] |
 | Memory có điều kiện | R27-09 phải chứng minh nguồn và trạng thái kiểm chứng, cách ly quyền, xử lý ghi đồng thời, xóa bản suy diễn và rollback. QA/Platform chốt ngưỡng trước thử nghiệm; chặn đưa memory vào pilot khi trượt gate hoặc chưa tính chi phí bảo trì. [S07] |
-| Mở rộng | Dùng kết quả hai vòng đo liên tiếp trên pilot để xét mở rộng. Đánh giá thêm chi phí vận hành, khả năng phân công trực sự cố và chi phí chuyển đổi nhà cung cấp. |
+| Quyết định có quản trị | R27-14 phải kiểm thử reviewer giả mạo, policy drift, replay, race, rollback và audit thiếu sự kiện. Chặn thực thi khi thiếu quyền/phê duyệt hoặc không thể truy vết chính sách. [S08] |\n| Mở rộng | Dùng kết quả hai vòng đo liên tiếp trên pilot để xét mở rộng. Đánh giá thêm chi phí vận hành, khả năng phân công trực sự cố và chi phí chuyển đổi nhà cung cấp. |
 
 Nếu thử memory, cộng chi phí tạo/hợp nhất/kiểm chứng, lưu trữ và bảo trì vào TCO; báo cáo chi phí phân bổ theo số lần tái sử dụng, không chỉ token tại thời điểm trả lời. [S07]
 
@@ -126,7 +132,7 @@ TCO tháng = inference + truy xuất + lưu trữ + chi phí tích hợp phân b
 | S04 | [Denis Shokhirev, Why one agent is no longer enough](https://gerdennisai.com/blog/multi-agent-cli-orchestration-without-chaos) | 09/11/2026 / 09/11/2026 | Kinh nghiệm triển khai tách vai trò, cô lập vùng sửa và lưu trạng thái điều phối. Dùng để thiết kế ADR-05 và R27-13. Bài viết chưa đưa ra benchmark đối chứng cho hiệu quả multi-agent. |
 | S05 | [Rafał Gancarz, Agentic AI Architecture: Current Challenges and Future Opportunities](https://www.infoq.com/articles/agentic-ai-architecture-challenges-opportunities/) | 09/11/2026 / 10/11/2026 | Phân tích ranh giới nghiệp vụ, điều phối theo loại tác vụ, quyền theo tác vụ và truy vết theo bước. Dùng cho ADR-03 và R27-10. Bài viết tổng hợp góc nhìn và nghiên cứu bên ngoài. Hiệu quả trên workload này cần đo trong pilot. |
 | S06 | [AWS, Pluggable Agentic AI Framework: A seven-layer composable enterprise agentic AI reference architecture](https://aws.amazon.com/blogs/machine-learning/pluggable-agentic-ai-framework-a-seven-layer-composable-enterprise-agentic-ai-reference-architecture-on-amazon-bedrock-agentcore/) | 09/11/2026 / 11/11/2026 | Kiến trúc tham chiếu của nhà cung cấp: contract phân lớp, cấu hình inference, observability và continuous evaluation. Dùng cho rà soát 7 năng lực, ADR-02–03, R27-04–08, R27-11 và gate phát hành. Chưa có benchmark cho workload này; không coi dịch vụ AWS, registry, multi-agent hoặc đánh giá mọi session là bắt buộc. Các gate và cách lấy mẫu là đề xuất của chiến lược. |
-| S07 | [Lance Martin, The components of agent memory](https://www.anthropic.com/research/components-of-agent-memory) | 06/11/2026 / 12/11/2026 | Thử nghiệm của Anthropic về phân tầng memory và hợp nhất/kiểm chứng ngoài phiên. Dùng cho ADR-04, R27-09 và gate/TCO memory. Hiệu quả phụ thuộc tác vụ/model; không suy rộng benchmark thành ROI của đội, không coi wiki hoặc dreaming là bắt buộc. |
+| S08 | [Agrawal & Tambe, A reference architecture for governed cognitive enterprises combining knowledge memory and decision intelligence with agentic AI under continuous assurance](https://link.springer.com/article/10.1007/s44163-026-02719-6) | 19/11/2026 / 19/11/2026 | GCEA: knowledge memory, decision intelligence, governed agentic action và assurance. Dùng cho O28-04, ADR-06, R27-14; kiến trúc khái niệm chưa xác minh hiệu quả trên workload này. |\n| S07 | [Lance Martin, The components of agent memory](https://www.anthropic.com/research/components-of-agent-memory) | 06/11/2026 / 12/11/2026 | Thử nghiệm của Anthropic về phân tầng memory và hợp nhất/kiểm chứng ngoài phiên. Dùng cho ADR-04, R27-09 và gate/TCO memory. Hiệu quả phụ thuộc tác vụ/model; không suy rộng benchmark thành ROI của đội, không coi wiki hoặc dreaming là bắt buộc. |
 
 | Phiên bản | Ngày | Nguồn | Thay đổi |
 | --- | --- | --- | --- |
@@ -134,6 +140,6 @@ TCO tháng = inference + truy xuất + lưu trữ + chi phí tích hợp phân b
 | 0.2 | 09/11/2026 | S04 | Bổ sung ADR-05 và thử nghiệm coding agent tùy chọn R27-13, tách khỏi pilot tra cứu tài liệu và workflow gọi công cụ của sản phẩm. |
 | 0.3 | 10/11/2026 | S05 | Cập nhật ADR-03 và R27-10 với thử nghiệm điều phối theo phụ thuộc, phân quyền theo phạm vi và gate truy vết cho workflow trong sản phẩm. |
 | 0.4 | 11/11/2026 | S06 | Bổ sung rà soát 7 năng lực và catalog có điều kiện; cập nhật ADR-02–03, đưa quyền/trace/evaluation vào R27-04, hoàn thiện R27-05–08 và gate hồi quy/rollback liên kết R27-11. Cập nhật skill và workbook cùng đợt; giữ nguyên hướng pilot và trạng thái Đề xuất. |
-| 0.5 | 12/11/2026 | S07 | Mở rộng ADR-04 và R27-09 với đối chứng memory, kiểm chứng nguồn, ghi đồng thời, rollback và TCO bảo trì. Cập nhật skill và context reference cùng đợt; giữ pilot RAG, lịch và trạng thái Đề xuất. |
+| 0.6 | 19/11/2026 | S08 | Bổ sung O28-04, ADR-06, R27-14 và gate phê duyệt/audit; giữ nguyên pilot RAG, các nhiệm vụ trước và trạng thái đề xuất. |\n| 0.5 | 12/11/2026 | S07 | Mở rộng ADR-04 và R27-09 với đối chứng memory, kiểm chứng nguồn, ghi đồng thời, rollback và TCO bảo trì. Cập nhật skill và context reference cùng đợt; giữ pilot RAG, lịch và trạng thái Đề xuất. |
 
 Khi có reference mới, cập nhật các ADR, nhiệm vụ và gate chịu ảnh hưởng theo [quy trình duy trì chiến lược](.skills/ai-architecture-strategy-2028/SKILL.md#maintain-the-strategy-file). Rà soát lại các giả định và quyết định đầu tư vào cuối mỗi quý.
