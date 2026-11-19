@@ -72,6 +72,10 @@ When persistent memory is justified, compare no memory, in-session notes and off
 
 Treat context lifecycle engineering as a candidate 2028 trend supported by dated evidence, not a certainty. Separate the source author's position from this skill's recommendations; do not claim context engineering eliminates hallucinations.
 
+## Evaluate governed decision intelligence
+
+For cognitive-enterprise and decision-intelligence references, distinguish conceptual architecture from measured evidence. Map knowledge provenance, AI recommendation, deterministic policy gate, authenticated human approval, authorized executor, and audit/feedback as logical responsibilities rather than mandatory services. Compare against rules plus human review before adding AI. Keep policy and transaction authority outside models. Test policy-version drift, reviewer spoofing, concurrent reviews, replay/idempotency, denied actions, missing audit events, and recovery. Measure decision correctness, policy violations, approval latency, audit completeness, and cost per valid decision; require security gates before performance comparison. Revise strategy objectives, ADRs, roadmap dependencies, gates and source register together.
+
 ## Build the investment and delivery plan
 
 - Work backward from the agreed 2028 target using calendar periods relative to the actual current date. Never schedule completed or past phases as future work. If the target has passed, ask whether to evaluate historical achievement or rebase the horizon.
