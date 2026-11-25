@@ -105,6 +105,8 @@ Các dòng dưới đây được chuyển từ ghi chú ôn lại đã có, m�
 
 | AZ900-R012 | 2026-11-25 | AZ900-H043 | D (Azure CLI) | Chờ kết quả LinkedIn; B (Azure Portal) là đáp án dự kiến theo ý định đề | Chưa chấm | 0 tạm thời | Ôn lại câu tạo VM, cấu hình Load Balancer, giám sát ứng dụng. Azure CLI thực hiện được các tác vụ nên đề thiếu tiêu chí phân biệt Portal và CLI. Chưa có ảnh kết quả chính thức; không thay đổi điểm hoặc readiness. |
 
+| AZ900-R013 | 2026-11-25 | AZ900-H011 | B (Azure Management Groups) | B (Azure Management Groups), đánh giá kỹ thuật; chờ key LinkedIn | 1/1 tạm thời | 0 chờ xác minh | LinkedIn Question 2/2: Cranium Corporation nhiều business units/subscriptions cần tổ chức scope, gán policy và phân quyền kế thừa. Ôn lại khái niệm H011; chưa có ảnh kết quả LinkedIn, chưa thay đổi điểm chính thức. |
+
 ## Điểm hiện hành sau khi tính các lần ôn
 
 Điểm cộng/trừ là thước đo luyện tập tự đặt, không phải điểm thi Microsoft. Phần trăm dùng trung bình có trọng số theo từng lượt: Dễ = 1, Trung bình = 1,25, Khó = 1,5. Số câu riêng biệt phục vụ kiểm tra độ phủ; ôn lại tăng số lượt, không tăng số câu riêng biệt.
@@ -156,3 +158,7 @@ AZ900-R011 liên kết AZ900-H010, người học chọn Availability Sets (A) n
 ### 2026-11-25 — Ôn lại Portal vs CLI (AZ900-R012)
 
 Lượt ôn lại liên kết AZ900-H043, người học chọn D (Azure CLI). Theo ý định câu hỏi LinkedIn nhiều khả năng chọn B (Azure Portal), nhưng cả hai đều có thể thực hiện ba tác vụ nêu trong stem. Chờ ảnh kết quả chính thức; giữ trạng thái pending, không cộng/trừ điểm hoặc thay đổi readiness. Không tạo kiến thức trùng với AZ900-020.
+
+### 2026-11-25 — Management Groups, Cranium Corporation
+
+AZ900-R013 ôn lại AZ900-H011: chọn B (Azure Management Groups), phù hợp kỹ thuật. Management Groups tổ chức subscriptions thành hierarchy và tạo scope kế thừa RBAC/Policy; Azure Policy là cơ chế thực thi compliance, không phải công cụ tổ chức subscriptions. Chờ ảnh kết quả LinkedIn, không thay đổi điểm domain (+12) hay readiness đến khi xác minh. Không tạo cheat-sheet trùng AZ900-012/013.
