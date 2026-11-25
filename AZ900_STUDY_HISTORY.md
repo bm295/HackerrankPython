@@ -103,6 +103,8 @@ Các dòng dưới đây được chuyển từ ghi chú ôn lại đã có, m�
 
 | AZ900-R011 | 2026-11-18 | AZ900-H010 | A (Azure Availability Sets) | D (Azure Virtual Machine Scale Sets) | 0/1 | −1 | Lặp lại tình huống web app có peak giờ trưa và trước tan tầm; VMSS hỗ trợ autoscale, Availability Sets không tự scale. Chưa có ảnh key LinkedIn; đáp án dựa trên kiến thức kỹ thuật. |
 
+| AZ900-R012 | 2026-11-25 | AZ900-H043 | D (Azure CLI) | Chờ kết quả LinkedIn; B (Azure Portal) là đáp án dự kiến theo ý định đề | Chưa chấm | 0 tạm thời | Ôn lại câu tạo VM, cấu hình Load Balancer, giám sát ứng dụng. Azure CLI thực hiện được các tác vụ nên đề thiếu tiêu chí phân biệt Portal và CLI. Chưa có ảnh kết quả chính thức; không thay đổi điểm hoặc readiness. |
+
 ## Điểm hiện hành sau khi tính các lần ôn
 
 Điểm cộng/trừ là thước đo luyện tập tự đặt, không phải điểm thi Microsoft. Phần trăm dùng trung bình có trọng số theo từng lượt: Dễ = 1, Trung bình = 1,25, Khó = 1,5. Số câu riêng biệt phục vụ kiểm tra độ phủ; ôn lại tăng số lượt, không tăng số câu riêng biệt.
@@ -150,3 +152,7 @@ AZ900-H066: Ảnh kết quả LinkedIn xác nhận key B,D; người học chỉ
 ### Ôn lại 2026-11-18: VM Scale Sets vs Availability Sets
 
 AZ900-R011 liên kết AZ900-H010, người học chọn Availability Sets (A) nhưng đáp án kỹ thuật là VM Scale Sets (D); 0/1, −1 điểm. Domain architecture: 27 câu riêng biệt, 34 lượt tính điểm, 29/48 ý đúng, +10. Đây là lượt ôn mới, không tạo H mới. Bài học AZ900-011 đã bao phủ; nếu có ảnh kết quả LinkedIn, đối chiếu key và sửa chính lượt R011.
+
+### 2026-11-25 — Ôn lại Portal vs CLI (AZ900-R012)
+
+Lượt ôn lại liên kết AZ900-H043, người học chọn D (Azure CLI). Theo ý định câu hỏi LinkedIn nhiều khả năng chọn B (Azure Portal), nhưng cả hai đều có thể thực hiện ba tác vụ nêu trong stem. Chờ ảnh kết quả chính thức; giữ trạng thái pending, không cộng/trừ điểm hoặc thay đổi readiness. Không tạo kiến thức trùng với AZ900-020.
