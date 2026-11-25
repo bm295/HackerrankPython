@@ -9,6 +9,7 @@ Tìm keyword và mục tiêu câu hỏi trong bảng, rồi đọc mục PMP tư
 | Lessons learned, busy team, multiple projects, project meetings, deliverable accepted | [PMP-035](#pmp-035) | Thu thập liên tục trong các cuộc họp phù hợp và cập nhật register, không chờ nghiệm thu. |
 | FIRST, NEXT; hành động đầu tiên hoặc tiếp theo | [PMP-001](#pmp-001) | Phân biệt bước cần làm ngay với giải pháp cuối cùng. |
 | Change request, scope creep, baseline, approval, backlog; fixed go-live date, additional scope, fully committed; cannot agree how to implement changes; fixed budget, regulated scope | [PMP-002](#pmp-002) | Xác định thẩm quyền và quy trình thay đổi; scope tăng nhưng giữ ngày giao cần phân tích tác động và phương án trước khi xin phê duyệt. |
+| New team member, mid-sprint, finish sooner, stakeholder adds resources | [PMP-036](#pmp-036) | Tham vấn nhóm về Sprint Goal và onboarding trước khi quyết định thêm người. |
 | Multiple teams, combined deliverables, integration conflicts, team leads | [PMP-031](#pmp-031) | Phối hợp sớm, thống nhất interface và dependencies thay vì đợi testing. |
 | Risk, issue, may occur, has occurred, no response planned, contingency | [PMP-003](#pmp-003) | Risk đã xảy ra và gây tác động cần ghi issue log và xử lý; nếu chưa có response thì cùng nhóm xác định workaround. |
 | Key stakeholder unhappy, threatens to remove team members, stop project | [PMP-034](#pmp-034) | Gặp để hiểu nguyên nhân trước khi escalation; xử lý khẩn nếu mất nhân sự thực tế. |
@@ -545,3 +546,15 @@ Bổ sung cho PMP-006. Chọn công thức có giả định phù hợp với đ
 **Cách phân tích đáp án:** Trong các lựa chọn, lồng ghép thảo luận lessons learned vào các cuộc họp dự án phù hợp là cách chủ động và ít gián đoạn hơn. Ghi lại bài học, tác động và hành động cải thiện trong register, không chỉ trao đổi miệng. Có thể dùng retrospective hoặc checkpoint phù hợp với cách tiếp cận dự án.
 
 **Bẫy:** Không mặc định phải thảo luận trong *mọi* cuộc họp; chọn đúng thời điểm và mục đích. Chờ deliverable được chấp nhận có thể bỏ sót kiến thức giữa chừng. Chưa đủ căn cứ xin thay đổi chính sách PMO hay thuê ngoài.
+
+<a id="pmp-036"></a>
+
+## PMP-036 | Tham vấn nhóm trước khi thêm người giữa Sprint
+
+**Dấu hiệu:** Stakeholder muốn bổ sung nhân sự trong Sprint nhằm hoàn thành dự án sớm hơn; PM phải chọn giữa trì hoãn, thêm ngay, hỏi nhóm hiện tại hoặc chỉ xem năng lực người mới.
+
+**Liên hệ lý thuyết:** Agile team self-management và servant leadership khuyến khích tham vấn nhóm về khả năng tiếp nhận, Sprint Goal, phụ thuộc và chi phí onboarding. Thêm người không mặc định tăng throughput ngay; giao tiếp và hướng dẫn có thể làm giảm năng suất ngắn hạn.
+
+**Cách phân tích đáp án:** Hỏi nhóm hiện tại về tác động và phương án tiếp nhận trước khi quyết định theo thẩm quyền của tổ chức. Sau đó xem xét kỹ năng người mới, kế hoạch onboarding, Sprint Goal và lịch bắt đầu phù hợp. Nếu nhóm không thể tiếp nhận mà không ảnh hưởng Sprint, có thể đề xuất sau Sprint.
+
+**Bẫy:** Không coi nhóm có quyền phê duyệt nhân sự tuyệt đối. Không mặc định phải chờ Sprint kết thúc hoặc cho vào ngay. Chỉ kiểm tra qualifications không đủ để đánh giá tác động lên công việc đang thực hiện.
