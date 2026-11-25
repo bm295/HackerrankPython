@@ -138,7 +138,7 @@ Add a concise uncertainty note only when needed to assess the lesson; keep sourc
 - For lessons-learned questions, treat knowledge capture as continuous throughout the project, not something deferred until deliverable acceptance or closure. If team members are overloaded, prefer incorporating short reflection and capture into suitable existing project meetings over immediately changing PMO policy or hiring external help. Do not prescribe a lessons-learned discussion in literally every meeting regardless of purpose; distinguish discussion from actually updating the lessons learned register.
 
 
-- When a stakeholder proposes adding a person mid-sprint to speed delivery, consult the current self-managing team about integration cost, capacity, sprint-goal impact, and onboarding before deciding. Do not assume an immediate productivity gain or an absolute ban until the sprint ends. Qualifications matter but do not replace assessing team/sprint disruption. Team consultation does not automatically grant the team formal staffing authority; follow organizational governance.
+- When a stakeholder proposes adding a person during an active sprint solely to finish sooner, and the provided answer key selects postponing their start until after the sprint, prioritize preserving the current sprint's stability and avoiding mid-sprint onboarding disruption. In that specific exam scenario, choose joining after the sprint (A), not team approval (C), immediate addition (B), or qualification review alone (D). This is an answer-key-specific heuristic, not a universal Scrum rule: adding people mid-sprint is not categorically forbidden, and team consultation remains valuable. Label a user-provided key as such rather than independently verified.
 
 ## Answer format
 
