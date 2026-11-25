@@ -82,6 +82,9 @@ Nhật ký ghi lại câu đã luyện, điểm thô và ghi chú để đối c
 
 | AZ900-H066 | 2026-11-18 | 2026-07-20 | Describe Azure management and governance | Cost Management and Billing, phạm vi chức năng | LinkedIn Question 1/2: select two; threat monitoring, NSG configuration, code repositories, underutilized resources, VM deployment | Trung bình; đề lỗi | D (identify underutilized resources) | B, D (key LinkedIn xác nhận bằng ảnh kết quả 18/11); kỹ thuật chỉ D đúng | 1/2 theo key; không tính readiness | Sai theo LinkedIn; key có lỗi kỹ thuật | LinkedIn đánh dấu B và D đúng, người học chỉ chọn D. Cost Management không trực tiếp cấu hình NSG; B là đáp án sai về kỹ thuật. Lưu kết quả provider, loại khỏi readiness và giữ điểm Governance +12 không đổi. Xem AZ900-045. |
 
+| AZ900-H067 | 2026-11-25 | 2026-07-20 | Describe Azure management and governance | Azure Status page và Health advisories | LinkedIn Question 1/2: nhiều ứng dụng gặp outage diện rộng với người dùng Western United States; bước chẩn đoán đầu tiên | Trung bình | B (Health advisories) | A (Status page), người học xác nhận key | 0/1 | Sai | Status page phù hợp kiểm tra sự cố Azure diện rộng; Service Health cung cấp thông tin cá nhân hóa, health advisories không phải lựa chọn tốt nhất ở đây. −1. Xem AZ900-019. |
+| AZ900-H068 | 2026-11-25 | 2026-07-20 | Describe Azure architecture and services | Azure Files | LinkedIn Question 2/2: nhân viên làm việc từ xa, cấp File Storage để cộng tác chia sẻ tệp | Dễ | YES | YES, người học xác nhận key | 1/1 | Đúng | Azure Files cung cấp managed file shares; không thay thế desktop hoặc ứng dụng. +1. Xem AZ900-006/029. |
+
 ## Lịch sử các lần ôn lại
 
 Các dòng dưới đây được chuyển từ ghi chú ôn lại đã có, mỗi lượt tính đúng một lần; điểm domain kế thừa phân loại và độ khó của câu gốc.
@@ -114,8 +117,8 @@ Các dòng dưới đây được chuyển từ ghi chú ôn lại đã có, m�
 | Domain | Câu riêng biệt | Lượt tính điểm | Điểm thô các lượt | Điểm cộng/trừ | Trung bình có trọng số | Đánh giá |
 | --- | --- | --- | --- | --- | --- | --- |
 | Describe cloud concepts | 11 | 13 | 12/14 | +10 | Cần tính lại theo trọng số từng lượt | Vững |
-| Describe Azure management and governance | 17 | 18 | 20/28 | +12 | Cần tính lại theo trọng số từng lượt | Đang củng cố |
-| Describe Azure architecture and services | 27 | 34 | 29/48 | +10 | Cần tính lại theo trọng số từng lượt | Cần ôn |
+| Describe Azure management and governance | 18 | 19 | 20/29 | +11 | Cần tính lại theo trọng số từng lượt | Đang củng cố |
+| Describe Azure architecture and services | 28 | 35 | 30/49 | +11 | Cần tính lại theo trọng số từng lượt | Cần ôn |
 
 Chưa đủ dữ liệu để kết luận mức sẵn sàng tổng thể: mỗi domain cần ít nhất 15 câu riêng biệt với chủ đề và độ khó đa dạng. Kết quả hiện hành bao gồm các lượt đã xem phản hồi trước đó; không diễn giải thành tỷ lệ đỗ.
 
