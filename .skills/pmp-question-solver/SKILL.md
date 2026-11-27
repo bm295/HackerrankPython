@@ -140,6 +140,9 @@ Add a concise uncertainty note only when needed to assess the lesson; keep sourc
 
 - When a stakeholder proposes adding a person during an active sprint solely to finish sooner, and the provided answer key selects postponing their start until after the sprint, prioritize preserving the current sprint's stability and avoiding mid-sprint onboarding disruption. In that specific exam scenario, choose joining after the sprint (A), not team approval (C), immediate addition (B), or qualification review alone (D). This is an answer-key-specific heuristic, not a universal Scrum rule: adding people mid-sprint is not categorically forbidden, and team consultation remains valuable. Label a user-provided key as such rather than independently verified.
 
+
+- In sustainability-principle questions where the response options explicitly compare preventing an environmental impact with reducing, restoring, or offsetting it, prioritize avoiding the negative impact entirely when feasible. Treat avoid > minimize > restore > offset as the hierarchy used by that question, not as an unconditional ranking for every project; account for feasibility, legal obligations, and residual impacts. When a screenshot already marks an answer correct, recognize it as a review of a completed quiz and record it as correct rather than asking for a new choice.
+
 ## Answer format
 
 Use this structure, scaled to the question's complexity and translated into the user's preferred language:
