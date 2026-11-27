@@ -7,6 +7,7 @@ Tìm keyword và mục tiêu câu hỏi trong bảng, rồi đọc mục PMP tư
 | Keyword / dấu hiệu trong đề | Mục nên đọc | Tip cần tìm |
 | --- | --- | --- |
 | Lessons learned, busy team, multiple projects, project meetings, deliverable accepted | [PMP-035](#pmp-035) | Thu thập liên tục trong các cuộc họp phù hợp và cập nhật register, không chờ nghiệm thu. |
+| Sustainability, negative environmental impact, avoid, minimize, restore, offset | [PMP-037](#pmp-037) | Ưu tiên phòng tránh tác động ngay từ nguồn khi khả thi. |
 | FIRST, NEXT; hành động đầu tiên hoặc tiếp theo | [PMP-001](#pmp-001) | Phân biệt bước cần làm ngay với giải pháp cuối cùng. |
 | Change request, scope creep, baseline, approval, backlog; fixed go-live date, additional scope, fully committed; cannot agree how to implement changes; fixed budget, regulated scope | [PMP-002](#pmp-002) | Xác định thẩm quyền và quy trình thay đổi; scope tăng nhưng giữ ngày giao cần phân tích tác động và phương án trước khi xin phê duyệt. |
 | New team member, mid-sprint, finish sooner, stakeholder adds resources | [PMP-036](#pmp-036) | Theo key câu này, gia nhập sau Sprint để tránh gián đoạn; không phải lệnh cấm tuyệt đối. |
@@ -558,3 +559,15 @@ Bổ sung cho PMP-006. Chọn công thức có giả định phù hợp với đ
 **Cách phân tích đáp án:** Với chính bộ đáp án này, chọn A: thông báo stakeholder để người mới tham gia sau Sprint. B giả định tăng tốc ngay; C là tham vấn có ích nhưng không phải đáp án được cung cấp; D chỉ kiểm tra qualifications mà chưa giải quyết thời điểm gia nhập.
 
 **Bẫy:** Đáp án A do người học cung cấp, chưa được xác minh độc lập từ answer key. Không biến thành quy tắc bắt buộc chờ hết Sprint trong mọi tình huống; thực tế cần xét tính cấp bách, tác động và thẩm quyền nhân sự. Người học chọn D nên vẫn sai dù key đổi từ C sang A.
+
+<a id="pmp-037"></a>
+
+## PMP-037 | Sustainability: ưu tiên tránh tác động môi trường
+
+**Dấu hiệu:** Dự án tạo negative environmental impact; đề hỏi ưu tiên giữa redesign để tránh hoàn toàn, giảm tác động, phục hồi sau tác động và đóng góp chương trình bù đắp.
+
+**Liên hệ lý thuyết:** Nguyên tắc *Integrate Sustainability Within All Project Areas* khuyến khích cân nhắc tác động môi trường trong quyết định dự án. Với bộ lựa chọn này, ngăn tác động ngay từ nguồn tốt hơn chỉ giảm hoặc xử lý hậu quả.
+
+**Cách phân tích đáp án:** Chọn *redesign the approach so the negative impact is avoided altogether*. Trong logic câu hỏi: **Avoid → Minimize → Restore → Offset**. Ảnh quiz đã xác nhận đáp án này là đúng.
+
+**Bẫy:** Không đồng nhất offset với việc loại bỏ tác động gốc. Đây là thứ tự ưu tiên trong bối cảnh câu hỏi, không phải công thức áp dụng máy móc bất kể khả thi, quy định pháp luật hay tác động còn lại.
