@@ -146,6 +146,8 @@ Add a concise uncertainty note only when needed to assess the lesson; keep sourc
 
 - For an international kick-off meeting where the question asks how to increase stakeholder engagement, distinguish ensuring necessary stakeholders or empowered delegates can attend (direct participation) from merely preparing slides or checking agenda accuracy. Time-zone-aware scheduling is important and may be the better answer when the question explicitly asks about scheduling accessibility; when both attendance and scheduling are options, explain the trade-off rather than treating one as a universal rule. Do not label an inferred answer as an official answer key.
 
+- When a newly assigned PM discovers a critical component failure during testing and prior risk identification or response is unknown, prefer checking the risk management plan and risk register for an existing response before inventing a workaround, revising the schedule, or routine escalation. Record the realized issue and implement the applicable response; urgent safety or mandatory notification takes precedence. Do not assume the failure necessarily delays the project.
+
 ## Answer format
 
 Use this structure, scaled to the question's complexity and translated into the user's preferred language:
