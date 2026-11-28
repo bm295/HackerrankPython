@@ -102,7 +102,7 @@ Use [PMP_STUDY_HISTORY.md](../../PMP_STUDY_HISTORY.md) for the learner's practic
 
 The cheat sheet teaches readers how to analyze answer choices and connect scenario facts to PMP theory. For each lesson, explain the recognition cues, relevant theory, reasoning that distinguishes the choices, and traps or exceptions. Use a short comparison or worked example when useful. Keep agent workflow, language rules, maintenance instructions, output templates, validation procedures, and the general exam reference in this skill only. Do not add empty placeholder sections or repetitive administrative metadata. Preserve useful formulas and stable lesson IDs.
 
-Updating the repository cheat sheet after a resolved question is part of this skill's normal workflow and needs no separate confirmation. Honor explicit requests to answer without editing. Limit routine question updates to the cheat sheet and study history.
+For this learner, wait for explicit confirmation of the answer key before any repository write or cumulative score update. Grade provisionally in chat only until confirmation. Once confirmed, update history and relevant cheat sheet; refine the skill only when needed. Honor explicit requests to answer without editing. Limit routine question updates to the cheat sheet and study history.
 
 Maintain a compact Vietnamese `Tra nhanh theo keyword trong câu hỏi` section immediately after the sheet title. Include a short reader-oriented explanation and a table mapping important English question keywords or scenario cues to linked PMP lesson IDs and the reasoning tip to look for. Cover every confirmed lesson once; indicate useful combinations when a question spans lessons. Explain that keywords route the reader to relevant guidance, not automatically to an answer. When adding or refining a lesson, update its index row and maintain a stable lowercase anchor such as `<a id="pmp-007"></a>` directly before its heading. Check that every index link resolves to the matching lesson; pending lessons should not appear as confirmed tips.
 
@@ -147,6 +147,8 @@ Add a concise uncertainty note only when needed to assess the lesson; keep sourc
 - For an international kick-off meeting where the question asks how to increase stakeholder engagement, distinguish ensuring necessary stakeholders or empowered delegates can attend (direct participation) from merely preparing slides or checking agenda accuracy. Time-zone-aware scheduling is important and may be the better answer when the question explicitly asks about scheduling accessibility; when both attendance and scheduling are options, explain the trade-off rather than treating one as a universal rule. Do not label an inferred answer as an official answer key.
 
 - When a newly assigned PM discovers a critical component failure during testing and prior risk identification or response is unknown, prefer checking the risk management plan and risk register for an existing response before inventing a workaround, revising the schedule, or routine escalation. Record the realized issue and implement the applicable response; urgent safety or mandatory notification takes precedence. Do not assume the failure necessarily delays the project.
+
+- When rescheduling exposes new risks from concurrent critical activities, review and analyze those risks with the team before selecting responses; do not assume concurrency necessarily causes delay. This sequence applies absent urgent protective action.
 
 ## Answer format
 
