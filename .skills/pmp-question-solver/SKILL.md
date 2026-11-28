@@ -143,6 +143,9 @@ Add a concise uncertainty note only when needed to assess the lesson; keep sourc
 
 - In sustainability-principle questions where the response options explicitly compare preventing an environmental impact with reducing, restoring, or offsetting it, prioritize avoiding the negative impact entirely when feasible. Treat avoid > minimize > restore > offset as the hierarchy used by that question, not as an unconditional ranking for every project; account for feasibility, legal obligations, and residual impacts. When a screenshot already marks an answer correct, recognize it as a review of a completed quiz and record it as correct rather than asking for a new choice.
 
+
+- For an international kick-off meeting where the question asks how to increase stakeholder engagement, distinguish ensuring necessary stakeholders or empowered delegates can attend (direct participation) from merely preparing slides or checking agenda accuracy. Time-zone-aware scheduling is important and may be the better answer when the question explicitly asks about scheduling accessibility; when both attendance and scheduling are options, explain the trade-off rather than treating one as a universal rule. Do not label an inferred answer as an official answer key.
+
 ## Answer format
 
 Use this structure, scaled to the question's complexity and translated into the user's preferred language:
