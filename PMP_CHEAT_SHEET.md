@@ -8,6 +8,7 @@ Tìm keyword và mục tiêu câu hỏi trong bảng, rồi đọc mục PMP tư
 | --- | --- | --- |
 | Lessons learned, busy team, multiple projects, project meetings, deliverable accepted | [PMP-035](#pmp-035) | Thu thập liên tục trong các cuộc họp phù hợp và cập nhật register, không chờ nghiệm thu. |
 | Sustainability, negative environmental impact, avoid, minimize, restore, offset | [PMP-037](#pmp-037) | Ưu tiên phòng tránh tác động ngay từ nguồn khi khả thi. |
+| International kick-off, stakeholder engagement, time zones, delegates, attendance | [PMP-038](#pmp-038) | Đảm bảo người cần thiết tham dự; cân nhắc lịch phù hợp múi giờ. |
 | FIRST, NEXT; hành động đầu tiên hoặc tiếp theo | [PMP-001](#pmp-001) | Phân biệt bước cần làm ngay với giải pháp cuối cùng. |
 | Change request, scope creep, baseline, approval, backlog; fixed go-live date, additional scope, fully committed; cannot agree how to implement changes; fixed budget, regulated scope | [PMP-002](#pmp-002) | Xác định thẩm quyền và quy trình thay đổi; scope tăng nhưng giữ ngày giao cần phân tích tác động và phương án trước khi xin phê duyệt. |
 | New team member, mid-sprint, finish sooner, stakeholder adds resources | [PMP-036](#pmp-036) | Theo key câu này, gia nhập sau Sprint để tránh gián đoạn; không phải lệnh cấm tuyệt đối. |
@@ -571,3 +572,15 @@ Bổ sung cho PMP-006. Chọn công thức có giả định phù hợp với đ
 **Cách phân tích đáp án:** Chọn *redesign the approach so the negative impact is avoided altogether*. Trong logic câu hỏi: **Avoid → Minimize → Restore → Offset**. Ảnh quiz đã xác nhận đáp án này là đúng.
 
 **Bẫy:** Không đồng nhất offset với việc loại bỏ tác động gốc. Đây là thứ tự ưu tiên trong bối cảnh câu hỏi, không phải công thức áp dụng máy móc bất kể khả thi, quy định pháp luật hay tác động còn lại.
+
+<a id="pmp-038"></a>
+
+## PMP-038 | Kick-off quốc tế: engagement, attendance và múi giờ
+
+**Dấu hiệu:** PM chuẩn bị agenda kick-off với stakeholders từ nhiều quốc gia; hỏi cách tăng stakeholder engagement. Lựa chọn gồm slides, lịch theo múi giờ, đảm bảo người cần thiết hoặc delegate tham dự, rà soát tài liệu.
+
+**Liên hệ lý thuyết:** Stakeholder engagement nhấn mạnh sự tham gia và cơ hội đóng góp; communications management tập trung vào truyền đạt thông tin. Với kick-off quốc tế, múi giờ và khả năng tham dự đều quan trọng.
+
+**Cách phân tích đáp án:** Trong bộ lựa chọn này, C — đảm bảo participants cần thiết hoặc delegates có thể tham dự — được đánh giá là tốt nhất vì gắn trực tiếp với participation. B — tìm lịch phù hợp múi giờ — là distractor mạnh, đồng thời là biện pháp thực tế để đạt được C. Kết hợp lịch phù hợp và xác nhận đại diện có thẩm quyền trong thực tế.
+
+**Bẫy:** Không suy ra B luôn sai: nếu câu hỏi hỏi cụ thể về scheduling accessibility, B có thể phù hợp hơn. Đây là đáp án suy luận, chưa có answer key độc lập.
