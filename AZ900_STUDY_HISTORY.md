@@ -85,6 +85,9 @@ Nhật ký ghi lại câu đã luyện, điểm thô và ghi chú để đối c
 | AZ900-H067 | 2026-11-25 | 2026-07-20 | Describe Azure management and governance | Azure Status page và Health advisories | LinkedIn Question 1/2: nhiều ứng dụng gặp outage diện rộng với người dùng Western United States; bước chẩn đoán đầu tiên | Trung bình | B (Health advisories) | A (Status page), người học xác nhận key | 0/1 | Sai | Status page phù hợp kiểm tra sự cố Azure diện rộng; Service Health cung cấp thông tin cá nhân hóa, health advisories không phải lựa chọn tốt nhất ở đây. −1. Xem AZ900-019. |
 | AZ900-H068 | 2026-11-25 | 2026-07-20 | Describe Azure architecture and services | Azure Files | LinkedIn Question 2/2: nhân viên làm việc từ xa, cấp File Storage để cộng tác chia sẻ tệp | Dễ | YES | YES, người học xác nhận key | 1/1 | Đúng | Azure Files cung cấp managed file shares; không thay thế desktop hoặc ứng dụng. +1. Xem AZ900-006/029. |
 
+| AZ900-H069 | 2026-11-28 | 2026-07-20 | Describe Azure architecture and services | Logic Apps vs Functions | Email từ khách hàng cụ thể kích hoạt SMS; người dùng ít kỹ năng kỹ thuật | Trung bình | C (Azure Functions) | A (Azure Logic Apps), người học xác nhận | 0/1 | Sai | Low-code workflow và connectors phù hợp hơn custom code; −1. |
+| AZ900-H070 | 2026-11-28 | 2026-07-20 | Describe Azure architecture and services | Availability Zone | Chọn phạm vi có ít nhất một datacenter | Dễ | C (Availability Zone) | C (Availability Zone), người học xác nhận | 1/1 | Đúng | Zone gồm một hoặc nhiều datacenter với hạ tầng độc lập; không bảo đảm không có outage; +1. |
+
 ## Lịch sử các lần ôn lại
 
 Các dòng dưới đây được chuyển từ ghi chú ôn lại đã có, mỗi lượt tính đúng một lần; điểm domain kế thừa phân loại và độ khó của câu gốc.
@@ -121,7 +124,7 @@ Các dòng dưới đây được chuyển từ ghi chú ôn lại đã có, m�
 | --- | --- | --- | --- | --- | --- | --- |
 | Describe cloud concepts | 11 | 13 | 12/14 | +10 | Cần tính lại theo trọng số từng lượt | Vững |
 | Describe Azure management and governance | 18 | 20 | 24/33 | +15 | Cần tính lại theo trọng số từng lượt | Đang củng cố |
-| Describe Azure architecture and services | 28 | 36 | 31/50 | +12 | Cần tính lại theo trọng số từng lượt | Cần ôn |
+| Describe Azure architecture and services | 30 | 38 | 32/52 | +12 | Cần tính lại theo trọng số từng lượt | Cần ôn |
 
 Chưa đủ dữ liệu để kết luận mức sẵn sàng tổng thể: mỗi domain cần ít nhất 15 câu riêng biệt với chủ đề và độ khó đa dạng. Kết quả hiện hành bao gồm các lượt đã xem phản hồi trước đó; không diễn giải thành tỷ lệ đỗ.
 
@@ -172,3 +175,7 @@ AZ900-R013 ôn lại AZ900-H011: chọn B (Azure Management Groups), phù hợp 
 ### 2026-11-28 — Ôn lại IaC và Storage Account
 
 Người học xác nhận hai câu đúng: R014 4/4 (+4 governance), R015 1/1 (+1 architecture). Tổng +5; cập nhật bảng tổng hợp từ số liệu hiện hành đã lưu. Trung bình có trọng số cần đối soát lại từ toàn bộ lịch sử.
+
+### 2026-11-28 — Logic Apps và Availability Zone
+
+Người học xác nhận đáp án trợ lý cho cả hai câu. H069 −1, H070 +1; net 0. Architecture 30 câu riêng biệt, 38 lượt, 32/52, +12 theo bảng hiện hành. Chưa tính lại weighted mean.
