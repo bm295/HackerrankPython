@@ -110,6 +110,9 @@ Các dòng dưới đây được chuyển từ ghi chú ôn lại đã có, m�
 
 | AZ900-R013 | 2026-11-25 | AZ900-H011 | B (Azure Management Groups) | B (Azure Management Groups), đánh giá kỹ thuật; chờ key LinkedIn | 1/1 tạm thời | 0 chờ xác minh | LinkedIn Question 2/2: Cranium Corporation nhiều business units/subscriptions cần tổ chức scope, gán policy và phân quyền kế thừa. Ôn lại khái niệm H011; chưa có ảnh kết quả LinkedIn, chưa thay đổi điểm chính thức. |
 
+| AZ900-R014 | 2026-11-28 | AZ900-H002 | B (F, T, F, T) | B (F, T, F, T), người học xác nhận | 4/4 | +4 | ARM không phải scripting language; IaC repeatability; không thao tác thủ công; Terraform đa cloud. |
+| AZ900-R015 | 2026-11-28 | AZ900-H006 | A (Azure Storage Account) | A (Azure Storage Account), người học xác nhận | 1/1 | +1 | Blob, Table, Queue, File. |
+
 ## Điểm hiện hành sau khi tính các lần ôn
 
 Điểm cộng/trừ là thước đo luyện tập tự đặt, không phải điểm thi Microsoft. Phần trăm dùng trung bình có trọng số theo từng lượt: Dễ = 1, Trung bình = 1,25, Khó = 1,5. Số câu riêng biệt phục vụ kiểm tra độ phủ; ôn lại tăng số lượt, không tăng số câu riêng biệt.
@@ -117,8 +120,8 @@ Các dòng dưới đây được chuyển từ ghi chú ôn lại đã có, m�
 | Domain | Câu riêng biệt | Lượt tính điểm | Điểm thô các lượt | Điểm cộng/trừ | Trung bình có trọng số | Đánh giá |
 | --- | --- | --- | --- | --- | --- | --- |
 | Describe cloud concepts | 11 | 13 | 12/14 | +10 | Cần tính lại theo trọng số từng lượt | Vững |
-| Describe Azure management and governance | 18 | 19 | 20/29 | +11 | Cần tính lại theo trọng số từng lượt | Đang củng cố |
-| Describe Azure architecture and services | 28 | 35 | 30/49 | +11 | Cần tính lại theo trọng số từng lượt | Cần ôn |
+| Describe Azure management and governance | 18 | 20 | 24/33 | +15 | Cần tính lại theo trọng số từng lượt | Đang củng cố |
+| Describe Azure architecture and services | 28 | 36 | 31/50 | +12 | Cần tính lại theo trọng số từng lượt | Cần ôn |
 
 Chưa đủ dữ liệu để kết luận mức sẵn sàng tổng thể: mỗi domain cần ít nhất 15 câu riêng biệt với chủ đề và độ khó đa dạng. Kết quả hiện hành bao gồm các lượt đã xem phản hồi trước đó; không diễn giải thành tỷ lệ đỗ.
 
@@ -165,3 +168,7 @@ Lượt ôn lại liên kết AZ900-H043, người học chọn D (Azure CLI), L
 ### 2026-11-25 — Management Groups, Cranium Corporation
 
 AZ900-R013 ôn lại AZ900-H011: chọn B (Azure Management Groups), phù hợp kỹ thuật. Management Groups tổ chức subscriptions thành hierarchy và tạo scope kế thừa RBAC/Policy; Azure Policy là cơ chế thực thi compliance, không phải công cụ tổ chức subscriptions. Chờ ảnh kết quả LinkedIn, không thay đổi điểm domain (+12) hay readiness đến khi xác minh. Không tạo cheat-sheet trùng AZ900-012/013.
+
+### 2026-11-28 — Ôn lại IaC và Storage Account
+
+Người học xác nhận hai câu đúng: R014 4/4 (+4 governance), R015 1/1 (+1 architecture). Tổng +5; cập nhật bảng tổng hợp từ số liệu hiện hành đã lưu. Trung bình có trọng số cần đối soát lại từ toàn bộ lịch sử.
