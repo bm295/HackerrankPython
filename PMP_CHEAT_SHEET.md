@@ -87,6 +87,8 @@ Khi nhiều thay đổi được nhận diện trong execution và nhóm chưa t
 
 ## PMP-003 | Nhận diện risk hay issue trước khi chọn cách xử lý
 
+**Rủi ro mới do đổi lịch:** Khi các hoạt động critical diễn ra đồng thời sau khi điều chỉnh lịch vì thiếu nhân sự, cùng nhóm xem xét rủi ro mới (A) trước khi chọn response (D). Đánh giá phụ thuộc, nguồn lực, xác suất và tác động; không mặc định phải quay lại lịch cũ hoặc dừng dự án. Đáp án A đã được người học xác nhận.
+
 **Dấu hiệu:** Chú ý sự kiện “có thể xảy ra” hay “đã xảy ra”. Domain liên quan: Business Environment, theo ECO tháng 7/2026.
 
 **Liên hệ lý thuyết:** Risk là sự kiện hoặc điều kiện chưa chắc chắn, có thể tác động tích cực hoặc tiêu cực đến mục tiêu. Issue là vấn đề hiện tại cần xử lý. Risk register lưu rủi ro và phương án ứng phó; issue log theo dõi vấn đề, người chịu trách nhiệm và tiến độ giải quyết.
@@ -98,7 +100,7 @@ Khi threat đã được ghi trong risk register, nay thực sự xảy ra và l
 
 **Tình huống trợ cấp chính phủ dự kiến (hybrid):** Khi dự án *có thể* không đáp ứng điều kiện nhận government subsidy, đây là risk về khả năng đủ điều kiện và nguồn tài trợ, chưa mặc định là issue. Ghi hoặc cập nhật risk register; đánh giá probability, impact đối với ngân sách, business case và các giả định tài trợ, rồi xác định response cùng stakeholder có thẩm quyền. Không tự động tăng risk level chỉ vì mới nghe tin: mức độ cần dựa trên đánh giá. Nếu câu trắc nghiệm chỉ đưa lựa chọn “increase the project's risk level”, đây có thể là lựa chọn gần nhất so với ghi issue log, dùng contingency reserve hoặc gửi change request ngay, nhưng cách diễn đạt thiếu bước đánh giá và không nên biến thành quy tắc chung. Khi xác nhận không đủ điều kiện hoặc thiếu hụt tài trợ đã hiện hữu, theo dõi issue và đánh giá thay đổi cần thiết; contingency reserve chỉ dùng đúng mục đích, thẩm quyền và kế hoạch ứng phó đã phê duyệt.
 
-**Tình huống PM mới phát hiện critical component failed khi testing:** Nếu chưa biết risk đã được nhận diện hoặc có response hay chưa, ưu tiên rà soát Risk Management Plan và Risk Register (A). Nếu có response phù hợp thì triển khai theo thẩm quyền; nếu chưa có thì cùng nhóm xây dựng workaround, ghi issue log và đánh giá tác động. Không mặc định phải sửa timeline hoặc báo cáo trước khi hiểu phương án, ngoại trừ nghĩa vụ thông báo khẩn cấp. Đáp án A là suy luận, chưa có key độc lập.
+**Tình huống PM mới phát hiện critical component failed khi testing:** Nếu chưa biết risk đã được nhận diện hoặc có response hay chưa, ưu tiên rà soát Risk Management Plan và Risk Register (A). Nếu có response phù hợp thì triển khai theo thẩm quyền; nếu chưa có thì cùng nhóm xây dựng workaround, ghi issue log và đánh giá tác động. Không mặc định phải sửa timeline hoặc báo cáo trước khi hiểu phương án, ngoại trừ nghĩa vụ thông báo khẩn cấp. Đáp án A đã được người học xác nhận.
 
 **Bẫy:** Chỉ cập nhật sổ theo dõi không giải quyết được vấn đề. Đừng tiếp tục coi vấn đề đã xảy ra là một khả năng trong tương lai hoặc lập lại phương án ứng phó đã có mà không có lý do.
 
